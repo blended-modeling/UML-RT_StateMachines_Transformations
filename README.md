@@ -54,4 +54,4 @@ Right-clicking in org.xtext.example.hclscope -> Run As -> Run Configurations -> 
 ```
 
 ### Enjoy
-Note: In case you encounter any issues, you can contact me at malvina.latifaj@mdh.se.
+Note: In case you encounter any issues or want to discuss further, you can contact me at malvina.latifaj@mdh.se.
