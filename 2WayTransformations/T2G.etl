@@ -1,0 +1,251 @@
+//RULES******************************************************************************************
+
+//statemachine ******************************************************************************************
+
+rule SM2SM
+transform s: Source!StateMachine
+to t: Target!StateMachine
+{
+t.name=s.name;
+	if (s.states.size() == 1){
+		t.top ::= s.states.first();
+	}
+
+	else {
+		var cs: new Target!CompositeState;
+		t.top = cs;
+		cs.substates::=s.states;
+		cs.transitions ::= s.transition + Sequence{s.initialtransition} + s.states.internaltransition; 
+		if (s.initialtransition.isDefined())  {cs.initial ::= s.initialtransition.initialstate;}
+		cs.choicePoints ::= s.choice;
+		cs.junctionPoints ::= s.junction;
+	}
+}
+
+//compositestate ******************************************************************************************
+
+rule State2CompositeState
+transform s: Source!State
+to t: Target!CompositeState
+{
+	guard: not (s.states.isEmpty() and s.entrypoint.isEmpty() and s.exitpoint.isEmpty() and s.junction.isEmpty() and s.choice.isEmpty() and s.internaltransition.isEmpty()) 
+	
+	t.name=s.name;
+	t.substates ::= s.states;
+	t.junctionPoints ::= s.junction;
+	t.choicePoints::=s.choice;
+	t.transitions::= s.transition +  s.historytransition + s.internaltransition + Sequence{s.initialtransition};
+	if (s.initialtransition.isDefined())  {t.initial ::= s.initialtransition.initialstate;}
+	t.deepHistory ::= s.historytransition.`to`.first();
+	t.entryPoints ::= s.entrypoint; 
+	t.exitPoints ::= s.exitpoint; 
+}
+
+//simplestate ******************************************************************************************
+
+rule State2SimpleState
+transform s: Source!State
+to t: Target!SimpleState
+{
+	guard: (s.states.isEmpty() and s.entrypoint.isEmpty() and s.exitpoint.isEmpty() and s.junction.isEmpty() and s.choice.isEmpty())
+
+	t.name=s.name;
+}
+
+//junctionpoints******************************************************************************************
+
+rule Junction2Junction
+transform s: Source!Junction
+to t: Target!JunctionPoint
+{
+	t.name=s.name;
+}
+
+//choicepoint ******************************************************************************************
+
+rule Choice2Choice
+transform s: Source!Choice
+to t: Target!ChoicePoint
+{
+	t.name=s.name;
+}
+
+//entrypoint ******************************************************************************************
+
+rule EntryPoint2EntryPoint
+transform s: Source!EntryPoint
+to t: Target!EntryPoint
+{
+	t.name = s.name;
+}
+//exitpoint ******************************************************************************************
+
+rule ExitPoint2ExitPoint
+transform s: Source!ExitPoint
+to t: Target!ExitPoint
+{
+	t.name = s.name;
+}
+
+//deephistory ******************************************************************************************
+
+rule DeepHistory2DeepHistory
+transform s: Source!DeepHistory
+to t: Target!DeepHistory
+{
+	t.name = s.name;
+}
+
+//initialstate ******************************************************************************************
+
+rule Initial2Initial
+transform s: Source!InitialState
+to t: Target!InitialPoint
+{
+	t.name=s.name;
+}
+
+//transition ******************************************************************************************
+
+rule Transition2Transition
+transform s: Source!Transition
+to t: Target!Transition{
+	t.name=s.name;
+	t.sourceVertex ::= s.from; 
+	t.targetVertex ::= s.`to`;
+	if (s.transitionbody.isDefined()) {
+		t.`guard` ::= s.transitionbody.transitionguard;
+		t.actionChain ::= s.transitionbody.transitionoperation;
+		
+		if (s.transitionbody.portevent.notEmpty() and s.transitionbody.portevent.port.isDefined() and s.transitionbody.portevent.event.isDefined()){
+	       t.triggers ::= s.transitionbody.portevent;
+		}
+		else if (s.transitionbody.methodparameter.notEmpty() and s.transitionbody.methodparameter.method.isDefined() and s.transitionbody.methodparameter.parameter.isDefined()){
+	       t.triggers ::= s.transitionbody.methodparameter;	      
+		}
+	    else {
+		t.triggers ::= s.transitionbody.trigger;
+        }
+	}	
+}
+
+//initialtransition **********************************************************************************
+
+rule InitialTransition2Transition
+transform s: Source!InitialTransition
+to t: Target!Transition{
+	t.name=s.name;
+	t.sourceVertex ::= s.initialstate; 
+	t.targetVertex ::= s.initialto;
+	if (s.transitionbody.isDefined()) {
+		t.`guard` ::= s.transitionbody.transitionguard;
+		t.actionChain ::= s.transitionbody.transitionoperation;
+		
+		if (s.transitionbody.portevent.notEmpty() and s.transitionbody.portevent.port.isDefined() and s.transitionbody.portevent.event.isDefined()){
+	       t.triggers ::= s.transitionbody.portevent;
+		}
+		else if (s.transitionbody.methodparameter.notEmpty() and s.transitionbody.methodparameter.method.isDefined() and s.transitionbody.methodparameter.parameter.isDefined()){
+	       t.triggers ::= s.transitionbody.methodparameter;	      
+		}
+	    else {
+		t.triggers ::= s.transitionbody.trigger;
+        }
+	}
+}
+
+
+//historytransition ******************************************************************************************
+
+rule HistoryTransition2Transition
+transform s: Source!HistoryTransition
+to t: Target!Transition{
+	t.name = s.name;
+	t.sourceVertex ::= s.from; 
+	t.targetVertex ::= s.`to`;
+	if (s.transitionbody.isDefined()) {
+		t.`guard` ::= s.transitionbody.transitionguard;
+		t.actionChain ::= s.transitionbody.transitionoperation;
+		
+		if (s.transitionbody.portevent.notEmpty() and s.transitionbody.portevent.port.isDefined() and s.transitionbody.portevent.event.isDefined()){
+	       t.triggers ::= s.transitionbody.portevent;
+		}
+		else if (s.transitionbody.methodparameter.notEmpty() and s.transitionbody.methodparameter.method.isDefined() and s.transitionbody.methodparameter.parameter.isDefined()){
+	       t.triggers ::= s.transitionbody.methodparameter;	      
+		}
+	    else {
+		t.triggers ::= s.transitionbody.trigger;
+        }
+	}
+}
+//internaltransition ******************************************************************************************
+
+rule InternalTransition2Transition
+transform s: Source!InternalTransition
+to t: Target!Transition{
+	t.name = s.name;
+	t.sourceVertex ::= null; 
+	t.targetVertex ::= null;
+	if (s.transitionbody.isDefined()) {
+		t.`guard` ::= s.transitionbody.transitionguard;
+		t.actionChain ::= s.transitionbody.transitionoperation;
+		
+		if (s.transitionbody.portevent.notEmpty() and s.transitionbody.portevent.port.isDefined() and s.transitionbody.portevent.event.isDefined()){
+	       t.triggers ::= s.transitionbody.portevent;
+		}
+		else if (s.transitionbody.methodparameter.notEmpty() and s.transitionbody.methodparameter.method.isDefined() and s.transitionbody.methodparameter.parameter.isDefined()){
+	       t.triggers ::= s.transitionbody.methodparameter;	      
+		}
+	    else {
+		t.triggers ::= s.transitionbody.trigger;
+        }
+	}
+}
+//guard ******************************************************************************************
+
+rule Guard2Guard
+transform s: Source!TransitionGuard
+to t: Target!Guard
+{
+	t.name = s.name;
+}
+
+//trigger ******************************************************************************************
+
+rule Trigger2Trigger
+transform s: Source!Trigger
+to t: Target!Trigger
+{
+	t.name = s.name;
+}
+
+//porteventrigger2trigger ****************************************************************************************************
+	
+	rule PortEventTrigger2Trigger
+	transform s: Source!PortEventTrigger
+	to t: Target!Trigger
+	{	
+	if (s.port.isDefined() and s.event.isDefined()){
+		t.name = s.port.name + "." + s.event.name;	
+	 }
+	}
+	
+//methodparameterrigger2trigger ****************************************************************************************************	
+    rule MethodParameterTrigger2Trigger
+	transform s: Source!MethodParameterTrigger
+	to t: Target!Trigger
+	{	
+	if (s.method.isDefined() and s.parameter.isDefined()){
+		t.name = s.method.name + "(" + s.parameter.name + ")";	
+	 }
+	}
+
+//transitionoperation-actionchain ****************************************************************************
+	
+	rule TransitionOperations2ActionChain
+	transform s: Source!TransitionOperation
+	to t: Target!ActionChain
+	{
+		t.name=s.name;
+	}
+
+

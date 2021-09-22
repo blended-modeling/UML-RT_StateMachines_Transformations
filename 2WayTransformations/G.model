@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<statemach:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:statemach="http://www.eclipse.org/papyrusrt/xtumlrt/statemach" name="S1">
+  <top name="SM">
+    <substates xsi:type="statemach:CompositeState" name="A" incommingTransitions="//@top/@transitions.1">
+      <entryPoints name="entryone" incommingTransitions="//@top/@substates.0/@transitions.2" outgoingTransitions="//@top/@substates.0/@transitions.0"/>
+      <entryPoints name="Aentry2" incommingTransitions="//@top/@transitions.0"/>
+      <entryPoints name="Aentry3" incommingTransitions="//@top/@transitions.3" outgoingTransitions="//@top/@substates.0/@transitions.1"/>
+      <exitPoints name="Aexit1" outgoingTransitions="//@top/@transitions.0"/>
+      <exitPoints name="Aexit2" outgoingTransitions="//@top/@transitions.2"/>
+      <substates xsi:type="statemach:SimpleState" name="B" incommingTransitions="//@top/@substates.0/@transitions.0"/>
+      <substates xsi:type="statemach:CompositeState" name="C">
+        <entryPoints name="Centry1"/>
+        <entryPoints name="Centry2"/>
+        <substates xsi:type="statemach:SimpleState" name="D" incommingTransitions="//@top/@substates.0/@substates.1/@transitions.0"/>
+        <transitions name="t9" targetVertex="//@top/@substates.0/@substates.1/@substates.0" sourceVertex="//@top/@substates.0/@substates.1/@initial"/>
+        <initial name="initial" outgoingTransitions="//@top/@substates.0/@substates.1/@transitions.0"/>
+      </substates>
+      <transitions name="t1" targetVertex="//@top/@substates.0/@substates.0" sourceVertex="//@top/@substates.0/@entryPoints.0"/>
+      <transitions name="t10" targetVertex="//@top/@substates.0/@deepHistory" sourceVertex="//@top/@substates.0/@entryPoints.2"/>
+      <transitions name="initiali" targetVertex="//@top/@substates.0/@entryPoints.0" sourceVertex="//@top/@substates.0/@initial"/>
+      <initial name="initial" outgoingTransitions="//@top/@substates.0/@transitions.2"/>
+      <deepHistory name="history*" incommingTransitions="//@top/@substates.0/@transitions.1"/>
+    </substates>
+    <substates xsi:type="statemach:SimpleState" name="E" incommingTransitions="//@top/@transitions.2" outgoingTransitions="//@top/@transitions.1 //@top/@transitions.3"/>
+    <transitions name="t2" targetVertex="//@top/@substates.0/@entryPoints.1" sourceVertex="//@top/@substates.0/@exitPoints.0">
+      <triggers name="port.event"/>
+    </transitions>
+    <transitions name="t3" targetVertex="//@top/@substates.0" sourceVertex="//@top/@substates.1">
+      <triggers name="method(par)"/>
+    </transitions>
+    <transitions name="t6" targetVertex="//@top/@substates.1" sourceVertex="//@top/@substates.0/@exitPoints.1">
+      <triggers name="trigger"/>
+    </transitions>
+    <transitions name="t7" targetVertex="//@top/@substates.0/@entryPoints.2" sourceVertex="//@top/@substates.1"/>
+  </top>
+</statemach:StateMachine>

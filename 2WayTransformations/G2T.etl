@@ -1,0 +1,389 @@
+	//RULES******************************************************************************************
+	
+	//statemachine ******************************************************************************************
+	
+	rule SM2SM
+	transform s: Source!StateMachine
+	to t: Target!StateMachine
+	{
+		t.name=s.name;
+		t.states.add(s.top.equivalent());
+	}
+	
+	//state *************************************************************************************************
+	
+	
+	rule State2State
+	transform s:Source!State
+	to t: Target!State
+	{
+		t.name=s.name;
+	}
+	
+	
+	//composite state ****************************************************************************************
+	
+	rule CompositeState2State
+	transform s: Source!CompositeState
+	to t: Target!State
+	{
+		t.name=s.name;
+		t.states::=s.substates;
+		t.entrypoint::=s.entryPoints;
+		t.exitpoint::=s.exitPoints;
+		t.choice::=s.choicePoints;
+		t.junction::=s.junctionPoints;
+	
+	
+	
+		for (transition in s.transitions) { 
+			var Transition = transition;
+		
+			if (Transition.targetVertex.isTypeOf(Source!DeepHistory)){
+		    t.historytransition.add(Transition.equivalent());
+		    }
+		    else if (Transition.sourceVertex.isTypeOf(Source!InitialPoint)){
+		    t.initialtransition = Transition.equivalent();
+		     }
+		    else if (Transition.sourceVertex == null and Transition.targetVertex == null){
+		    t.internaltransition.add(Transition.equivalent());
+		    }
+		    else {
+		    t.transition.add(Transition.equivalent());
+		    }
+		   }
+	}
+	
+	
+	
+	//simplestate ********************************************************************************************
+	rule SimpleState2State
+	transform s: Source!SimpleState
+	to t: Target!State
+	{
+		t.name=s.name;
+	}
+	
+	//entrypoint *********************************************************************************************
+	
+	rule EntryPoint2EntryPoint
+	transform s: Source!EntryPoint
+	to t: Target!EntryPoint
+	{
+		t.name=s.name;
+	}
+	
+	//exitpoint **********************************************************************************************
+	
+	rule ExitPoint2ExitPoint
+	transform s: Source!ExitPoint
+	to t: Target!ExitPoint
+	{
+		t.name=s.name;
+	}
+	
+	//choicepoint ********************************************************************************************
+	rule Choice2Choice
+	transform s: Source!ChoicePoint
+	to t: Target!Choice
+	{
+		t.name=s.name;
+	}
+	
+	//junctionpoint *******************************************************************************************
+	
+	rule Junction2Junction
+	transform s: Source!JunctionPoint
+	to t: Target!Junction
+	{
+		t.name=s.name;
+	}
+	
+	//initial *************************************************************************************************
+	rule Initial2Initial
+	transform s: Source!InitialPoint
+	to t: Target!InitialState
+	{
+		t.name=s.name;
+	}
+	
+	 //deephistory ********************************************************************************************
+	 
+	rule DeepHistory2DeepHistory
+	transform s: Source!DeepHistory
+	to t: Target!DeepHistory
+	{
+		t.name=s.name;
+	}
+	
+	//initialstate ********************************************************************************************
+	
+	rule State2InitialState
+	transform s: Source!State
+	to t: Target!InitialState
+	{
+		t.name=s.name;
+	}
+	
+	//initialtransition **************************************************************************************
+	
+	rule Transition2InitialTransition
+	transform s: Source!Transition
+	to t: Target!InitialTransition {
+		guard: not (s.sourceVertex==null or s.sourceVertex.isTypeOf(Source!SimpleState) or s.sourceVertex.isTypeOf(Source!CompositeState) or s.sourceVertex.isTypeOf(Source!ChoicePoint)
+		or s.sourceVertex.isTypeOf(Source!JunctionPoint) or s.sourceVertex.isTypeOf(Source!EntryPoint) or s.sourceVertex.isTypeOf(Source!ExitPoint) or s.targetVertex.isTypeOf(Source!DeepHistory))
+		t.name=s.name;
+		var tb: new Target!TransitionBody;
+		t.transitionbody=tb;
+		tb.transitionguard ::= s.`guard`;
+		tb.transitionoperation ::=s.actionChain;
+		t.initialstate ::= s.sourceVertex; 
+		t.initialto ::= s.targetVertex; 
+		
+		for (trigger in s.triggers) { 
+			var T = trigger;
+			
+			if (T.name.matches(".*\\..*")){
+			
+			  var pet: new Target!PortEventTrigger;
+			  tb.portevent.add(pet);
+			  	  
+			  var porta: new Target!Port;
+			  pet.port = porta;
+			  porta.name = T.name.split("\\.").first();
+			  			  
+			  var eventi: new Target!Event;
+			  pet.event = eventi;	          
+	          eventi.name = T.name.split("\\.").second();	      		 
+		    }	
+		   	   
+			else if (T.name.matches(".*\\(.*")){
+			
+			  var mpt: new Target!MethodParameterTrigger;
+			  tb.methodparameter.add(mpt);
+			  		  
+			  var methoda: new Target!Method;
+			  mpt.method = methoda;
+			  methoda.name = T.name.split("\\(").first();
+			  			  
+			  var parameteri: new Target!Parameter;
+			  mpt.parameter = parameteri;	          
+	          parameteri.name = T.name.split("\\(").second();
+	          parameteri.name = parameteri.name.split("\\)").first();	      		 
+		    }
+		       
+		     else {
+	        tb.trigger.add(T.equivalent());           
+		    }
+		}
+	}
+	//internaltransition **************************************************************************************
+	
+	rule Transition2InternalTransition
+	transform s: Source!Transition
+	to t: Target!InternalTransition {
+	
+		guard: (s.sourceVertex==null and s.targetVertex==null)	
+		t.name=s.name;
+		var tb: new Target!TransitionBody;
+		t.transitionbody=tb;
+		tb.transitionguard ::= s.`guard`;
+		tb.transitionoperation ::=s.actionChain;
+	
+	for (trigger in s.triggers) { 
+			var T = trigger;
+			
+			if (T.name.matches(".*\\..*")){
+			
+			  var pet: new Target!PortEventTrigger;
+			  tb.portevent.add(pet);
+			  	  
+			  var porta: new Target!Port;
+			  pet.port = porta;
+			  porta.name = T.name.split("\\.").first();
+			  			  
+			  var eventi: new Target!Event;
+			  pet.event = eventi;	          
+	          eventi.name = T.name.split("\\.").second();	      		 
+		    }	
+		   	   
+			else if (T.name.matches(".*\\(.*")){
+			
+			  var mpt: new Target!MethodParameterTrigger;
+			  tb.methodparameter.add(mpt);
+			  		  
+			  var methoda: new Target!Method;
+			  mpt.method = methoda;
+			  methoda.name = T.name.split("\\(").first();
+			  			  
+			  var parameteri: new Target!Parameter;
+			  mpt.parameter = parameteri;	          
+	          parameteri.name = T.name.split("\\(").second();
+	          parameteri.name = parameteri.name.split("\\)").first();	      		 
+		    }
+		       
+		     else {
+	        tb.trigger.add(T.equivalent());           
+		    }
+		}
+		
+	}
+	
+	
+	//transition ***********************************************************************************************
+	
+	rule Transition2Transition
+	transform s: Source!Transition 
+	to t: Target!Transition
+	{
+		guard: (s.sourceVertex.isTypeOf(Source!SimpleState) or s.sourceVertex.isTypeOf(Source!CompositeState) or s.sourceVertex.isTypeOf(Source!ChoicePoint)
+		or s.sourceVertex.isTypeOf(Source!JunctionPoint) or s.sourceVertex.isTypeOf(Source!EntryPoint) or s.sourceVertex.isTypeOf(Source!ExitPoint))
+		and (s.targetVertex.isTypeOf(Source!SimpleState) or s.targetVertex.isTypeOf(Source!CompositeState) or s.targetVertex.isTypeOf(Source!ChoicePoint)
+		or s.targetVertex.isTypeOf(Source!JunctionPoint) or s.targetVertex.isTypeOf(Source!EntryPoint) or s.targetVertex.isTypeOf(Source!ExitPoint))
+		
+		t.name=s.name;
+	
+		var tb: new Target!TransitionBody;
+		t.transitionbody=tb;
+		tb.transitionguard ::= s.`guard`;
+		tb.transitionoperation ::=s.actionChain;
+		t.from ::= s.sourceVertex; 
+		t.`to` ::= s.targetVertex; 
+	    
+		
+	for (trigger in s.triggers) { 
+			var T = trigger;
+			
+			if (T.name.matches(".*\\..*")){
+			
+			  var pet: new Target!PortEventTrigger;
+			  tb.portevent.add(pet);
+			  	  
+			  var porta: new Target!Port;
+			  pet.port = porta;
+			  porta.name = T.name.split("\\.").first();
+			  			  
+			  var eventi: new Target!Event;
+			  pet.event = eventi;	          
+	          eventi.name = T.name.split("\\.").second();	      		 
+		    }	
+		   	   
+			else if (T.name.matches(".*\\(.*")){
+			
+			  var mpt: new Target!MethodParameterTrigger;
+			  tb.methodparameter.add(mpt);
+			  		  
+			  var methoda: new Target!Method;
+			  mpt.method = methoda;
+			  methoda.name = T.name.split("\\(").first();
+			  			  
+			  var parameteri: new Target!Parameter;
+			  mpt.parameter = parameteri;	          
+	          parameteri.name = T.name.split("\\(").second();
+	          parameteri.name = parameteri.name.split("\\)").first();	      		 
+		    }
+		       
+		     else {
+		     
+	        tb.trigger.add(T.equivalent());           
+		    }
+		}
+	}
+	
+	
+	//historytransition ******************************************************************************************
+	
+	rule Transition2HistoryTransition
+	transform s: Source!Transition
+	to t: Target!HistoryTransition 
+	{
+		guard: (s.targetVertex.isTypeOf(Source!DeepHistory))
+		t.name=s.name;
+		var tb: new Target!TransitionBody;
+		t.transitionbody=tb;
+		tb.transitionguard ::= s.`guard`;
+		tb.transitionoperation ::=s.actionChain;
+		t.from ::= s.sourceVertex; 
+		t.`to` ::= s.targetVertex; 
+		
+	for (trigger in s.triggers) { 
+			var T = trigger;
+			
+			if (T.name.matches(".*\\..*")){
+			
+			  var pet: new Target!PortEventTrigger;
+			  tb.portevent.add(pet);
+			  	  
+			  var porta: new Target!Port;
+			  pet.port = porta;
+			  porta.name = T.name.split("\\.").first();
+			  			  
+			  var eventi: new Target!Event;
+			  pet.event = eventi;	          
+	          eventi.name = T.name.split("\\.").second();	      		 
+		    }	
+		   	   
+			else if (T.name.matches(".*\\(.*")){
+			
+			  var mpt: new Target!MethodParameterTrigger;
+			  tb.methodparameter.add(mpt);
+			  		  
+			  var methoda: new Target!Method;
+			  mpt.method = methoda;
+			  methoda.name = T.name.split("\\(").first();
+			  			  
+			  var parameteri: new Target!Parameter;
+			  mpt.parameter = parameteri;	          
+	          parameteri.name = T.name.split("\\(").second();
+	          parameteri.name = parameteri.name.split("\\)").first();	      		 
+		    }
+		       
+		     else {
+	        tb.trigger.add(T.equivalent());           
+		    }
+		}
+	}
+	
+	//guard *****************************************************************************************************
+	
+	rule Guard2TransitionGuard
+	transform s: Source!Guard
+	to t: Target!TransitionGuard
+	{
+		t.name=s.name;
+	}
+	
+	//actionchain-transitionoperation ****************************************************************************
+	
+	rule ActionChain2TransitionOperations
+	transform s: Source!ActionChain
+	to t: Target!TransitionOperation
+	{
+		t.name=s.name;
+	}
+	
+	//trigger
+	rule Trigger2Trigger
+	transform s: Source!Trigger
+	to t: Target!Trigger, mpt:Target!MethodParameterTrigger, m: Target!Method, pa: Target!Parameter, pet: Target!PortEventTrigger, p:Target!Port , e:Target!Event
+	{
+	  if (s.name.matches(".*\\..*")){
+	    p.name = s.name.split("\\.").first();
+	    e.name = s.name.split("\\.").second();
+	    pet.port = p;
+	    pet.event = e;
+	  }
+	  
+	 else if (s.name.matches(".*\\(.*")){
+	    m.name = s.name.split("\\(").first();
+	    pa.name = s.name.split("\\(").second();
+	    pa.name = s.name.split("\\)").first();
+	    mpt.method = m;
+	    mpt.parameter = pa;
+	  }
+	  else {
+	  t.name = s.name;
+	  }
+	}
+	
+	
