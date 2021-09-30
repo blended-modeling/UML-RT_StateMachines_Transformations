@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:Customization
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:custom="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/custom"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:efacet="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet"
+    xmlns:javaQuery="http://www.eclipse.org/papyrus/emf/facet/query/java/0.2.incubation/javaquery"
+    name="StateMachineDiagram"
+    documentation="Display correct names for RT StateMachine diagrams"
+    mustBeLoadedByDefault="true"
+    rank="-55">
+  <eClassifiers
+      xsi:type="custom:EClassCustomization"
+      name="Diagram">
+    <extendedMetaclass href="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//Diagram"/>
+    <facetOperations
+        name="GetLabel">
+      <eType
+          xsi:type="ecore:EDataType"
+          href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters
+          name="eObject">
+        <eType
+            xsi:type="ecore:EClass"
+            href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eParameters>
+      <query
+          xsi:type="javaQuery:JavaQuery"
+          implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.query.GetLabelQuery"/>
+      <override
+          xsi:type="efacet:FacetOperation"
+          href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/label"/>
+    </facetOperations>
+    <extendedFacets
+        href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject"/>
+  </eClassifiers>
+</custom:Customization>

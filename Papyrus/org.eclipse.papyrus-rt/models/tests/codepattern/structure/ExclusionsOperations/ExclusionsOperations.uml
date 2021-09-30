@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_ZtCs8Pk6EeaxQe9AQrYHAg" name="ExclusionsOperations">
+    <packagedElement xmi:type="uml:Class" xmi:id="_anp7EPk6EeaxQe9AQrYHAg" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j2RmwPk6EeaxQe9AQrYHAg" name="a" visibility="protected" type="_bzsQYPk6EeaxQe9AQrYHAg" isOrdered="true" aggregation="composite"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kOmnMPk6EeaxQe9AQrYHAg" name="b" visibility="protected" type="_cqQsAPk6EeaxQe9AQrYHAg" isOrdered="true" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bzsQYPk6EeaxQe9AQrYHAg" name="A" isActive="true">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BJRmwPk7EeaxQe9AQrYHAg" name="OpaqueBehavior1" specification="_myx0IPk6EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body>// op1
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vHCMgPk-EeaxQe9AQrYHAg" name="OpaqueBehavior2" specification="_FCW0UPk_EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body>// op2
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_8-rRwPk-EeaxQe9AQrYHAg" name="OpaqueBehavior3" specification="_ymvNkPk-EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body>// op3
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_jJiDQPk_EeaxQe9AQrYHAg" name="OpaqueBehavior4" specification="_TuCwMPlAEeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body>    //
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vKSxUFEhEeeEH69ALRevmw" specification="_JIuJkPk7EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body></body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_vKio8FEhEeeEH69ALRevmw" specification="_c4gKEPk_EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body></body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_myx0IPk6EeaxQe9AQrYHAg" name="op1" concurrency="guarded" method="_BJRmwPk7EeaxQe9AQrYHAg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_sbkooPk6EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ua9tgPk6EeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xWm_QPk6EeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JIuJkPk7EeaxQe9AQrYHAg" name="op2" concurrency="guarded" method="_vKSxUFEhEeeEH69ALRevmw">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_L_C2cPk7EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NjY-EPk7EeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_O0GYAPk7EeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ymvNkPk-EeaxQe9AQrYHAg" name="op3" concurrency="guarded" method="_8-rRwPk-EeaxQe9AQrYHAg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1yKnwPk-EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3yXk8Pk-EeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5YpmQPk-EeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_c4gKEPk_EeaxQe9AQrYHAg" name="op4" concurrency="guarded" method="_vKio8FEhEeeEH69ALRevmw">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_e_MJwPk_EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gZtnAPk_EeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h7HIUPk_EeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cqQsAPk6EeaxQe9AQrYHAg" name="B" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_eG6QMPk6EeaxQe9AQrYHAg" general="_bzsQYPk6EeaxQe9AQrYHAg"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_8t4AMPk_EeaxQe9AQrYHAg" name="OpaqueBehavior3" redefinedClassifier="_8-rRwPk-EeaxQe9AQrYHAg" specification="_yyswgPk_EeaxQe9AQrYHAg" redefinedBehavior="_8-rRwPk-EeaxQe9AQrYHAg">
+        <language>C++</language>
+        <body>    // 
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_FCW0UPk_EeaxQe9AQrYHAg" name="op2" concurrency="guarded" method="_vHCMgPk-EeaxQe9AQrYHAg" redefinedOperation="_JIuJkPk7EeaxQe9AQrYHAg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OwoQcPk_EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_RhB7gPk_EeaxQe9AQrYHAg" name="y" type="_gRkJ4Pk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_TqBBQPk_EeaxQe9AQrYHAg" type="_hbveAPk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yyswgPk_EeaxQe9AQrYHAg" name="op3" concurrency="guarded" method="_8t4AMPk_EeaxQe9AQrYHAg" redefinedOperation="_ymvNkPk-EeaxQe9AQrYHAg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2_2tcPk_EeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5F-FYPk_EeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6rn0kPk_EeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_TuCwMPlAEeaxQe9AQrYHAg" name="op4" concurrency="guarded" method="_jJiDQPk_EeaxQe9AQrYHAg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WdbHkPlAEeaxQe9AQrYHAg" name="x">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XqCrsPlAEeaxQe9AQrYHAg" name="y" type="_hbveAPk6EeaxQe9AQrYHAg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZPgNoPlAEeaxQe9AQrYHAg" type="_gRkJ4Pk6EeaxQe9AQrYHAg" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gRkJ4Pk6EeaxQe9AQrYHAg" name="C"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hbveAPk6EeaxQe9AQrYHAg" name="D">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ispsQPk6EeaxQe9AQrYHAg" general="_gRkJ4Pk6EeaxQe9AQrYHAg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ZtW2APk6EeaxQe9AQrYHAg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZtXdEPk6EeaxQe9AQrYHAg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_aqLDkPk6EeaxQe9AQrYHAg" base_Class="_anp7EPk6EeaxQe9AQrYHAg"/>
+  <UMLRealTime:Capsule xmi:id="_bz4doPk6EeaxQe9AQrYHAg" base_Class="_bzsQYPk6EeaxQe9AQrYHAg"/>
+  <UMLRealTime:Capsule xmi:id="_cqcSMPk6EeaxQe9AQrYHAg" base_Class="_cqQsAPk6EeaxQe9AQrYHAg"/>
+  <UMLRealTime:CapsulePart xmi:id="_j2S04Pk6EeaxQe9AQrYHAg" base_Property="_j2RmwPk6EeaxQe9AQrYHAg"/>
+  <UMLRealTime:CapsulePart xmi:id="_kOocYPk6EeaxQe9AQrYHAg" base_Property="_kOmnMPk6EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_VMKJcPk_EeaxQe9AQrYHAg" base_RedefinableElement="_FCW0UPk_EeaxQe9AQrYHAg" rootFragment="_JIuJkPk7EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_DT3cwPlAEeaxQe9AQrYHAg" base_RedefinableElement="_8t4AMPk_EeaxQe9AQrYHAg" rootFragment="_8-rRwPk-EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_M2RnIPlAEeaxQe9AQrYHAg" base_RedefinableElement="_yyswgPk_EeaxQe9AQrYHAg" rootFragment="_ymvNkPk-EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_bWuY0PlAEeaxQe9AQrYHAg" base_RedefinableElement="_TuCwMPlAEeaxQe9AQrYHAg"/>
+</xmi:XMI>

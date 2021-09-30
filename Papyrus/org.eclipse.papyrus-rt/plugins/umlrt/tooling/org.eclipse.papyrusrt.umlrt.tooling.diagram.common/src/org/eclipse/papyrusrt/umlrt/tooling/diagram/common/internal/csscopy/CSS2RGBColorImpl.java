@@ -1,0 +1,40 @@
+package org.eclipse.papyrusrt.umlrt.tooling.diagram.common.internal.csscopy;
+
+import org.w3c.dom.css.CSSPrimitiveValue;
+import org.w3c.dom.css.RGBColor;
+
+/**
+ * Simple {@link RGBColor} implementation.
+ *
+ * @version 1.0.0
+ * @author <a href="mailto:angelo.zerr@gmail.com">Angelo ZERR</a>
+ *
+ */
+public class CSS2RGBColorImpl implements RGBColor {
+
+	private CSSPrimitiveValue red;
+	private CSSPrimitiveValue green;
+	private CSSPrimitiveValue blue;
+
+	public CSS2RGBColorImpl(int r, int g, int b) {
+		red = new CSS2PrimitiveValueImpl(r);
+		green = new CSS2PrimitiveValueImpl(g);
+		blue = new CSS2PrimitiveValueImpl(b);
+	}
+
+	@Override
+	public CSSPrimitiveValue getBlue() {
+		return blue;
+	}
+
+	@Override
+	public CSSPrimitiveValue getGreen() {
+		return green;
+	}
+
+	@Override
+	public CSSPrimitiveValue getRed() {
+		return red;
+	}
+
+}

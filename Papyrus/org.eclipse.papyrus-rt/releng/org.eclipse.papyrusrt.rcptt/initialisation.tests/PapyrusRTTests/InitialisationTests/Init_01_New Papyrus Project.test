@@ -1,0 +1,26 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Init_01_New Papyrus Project
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _72T7IHJUEeWvjsyMxcx8VQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 11/25/15 2:42 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+
+get-menu "File/New/Papyrus Project" | click
+with [get-window "New Papyrus Project"] {
+    get-button "Next >" | click
+    with [get-editbox -after [get-label "Project name:"]] {
+        set-text papyrusNew
+    }
+    get-button Finish | click
+}
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

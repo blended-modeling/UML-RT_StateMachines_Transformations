@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:BackupProfile="http:///schemas/BackupProfile/_J7IFgKInEeS_KNX0nfvIVQ/1" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ http:///schemas/BackupProfile/_J7IFgKInEeS_KNX0nfvIVQ/1 pathmap://PAPYRUS_BACKUP_PROFILE/backup-profile.profile.uml#_J7IFgaInEeS_KNX0nfvIVQ http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks">
+  <uml:Model xmi:id="_ccTKcKsWEeSgcr4lWvX0UQ" name="Papyrus4RT" URI="">
+    <packagedElement xmi:type="uml:Package" xmi:id="_bQ8NwKsaEeSgcr4lWvX0UQ" name="Use Cases">
+      <packagedElement xmi:type="uml:Package" xmi:id="_GNjBkKscEeSgcr4lWvX0UQ" name="Actors">
+        <packagedElement xmi:type="uml:Actor" xmi:id="_1jf7kKsaEeSgcr4lWvX0UQ" name="User">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8tLg0NPnEeSQ8uMbz_lWzg" annotatedElement="_1jf7kKsaEeSgcr4lWvX0UQ">
+            <body>A User is the generic representation of a person (actor) using Papyrus4RT.
+Actual person using Papyrus4RT will assume one or more roles that are derived from this base actor.
+</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_2lgyMKsaEeSgcr4lWvX0UQ" name="Model Developer">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fAE-wNPnEeSQ8uMbz_lWzg" annotatedElement="_2lgyMKsaEeSgcr4lWvX0UQ">
+            <body>A Model Developer creates models using Papyrus4RT.
+A Model Developer is expected to be very knowledgeable in UML-RT and its implementation in Papyrus4RT and to be knowledgeable in UML.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_VnmgEKuxEeS3tvGgNcGffw" general="_1jf7kKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_3dgxMKsaEeSgcr4lWvX0UQ" name="Toolsmith">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_UqAtYNPoEeSQ8uMbz_lWzg" annotatedElement="_GNjBkKscEeSgcr4lWvX0UQ">
+            <body>Toolsmiths are actors that modify the Papyrus4RT tool to specialize it for a certain domain, enviroment, company, etc.
+Toolsmiths can be further specialized based on their domain/area expertise.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_W06nwKuxEeS3tvGgNcGffw" general="_1jf7kKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_8vlHwKsaEeSgcr4lWvX0UQ" name="RTS Toolsmith">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9ViE0NPoEeSQ8uMbz_lWzg" annotatedElement="_8vlHwKsaEeSgcr4lWvX0UQ">
+            <body>An RTS Toolsmith specialises in the modification and extension of the Runtime System provided as part of Papyrus4RT.
+RTS Toolsmiths are expected to be knowledgeable in the Runtime System as well as in one or multiple target platform(s) where Papyrus4RT's executable models will be expected to run.
+RTS Toolsmiths are expected to be very knowledgeable in C++ (or any other language in which the Runtime System is implemented in the future).</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_ZS7iUKuxEeS3tvGgNcGffw" general="_3dgxMKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_92lzIKsaEeSgcr4lWvX0UQ" name="Customization Toolsmith">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RTLfANPpEeSQ8uMbz_lWzg" annotatedElement="_92lzIKsaEeSgcr4lWvX0UQ">
+            <body>A Customization Toolsmith specialises in the modification and extension of the Papyrus4RT DSML to adapt it to the needs of a domain or company.
+Modeling Toolsmiths are expected to be knowledgeable in Java, the Eclipse Plugin Development Toolkit, and Papyrus' extension mechanisms.
+</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_az0tUKuxEeS3tvGgNcGffw" general="_3dgxMKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_DuOU4KsbEeSgcr4lWvX0UQ" name="CodeGen Toolsmith">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9arOENPpEeSQ8uMbz_lWzg" annotatedElement="_DuOU4KsbEeSgcr4lWvX0UQ">
+            <body>A CodeGen Toolsmith specialises in the modification and extension of Papyrus4RT's model to code transformation.
+CodeGen Toolsmiths are expected to be knowledgeable in Java, the Eclipse Plugin Development Toolkit, XTend, and with Papyrus4RT's transformations and intermediate model.
+</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_c0TXUKuxEeS3tvGgNcGffw" general="_3dgxMKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_NlHG4O55EeSG7Iw-BmBlGg" name="DSML Toolsmith">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_loMscO55EeSG7Iw-BmBlGg" annotatedElement="_DuOU4KsbEeSgcr4lWvX0UQ _GNjBkKscEeSgcr4lWvX0UQ">
+            <body>A DSML Toolsmith specialises in the creation of Domain-Specifc Modeling Languages based on Papyrus and Papyrus4RT. DSML
+        Toolsmiths are expected to be knowledgeable in Java, the Eclipse Plugin Development Toolkit, EMF, UML2, OCL, Papyrus’ DSML
+        definition and creation tools and helpers. DSML Toolsmiths work closely with other toolsmiths in the creation of a complete
+        solution.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_gCH0wO55EeSG7Iw-BmBlGg" general="_3dgxMKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_BSoloO6aEeSG7Iw-BmBlGg" name="Tool Administrator">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MZNRcO6aEeSG7Iw-BmBlGg" annotatedElement="_DuOU4KsbEeSgcr4lWvX0UQ _GNjBkKscEeSgcr4lWvX0UQ _BSoloO6aEeSG7Iw-BmBlGg">
+            <body>A Tool Administrator sets a configuration of the tool to be used by a team of Users.</body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_JzFfkO6hEeSDjuOVpjxKrA" name="Power User">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ntW68O6hEeSDjuOVpjxKrA" annotatedElement="_1jf7kKsaEeSgcr4lWvX0UQ _JzFfkO6hEeSDjuOVpjxKrA">
+            <body>A Power User is a user who has good knowledge of the model and UML2 and is able to create and use Plugets to facilitate
+        their tasks</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_OY7pUO6hEeSDjuOVpjxKrA" general="_1jf7kKsaEeSgcr4lWvX0UQ"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_VmhaoKu0EeS3tvGgNcGffw" name="Use Cases">
+        <packagedElement xmi:type="uml:UseCase" xmi:id="__dRGANPrEeSQ8uMbz_lWzg" name="Create UML-RT Protocol"/>
+        <packagedElement xmi:type="uml:Association" xmi:id="_hyXt8NPsEeSQ8uMbz_lWzg" name="A_create a protocl_model developer" memberEnd="_hydNgNPsEeSQ8uMbz_lWzg _hyd0kNPsEeSQ8uMbz_lWzg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hyaxQNPsEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hybYUNPsEeSQ8uMbz_lWzg" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_hydNgNPsEeSQ8uMbz_lWzg" name="create a protocl" type="__dRGANPrEeSQ8uMbz_lWzg" association="_hyXt8NPsEeSQ8uMbz_lWzg"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_hyd0kNPsEeSQ8uMbz_lWzg" name="model developer" type="_2lgyMKsaEeSgcr4lWvX0UQ" association="_hyXt8NPsEeSQ8uMbz_lWzg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_viRMcNPsEeSQ8uMbz_lWzg" name="Create Papyrus4RT Project"/>
+        <packagedElement xmi:type="uml:Association" xmi:id="_7DyH0NPsEeSQ8uMbz_lWzg" name="A_create a papyrus4rt project_model developer" memberEnd="_7Dz9ANPsEeSQ8uMbz_lWzg _7D0kENPsEeSQ8uMbz_lWzg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7DzV8NPsEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7DzV8dPsEeSQ8uMbz_lWzg" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_7Dz9ANPsEeSQ8uMbz_lWzg" name="create a papyrus4rt project" type="_viRMcNPsEeSQ8uMbz_lWzg" association="_7DyH0NPsEeSQ8uMbz_lWzg"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_7D0kENPsEeSQ8uMbz_lWzg" name="model developer" type="_2lgyMKsaEeSgcr4lWvX0UQ" association="_7DyH0NPsEeSQ8uMbz_lWzg"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_uheDQKsaEeSgcr4lWvX0UQ" name="Requirements"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_CQ634Ku0EeS3tvGgNcGffw" name="Structure">
+      <packagedElement xmi:type="uml:Class" xmi:id="_H87kgNPtEeSQ8uMbz_lWzg" name="Papyrus4RT">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_of1PANPtEeSQ8uMbz_lWzg" name="profile" type="_RWLy4NPtEeSQ8uMbz_lWzg" aggregation="composite" association="_sZMGMNPtEeSQ8uMbz_lWzg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_x_FXsNPtEeSQ8uMbz_lWzg" name="dsml" type="_TEsjINPtEeSQ8uMbz_lWzg" aggregation="composite" association="_zu2sMNPtEeSQ8uMbz_lWzg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2vZFANPtEeSQ8uMbz_lWzg" name="codegen" type="_ZBxlkNPtEeSQ8uMbz_lWzg" aggregation="composite" association="_4nJQ0NPtEeSQ8uMbz_lWzg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_64WecNPtEeSQ8uMbz_lWzg" name="model" type="_enQnYNPtEeSQ8uMbz_lWzg" aggregation="composite" association="_8bnoANPtEeSQ8uMbz_lWzg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_RWLy4NPtEeSQ8uMbz_lWzg" name="UML-RT Profile"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_TEsjINPtEeSQ8uMbz_lWzg" name="Papyrus4RT DSML"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZBxlkNPtEeSQ8uMbz_lWzg" name="Papyrus4RT Code Generator"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_enQnYNPtEeSQ8uMbz_lWzg" name="UML Model"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_sZMGMNPtEeSQ8uMbz_lWzg" name="Association1" memberEnd="_of1PANPtEeSQ8uMbz_lWzg _sZMGM9PtEeSQ8uMbz_lWzg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sZMGMdPtEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sZMGMtPtEeSQ8uMbz_lWzg" key="nature" value="SysML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_sZMGM9PtEeSQ8uMbz_lWzg" name="papyrus4rt" type="_H87kgNPtEeSQ8uMbz_lWzg" association="_sZMGMNPtEeSQ8uMbz_lWzg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_zu2sMNPtEeSQ8uMbz_lWzg" name="Association2" memberEnd="_x_FXsNPtEeSQ8uMbz_lWzg _zu2sM9PtEeSQ8uMbz_lWzg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zu2sMdPtEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zu2sMtPtEeSQ8uMbz_lWzg" key="nature" value="SysML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_zu2sM9PtEeSQ8uMbz_lWzg" name="papyrus4rt" type="_H87kgNPtEeSQ8uMbz_lWzg" association="_zu2sMNPtEeSQ8uMbz_lWzg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_4nJQ0NPtEeSQ8uMbz_lWzg" name="Association3" memberEnd="_2vZFANPtEeSQ8uMbz_lWzg _4nJQ09PtEeSQ8uMbz_lWzg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4nJQ0dPtEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4nJQ0tPtEeSQ8uMbz_lWzg" key="nature" value="SysML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_4nJQ09PtEeSQ8uMbz_lWzg" name="papyrus4rt" type="_H87kgNPtEeSQ8uMbz_lWzg" association="_4nJQ0NPtEeSQ8uMbz_lWzg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_8bnoANPtEeSQ8uMbz_lWzg" name="Association4" memberEnd="_64WecNPtEeSQ8uMbz_lWzg _8bnoA9PtEeSQ8uMbz_lWzg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8bnoAdPtEeSQ8uMbz_lWzg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8bnoAtPtEeSQ8uMbz_lWzg" key="nature" value="SysML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_8bnoA9PtEeSQ8uMbz_lWzg" name="papyrus4rt" type="_H87kgNPtEeSQ8uMbz_lWzg" association="_8bnoANPtEeSQ8uMbz_lWzg"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_cAQTcNPuEeSQ8uMbz_lWzg" name="Behaviour">
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_qU9vMNPuEeSQ8uMbz_lWzg" name="Create UML-RT Protocol">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xZOcINPuEeSQ8uMbz_lWzg" name="" type="_2lgyMKsaEeSgcr4lWvX0UQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1aAJ8NPuEeSQ8uMbz_lWzg" name="" type="_H87kgNPtEeSQ8uMbz_lWzg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3yj8wNPuEeSQ8uMbz_lWzg" name="" type="_enQnYNPtEeSQ8uMbz_lWzg"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_xZNOANPuEeSQ8uMbz_lWzg" name="" represents="_xZOcINPuEeSQ8uMbz_lWzg" coveredBy="_OLS5UNPvEeSQ8uMbz_lWzg _tqT9kNPyEeSQ8uMbz_lWzg _4l_oANPyEeSQ8uMbz_lWzg"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_1Z_i4NPuEeSQ8uMbz_lWzg" name="" represents="_1aAJ8NPuEeSQ8uMbz_lWzg" coveredBy="_OLTgYNPvEeSQ8uMbz_lWzg _nUCfYNPvEeSQ8uMbz_lWzg _nUJ0INPvEeSQ8uMbz_lWzg _tqTWgNPyEeSQ8uMbz_lWzg _4mAPENPyEeSQ8uMbz_lWzg _NPUxkNP1EeSQ8uMbz_lWzg _faIVINP1EeSQ8uMbz_lWzg _faI8MNP1EeSQ8uMbz_lWzg"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_3yjVsNPuEeSQ8uMbz_lWzg" name="model" represents="_3yj8wNPuEeSQ8uMbz_lWzg" coveredBy="_SUlC4NPvEeSQ8uMbz_lWzg _f3DJYNPvEeSQ8uMbz_lWzg _kMoCgNPvEeSQ8uMbz_lWzg _l2sswNPxEeSQ8uMbz_lWzg _1ZnoENPxEeSQ8uMbz_lWzg _-QAIANPzEeSQ8uMbz_lWzg _lMrYANP0EeSQ8uMbz_lWzg _5bbJQNP0EeSQ8uMbz_lWzg _-v4FcNP0EeSQ8uMbz_lWzg _NPUxkdP1EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_OLS5UNPvEeSQ8uMbz_lWzg" name="MessageSend" covered="_xZNOANPuEeSQ8uMbz_lWzg" message="_OLMysNPvEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_OLTgYNPvEeSQ8uMbz_lWzg" name="MessageRecv" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_OLMysNPvEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tqTWgNPyEeSQ8uMbz_lWzg" name="MessageSend2" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_tqSIYNPyEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tqT9kNPyEeSQ8uMbz_lWzg" name="MessageRecv5" covered="_xZNOANPuEeSQ8uMbz_lWzg" message="_tqSIYNPyEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4l_oANPyEeSQ8uMbz_lWzg" name="MessageSend3" covered="_xZNOANPuEeSQ8uMbz_lWzg" message="_4l-Z4NPyEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4mAPENPyEeSQ8uMbz_lWzg" name="MessageRecv6" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_4l-Z4NPyEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:CombinedFragment" xmi:id="_nUCfYNPvEeSQ8uMbz_lWzg" name="CombinedFragment" covered="_1Z_i4NPuEeSQ8uMbz_lWzg">
+          <operand xmi:type="uml:InteractionOperand" xmi:id="_nUJ0INPvEeSQ8uMbz_lWzg" name="InteractionOperand" covered="_1Z_i4NPuEeSQ8uMbz_lWzg">
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SUkb0NPvEeSQ8uMbz_lWzg" name="MessageSend0" message="_SUjNsNPvEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f3CiUNPvEeSQ8uMbz_lWzg" name="MessageSend1" message="_f3BUMNPvEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMnbcNPvEeSQ8uMbz_lWzg" name="MessageSend2" message="_kMmNUNPvEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-P_g8NPzEeSQ8uMbz_lWzg" name="MessageSend4" message="_-P-S0NPzEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_l2sFsNPxEeSQ8uMbz_lWzg" name="MessageSend0" message="_l2q3kNPxEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lMqw8NP0EeSQ8uMbz_lWzg" name="MessageSend5" message="_lMpi0NP0EeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1ZmZ8NPxEeSQ8uMbz_lWzg" name="MessageSend1" message="_1Zly4NPxEeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5baiMNP0EeSQ8uMbz_lWzg" name="MessageSend4" message="_5bZUENP0EeSQ8uMbz_lWzg"/>
+            <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-v3eYNP0EeSQ8uMbz_lWzg" name="MessageSend5" message="_-v1pMNP0EeSQ8uMbz_lWzg"/>
+            <guard xmi:type="uml:InteractionConstraint" xmi:id="_nULCQNPvEeSQ8uMbz_lWzg" name="true">
+              <specification xmi:type="uml:LiteralString" xmi:id="_nULpUNPvEeSQ8uMbz_lWzg" name="true" value="true"/>
+              <maxint xmi:type="uml:LiteralInteger" xmi:id="_nUM3cNPvEeSQ8uMbz_lWzg" value="1"/>
+              <minint xmi:type="uml:LiteralInteger" xmi:id="_nUMQYNPvEeSQ8uMbz_lWzg"/>
+            </guard>
+          </operand>
+        </fragment>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SUlC4NPvEeSQ8uMbz_lWzg" name="MessageRecv0" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_SUjNsNPvEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f3DJYNPvEeSQ8uMbz_lWzg" name="MessageRecv1" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_f3BUMNPvEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMoCgNPvEeSQ8uMbz_lWzg" name="MessageRecv2" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_kMmNUNPvEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-QAIANPzEeSQ8uMbz_lWzg" name="MessageRecv7" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_-P-S0NPzEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_l2sswNPxEeSQ8uMbz_lWzg" name="MessageRecv3" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_l2q3kNPxEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lMrYANP0EeSQ8uMbz_lWzg" name="MessageRecv8" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_lMpi0NP0EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1ZnoENPxEeSQ8uMbz_lWzg" name="MessageRecv4" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_1Zly4NPxEeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5bbJQNP0EeSQ8uMbz_lWzg" name="MessageRecv9" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_5bZUENP0EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-v4FcNP0EeSQ8uMbz_lWzg" name="MessageRecv10" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_-v1pMNP0EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NPUxkNP1EeSQ8uMbz_lWzg" name="MessageSend4" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_NPS8YNP1EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NPUxkdP1EeSQ8uMbz_lWzg" name="MessageRecv11" covered="_3yjVsNPuEeSQ8uMbz_lWzg" message="_NPS8YNP1EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_faIVINP1EeSQ8uMbz_lWzg" name="MessageSend5" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_faHHANP1EeSQ8uMbz_lWzg"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_faI8MNP1EeSQ8uMbz_lWzg" name="MessageRecv12" covered="_1Z_i4NPuEeSQ8uMbz_lWzg" message="_faHHANP1EeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_OLMysNPvEeSQ8uMbz_lWzg" name="create UML-RT Protocol" receiveEvent="_OLTgYNPvEeSQ8uMbz_lWzg" sendEvent="_OLS5UNPvEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_SUjNsNPvEeSQ8uMbz_lWzg" name="create package &quot;&lt;&lt;ProtocolContainer>> P1&quot;" receiveEvent="_SUlC4NPvEeSQ8uMbz_lWzg" sendEvent="_SUkb0NPvEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_f3BUMNPvEeSQ8uMbz_lWzg" name="create collaboration &quot;&lt;&lt;Protocol> P1&quot;" receiveEvent="_f3DJYNPvEeSQ8uMbz_lWzg" sendEvent="_f3CiUNPvEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_kMmNUNPvEeSQ8uMbz_lWzg" name="create interface &quot;&lt;&lt;RTMessageSet>> P1&quot; with rtMsgKing=&quot;in&quot;" receiveEvent="_kMoCgNPvEeSQ8uMbz_lWzg" sendEvent="_kMnbcNPvEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_l2q3kNPxEeSQ8uMbz_lWzg" name="create interface &quot;&lt;&lt;RTMessageSet>> P1~&quot; with rtMsgKing=&quot;out&quot;" receiveEvent="_l2sswNPxEeSQ8uMbz_lWzg" sendEvent="_l2sFsNPxEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_1Zly4NPxEeSQ8uMbz_lWzg" name="create interface &quot;&lt;&lt;RTMessageSet>> P1io&quot; with rtMsgKing=&quot;inout&quot;" receiveEvent="_1ZnoENPxEeSQ8uMbz_lWzg" sendEvent="_1ZmZ8NPxEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_tqSIYNPyEeSQ8uMbz_lWzg" name="get protocol name" receiveEvent="_tqT9kNPyEeSQ8uMbz_lWzg" sendEvent="_tqTWgNPyEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_4l-Z4NPyEeSQ8uMbz_lWzg" name="set protocol name to &quot;P1&quot;" receiveEvent="_4mAPENPyEeSQ8uMbz_lWzg" sendEvent="_4l_oANPyEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_-P-S0NPzEeSQ8uMbz_lWzg" name="create realization from &quot;&lt;&lt;Protocol>> P1&quot; to &quot;&lt;&lt;RTMessageSet>> P1&quot;" receiveEvent="_-QAIANPzEeSQ8uMbz_lWzg" sendEvent="_-P_g8NPzEeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_lMpi0NP0EeSQ8uMbz_lWzg" name="create usage from &quot;&lt;&lt;Protocol>> P1&quot; to &quot;&lt;&lt;RTMessageSet>> P1~&quot;" receiveEvent="_lMrYANP0EeSQ8uMbz_lWzg" sendEvent="_lMqw8NP0EeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_5bZUENP0EeSQ8uMbz_lWzg" name="create realization from &quot;&lt;&lt;Protocol>> P1&quot; to &quot;&lt;&lt;RTMessageSet>> P1io&quot;" receiveEvent="_5bbJQNP0EeSQ8uMbz_lWzg" sendEvent="_5baiMNP0EeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_-v1pMNP0EeSQ8uMbz_lWzg" name="create usage from &quot;&lt;&lt;Protocol>> P1&quot; to &quot;&lt;&lt;RTMessageSet>> P1io&quot;" receiveEvent="_-v4FcNP0EeSQ8uMbz_lWzg" sendEvent="_-v3eYNP0EeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_NPS8YNP1EeSQ8uMbz_lWzg" name="create AnyReceiveEvent &quot;*&quot;" receiveEvent="_NPUxkdP1EeSQ8uMbz_lWzg" sendEvent="_NPUxkNP1EeSQ8uMbz_lWzg"/>
+        <message xmi:type="uml:Message" xmi:id="_faHHANP1EeSQ8uMbz_lWzg" name="open protocol editor" receiveEvent="_faI8MNP1EeSQ8uMbz_lWzg" sendEvent="_faIVINP1EeSQ8uMbz_lWzg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_ogwicNP1EeSQ8uMbz_lWzg" name="act | Create UML-RT Protocol"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Jg6wQO9LEeS9e_n4gZu8pw" name="Architecture">
+      <packagedElement xmi:type="uml:Class" xmi:id="_TRcPIO9LEeS9e_n4gZu8pw" name="Eltesoft">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bRZIQO9LEeS9e_n4gZu8pw" name="model execution" type="_YRWesO9LEeS9e_n4gZu8pw" association="_bRUPwO9LEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_UptCkO9LEeS9e_n4gZu8pw" name="CEA">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_fxnLIO9LEeS9e_n4gZu8pw" name="alf" type="_Vq3koO9LEeS9e_n4gZu8pw" association="_fxlV8O9LEeS9e_n4gZu8pw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gjCBAe9LEeS9e_n4gZu8pw" name="moka" type="_WoRBAO9LEeS9e_n4gZu8pw" association="_gjAy4O9LEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vq3koO9LEeS9e_n4gZu8pw" name="ALF"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_WoRBAO9LEeS9e_n4gZu8pw" name="Moka"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_YRWesO9LEeS9e_n4gZu8pw" name="Model Execution"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_bRUPwO9LEeS9e_n4gZu8pw" name="A_model execution_eltesoft" memberEnd="_bRZIQO9LEeS9e_n4gZu8pw _bRZvUO9LEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bRXTEO9LEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bRX6IO9LEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_bRZvUO9LEeS9e_n4gZu8pw" name="eltesoft" type="_TRcPIO9LEeS9e_n4gZu8pw" association="_bRUPwO9LEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_fxlV8O9LEeS9e_n4gZu8pw" name="A_alf_cea" memberEnd="_fxnLIO9LEeS9e_n4gZu8pw _fxnLIe9LEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fxl9AO9LEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fxmkEO9LEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_fxnLIe9LEeS9e_n4gZu8pw" name="cea" type="_UptCkO9LEeS9e_n4gZu8pw" association="_fxlV8O9LEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gjAy4O9LEeS9e_n4gZu8pw" name="A_moka_cea" memberEnd="_gjCBAe9LEeS9e_n4gZu8pw _gjCoEO9LEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gjBZ8O9LEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gjCBAO9LEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_gjCoEO9LEeS9e_n4gZu8pw" name="cea" type="_UptCkO9LEeS9e_n4gZu8pw" association="_gjAy4O9LEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0M0EAO9LEeS9e_n4gZu8pw" name="InQuery">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_OKyB4O9MEeS9e_n4gZu8pw" name="transformation" type="_EuoQgO9MEeS9e_n4gZu8pw" association="_OKwMsO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2ka0kO9LEeS9e_n4gZu8pw" name="Ed S.">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_O_NIcO9MEeS9e_n4gZu8pw" name="profile" type="_DugQQO9MEeS9e_n4gZu8pw" association="_O_L6UO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_3oyboO9LEeS9e_n4gZu8pw" name="Zeligsoft">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PjCOQe9MEeS9e_n4gZu8pw" name="runtime" type="_COMUEO9MEeS9e_n4gZu8pw" association="_PjBAIO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_COMUEO9MEeS9e_n4gZu8pw" name="Runtime"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DugQQO9MEeS9e_n4gZu8pw" name="Profile"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_EuoQgO9MEeS9e_n4gZu8pw" name="Transformation">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JOAR8ALsEeWLLcKQeQuvGw">
+          <body>namespace Papyrus4RT::Architecture;
+
+class Transformation {
+
+}</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_OKwMsO9MEeS9e_n4gZu8pw" name="A_transformation_inquery" memberEnd="_OKyB4O9MEeS9e_n4gZu8pw _OKyo8O9MEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OKwzwO9MEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OKxa0O9MEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_OKyo8O9MEeS9e_n4gZu8pw" name="inquery" type="_0M0EAO9LEeS9e_n4gZu8pw" association="_OKwMsO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_O_L6UO9MEeS9e_n4gZu8pw" name="A_profile_ed s." memberEnd="_O_NIcO9MEeS9e_n4gZu8pw _O_NvgO9MEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O_MhYO9MEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O_MhYe9MEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_O_NvgO9MEeS9e_n4gZu8pw" name="ed s." type="_2ka0kO9LEeS9e_n4gZu8pw" association="_O_L6UO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_PjBAIO9MEeS9e_n4gZu8pw" name="A_runtime_zeligsoft" memberEnd="_PjCOQe9MEeS9e_n4gZu8pw _PjC1UO9MEeS9e_n4gZu8pw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PjBnMO9MEeS9e_n4gZu8pw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PjCOQO9MEeS9e_n4gZu8pw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_PjC1UO9MEeS9e_n4gZu8pw" name="zeligsoft" type="_3oyboO9LEeS9e_n4gZu8pw" association="_PjBAIO9MEeS9e_n4gZu8pw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dPbs0O9MEeS9e_n4gZu8pw" client="_0M0EAO9LEeS9e_n4gZu8pw" supplier="_TRcPIO9LEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_e0Ad8O9MEeS9e_n4gZu8pw" client="_dPbs0O9MEeS9e_n4gZu8pw" supplier="_2ka0kO9LEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_hQ9BgO9MEeS9e_n4gZu8pw" client="_TRcPIO9LEeS9e_n4gZu8pw" supplier="_DugQQO9MEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_h3jugO9MEeS9e_n4gZu8pw" client="_EuoQgO9MEeS9e_n4gZu8pw" supplier="_DugQQO9MEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_izOskO9MEeS9e_n4gZu8pw" client="_COMUEO9MEeS9e_n4gZu8pw" supplier="_DugQQO9MEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_jg6R8O9MEeS9e_n4gZu8pw" client="_0M0EAO9LEeS9e_n4gZu8pw" supplier="_COMUEO9MEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_mmPEIO9MEeS9e_n4gZu8pw" client="_EuoQgO9MEeS9e_n4gZu8pw" supplier="_Vq3koO9LEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_nJm28O9MEeS9e_n4gZu8pw" client="_YRWesO9LEeS9e_n4gZu8pw" supplier="_Vq3koO9LEeS9e_n4gZu8pw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_n0QWcO9MEeS9e_n4gZu8pw" client="_YRWesO9LEeS9e_n4gZu8pw" supplier="_WoRBAO9LEeS9e_n4gZu8pw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_gEyj0ALpEeWbONOPJ8gToQ" name="DevEnv">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_g99ngALpEeWbONOPJ8gToQ">
+        <body>namespace Papyrus4RT;
+
+package DevEnv {
+
+}</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck5s0KsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck6T4KsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck8JEKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck8wIKsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_Gx8MgLX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck8wIasWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck8wIqsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_fSw28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck9XMKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck9XMasWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_rpx28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck9-QKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck9-QasWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_5WYJ0LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck-lUKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck-lUasWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_C2zXMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck_MYKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck_MYasWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_NxdG4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck_MYqsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ck_zcKsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ck_zcasWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_clAagKsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_meOioLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_clAagasWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_clBBkKsWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_nAF5kLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_clUjkKsWEeSgcr4lWvX0UQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_clUjkasWEeSgcr4lWvX0UQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_neZmMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hSBzAALpEeWbONOPJ8gToQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hSDoMALpEeWbONOPJ8gToQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hVDR0ALpEeWbONOPJ8gToQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hVD44ALpEeWbONOPJ8gToQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_BACKUP_PROFILE/backup-profile.profile.uml#_J7IFgaInEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_BACKUP_PROFILE/backup-profile.profile.uml#_74TbUKFzEeS_KNX0nfvIVQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_IhysMALsEeWLLcKQeQuvGw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IiBVsALsEeWLLcKQeQuvGw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="_H9CSMNPtEeSQ8uMbz_lWzg" base_Class="_H87kgNPtEeSQ8uMbz_lWzg"/>
+  <Blocks:Block xmi:id="_RWNoENPtEeSQ8uMbz_lWzg" base_Class="_RWLy4NPtEeSQ8uMbz_lWzg"/>
+  <Blocks:Block xmi:id="_TEtxQNPtEeSQ8uMbz_lWzg" base_Class="_TEsjINPtEeSQ8uMbz_lWzg"/>
+  <Blocks:Block xmi:id="_ZBzawNPtEeSQ8uMbz_lWzg" base_Class="_ZBxlkNPtEeSQ8uMbz_lWzg"/>
+  <Blocks:Block xmi:id="_enR1gNPtEeSQ8uMbz_lWzg" base_Class="_enQnYNPtEeSQ8uMbz_lWzg"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_hUeDAALpEeWbONOPJ8gToQ" base_Comment="_g99ngALpEeWbONOPJ8gToQ" language="Alf"/>
+  <BackupProfile:Backup xmi:id="_hVNp4ALpEeWbONOPJ8gToQ" timestamp="2015-05-25 10:23:02.284" state="MERGED" base_Comment="_g99ngALpEeWbONOPJ8gToQ"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_JOD8UALsEeWLLcKQeQuvGw" base_Comment="_JOAR8ALsEeWLLcKQeQuvGw" language="Alf"/>
+  <BackupProfile:Backup xmi:id="_JOHmsALsEeWLLcKQeQuvGw" timestamp="2015-05-25 10:41:31.204" state="MERGED" base_Comment="_JOAR8ALsEeWLLcKQeQuvGw"/>
+</xmi:XMI>

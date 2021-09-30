@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrusrt.codegen.config;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrusrt.codegen.config.Activator
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: com.google.inject;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.eclipse.xtend.lib;bundle-version="[2.12.0,3.0.0)",
+ org.eclipse.papyrusrt.codegen;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.config;bundle-version="[1.0.0,2.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrusrt.codegen.config

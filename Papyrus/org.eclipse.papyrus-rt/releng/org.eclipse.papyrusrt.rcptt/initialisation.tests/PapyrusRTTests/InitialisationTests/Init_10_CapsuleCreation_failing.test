@@ -1,0 +1,59 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Init_10_CapsuleCreation_failing
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _UmrxMJRGEeWg-ZoKXM5ShA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 10/14/16 9:59 AM
+Tags: ignore
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+
+// Create new project
+get-menu "File/New/Papyrus Project" | click
+with [get-window "New Papyrus Project"] {
+    get-group "Diagram Language:" | get-button "UML-RT" | click
+    get-button "Next >" | click
+    with [get-editbox -after [get-label "Project name:"]] {
+        set-text EmptyUMLRTProject
+    }
+    get-button "Next >" | click
+    get-button Finish | click
+}
+
+// Create a new Capsule in the Root Element
+with [get-view "Project Explorer" | get-tree] {
+    select EmptyUMLRTProject | double-click
+    select "EmptyUMLRTProject/model/di" | double-click
+}
+with [get-view "Model Explorer" | get-tree] {
+    get-item RootElement | click
+    get-item RootElement | click
+    select RootElement | get-menu "UMLRealTime/Capsule" | click
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+}
+
+//Check if the Diagram has been created
+with [get-editor "model.di"] {
+    get-tab-folder | get-property activePage | equals Capsule1 | verify-true
+    with [get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1] {
+     // Check the Edit Part and the UML element
+        get-property "getClassName()" 
+            | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.RTClassCompositeEditPart" 
+            | verify-true
+        get-property "getUMLElement().getClassName()" | equals "org.eclipse.uml2.uml.internal.impl.ClassImpl" 
+            | verify-true
+    }
+}
+// Check if Capsule is Public
+get-view Properties | get-property-tab UML | click
+get-view Properties | get-combo -after [get-label Visibility] | get-property selection | equals public | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <stats location="http://download.eclipse.org/stats/">
+      <feature url="features/org.eclipse.papyrusrt.codegen-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.codegen-feature_1.0.0.201707040432.jar" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.201707040432"/>
+      <feature url="features/org.eclipse.papyrusrt.rts-feature_1.0.0.201707040432.jar" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.201707040432"/>
+      <feature url="features/org.eclipse.papyrusrt.rts-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.xtumlrt.xtext.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.xtumlrt.xtext.feature" version="1.0.0.qualifier"/>
+   </stats>
+   <feature url="features/codegen/org.eclipse.papyrusrt.codegen-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/runtime/org.eclipse.papyrusrt.rts-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/xtext/org.eclipse.papyrusrt.xtumlrt.xtext.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.xtumlrt.xtext.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/codegen/org.eclipse.papyrusrt.codegen-feature.source_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.codegen-feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/runtime/org.eclipse.papyrusrt.rts-feature.source_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.rts-feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/xtext/org.eclipse.papyrusrt.xtumlrt.xtext.feature.source_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.xtumlrt.xtext.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <category-def name="org.eclipse.papyrusrt.codegen" label="PapyrusRT Codegen">
+      <description>
+         The PapyrusRT code generator, runtime system and textual syntax support.
+      </description>
+   </category-def>
+</site>

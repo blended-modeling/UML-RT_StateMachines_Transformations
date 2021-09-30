@@ -1,0 +1,73 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: Synchro_30_SynchroValueInPropertyView
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _RMPWcJduEeWgGtN7My9Uew
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:29 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Here we test the value of the CapsuleDiagram synchronisation property. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+// Open The Diagram
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+with [get-view "Model Explorer" | get-tree] {
+    select "RootElement/«Capsule» Capsule1" | double-click
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+}
+
+// Select the Diagram
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1] {
+   
+    mouse-move 699 393 button1 -height 450 -width 834
+    mouse-press 699 393 button1 -height 450 -width 834
+    mouse-release 699 393 button1 524288 -height 450 -width 834
+    
+    mouse-move 152 366 button1 -height 450 -width 834
+    mouse-press 152 366 button1 -height 450 -width 834
+    mouse-release 152 366 button1 524288 -height 450 -width 834
+   
+}
+
+// Select the Appearence Tab
+get-view Properties | get-property-tab Appearance | click
+
+// Check the Synchronisation true radioButton should be selected
+get-view Properties | get-group Synchronization | get-button true | get-property selected | equals true | verify-true
+
+// Select the Capsule
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1 
+    | get-edit-part -className RTClassCompositeCompartmentEditPart] { 
+    mouse-move 392 138 button1 -height 230 -width 500
+    mouse-press 392 138 button1 -height 230 -width 500
+    mouse-release 392 138 button1 524288 -height 230 -width 500
+}
+
+// Test the Synchronization Value
+get-view Properties | get-group Synchronization | get-button true | get-property selected | equals true | verify-true
+
+// Select the Diagram
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1] {
+    mouse-move 452 351 button1 -height 450 -width 834
+    mouse-press 452 351 button1 -height 450 -width 834
+    mouse-release 452 351 button1 524288 -height 450 -width 834
+    
+}
+
+// Test the UML property isCanonical for the Diagram and the Capsule
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1] {
+    get-property "isCanonical()" | equals true | verify-true
+    get-edit-part -name Capsule1 | get-property "isCanonical()" | equals true | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

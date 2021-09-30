@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlrt" nsURI="http://www.eclipse.org/papyrus/umlrt/compare/1.0"
+    nsPrefix="umlrt">
+  <eClassifiers xsi:type="ecore:EClass" name="UMLRTDiff" eSuperTypes="../../org.eclipse.emf.compare.uml2/model/uml2compare.ecore#//UMLDiff"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolChange" eSuperTypes="#//UMLRTDiff"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolMessageChange" eSuperTypes="#//UMLRTDiff"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolMessageParameterChange" eSuperTypes="#//UMLRTDiff"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLRTDiagramChange" eSuperTypes="platform:/plugin/org.eclipse.emf.compare.diagram/model/diagramCompare.ecore#//DiagramChange"/>
+</ecore:EPackage>

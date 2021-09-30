@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_4F-zkPk1EeaxQe9AQrYHAg" name="ExclusionsAttributes">
+    <packagedElement xmi:type="uml:Class" xmi:id="_DMz-EPk2EeaxQe9AQrYHAg" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_IjJesPk4EeaxQe9AQrYHAg" name="a" visibility="protected" type="_Kpi1YPk2EeaxQe9AQrYHAg" isOrdered="true" aggregation="composite"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JFDR4Pk4EeaxQe9AQrYHAg" name="b" visibility="protected" type="_Li1N0Pk2EeaxQe9AQrYHAg" isOrdered="true" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Kpi1YPk2EeaxQe9AQrYHAg" name="A" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VPUhQPk2EeaxQe9AQrYHAg" name="c1" visibility="public" type="_QnCHgPk2EeaxQe9AQrYHAg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_bBqTUPk2EeaxQe9AQrYHAg" name="c2" visibility="public" type="_QnCHgPk2EeaxQe9AQrYHAg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cigbAPk2EeaxQe9AQrYHAg" name="c3" visibility="public" type="_QnCHgPk2EeaxQe9AQrYHAg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Li1N0Pk2EeaxQe9AQrYHAg" name="B" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NXXGgPk2EeaxQe9AQrYHAg" general="_Kpi1YPk2EeaxQe9AQrYHAg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BGWLYPk3EeaxQe9AQrYHAg" name="c2" visibility="public" type="_R4WlcPk2EeaxQe9AQrYHAg" redefinedProperty="_bBqTUPk2EeaxQe9AQrYHAg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dFG8UPk3EeaxQe9AQrYHAg" name="c3" visibility="public" redefinedProperty="_cigbAPk2EeaxQe9AQrYHAg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QnCHgPk2EeaxQe9AQrYHAg" name="C">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_M2uq0AUMEeeC7eUse1vXQQ" name="a1" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QtHGgAUMEeeC7eUse1vXQQ" name="a2" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SjgAYAUMEeeC7eUse1vXQQ" name="a3" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R4WlcPk2EeaxQe9AQrYHAg" name="D">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LqN0YAUMEeeC7eUse1vXQQ" general="_QnCHgPk2EeaxQe9AQrYHAg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WBa4wAUMEeeC7eUse1vXQQ" name="a2" visibility="public" redefinedProperty="_QtHGgAUMEeeC7eUse1vXQQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZwUzcAUMEeeC7eUse1vXQQ" name="a3" visibility="public" redefinedProperty="_SjgAYAUMEeeC7eUse1vXQQ"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_4GtMUPk1EeaxQe9AQrYHAg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4GwPoPk1EeaxQe9AQrYHAg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_DRb_YPk2EeaxQe9AQrYHAg" base_Class="_DMz-EPk2EeaxQe9AQrYHAg"/>
+  <UMLRealTime:Capsule xmi:id="_Kp5asPk2EeaxQe9AQrYHAg" base_Class="_Kpi1YPk2EeaxQe9AQrYHAg"/>
+  <UMLRealTime:Capsule xmi:id="_LkUbkPk2EeaxQe9AQrYHAg" base_Class="_Li1N0Pk2EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_E5wyoPk3EeaxQe9AQrYHAg" base_RedefinableElement="_BGWLYPk3EeaxQe9AQrYHAg" rootFragment="_bBqTUPk2EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_fpHxMPk3EeaxQe9AQrYHAg" base_RedefinableElement="_dFG8UPk3EeaxQe9AQrYHAg"/>
+  <UMLRealTime:CapsulePart xmi:id="_IjVE4Pk4EeaxQe9AQrYHAg" base_Property="_IjJesPk4EeaxQe9AQrYHAg"/>
+  <UMLRealTime:CapsulePart xmi:id="_JFEgAPk4EeaxQe9AQrYHAg" base_Property="_JFDR4Pk4EeaxQe9AQrYHAg"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_dvbGQAUMEeeC7eUse1vXQQ" base_RedefinableElement="_WBa4wAUMEeeC7eUse1vXQQ" rootFragment="_QtHGgAUMEeeC7eUse1vXQQ"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_lm5Y0AUMEeeC7eUse1vXQQ" base_RedefinableElement="_ZwUzcAUMEeeC7eUse1vXQQ"/>
+</xmi:XMI>

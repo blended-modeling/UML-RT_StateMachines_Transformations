@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_9DOqkAlMEearytE6EsKqpA" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_E-wWsAlNEearytE6EsKqpA" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_HHVz0AlNEearytE6EsKqpA" name="greeter" visibility="public" type="_H1CnUAlNEearytE6EsKqpA" isOrdered="true" aggregation="composite" isBehavior="true">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HHhaAAlNEearytE6EsKqpA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HHiBEAlNEearytE6EsKqpA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_U71ecAlNEearytE6EsKqpA" name="dismisser" visibility="public" type="_S5cv8AlNEearytE6EsKqpA" isOrdered="true" aggregation="composite" isBehavior="true">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U736sAlNEearytE6EsKqpA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U74hwAlNEearytE6EsKqpA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_bqRsYAlNEearytE6EsKqpA" name="receiver" visibility="public" type="_H1CnUAlNEearytE6EsKqpA" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bqThkAlNEearytE6EsKqpA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bqUIoAlNEearytE6EsKqpA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_I30wUBSNEeaSl5D92sEN3Q" name="capsule2" visibility="protected" type="_lkwYgAlNEearytE6EsKqpA" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I3628BSNEeaSl5D92sEN3Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I37eABSNEeaSl5D92sEN3Q" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_H1G4wAlNEearytE6EsKqpA" name="Greet">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_H1CnUAlNEearytE6EsKqpA" name="Greet">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H1TGAAlNEearytE6EsKqpA" client="_H1CnUAlNEearytE6EsKqpA" supplier="_H1LKMAlNEearytE6EsKqpA" contract="_H1LKMAlNEearytE6EsKqpA"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H1fTQAlNEearytE6EsKqpA" client="_H1CnUAlNEearytE6EsKqpA" supplier="_H1bo4AlNEearytE6EsKqpA" contract="_H1bo4AlNEearytE6EsKqpA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_H1LKMAlNEearytE6EsKqpA" name="Greet"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_H1ViQAlNEearytE6EsKqpA" name="Greet~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_H1aawAlNEearytE6EsKqpA" client="_H1CnUAlNEearytE6EsKqpA" supplier="_H1ViQAlNEearytE6EsKqpA"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_H1bB0AlNEearytE6EsKqpA" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_H1bo4AlNEearytE6EsKqpA" name="GreetIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_H1f6UAlNEearytE6EsKqpA" client="_H1CnUAlNEearytE6EsKqpA" supplier="_H1bo4AlNEearytE6EsKqpA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_S5elIAlNEearytE6EsKqpA" name="Dismiss">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_S5cv8AlNEearytE6EsKqpA" name="Dismiss">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_S5jdoAlNEearytE6EsKqpA" client="_S5cv8AlNEearytE6EsKqpA" supplier="_S5hBYAlNEearytE6EsKqpA" contract="_S5hBYAlNEearytE6EsKqpA"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_S5pkQAlNEearytE6EsKqpA" client="_S5cv8AlNEearytE6EsKqpA" supplier="_S5nvEAlNEearytE6EsKqpA" contract="_S5nvEAlNEearytE6EsKqpA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_S5hBYAlNEearytE6EsKqpA" name="Dismiss"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_S5krwAlNEearytE6EsKqpA" name="Dismiss~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_S5mg8AlNEearytE6EsKqpA" client="_S5cv8AlNEearytE6EsKqpA" supplier="_S5krwAlNEearytE6EsKqpA"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_S5nIAAlNEearytE6EsKqpA" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_S5nvEAlNEearytE6EsKqpA" name="DismissIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_S5qLUAlNEearytE6EsKqpA" client="_S5cv8AlNEearytE6EsKqpA" supplier="_S5nvEAlNEearytE6EsKqpA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lkwYgAlNEearytE6EsKqpA" name="Capsule2" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_AYgIsG7kEeauY6IB__x90g" name="bounce" visibility="protected" type="_KkvZMBa-EeaSl5D92sEN3Q" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Aexv0G7kEeauY6IB__x90g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AeyW4G7kEeauY6IB__x90g" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7lyo8AlcEearytE6EsKqpA" name="Capsule3" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_87sE4AlcEearytE6EsKqpA" name="capsule1" visibility="protected" type="_E-wWsAlNEearytE6EsKqpA" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_87tTAAlcEearytE6EsKqpA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_87t6EAlcEearytE6EsKqpA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Kk3VABa-EeaSl5D92sEN3Q" name="Bounce">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_KkvZMBa-EeaSl5D92sEN3Q" name="Bounce">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Kk-CsBa-EeaSl5D92sEN3Q" client="_KkvZMBa-EeaSl5D92sEN3Q" supplier="_Kk8NgBa-EeaSl5D92sEN3Q" contract="_Kk8NgBa-EeaSl5D92sEN3Q"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KlEwYBa-EeaSl5D92sEN3Q" client="_KkvZMBa-EeaSl5D92sEN3Q" supplier="_KlDiQBa-EeaSl5D92sEN3Q" contract="_KlDiQBa-EeaSl5D92sEN3Q"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Kk8NgBa-EeaSl5D92sEN3Q" name="Bounce"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_KlAe8Ba-EeaSl5D92sEN3Q" name="Bounce~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_KlCUIBa-EeaSl5D92sEN3Q" client="_KkvZMBa-EeaSl5D92sEN3Q" supplier="_KlAe8Ba-EeaSl5D92sEN3Q"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_KlC7MBa-EeaSl5D92sEN3Q" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_KlDiQBa-EeaSl5D92sEN3Q" name="BounceIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_KlFXcBa-EeaSl5D92sEN3Q" client="_KkvZMBa-EeaSl5D92sEN3Q" supplier="_KlDiQBa-EeaSl5D92sEN3Q"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9QKTUAlMEearytE6EsKqpA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9QPL0AlMEearytE6EsKqpA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_FDnokAlNEearytE6EsKqpA" base_Class="_E-wWsAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTPort xmi:id="_HHkdUAlNEearytE6EsKqpA" base_Port="_HHVz0AlNEearytE6EsKqpA"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_H1JVAAlNEearytE6EsKqpA" base_Package="_H1G4wAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_H1NmcAlNEearytE6EsKqpA" base_Interface="_H1LKMAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_H1YlkAlNEearytE6EsKqpA" base_Interface="_H1ViQAlNEearytE6EsKqpA" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_H1deEAlNEearytE6EsKqpA" base_Interface="_H1bo4AlNEearytE6EsKqpA" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_H1hvgAlNEearytE6EsKqpA" base_Collaboration="_H1CnUAlNEearytE6EsKqpA"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_S5fzQAlNEearytE6EsKqpA" base_Package="_S5elIAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_S5iPgAlNEearytE6EsKqpA" base_Interface="_S5hBYAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_S5lS0AlNEearytE6EsKqpA" base_Interface="_S5krwAlNEearytE6EsKqpA" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_S5o9MAlNEearytE6EsKqpA" base_Interface="_S5nvEAlNEearytE6EsKqpA" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_S5rZcAlNEearytE6EsKqpA" base_Collaboration="_S5cv8AlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTPort xmi:id="_U75I0AlNEearytE6EsKqpA" base_Port="_U71ecAlNEearytE6EsKqpA"/>
+  <UMLRealTime:RTPort xmi:id="_bqUvsAlNEearytE6EsKqpA" base_Port="_bqRsYAlNEearytE6EsKqpA"/>
+  <UMLRealTime:Capsule xmi:id="_lk14EAlNEearytE6EsKqpA" base_Class="_lkwYgAlNEearytE6EsKqpA"/>
+  <UMLRealTime:Capsule xmi:id="_7l26YAlcEearytE6EsKqpA" base_Class="_7lyo8AlcEearytE6EsKqpA"/>
+  <UMLRealTime:CapsulePart xmi:id="_87t6EQlcEearytE6EsKqpA" base_Property="_87sE4AlcEearytE6EsKqpA"/>
+  <UMLRealTime:CapsulePart xmi:id="_I37eARSNEeaSl5D92sEN3Q" base_Property="_I30wUBSNEeaSl5D92sEN3Q"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_Kk4jIBa-EeaSl5D92sEN3Q" base_Package="_Kk3VABa-EeaSl5D92sEN3Q"/>
+  <UMLRealTime:RTMessageSet xmi:id="_Kk80kBa-EeaSl5D92sEN3Q" base_Interface="_Kk8NgBa-EeaSl5D92sEN3Q"/>
+  <UMLRealTime:RTMessageSet xmi:id="_KlBtEBa-EeaSl5D92sEN3Q" base_Interface="_KlAe8Ba-EeaSl5D92sEN3Q" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_KlEJUBa-EeaSl5D92sEN3Q" base_Interface="_KlDiQBa-EeaSl5D92sEN3Q" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_KlF-gBa-EeaSl5D92sEN3Q" base_Collaboration="_KkvZMBa-EeaSl5D92sEN3Q"/>
+  <UMLRealTime:RTPort xmi:id="_AezlAG7kEeauY6IB__x90g" base_Port="_AYgIsG7kEeauY6IB__x90g"/>
+</xmi:XMI>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.core.releng</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.core.common.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<!-- The bundle projects share a parent module. -->
+		<module>../../../plugins/umlrt/common</module>
+	
+		<!-- The feature projects. -->
+		<module>../../../features/common/org.eclipse.papyrusrt.umlrt.common.feature</module>
+		<module>../../../features/common/org.eclipse.papyrusrt.umlrt.common.ui.feature</module>
+		
+		<!-- The p2 repository and other site concerns. -->
+		<module>site</module>
+	</modules>
+	<name>Common</name>
+</project>

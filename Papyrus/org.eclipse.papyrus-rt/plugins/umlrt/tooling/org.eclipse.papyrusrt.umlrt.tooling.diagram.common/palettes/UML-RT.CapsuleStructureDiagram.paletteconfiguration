@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<paletteconfiguration:PaletteConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:paletteconfiguration="http://www.eclipse.org/papyrus/diagram/paletteconfiguration/0.8" id="org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagrampalette" label="UMLRealTime">
+  <drawerConfigurations id="org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagrampalette.node" label="Capsule Structure" description="Capsule Structure Drawer">
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="capsulestructurediagram.nodes.port" label="Port" description="Create a Port">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_port.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagram.RTPort_Shape"/>
+      </elementDescriptors>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagram.InternalBehaviorPort_Shape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="capsulestructurediagram.nodes.capsulepart" label="Capsule Part" description="Create a Capsule Part">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/capsule_part.png"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagram.CapsulePart_Shape"/>
+      </elementDescriptors>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagram.CapsulePart_AttributeLabel"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="capsulestructurediagram.edges.connector" label="Connector" description="Create a new connector" kind="ConnectionTool">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="icons/full/obj16/Connector.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.capsulestructurediagram.Connector_Edge"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+  </drawerConfigurations>
+  <requiredProfiles>UMLRealTime</requiredProfiles>
+</paletteconfiguration:PaletteConfiguration>

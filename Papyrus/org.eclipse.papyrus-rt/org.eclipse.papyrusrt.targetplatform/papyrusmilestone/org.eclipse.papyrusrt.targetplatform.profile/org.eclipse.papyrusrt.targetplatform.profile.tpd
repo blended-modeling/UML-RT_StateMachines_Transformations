@@ -1,0 +1,9 @@
+/**
+ * Profile Target Platform for Papyrus-RT (milestones)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT profile component in the milestones versions of Papyrus-RT.
+ */
+target "Papyrus-RT milestones profile target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.papyrus/org.eclipse.papyrusrt.targetplatform.papyrus.tpd"
+

@@ -1,0 +1,30 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Init_00_ViewPointTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _U3PtUHM3EeW2OsT5BxCMLQ
+Runtime-Version: 2.0.1.201508250612
+Save-Time: 11/25/15 2:42 PM
+Tags: ignore
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-preferences-menu | click
+with [get-window Preferences] {
+   get-tree | select "Papyrus/Viewpoints Configuration" | double-click
+}
+with [get-window Preferences] {
+    get-group "Configuration selection:" | get-button "Deployed through the extension point" | get-property selected 
+        | equals true | verify-true
+    with [get-group "Viewpoint selection:"] {
+        get-combo -after [get-label "Stakeholder:"] | get-property selection | equals "UML-RT Modeler" | verify-true
+        get-combo -after [get-label "Viewpoint:"] | get-property selection | equals "UML-RT Viewpoint" | verify-true
+    }
+}
+get-window Preferences | get-button Cancel | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

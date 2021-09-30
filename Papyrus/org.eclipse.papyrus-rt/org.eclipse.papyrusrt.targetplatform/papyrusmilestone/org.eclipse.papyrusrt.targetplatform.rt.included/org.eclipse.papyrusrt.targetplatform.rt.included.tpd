@@ -1,0 +1,18 @@
+/**
+ * Full Target Platform for Papyrus-RT (milestones)
+ * 
+ * This TP is intended to contain the Papyrus-RT features in the milestones versions of Papyrus-RT.
+ */
+target "Papyrus-RT milestones full target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.papyrus/org.eclipse.papyrusrt.targetplatform.papyrus.tpd"
+
+// Includes all Papyrus-RT features
+location "http://download.eclipse.org/papyrus-rt/updates/nightly/oxygen/" eclipse-papyrus-RT-master {
+	org.eclipse.papyrusrt.feature.feature.group lazy
+	org.eclipse.papyrusrt.codegen-feature.feature.group lazy
+	org.eclipse.papyrusrt.rts-feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.migration.rsa.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.cpp.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.feature.group lazy
+}

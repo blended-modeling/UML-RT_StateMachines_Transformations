@@ -1,0 +1,17 @@
+Top.computerSystem.Connector3
+    Top.computerSystem.user#computerPort.far[0] <-> Top.computerSystem.computer#userPort.far[0]
+Top.computerSystem.Connector4
+    Top.computerSystem.computer#usbPort.far[0] <-> Top.computerSystem.printer#usbPort.far[0]
+Top.computerSystem.Connector5
+    Top.computerSystem.computer#usbPort.far[1] <-> Top.computerSystem.massStorage#usbPort.far[0]
+Top.computerSystem.computer.Connector3
+    Top.computerSystem.computer.driverManager#resMgr.far[0] <-> Top.computerSystem.computer#resMgr.far[0]
+Top.computerSystem.computer.Connector4
+    Top.computerSystem.user#computerPort.far[0] <-> Top.computerSystem.computer.application#UserControlePort.far[0]
+Top.computerSystem.computer.Connector5
+    Top.computerSystem.computer.application#resourcePort.far[0] <-> Top.computerSystem.computer.driverManager#appPort.far[0]
+Top.computerSystem.computer.Connector6
+    Top.computerSystem.computer.usbBus[0]#usbExtPort.far[0] <-> Top.computerSystem.printer#usbPort.far[0]
+    Top.computerSystem.computer.usbBus[1]#usbExtPort.far[0] <-> Top.computerSystem.massStorage#usbPort.far[0]
+Top.computerSystem.computer.application.Connector1
+    Top.computerSystem.computer.application#usbPort.far[0] <-> Top.computerSystem.computer.application.deviceInterface#usbInPort.far[0]

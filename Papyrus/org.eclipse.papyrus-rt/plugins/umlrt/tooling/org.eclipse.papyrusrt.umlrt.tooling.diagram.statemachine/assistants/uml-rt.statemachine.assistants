@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assistant:ModelingAssistantProvider xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assistant="http://www.eclipse.org/Papyrus/2014/diagram/assistant" xmlns:filters="http://www.eclipse.org/Papyrus/2014/common/filters" xmlns:umlfilters="http://www.eclipse.org/Papyrus/2014/uml/filters" name="UMLRealTime StateMachine" clientContextID="org.eclipse.papyrusrt.umlrt.architecture">
+  <ownedFilter xsi:type="filters:CompoundFilter" name="pertains to Profile UMLRealTime" filter="//@ownedFilter.0/@ownedFilter.0" operator="or">
+    <ownedFilter xsi:type="umlfilters:ProfileApplied" name="UMLRealTime is applied in context" profileQualifiedName="UMLRealTime" profileURI="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+  </ownedFilter>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="RTState_Shape" elementTypeID="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.State_Shape"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="RTRegion" elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTRegion"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="RTState" elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTState"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="InternalTransition Label" elementTypeID="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.InternalTransition_Label"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="RTState_Shape_TN" elementTypeID="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.State_Shape_TN"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.TransitionInternal" filter="//@popupAssistant.0/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" name="TransitionInternalAnd" filter="//@ownedFilter.0 //@popupAssistant.0/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" name="TransitionInternalOr" filter="//@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.5" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTPseudoState_EntryPoint" filter="//@popupAssistant.1/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.3 //@ownedFilter.2" operator="or"/>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTPseudoState_ExitPoint" filter="//@popupAssistant.2/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.3 //@ownedFilter.2" operator="or"/>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTState" filter="//@ownedFilter.2"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTPseudoState_Choice" filter="//@ownedFilter.2"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTPseudoState_Junction" filter="//@ownedFilter.2"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.umlrt.core.RTPseudoState_DeepHistory" filter="//@ownedFilter.2"/>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_ChoiceShape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.State_Shape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_DeepHistoryShape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_EntryPointShape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_ExitPointShape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_JunctionShape</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.InternalTransition_Label</elementTypeID>
+</assistant:ModelingAssistantProvider>

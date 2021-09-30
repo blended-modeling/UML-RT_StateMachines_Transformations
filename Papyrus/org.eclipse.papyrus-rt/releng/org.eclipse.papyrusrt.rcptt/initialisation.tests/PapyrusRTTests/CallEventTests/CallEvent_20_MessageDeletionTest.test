@@ -1,0 +1,51 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _rgzB0HyzEeWDurBKKa1KKg
+Element-Name: CallEvent_20_MessageDeletionTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _WwcYUHyzEeWDurBKKa1KKg
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:38 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+The Deletion of the message should delete the Associated Call Event
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "CallEventProject/model" | double-click
+get-view "Model Explorer" | get-tree | get-item "RootElement/«Protocol» Protocol1" | click
+
+
+with [get-view Properties] {
+    get-tree | select "out MessageTestOUT ()"
+    get-button "Remove or exclude selected element" | click
+}
+get-button "Save All (M1+M2+S)" | click
+get-view "Project Explorer" | get-tree | select "CallEventProject/model/uml" | get-menu "Open With/UML Model Editor" 
+    | click
+
+get-editor "model.uml" | get-tree 
+    | get-item "platform:\\/resource\\/CallEventProject\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1" 
+    | click
+get-editor "model.uml" | get-tree 
+    | get-item "platform:\\/resource\\/CallEventProject\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1" 
+    | get-property childCount | equals 7 | verify-true
+get-editor "model.uml" | get-tree 
+    | get-item "platform:\\/resource\\/CallEventProject\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<<RTMessageSet>> <Interface> Protocol1~" 
+    | click
+get-editor "model.uml" | get-tree 
+    | get-item "platform:\\/resource\\/CallEventProject\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<<RTMessageSet>> <Interface> Protocol1~" 
+    | get-property childCount | equals 0 | verify-true
+with [get-view Properties | get-tree] {
+    get-item "RT Message Set/Rt Msg Kind" | get-property "values['Property']" | equals "Rt Msg Kind" | verify-true
+    get-item "RT Message Set/Rt Msg Kind" | get-property "values['Value']" | equals out | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

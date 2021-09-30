@@ -1,0 +1,1309 @@
+
+#include "TopControllers.hh"
+
+#include "Computer.hh"
+#include "ComputerSystem.hh"
+#include "ExtMassStorage.hh"
+#include "LocalPrinter.hh"
+#include "ResourceManager.hh"
+#include "Top.hh"
+#include "USBDeviceDriver.hh"
+#include "User.hh"
+#include "WordProcessorApp.hh"
+#include "umlrtcapsuleclass.hh"
+#include "umlrtcapsulepart.hh"
+#include "umlrtcommsport.hh"
+#include "umlrtcommsportfarend.hh"
+#include "umlrtcontroller.hh"
+#include "umlrtslot.hh"
+#include <cstddef>
+
+
+static UMLRTController DefaultController_( "DefaultController" );
+
+UMLRTController * DefaultController = &DefaultController_;
+
+static Capsule_Top top( &Top, &Top_slots[InstId_Top], NULL, NULL, true );
+
+static UMLRTSlot * slots_Top[] = 
+{
+    &Top_slots[InstId_Top_computerSystem]
+};
+
+static UMLRTCapsulePart parts_Top[] = 
+{
+    {
+        &Top,
+        Capsule_Top::part_computerSystem,
+        1,
+        &slots_Top[0]
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem[] = 
+{
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::borderport_frame,
+        &Top_slots[InstId_Top_computerSystem],
+        1,
+        borderfarEndList_Top_computerSystem,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    },
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::borderport_timer,
+        &Top_slots[InstId_Top_computerSystem],
+        1,
+        &borderfarEndList_Top_computerSystem[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+static const UMLRTCommsPort * borderports_Top_computerSystem_ptrs[] = 
+{
+    &borderports_Top_computerSystem[0],
+    &borderports_Top_computerSystem[1]
+};
+
+static Capsule_ComputerSystem top_computerSystem( &ComputerSystem, &Top_slots[InstId_Top_computerSystem], borderports_Top_computerSystem_ptrs, NULL, true );
+
+static UMLRTSlot * slots_Top_computerSystem[] = 
+{
+    &Top_slots[InstId_Top_computerSystem_computer],
+    &Top_slots[InstId_Top_computerSystem_massStorage],
+    &Top_slots[InstId_Top_computerSystem_printer],
+    &Top_slots[InstId_Top_computerSystem_user]
+};
+
+static UMLRTCapsulePart parts_Top_computerSystem[] = 
+{
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_computer,
+        1,
+        &slots_Top_computerSystem[0]
+    },
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_massStorage,
+        1,
+        &slots_Top_computerSystem[1]
+    },
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_printer,
+        1,
+        &slots_Top_computerSystem[2]
+    },
+    {
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_user,
+        1,
+        &slots_Top_computerSystem[3]
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer[] = 
+{
+    {
+        &Computer,
+        Capsule_Computer::borderport_frame,
+        &Top_slots[InstId_Top_computerSystem_computer],
+        1,
+        borderfarEndList_Top_computerSystem_computer,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    },
+    {
+        &Computer,
+        Capsule_Computer::borderport_timer,
+        &Top_slots[InstId_Top_computerSystem_computer],
+        1,
+        &borderfarEndList_Top_computerSystem_computer[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    },
+    {
+        &Computer,
+        Capsule_Computer::borderport_usbPort,
+        &Top_slots[InstId_Top_computerSystem_computer],
+        2,
+        &borderfarEndList_Top_computerSystem_computer[2],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &Computer,
+        Capsule_Computer::borderport_userPort,
+        &Top_slots[InstId_Top_computerSystem_computer],
+        1,
+        &borderfarEndList_Top_computerSystem_computer[4],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static const UMLRTCommsPort * borderports_Top_computerSystem_computer_ptrs[] = 
+{
+    &borderports_Top_computerSystem_computer[0],
+    &borderports_Top_computerSystem_computer[1],
+    &borderports_Top_computerSystem_computer[2],
+    &borderports_Top_computerSystem_computer[3]
+};
+
+static UMLRTCommsPortFarEnd internalfarEndList_Top_computerSystem_computer[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_computer_driverManager[Capsule_ResourceManager::borderport_resMgr]
+    }
+};
+
+UMLRTCommsPort internalports_Top_computerSystem_computer[] = 
+{
+    {
+        &Computer,
+        Capsule_Computer::internalport_resMgr,
+        &Top_slots[InstId_Top_computerSystem_computer],
+        1,
+        internalfarEndList_Top_computerSystem_computer,
+        NULL,
+        NULL,
+        "",
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static const UMLRTCommsPort * internalports_Top_computerSystem_computer_ptrs[] = 
+{
+    &internalports_Top_computerSystem_computer[0]
+};
+
+static Capsule_Computer top_computerSystem_computer( &Computer, &Top_slots[InstId_Top_computerSystem_computer], borderports_Top_computerSystem_computer_ptrs, internalports_Top_computerSystem_computer_ptrs, true );
+
+static UMLRTSlot * slots_Top_computerSystem_computer[] = 
+{
+    &Top_slots[InstId_Top_computerSystem_computer_application],
+    &Top_slots[InstId_Top_computerSystem_computer_driverManager],
+    &Top_slots[InstId_Top_computerSystem_computer_usbBus_0],
+    &Top_slots[InstId_Top_computerSystem_computer_usbBus_1]
+};
+
+static UMLRTCapsulePart parts_Top_computerSystem_computer[] = 
+{
+    {
+        &Computer,
+        Capsule_Computer::part_application,
+        1,
+        &slots_Top_computerSystem_computer[0]
+    },
+    {
+        &Computer,
+        Capsule_Computer::part_driverManager,
+        1,
+        &slots_Top_computerSystem_computer[1]
+    },
+    {
+        &Computer,
+        Capsule_Computer::part_usbBus,
+        2,
+        &slots_Top_computerSystem_computer[2]
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_application[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_user[Capsule_User::borderport_computerPort]
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        &borderports_Top_computerSystem_computer_driverManager[Capsule_ResourceManager::borderport_appPort]
+    },
+    {
+        0,
+        &borderports_Top_computerSystem_computer_application_deviceInterface[Capsule_USBDeviceDriver::borderport_usbInPort]
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_application[] = 
+{
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::borderport_UserControlePort,
+        &Top_slots[InstId_Top_computerSystem_computer_application],
+        1,
+        borderfarEndList_Top_computerSystem_computer_application,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::borderport_resourcePort,
+        &Top_slots[InstId_Top_computerSystem_computer_application],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_application[3],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::borderport_frame,
+        &Top_slots[InstId_Top_computerSystem_computer_application],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_application[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    },
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::borderport_usbPort,
+        &Top_slots[InstId_Top_computerSystem_computer_application],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_application[4],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::borderport_log,
+        &Top_slots[InstId_Top_computerSystem_computer_application],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_application[2],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+static const UMLRTCommsPort * borderports_Top_computerSystem_computer_application_ptrs[] = 
+{
+    &borderports_Top_computerSystem_computer_application[0],
+    &borderports_Top_computerSystem_computer_application[1],
+    &borderports_Top_computerSystem_computer_application[2],
+    &borderports_Top_computerSystem_computer_application[3],
+    &borderports_Top_computerSystem_computer_application[4]
+};
+
+static Capsule_WordProcessorApp top_computerSystem_computer_application( &WordProcessorApp, &Top_slots[InstId_Top_computerSystem_computer_application], borderports_Top_computerSystem_computer_application_ptrs, NULL, true );
+
+static UMLRTSlot * slots_Top_computerSystem_computer_application[] = 
+{
+    &Top_slots[InstId_Top_computerSystem_computer_application_deviceInterface]
+};
+
+static UMLRTCapsulePart parts_Top_computerSystem_computer_application[] = 
+{
+    {
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::part_deviceInterface,
+        1,
+        &slots_Top_computerSystem_computer_application[0]
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_application_deviceInterface[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        &borderports_Top_computerSystem_computer_application[Capsule_WordProcessorApp::borderport_usbPort]
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_application_deviceInterface[] = 
+{
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbExtPort,
+        &Top_slots[InstId_Top_computerSystem_computer_application_deviceInterface],
+        1,
+        borderfarEndList_Top_computerSystem_computer_application_deviceInterface,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbInPort,
+        &Top_slots[InstId_Top_computerSystem_computer_application_deviceInterface],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_application_deviceInterface[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_driverManager[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_computer_application[Capsule_WordProcessorApp::borderport_resourcePort]
+    },
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        &internalports_Top_computerSystem_computer[Capsule_Computer::internalport_resMgr]
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_driverManager[] = 
+{
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::borderport_resMgr,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_driverManager[2],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::borderport_appPort,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager],
+        1,
+        borderfarEndList_Top_computerSystem_computer_driverManager,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::borderport_frame,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_driverManager[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    },
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::borderport_timer,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_driverManager[3],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+static const UMLRTCommsPort * borderports_Top_computerSystem_computer_driverManager_ptrs[] = 
+{
+    &borderports_Top_computerSystem_computer_driverManager[0],
+    &borderports_Top_computerSystem_computer_driverManager[1],
+    &borderports_Top_computerSystem_computer_driverManager[2],
+    &borderports_Top_computerSystem_computer_driverManager[3]
+};
+
+static Capsule_ResourceManager top_computerSystem_computer_driverManager( &ResourceManager, &Top_slots[InstId_Top_computerSystem_computer_driverManager], borderports_Top_computerSystem_computer_driverManager_ptrs, NULL, true );
+
+static UMLRTSlot * slots_Top_computerSystem_computer_driverManager[] = 
+{
+    &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbPrinterDriver],
+    &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbStorageDriver]
+};
+
+static UMLRTCapsulePart parts_Top_computerSystem_computer_driverManager[] = 
+{
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::part_usbPrinterDriver,
+        1,
+        &slots_Top_computerSystem_computer_driverManager[0]
+    },
+    {
+        &ResourceManager,
+        Capsule_ResourceManager::part_usbStorageDriver,
+        1,
+        &slots_Top_computerSystem_computer_driverManager[1]
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_driverManager_usbPrinterDriver[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_driverManager_usbPrinterDriver[] = 
+{
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbExtPort,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbPrinterDriver],
+        1,
+        borderfarEndList_Top_computerSystem_computer_driverManager_usbPrinterDriver,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbInPort,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbPrinterDriver],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_driverManager_usbPrinterDriver[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_driverManager_usbStorageDriver[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_driverManager_usbStorageDriver[] = 
+{
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbExtPort,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbStorageDriver],
+        1,
+        borderfarEndList_Top_computerSystem_computer_driverManager_usbStorageDriver,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbInPort,
+        &Top_slots[InstId_Top_computerSystem_computer_driverManager_usbStorageDriver],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_driverManager_usbStorageDriver[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_usbBus_0[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_printer[Capsule_LocalPrinter::borderport_usbPort]
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_usbBus_0[] = 
+{
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbExtPort,
+        &Top_slots[InstId_Top_computerSystem_computer_usbBus_0],
+        1,
+        borderfarEndList_Top_computerSystem_computer_usbBus_0,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbInPort,
+        &Top_slots[InstId_Top_computerSystem_computer_usbBus_0],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_usbBus_0[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_computer_usbBus_1[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_massStorage[Capsule_ExtMassStorage::borderport_usbPort]
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_computer_usbBus_1[] = 
+{
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbExtPort,
+        &Top_slots[InstId_Top_computerSystem_computer_usbBus_1],
+        1,
+        borderfarEndList_Top_computerSystem_computer_usbBus_1,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &USBDeviceDriver,
+        Capsule_USBDeviceDriver::borderport_usbInPort,
+        &Top_slots[InstId_Top_computerSystem_computer_usbBus_1],
+        1,
+        &borderfarEndList_Top_computerSystem_computer_usbBus_1[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_massStorage[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        &borderports_Top_computerSystem_computer_usbBus_1[Capsule_USBDeviceDriver::borderport_usbExtPort]
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_massStorage[] = 
+{
+    {
+        &ExtMassStorage,
+        Capsule_ExtMassStorage::borderport_usbPort,
+        &Top_slots[InstId_Top_computerSystem_massStorage],
+        1,
+        &borderfarEndList_Top_computerSystem_massStorage[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &ExtMassStorage,
+        Capsule_ExtMassStorage::borderport_log,
+        &Top_slots[InstId_Top_computerSystem_massStorage],
+        1,
+        borderfarEndList_Top_computerSystem_massStorage,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_printer[] = 
+{
+    {
+        0,
+        NULL
+    },
+    {
+        0,
+        &borderports_Top_computerSystem_computer_usbBus_0[Capsule_USBDeviceDriver::borderport_usbExtPort]
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_printer[] = 
+{
+    {
+        &LocalPrinter,
+        Capsule_LocalPrinter::borderport_usbPort,
+        &Top_slots[InstId_Top_computerSystem_printer],
+        1,
+        &borderfarEndList_Top_computerSystem_printer[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &LocalPrinter,
+        Capsule_LocalPrinter::borderport_log,
+        &Top_slots[InstId_Top_computerSystem_printer],
+        1,
+        borderfarEndList_Top_computerSystem_printer,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+static UMLRTCommsPortFarEnd borderfarEndList_Top_computerSystem_user[] = 
+{
+    {
+        0,
+        &borderports_Top_computerSystem_computer_application[Capsule_WordProcessorApp::borderport_UserControlePort]
+    },
+    {
+        0,
+        NULL
+    }
+};
+
+UMLRTCommsPort borderports_Top_computerSystem_user[] = 
+{
+    {
+        &User,
+        Capsule_User::borderport_computerPort,
+        &Top_slots[InstId_Top_computerSystem_user],
+        1,
+        borderfarEndList_Top_computerSystem_user,
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+    },
+    {
+        &User,
+        Capsule_User::borderport_timer,
+        &Top_slots[InstId_Top_computerSystem_user],
+        1,
+        &borderfarEndList_Top_computerSystem_user[1],
+        NULL,
+        NULL,
+        "",
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    }
+};
+
+UMLRTSlot Top_slots[] = 
+{
+    {
+        "Top",
+        0,
+        &Top,
+        NULL,
+        0,
+        &top,
+        &DefaultController_,
+        1,
+        parts_Top,
+        0,
+        NULL,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem",
+        0,
+        &ComputerSystem,
+        &Top,
+        Capsule_Top::part_computerSystem,
+        &top_computerSystem,
+        &DefaultController_,
+        4,
+        parts_Top_computerSystem,
+        2,
+        borderports_Top_computerSystem,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer",
+        0,
+        &Computer,
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_computer,
+        &top_computerSystem_computer,
+        &DefaultController_,
+        3,
+        parts_Top_computerSystem_computer,
+        4,
+        borderports_Top_computerSystem_computer,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.application",
+        0,
+        &WordProcessorApp,
+        &Computer,
+        Capsule_Computer::part_application,
+        &top_computerSystem_computer_application,
+        &DefaultController_,
+        1,
+        parts_Top_computerSystem_computer_application,
+        5,
+        borderports_Top_computerSystem_computer_application,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.application.deviceInterface",
+        0,
+        &USBDeviceDriver,
+        &WordProcessorApp,
+        Capsule_WordProcessorApp::part_deviceInterface,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_computer_application_deviceInterface,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.driverManager",
+        0,
+        &ResourceManager,
+        &Computer,
+        Capsule_Computer::part_driverManager,
+        &top_computerSystem_computer_driverManager,
+        &DefaultController_,
+        2,
+        parts_Top_computerSystem_computer_driverManager,
+        4,
+        borderports_Top_computerSystem_computer_driverManager,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.driverManager.usbPrinterDriver",
+        0,
+        &USBDeviceDriver,
+        &ResourceManager,
+        Capsule_ResourceManager::part_usbPrinterDriver,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_computer_driverManager_usbPrinterDriver,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.driverManager.usbStorageDriver",
+        0,
+        &USBDeviceDriver,
+        &ResourceManager,
+        Capsule_ResourceManager::part_usbStorageDriver,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_computer_driverManager_usbStorageDriver,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.usbBus[0]",
+        0,
+        &USBDeviceDriver,
+        &Computer,
+        Capsule_Computer::part_usbBus,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_computer_usbBus_0,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.computer.usbBus[1]",
+        1,
+        &USBDeviceDriver,
+        &Computer,
+        Capsule_Computer::part_usbBus,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_computer_usbBus_1,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.massStorage",
+        0,
+        &ExtMassStorage,
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_massStorage,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_massStorage,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.printer",
+        0,
+        &LocalPrinter,
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_printer,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_printer,
+        NULL,
+        true,
+        false
+    },
+    {
+        "Top.computerSystem.user",
+        0,
+        &User,
+        &ComputerSystem,
+        Capsule_ComputerSystem::part_user,
+        NULL,
+        &DefaultController_,
+        0,
+        NULL,
+        2,
+        borderports_Top_computerSystem_user,
+        NULL,
+        true,
+        false
+    }
+};
+

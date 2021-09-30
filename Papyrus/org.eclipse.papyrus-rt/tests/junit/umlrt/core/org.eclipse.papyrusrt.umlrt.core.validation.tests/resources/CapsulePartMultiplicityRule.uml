@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_7WGJcJ3XEeWST5mhjVly2w" name="CapsulePartMultiplicityRule">
+    <packagedElement xmi:type="uml:Class" xmi:id="__0Y5sJ3XEeWST5mhjVly2w" name="Capsule" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EqMyEJ3YEeWST5mhjVly2w" name="CapsulePartUpperEqualsLower" visibility="protected" type="_A4OVQJ3YEeWST5mhjVly2w" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EqUG0J3YEeWST5mhjVly2w" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EqUG0Z3YEeWST5mhjVly2w" value="3"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Fr3DYJ3YEeWST5mhjVly2w" name="CapsulePartUpperNotEqualsLower" visibility="protected" type="_A4OVQJ3YEeWST5mhjVly2w" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fr5foZ3YEeWST5mhjVly2w" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fr6GsJ3YEeWST5mhjVly2w" value="3"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GAzYoJ3YEeWST5mhjVly2w" name="CapsulePartUpperNotEqualsLowerNotIntegers" visibility="protected" type="_A4OVQJ3YEeWST5mhjVly2w" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralString" xmi:id="_hd1VgJ3YEeWST5mhjVly2w" value="3"/>
+        <upperValue xmi:type="uml:LiteralString" xmi:id="_iTEUYJ3YEeWST5mhjVly2w" value="15"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GVmj8J3YEeWST5mhjVly2w" name="CapsulePartUpperEqualsLowerNotIntegers" visibility="protected" type="_A4OVQJ3YEeWST5mhjVly2w" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralString" xmi:id="_d8-d4J3YEeWST5mhjVly2w" value="12"/>
+        <upperValue xmi:type="uml:LiteralString" xmi:id="_fVFgUJ3YEeWST5mhjVly2w" value="12"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GsW3EJ3YEeWST5mhjVly2w" name="CapsulePartNotFixed" visibility="protected" type="_A4OVQJ3YEeWST5mhjVly2w" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GsYsQZ3YEeWST5mhjVly2w"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GsZTUJ3YEeWST5mhjVly2w" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A4OVQJ3YEeWST5mhjVly2w" name="CapsuleType" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7dgZAJ3XEeWST5mhjVly2w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7diOMJ3XEeWST5mhjVly2w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="__7UoIJ3XEeWST5mhjVly2w" base_Class="__0Y5sJ3XEeWST5mhjVly2w"/>
+  <UMLRealTime:Capsule xmi:id="_A5DbsJ3YEeWST5mhjVly2w" base_Class="_A4OVQJ3YEeWST5mhjVly2w"/>
+  <UMLRealTime:CapsulePart xmi:id="_EqSRoJ3YEeWST5mhjVly2w" base_Property="_EqMyEJ3YEeWST5mhjVly2w"/>
+  <UMLRealTime:CapsulePart xmi:id="_Fr5foJ3YEeWST5mhjVly2w" base_Property="_Fr3DYJ3YEeWST5mhjVly2w"/>
+  <UMLRealTime:CapsulePart xmi:id="_GA3DAJ3YEeWST5mhjVly2w" base_Property="_GAzYoJ3YEeWST5mhjVly2w"/>
+  <UMLRealTime:CapsulePart xmi:id="_GVnyEJ3YEeWST5mhjVly2w" base_Property="_GVmj8J3YEeWST5mhjVly2w"/>
+  <UMLRealTime:CapsulePart xmi:id="_GsYsQJ3YEeWST5mhjVly2w" base_Property="_GsW3EJ3YEeWST5mhjVly2w"/>
+</xmi:XMI>

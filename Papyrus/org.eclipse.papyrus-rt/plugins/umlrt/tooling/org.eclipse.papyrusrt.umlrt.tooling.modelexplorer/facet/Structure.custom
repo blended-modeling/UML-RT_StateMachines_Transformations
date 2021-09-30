@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:Customization xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:custom="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/custom" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:efacet="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet" xmlns:javaQuery="http://www.eclipse.org/papyrus/emf/facet/query/java/0.2.incubation/javaquery" xmlns:query="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query" name="UML-RT Structure" nsPrefix="" documentation="Presentation of UML-RT specific structure." mustBeLoadedByDefault="true" rank="-100">
+  <eClassifiers xsi:type="efacet:Facet" name="CapsuleFacet" conformanceTypedElement="//CapsuleFacet/isCapsule">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+    <facetOperations name="isCapsule" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsCapsuleQuery"/>
+    </facetOperations>
+    <facetOperations name="noStructuralFeatureReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.AllButStructuralFeaturesQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="InheritedConnector" documentation="Presentation of an inherited or redefined connector." conformanceTypedElement="//InheritedConnector/isInheritedOrRedefined">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+    <facetOperations name="isInheritedOrRedefined" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsInheritedOrRedefinedQuery"/>
+    </facetOperations>
+    <facetOperations name="noContents" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="CapsuleFeatures" extendedFacets="//CapsuleFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedStateMachine" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, or excluded state machine.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Capsule/stateMachine"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedPort" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded ports.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getPorts">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedAttribute" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded capsule-parts.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getAttributes">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedConnector" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded connectors.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getConnectors">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="stateMachine" volatile="true" transient="true" derived="true" documentation="Locally-defined state machine.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Capsule/stateMachine"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="port" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined ports.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getPorts">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="attribute" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined capsule-parts.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getAttributes">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="connector" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined connectors.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getConnectors">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="otherPort" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Non-RT ports.  Primarily to make the accessible to apply the stereotype.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getPorts">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="otherAttribute" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Non-RT attributes.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getAttributes">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="otherConnector" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Non-RT connectors.  Primarily to make the accessible to apply the stereotype.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+      <query xsi:type="query:OperationCallQuery" operation="//CapsuleFeatures/getConnectors">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetOperations name="getPorts" upperBound="-1" documentation="Returns inherited or locally defined ports of the capsule.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+      <eParameters name="rtSpecific" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetRTPortsQuery"/>
+    </facetOperations>
+    <facetOperations name="getAttributes" upperBound="-1" documentation="Returns inherited or locally defined attributes (non-ports) of the capsule.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+      <eParameters name="rtSpecific" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetRTAttributesQuery"/>
+    </facetOperations>
+    <facetOperations name="getConnectors" upperBound="-1" documentation="Returns inherited or locally defined connectors of the capsule.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+      <eParameters name="rtSpecific" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetRTConnectorsQuery"/>
+    </facetOperations>
+    <facetOperations name="getSingleContent" documentation="Returns a singular inherited or locally defined member of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTSingleElementQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="ExcludedElement" documentation="Presentation of an excluded element." conformanceTypedElement="//ExcludedElement/isExcluded">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+    <facetOperations name="isExcluded" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsExcludedQuery"/>
+    </facetOperations>
+    <facetOperations name="noContents" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+</custom:Customization>

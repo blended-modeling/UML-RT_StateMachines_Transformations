@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_ZKeKEDSOEeW3Wtd_ydJ-cQ" name="MutualReferences">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQbooF0EEeeJDoHWZt2tkw" source="http://www.eclipse.org/papyrus-rt/language/1.0.0">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cQdd0F0EEeeJDoHWZt2tkw" key="language" value="umlrt-cpp"/>
+    </eAnnotations>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ZP-VIDSOEeW3Wtd_ydJ-cQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bntokDSOEeW3Wtd_ydJ-cQ" name="Class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_etoQoDSOEeW3Wtd_ydJ-cQ" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iLO_8DSOEeW3Wtd_ydJ-cQ" name="Attribute2" type="_dI6VkDSOEeW3Wtd_ydJ-cQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dI6VkDSOEeW3Wtd_ydJ-cQ" name="Class2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_k7zqIDSOEeW3Wtd_ydJ-cQ" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_macLUDSOEeW3Wtd_ydJ-cQ" name="Attribute2" type="_bntokDSOEeW3Wtd_ydJ-cQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zCXIwKA0EeWSY7VdA529Xw" name="Top" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ZKeKETSOEeW3Wtd_ydJ-cQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZKeKEjSOEeW3Wtd_ydJ-cQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_cQhIMF0EEeeJDoHWZt2tkw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQlZoF0EEeeJDoHWZt2tkw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_zEGOIKA0EeWSY7VdA529Xw" base_Class="_zCXIwKA0EeWSY7VdA529Xw"/>
+  <RTCppProperties:AttributeProperties xmi:id="_QI8c8F0FEeeJDoHWZt2tkw" pointsToConstType="true" base_Property="_macLUDSOEeW3Wtd_ydJ-cQ"/>
+</xmi:XMI>

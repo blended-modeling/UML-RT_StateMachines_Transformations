@@ -1,0 +1,15 @@
+/**
+ * Codegen Target Platform for Papyrus-RT (nightly)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT codegen component in the nightly versions of Papyrus-RT.
+ */
+target "Papyrus-RT nightly codegen target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.core/org.eclipse.papyrusrt.targetplatform.core.tpd"
+
+location "https://hudson.eclipse.org/papyrus-rt/job/Papyrus-RT-Master-Core/lastSuccessfulBuild/artifact/repository/" papyrus-rt-core {
+	org.eclipse.papyrusrt.umlrt.core.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.common.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.common.ui.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.cpp.feature.feature.group lazy
+}

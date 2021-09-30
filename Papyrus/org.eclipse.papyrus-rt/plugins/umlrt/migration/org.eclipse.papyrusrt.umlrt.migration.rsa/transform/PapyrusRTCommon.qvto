@@ -1,0 +1,141 @@
+/*****************************************************************************
+ * Copyright (c) 2016 Christian W. Damus and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Christian W. Damus - Initial API and implementation
+ *
+ *****************************************************************************/
+
+import org.eclipse.papyrus.uml.m2m.qvto.common.utils.Traces;
+
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype umlrt "strict" uses 'http://www.eclipse.org/papyrus/umlrt';
+modeltype umlrtsm "strict" uses 'http://www.eclipse.org/papyrus/umlrt/statemachine';
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+library PapyrusRTCommon;
+
+query uml::Element::getOriginal() : uml::Element
+{
+	var myTrace : uml::Element := self.invresolveone(uml::Element);
+	return if myTrace.oclIsUndefined() then
+		// Try the black-box to access the previous transformations' traces
+		self.traceFrom('uml::Element').oclAsType(uml::Element)
+	else
+		myTrace
+	endif;
+}
+
+query notation::Diagram::getOriginal() : notation::Diagram
+{
+	var myTrace : notation::Diagram := self.invresolveone(notation::Diagram);
+	return if myTrace.oclIsUndefined() then
+		// Try the black-box to access the previous transformations' traces
+		self.traceFrom('notation::Diagram').oclAsType(notation::Diagram)
+	else
+		myTrace
+	endif;
+}
+
+/**
+ * Unset the named feature of an object.
+ */
+helper OclAny::unset(feature : String) {
+	var eObject : EObject := self.oclAsType(EObject);
+	eObject.eUnset(eObject.eClass().getEStructuralFeature(feature));
+}
+
+/**
+ * Is a class a Capsule?
+ */
+query uml::Class::isCapsule() : Boolean
+{
+	return not self.oclIsUndefined() and
+		self.getStereotypeApplications()->exists(oclIsKindOf(umlrt::Capsule));
+}
+
+/**
+ * Is a state machine an RTStateMachine?
+ */
+query uml::StateMachine::isRTStateMachine() : Boolean
+{
+	return not self.oclIsUndefined() and
+		self.getStereotypeApplications()->exists(oclIsKindOf(umlrtsm::RTStateMachine));
+}
+
+/**
+ * Is a state an RTState?
+ */
+query uml::State::isRTState() : Boolean
+{
+	return not self.oclIsUndefined() and
+		self.getStereotypeApplications()->exists(oclIsKindOf(umlrtsm::RTState));
+}
+
+/**
+ * Is an element a context for UML-RT diagrams?
+ */
+query uml::NamedElement::isRTContext() : Boolean
+{
+	return self.oclIsKindOf(uml::State) and self.oclAsType(uml::State).isRTState()
+		or self.oclIsKindOf(uml::StateMachine) and self.oclAsType(uml::StateMachine).isRTStateMachine()
+		or self.oclIsKindOf(uml::Class) and self.oclAsType(uml::Class).isCapsule();
+}
+
+query uml::NamedElement::hasName() : Boolean
+{
+	return not self.oclIsUndefined() and
+			not self.name.oclIsUndefined() and
+			self.name <> '';
+}
+
+query notation::Diagram::hasName() : Boolean
+{
+	return not self.oclIsUndefined() and
+			not self.name.oclIsUndefined() and
+			self.name <> '';
+}
+
+query uml::NamedElement::diagramContextElement() : uml::NamedElement
+{
+	return if self.oclIsKindOf(uml::Vertex) then
+		self.oclAsType(uml::Vertex).containingStateMachine().diagramContextElement()
+	elif self.oclIsKindOf(uml::Behavior) then
+		self.oclAsType(uml::Behavior).context.diagramContextElement()
+	else 
+		self
+	endif;
+}
+
+query notation::Diagram::contextElement() : uml::NamedElement
+{
+	return if self.element.oclIsKindOf(uml::NamedElement) then
+		self.element.oclAsType(uml::NamedElement).diagramContextElement()
+	endif;
+}
+
+query notation::Diagram::isUMLRTDiagram() : Boolean
+{
+	var context : uml::NamedElement := self.contextElement();
+	
+	return not context.oclIsUndefined() and context.isRTContext();
+}
+
+query notation::Diagram::isCapsuleStructureDiagram() : Boolean
+{
+	return self.type = 'CompositeStructure' and
+		self.element.oclAsType(uml::Class).isCapsule();
+}
+
+query notation::Diagram::isRTStateMachineDiagram() : Boolean
+{
+	return self.type = 'PapyrusUMLStateMachineDiagram' and
+		(self.element.oclAsType(uml::StateMachine).isRTStateMachine() or
+		 self.element.oclAsType(uml::State).isRTState());
+}

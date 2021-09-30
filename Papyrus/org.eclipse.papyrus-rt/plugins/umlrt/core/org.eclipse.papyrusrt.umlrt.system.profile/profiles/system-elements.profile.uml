@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Profile xmi:id="_yYSOcG9gEeaLmNOvEdC4eg" name="SystemElements" URI="http://www.eclipse.org/papyrus/umlrt/systemelements" metaclassReference="_4F44MG9lEeaLmNOvEdC4eg _EWWHwG9nEeaLmNOvEdC4eg">
+    <elementImport xmi:id="_4F44MG9lEeaLmNOvEdC4eg" alias="Collaboration">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Collaboration"/>
+    </elementImport>
+    <elementImport xmi:id="_EWWHwG9nEeaLmNOvEdC4eg" alias="Class">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_kAM5IG9hEeaLmNOvEdC4eg" name="SystemProtocol">
+      <ownedAttribute xmi:id="_CSTo4G9mEeaLmNOvEdC4eg" name="base_Collaboration" association="_CSOJUG9mEeaLmNOvEdC4eg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Collaboration"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_CSOJUG9mEeaLmNOvEdC4eg" name="E_SystemProtocol_Collaboration1" memberEnd="_CSSawG9mEeaLmNOvEdC4eg _CSTo4G9mEeaLmNOvEdC4eg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_CSSawG9mEeaLmNOvEdC4eg" name="extension_SystemProtocol" type="_kAM5IG9hEeaLmNOvEdC4eg" aggregation="composite" association="_CSOJUG9mEeaLmNOvEdC4eg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_3xoqAG9mEeaLmNOvEdC4eg" name="BaseProtocol">
+      <ownedRule xmi:id="_9fqj0G9mEeaLmNOvEdC4eg" name="BaseProtocols are always abstract" constrainedElement="_3xoqAG9mEeaLmNOvEdC4eg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_In2cYG9rEeaLmNOvEdC4eg">
+          <language>OCL</language>
+          <body>base_Collaboration.isAbstract</body>
+        </specification>
+      </ownedRule>
+      <ownedAttribute xmi:id="_6O_dQW9mEeaLmNOvEdC4eg" name="base_Collaboration" association="_6O-PIG9mEeaLmNOvEdC4eg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Collaboration"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_6O-PIG9mEeaLmNOvEdC4eg" name="E_BaseProtocol_Collaboration1" memberEnd="_6O_dQG9mEeaLmNOvEdC4eg _6O_dQW9mEeaLmNOvEdC4eg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6O_dQG9mEeaLmNOvEdC4eg" name="extension_BaseProtocol" type="_3xoqAG9mEeaLmNOvEdC4eg" aggregation="composite" association="_6O-PIG9mEeaLmNOvEdC4eg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_BtRMsG9nEeaLmNOvEdC4eg" name="SystemClass">
+      <ownedAttribute xmi:id="_H7__0G9nEeaLmNOvEdC4eg" name="base_Class" association="_H7-xsG9nEeaLmNOvEdC4eg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_H7-xsG9nEeaLmNOvEdC4eg" name="E_SystemClass_Class1" memberEnd="_H7_YwG9nEeaLmNOvEdC4eg _H7__0G9nEeaLmNOvEdC4eg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_H7_YwG9nEeaLmNOvEdC4eg" name="extension_SystemClass" type="_BtRMsG9nEeaLmNOvEdC4eg" aggregation="composite" association="_H7-xsG9nEeaLmNOvEdC4eg"/>
+    </packagedElement>
+    <profileApplication xmi:id="_RXOLkHTiEeaz8OosCCLXqg">
+      <eAnnotations xmi:id="_RXQAwHTiEeaz8OosCCLXqg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Profile>
+  <Ecore:EPackage xmi:id="_SS8M8HTiEeaz8OosCCLXqg" base_Package="_yYSOcG9gEeaLmNOvEdC4eg" packageName="system elements" nsPrefix="SystemElements" nsURI="http://www.eclipse.org/papyrus/umlrt/systemelements" basePackage="org.eclipse.papyrusrt.umlrt.system.profile" prefix="SystemElements"/>
+</xmi:XMI>

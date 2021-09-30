@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Papyrus-RT"
+            id="org.eclipse.papyrusrt.views.category">
+      </category>
+      <view
+            name="Code Snippet"
+            icon="icons/code_snippet_view.gif"
+            category="org.eclipse.papyrusrt.views.category"
+            class="org.eclipse.papyrusrt.umlrt.tooling.views.codesnippet.internal.CodeSnippetView"
+            id="org.eclipse.papyrusrt.umlrt.tooling.views.codesnippet">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.papyrus.infra.core.perspective">
+         <view
+               id="org.eclipse.papyrusrt.umlrt.tooling.views.codesnippet"
+               relationship="stack"
+               relative="org.eclipse.ui.views.PropertySheet">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

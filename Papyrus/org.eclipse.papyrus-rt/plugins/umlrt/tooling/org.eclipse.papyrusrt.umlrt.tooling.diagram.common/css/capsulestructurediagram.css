@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2015, 2016 CEA LIST, Christian W. Damus, and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST - Initial API and implementation
+ *  Christian W. Damus - bugs 475905, 501081, 467545
+ * 
+ */
+
+Label[type=StereotypeLabel]{
+	visible:false;
+}
+
+CompositeStructureDiagram{
+	canonical:true;
+}
+
+[appliedStereotypes~="UMLRealTime::RTPort"]{
+	canonical:true;
+}
+Port[isTypeRedefined=true] {
+	bold: true;
+}
+
+[appliedStereotypes~="UMLRealTime::Capsule"]{
+	canonical:true;
+}
+
+[appliedStereotypes~="UMLRealTime::CapsulePart"] {
+	canonical:true;
+	/* Visibility, derivation, and modifiers are not applicable to capsule-parts */
+	maskLabel: name type multiplicity;
+	elementIcon: false;
+}
+Property[isTypeRedefined=true] {
+	bold: true;
+}
+
+[appliedStereotypes~="UMLRealTime::RTConnector"]{
+	canonical:true;
+}
+[appliedStereotypes~="UMLRealTime::RTConnector"] > Label {
+	visible:false;
+}
+
+
+/* Hide the internal Structure of Capsule Part */
+Property[appliedStereotypes~="UMLRealTime::CapsulePart"] > Compartment[kind="internalstructure"]{
+    visible:false;
+}
+
+/* Set the Port figure to oval if it is unWired */
+Port[appliedStereotypes~="UMLRealTime::RTPort"][isWired="false"] {
+	isOval : true;
+}
+
+/* Fill the Port figure  if it is not conjugated */
+Port[appliedStereotypes~="UMLRealTime::RTPort"][isConjugated="false"] {
+	gradient: none;
+	fillColor:black;
+}
+
+Port {
+	isPortResizable: false;
+	/* Visibility, derivation, type, and modifiers are not applicable to ports */
+	maskLabel: name conjugated multiplicity;
+}
+
+/* Fill the Port figure  if it is not conjugated */
+Port[appliedStereotypes~="UMLRealTime::RTPort"][isConjugated="true"] {
+	gradient: none;
+	fillColor:white;
+}
+
+/* Set Margin for CapsulePart figure */
+Property[appliedStereotypes~="UMLRealTime::CapsulePart"] {
+    rightMarginLabel:10;
+    leftMarginLabel:10;
+    topMarginLabel:16;
+    bottomMarginLabel:14;
+}
+

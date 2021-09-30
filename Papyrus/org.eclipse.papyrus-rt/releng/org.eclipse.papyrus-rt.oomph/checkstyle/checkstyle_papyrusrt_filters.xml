@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<!-- http://weblex.ens-lsh.fr/doc/weblex/regexp.html for regex rules. -->
+<suppressions>
+  <!-- ************************************* -->
+  <!-- Suppress for Papyrus RT modules -->
+  <!-- ************************************* -->
+
+  <!-- Suppress checks in generated code -->
+  <suppress checks=".*" files="[/\\](?:src|xtend)-gen[/\\]" />
+
+  
+</suppressions>

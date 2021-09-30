@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+ Copyright (c) 2015, 2017 CEA LIST, Christian W. Damus, and others.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   CEA LIST - Initial API and implementation
+   Christian W. Damus - bugs 493866, 493869, 510323, 517467
+-->
+<plugin>
+
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.canonical.strategies">
+      <semanticChildrenStrategy
+            class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.canonical.RTStateMachineSemanticChildrenStrategy"
+            priority="50">
+         <enablement>
+            <or>
+               <with
+                     variable="element">
+                  <or>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.uml2.uml.StateMachine">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.papyrus.uml.stereotype"
+                              value="UMLRTStateMachines::RTStateMachine">
+                        </test>
+                     </and>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.uml2.uml.State">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.papyrus.uml.stereotype"
+                              value="UMLRTStateMachines::RTState">
+                        </test>
+                     </and>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.uml2.uml.Region">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.papyrus.uml.stereotype"
+                              value="UMLRTStateMachines::RTRegion">
+                        </test>
+                     </and>
+                      <and>
+                        <instanceof
+                              value="org.eclipse.uml2.uml.Pseudostate">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.papyrus.uml.stereotype"
+                              value="UMLRTStateMachines::RTPseudostate">
+                        </test>
+                     </and>
+                  </or>
+               </with>
+               <with
+                     variable="editPart">
+                  <instanceof
+                        value="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.IStateMachineInheritableEditPart">
+                  </instanceof>
+               </with>
+            </or>
+         </enablement>
+      </semanticChildrenStrategy>
+      <visualChildrenStrategy
+            class="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.internal.canonical.RTInheritableVisualChildrenStrategy"
+            priority="100">
+         <enablement>
+            <with
+                  variable="editPart">
+               <or>
+                  <instanceof
+                        value="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.IStateMachineInheritableEditPart">
+                  </instanceof>
+               </or>
+            </with>
+         </enablement>
+      </visualChildrenStrategy>
+   </extension>
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editpolicies.RTStateMachineEditPolicyProvider">
+         <Priority
+               name="High">
+         </Priority>
+      </editpolicyProvider>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.internal.editpolicies.RTLinksLFEditPolicyProvider">
+         <Priority name="Medium"/>
+         <!-- The object declaration must look exactly like this because the LinkLF edit-policy
+              provider implementation expects to find exactly this class name (with plug-in qualifier)
+              and other details. -->
+         <object id="diagram_name" class="org.eclipse.gmf.runtime.notation.Diagram(org.eclipse.gmf.runtime.notation)">
+            <method name="getType()" value="PapyrusUMLStateMachineDiagram"/>
+         </object>
+      </editpolicyProvider>
+   </extension>
+
+    <extension
+          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+       <editpartProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.RTStateMachineEditPartProvider">
+          <Priority
+                name="Medium">
+          </Priority>
+       </editpartProvider>
+    </extension>
+    
+    <extension
+          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+       <decoratorProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.decorators.CompositeStateDecorator$Provider">
+          <Priority
+                name="Medium">
+          </Priority>
+       </decoratorProvider>
+    </extension>
+    <extension
+          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+       <decoratorProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.decorators.TransitionDecoratorProvider">
+          <Priority
+                name="Medium">
+          </Priority>
+       </decoratorProvider>
+    </extension>
+    <extension
+          point="org.eclipse.papyrus.infra.gmfdiag.assistant.modelProviders">
+       <modelProvider
+             uri="assistants/uml-rt.statemachine.assistants">
+       </modelProvider>
+    </extension>
+    <extension
+          point="org.eclipse.papyrus.infra.gmfdiag.common.diagramExpansion">
+       <diagramexpansion
+             model="expansion/uml-rt.statemachine.expansionmodel">
+       </diagramexpansion>
+    </extension>
+    <extension
+          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+       <decoratorProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.decorators.StateWithInternalTransitionDecorator$Provider">
+          <Priority
+                name="Medium">
+          </Priority>
+       </decoratorProvider>
+    </extension>
+    <extension
+          point="org.eclipse.papyrus.infra.gmfdiag.common.visualTypeProviders">
+       <visualTypeProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.providers.UMLRTStateMachineVisualTypeProvider"
+             diagramType="PapyrusUMLStateMachineDiagram">
+          <Priority
+                name="Medium">
+          </Priority>
+       </visualTypeProvider>
+    </extension>
+    <extension
+          point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+       <ParserProvider
+             class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.providers.RTStateMachineParserProvider">
+          <Priority
+                name="High">
+          </Priority>
+       </ParserProvider>
+    </extension>
+    <extension
+          point="org.eclipse.papyrus.extensionpoints.editors.DirectEditor">
+       <DirectEditor
+             additionalConstraint="org.eclipse.papyrusrt.umlrt.tooling.ui.constraints.UMLRTDirectEditorConstraint"
+             language="UML-RT"
+             objectToEdit="org.eclipse.uml2.uml.Transition">
+          <Priority
+                name="High">
+          </Priority>
+          <simpleeditor
+                editorConfiguration="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.parsers.NamedElementDirectEditorConfiguration">
+          </simpleeditor>
+       </DirectEditor>
+       <DirectEditor
+             additionalConstraint="org.eclipse.papyrusrt.umlrt.tooling.ui.constraints.UMLRTDirectEditorConstraint"
+             language="UML-RT"
+             objectToEdit="org.eclipse.uml2.uml.State">
+          <Priority
+                name="High">
+          </Priority>
+          <simpleeditor
+                editorConfiguration="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.parsers.NamedElementDirectEditorConfiguration">
+          </simpleeditor>
+       </DirectEditor>
+    </extension>
+    
+    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.providers.UMLRTStateMachineViewProvider">
+         <Priority name="Medium"/>
+      </viewProvider>
+   </extension>
+   
+   <extension
+         point="org.eclipse.papyrus.infra.ui.papyrusDiagram">
+      <creationCommand
+            creationCommandClass="org.eclipse.papyrusrt.umlrt.core.internal.commands.CreateHeadlessStateMachineDiagramCommand"
+            creationCondition="org.eclipse.papyrus.uml.diagram.statemachine.StateMachineDiagramCreationCondition"
+            icon="icons/Diagram_StateMachine.gif"
+            id="org.eclipse.papyrus.uml.diagram.statemachine.CreationCommand"
+            language="uml"
+            label="UML-RT State Machine Diagram">
+      </creationCommand>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.architecture.models">
+      <model
+            path="architecture/umlrt-statemachine.architecture">
+      </model>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.go-outside"
+            name="%go-outside.name"
+            description="%go-outside.desc"
+            categoryId="org.eclipse.papyrusrt.umlrt.tooling.ui.commands">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.go-outside"
+            class="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.handlers.GoOutsideHandler">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <count
+                     value="1">
+               </count>
+               <iterate>
+                  <instanceof
+                        value="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+                  </instanceof>
+               </iterate>
+            </with>
+         </activeWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:navigateMenu?after=additions"
+            allPopups="false">
+         <dynamic id="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.navigate">
+            <class class="org.eclipse.papyrusrt.umlrt.tooling.ui.menus.MultiCommandContribution">
+               <parameter name="commandIDs" value="go-outside"/>
+            </class>
+         </dynamic>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            sequence="M1+SHIFT+-"
+            commandId="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.go-outside"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.papyrus.uml.diagram.statemachine.ui.diagramContext">
+      </key>
+   </extension>
+</plugin>

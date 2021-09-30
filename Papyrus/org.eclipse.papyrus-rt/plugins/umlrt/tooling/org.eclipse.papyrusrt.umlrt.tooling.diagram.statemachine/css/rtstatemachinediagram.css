@@ -1,0 +1,93 @@
+/*****************************************************************************
+ * Copyright (c) 2015, 2016 CEA LIST, Christian W. Damus, and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   CEA LIST - Initial API and implementation
+ *   Christian W. Damus - bugs 486854, 493866
+ *   
+ *****************************************************************************/
+
+Label[type=StereotypeLabel] {
+	visible: false;
+}
+
+StateMachineDiagram {
+	canonical: true;
+}
+
+[appliedStereotypes~="UMLRTStateMachines::RTStateMachine"] {
+	canonical: true;
+}
+
+[appliedStereotypes~="UMLRTStateMachines::RTRegion"] {
+	canonical: true;
+}
+
+[appliedStereotypes~="UMLRTStateMachines::RTState"] {
+	canonical: true;
+}
+
+/* Don't let states within a region show canonical region content */
+Region[appliedStereotypes~="UMLRTStateMachines::RTRegion"] State[appliedStereotypes~="UMLRTStateMachines::RTState"] Region[appliedStereotypes~="UMLRTStateMachines::RTRegion"] {
+	canonical: false;
+}
+
+Compartment[type="InternalTransitions"] {
+	canonical: true;
+}
+
+[appliedStereotypes~="UMLRTStateMachines::RTPseudostate"] {
+	canonical: true;
+}
+
+Label[type="Pseudostate_InitialStereotypeLabel"] {
+	visible: false;
+}
+
+Label[type="Pseudostate_JoinStereotypeLabel"] { 
+	visible: false;
+}
+
+Label[type="Pseudostate_ForkStereotypeLabel"] {
+	visible: false;
+}
+
+Label[type="Pseudostate_ChoiceStereotypeLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_JunctionStereotypeLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_ShallowHistoryStereotypeLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_DeepHistoryStereotypeLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_TerminateStereotypeLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_EntryPointStereotypeLabel"], Label[type="Pseudostate_EntryPointFloatingNameLabel"] {
+	visible: false;
+}
+Label[type="Pseudostate_ExitPointStereotypeLabel"], Label[type="Pseudostate_ExitPointFloatingNameLabel"] {
+	visible: false;
+}
+
+/** Do not show inside states => sub machine should be use instead. (Bug 494280) */
+Region State > Compartment[type="State_RegionCompartment"] {
+	visible: false;
+}
+
+Label[type="Transition_GuardLabel"] {
+	visible: false;
+}
+
+.showGuardAndEffect Label[type="Transition_GuardLabel"] {
+	visible: true;
+} 

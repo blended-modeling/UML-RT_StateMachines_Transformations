@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_mmoGINcaEeajJcal_2Mr_A" name="StateMachineModel">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_q0ueQNcaEeajJcal_2Mr_A" name="StateMachine">
+      <region xmi:id="_rIxboNcaEeajJcal_2Mr_A" name="Region">
+        <transition xmi:id="_2HIKINcbEeajJcal_2Mr_A" name="InitialToS1" source="_zSh7kNcbEeajJcal_2Mr_A" target="_y4PzUNcbEeajJcal_2Mr_A"/>
+        <transition xmi:id="_4NvRUNcbEeajJcal_2Mr_A" name="S1ToS2" source="_y4PzUNcbEeajJcal_2Mr_A" target="_3ghmANcbEeajJcal_2Mr_A"/>
+        <transition xmi:id="_TZHtcNcwEeaB5Y5OmPAhhQ" name="S2ToFinal" source="_3ghmANcbEeajJcal_2Mr_A" target="_30RocNcbEeajJcal_2Mr_A"/>
+        <transition xmi:id="_w3jkkNc0EeaB5Y5OmPAhhQ" name="S1ToFinal" source="_y4PzUNcbEeajJcal_2Mr_A" target="_30RocNcbEeajJcal_2Mr_A"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y4PzUNcbEeajJcal_2Mr_A" name="S1"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_zSh7kNcbEeajJcal_2Mr_A" name="InitialState"/>
+        <subvertex xmi:type="uml:State" xmi:id="_3ghmANcbEeajJcal_2Mr_A" name="S2"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_30RocNcbEeajJcal_2Mr_A" name="FinalState"/>
+      </region>
+    </packagedElement>
+    <profileApplication xmi:id="_mrSjsNcaEeajJcal_2Mr_A">
+      <eAnnotations xmi:id="_mrbGkNcaEeajJcal_2Mr_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:id="_JhZKcNccEeajJcal_2Mr_A">
+      <eAnnotations xmi:id="_JhZxgNccEeajJcal_2Mr_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+    <profileApplication xmi:id="_Ksu_YNcgEeajJcal_2Mr_A">
+      <eAnnotations xmi:id="_KsvmcNcgEeajJcal_2Mr_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTimeStateMach:RTState xmi:id="_n945YNctEeaB5Y5OmPAhhQ" base_State="_y4PzUNcbEeajJcal_2Mr_A"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_piyaoNctEeaB5Y5OmPAhhQ" base_Region="_rIxboNcaEeajJcal_2Mr_A"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_qhKucNctEeaB5Y5OmPAhhQ" base_StateMachine="_q0ueQNcaEeajJcal_2Mr_A"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_HwbMANcwEeaB5Y5OmPAhhQ" base_Pseudostate="_zSh7kNcbEeajJcal_2Mr_A"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_K0Ua0NcwEeaB5Y5OmPAhhQ" base_State="_3ghmANcbEeajJcal_2Mr_A"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_MBlfMNcwEeaB5Y5OmPAhhQ" base_State="_30RocNcbEeajJcal_2Mr_A"/>
+</xmi:XMI>

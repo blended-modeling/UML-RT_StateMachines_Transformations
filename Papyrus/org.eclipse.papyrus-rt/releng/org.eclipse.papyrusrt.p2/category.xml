@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <stats location="http://download.eclipse.org/stats/">
+      <feature url="features/org.eclipse.papyrusrt.all.feature_1.0.0.201707040510.jar" id="org.eclipse.papyrusrt.all.feature" version="1.0.0.201707040510"/>
+      <feature url="features/org.eclipse.papyrusrt.base.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.base.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.codegen-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.codegen-feature_1.0.0.201707040432.jar" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.201707040432"/>
+      <feature url="features/org.eclipse.papyrusrt.feature_1.0.0.201707040510.jar" id="org.eclipse.papyrusrt.feature" version="1.0.0.201707040510"/>
+      <feature url="features/org.eclipse.papyrusrt.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.installer.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.installer.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.rcp.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.rcp.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.rts-feature_1.0.0.201707040432.jar" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.201707040432"/>
+      <feature url="features/org.eclipse.papyrusrt.rts-feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.common.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.common.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.common.feature_1.0.0.201707040418.jar" id="org.eclipse.papyrusrt.umlrt.common.feature" version="1.0.0.201707040418"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.common.ui.feature_1.0.0.201707040418.jar" id="org.eclipse.papyrusrt.umlrt.common.ui.feature" version="1.0.0.201707040418"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.common.ui.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.common.ui.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.core.feature_1.0.0.201707040418.jar" id="org.eclipse.papyrusrt.umlrt.core.feature" version="1.0.0.201707040418"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.core.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.core.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.cpp.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.cpp.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.cpp.feature_1.0.0.201707040418.jar" id="org.eclipse.papyrusrt.umlrt.cpp.feature" version="1.0.0.201707040418"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.migration.rsa.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.migration.rsa.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.profile.feature_1.0.0.201707040402.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.201707040402"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.profile.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.tooling.compare.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.tooling.compare.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.tooling.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.tooling.feature" version="1.0.0.qualifier"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.tooling.feature_1.0.0.201707040447.jar" id="org.eclipse.papyrusrt.umlrt.tooling.feature" version="1.0.0.201707040447"/>
+      <feature url="features/org.eclipse.papyrusrt.xtumlrt.xtext.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.xtumlrt.xtext.feature" version="1.0.0.qualifier"/>
+   </stats>
+   <feature url="features/core/" id="org.eclipse.papyrusrt.umlrt.core.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/cpp/" id="org.eclipse.papyrusrt.umlrt.cpp.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/" id="org.eclipse.papyrusrt.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/profile/" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/tooling/" id="org.eclipse.papyrusrt.umlrt.tooling.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/tooling/" id="org.eclipse.papyrusrt.umlrt.tooling.compare.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/common/" id="org.eclipse.papyrusrt.umlrt.common.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/common/" id="org.eclipse.papyrusrt.umlrt.common.ui.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/common/" id="org.eclipse.papyrusrt.umlrt.common.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/common/" id="org.eclipse.papyrusrt.umlrt.common.ui.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/core/" id="org.eclipse.papyrusrt.umlrt.core.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/cpp/" id="org.eclipse.papyrusrt.umlrt.cpp.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/" id="org.eclipse.papyrusrt.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/profile/" id="org.eclipse.papyrusrt.umlrt.profile.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/tooling/" id="org.eclipse.papyrusrt.umlrt.tooling.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/tooling/" id="org.eclipse.papyrusrt.umlrt.tooling.compare.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/migration/" id="org.eclipse.papyrusrt.umlrt.migration.rsa.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/migration/" id="org.eclipse.papyrusrt.umlrt.migration.rsa.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt"/>
+   </feature>
+   <feature url="features/codegen/" id="org.eclipse.papyrusrt.codegen-feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/runtime/" id="org.eclipse.papyrusrt.rts-feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <feature url="features/xtext/" id="org.eclipse.papyrusrt.xtumlrt.xtext.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.codegen"/>
+   </feature>
+   <category-def name="org.eclipse.papyrusrt" label="Papyrus-RT">
+      <description>
+         Papyrus for RealTime
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.papyrusrt.codegen" label="Papyrus RT Codegen">
+      <description>
+         Papyrus extension for RealTime Code generation
+      </description>
+   </category-def>
+</site>

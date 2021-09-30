@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Model to text transformations"
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.commands.category">
+      </category>
+      <command
+            name="Model to textual UML-RT transformation"
+            categoryId="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.commands.category"
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.commands.model2textCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.commands.model2textCommand"
+            class="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.handlers.UMLRT2textHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <command
+               commandId="org.eclipse.papyrusrt.xtumlrt.trans.to.text.ui.commands.model2textCommand"
+               label="Transform Papyrus UML-RT model to textual model (experimental)"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="or">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.extension"
+                                 value="uml">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </iterate>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

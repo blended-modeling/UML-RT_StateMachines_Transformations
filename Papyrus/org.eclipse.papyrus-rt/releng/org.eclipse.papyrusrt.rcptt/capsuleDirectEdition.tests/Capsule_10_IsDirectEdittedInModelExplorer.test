@@ -1,0 +1,40 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: Capsule_10_IsDirectEdittedInModelExplorer
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _uqwzUAWLEeeYcMLssbqO4w
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/13/17 10:56 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test that when we create a capsule from the model explorer, the capsule item in the view is automatically edittable 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+with [get-view "Model Explorer" | get-tree] {
+    select RootElement | get-menu "New UML-RT Child/Capsule" | click
+    
+     // this event "activate-cell-edit" is recorded by RCPTT : it ensures that a direct editor is added to the Capsule item
+    select "RootElement/«Capsule» Capsule2" | activate-cell-edit  
+    
+    // this is recorded by RCPTT when trying to change the name of the Capsule : 
+    // no other event is required (press F2 or other): it ensures that we did not loose the control
+    with [get-editbox] {
+        set-text myCapsule
+        key-type Enter
+    }
+      
+}
+
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

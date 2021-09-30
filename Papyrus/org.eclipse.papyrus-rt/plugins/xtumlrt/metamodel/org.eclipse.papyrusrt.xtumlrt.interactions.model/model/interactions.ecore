@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="interactions" nsURI="http://www.eclipse.org/papyrusrt/xtumlrt/interactions"
+    nsPrefix="interactions">
+  <eClassifiers xsi:type="ecore:EClass" name="Interaction" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Behaviour #//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalGates" upperBound="-1"
+        eType="#//Gate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fragments" upperBound="-1"
+        eType="#//InteractionFragment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifelines" upperBound="-1"
+        eType="#//Lifeline" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Message" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionFragment" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="covered" upperBound="-1"
+        eType="#//Lifeline" eOpposite="#//Lifeline/coveredBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalOrdering" upperBound="-1"
+        eType="#//GeneralOrdering" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gate" eSuperTypes="#//MessageEnd"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceSpecification" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toAfter" upperBound="-1"
+        eType="#//GeneralOrdering" eOpposite="#//GeneralOrdering/before"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toBefore" upperBound="-1"
+        eType="#//GeneralOrdering" eOpposite="#//GeneralOrdering/after"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionSpecification" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//OccurrenceSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finish" lowerBound="1"
+        eType="#//OccurrenceSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateInvariant" eSuperTypes="#//InteractionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Lifeline" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coveredBy" upperBound="-1"
+        eType="#//InteractionFragment" eOpposite="#//InteractionFragment/covered"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="represents" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageSort">
+    <eLiterals name="asynchSignal" literal="ASYNCH_SIGNAL"/>
+    <eLiterals name="asynchCall" value="1" literal="ASYNCH_CALL"/>
+    <eLiterals name="synchCall" value="2" literal="SYNCH_CALL"/>
+    <eLiterals name="reply" value="3" literal="REPLY"/>
+    <eLiterals name="createMessage" value="4" literal="CREATE_MESSAGE"/>
+    <eLiterals name="deleteMessage" value="5" literal="DELETE_MESSAGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageKind">
+    <eLiterals name="unknown" literal="UNKNOWN"/>
+    <eLiterals name="complete" value="1" literal="COMPLETE"/>
+    <eLiterals name="lost" value="2" literal="LOST"/>
+    <eLiterals name="found" value="3" literal="FOUND"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageSort" eType="#//MessageSort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageKind" eType="#//MessageKind"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendEvent" eType="#//MessageEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiveEvent" eType="#//MessageEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageEnd" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageOccurrenceSpecification" eSuperTypes="#//OccurrenceSpecification #//MessageEnd"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DestructionOccurrenceSpecification"
+      eSuperTypes="#//MessageOccurrenceSpecification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralOrdering" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="before" lowerBound="1"
+        eType="#//OccurrenceSpecification" eOpposite="#//OccurrenceSpecification/toAfter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="after" lowerBound="1" eType="#//OccurrenceSpecification"
+        eOpposite="#//OccurrenceSpecification/toBefore"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionOccurrenceSpecification" eSuperTypes="#//OccurrenceSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="execution" lowerBound="1"
+        eType="#//ExecutionSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionExecutionSpecification" eSuperTypes="#//ExecutionSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//AbstractAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviourExecutionSpecification" eSuperTypes="#//ExecutionSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviour" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Behaviour"/>
+  </eClassifiers>
+</ecore:EPackage>

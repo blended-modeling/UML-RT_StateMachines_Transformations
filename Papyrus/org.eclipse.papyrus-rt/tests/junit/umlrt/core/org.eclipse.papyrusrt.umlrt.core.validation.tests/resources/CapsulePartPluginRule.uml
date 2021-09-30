@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_fhwhcOREEeW10dPuv-Yr7w" name="CapsulePartPluginRule">
+    <packagedElement xmi:type="uml:Class" xmi:id="_g3wEAOREEeW10dPuv-Yr7w" name="Capsule" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kGnMsOREEeW10dPuv-Yr7w" name="pluginCapsulePart" visibility="protected" type="_iVvE8OREEeW10dPuv-Yr7w" isOrdered="true" aggregation="shared">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kGt6YOREEeW10dPuv-Yr7w"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kGt6YeREEeW10dPuv-Yr7w" value="5"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sB-gwOREEeW10dPuv-Yr7w" name="invalidPluginCapsulePart" visibility="protected" type="_iVvE8OREEeW10dPuv-Yr7w" isOrdered="true" aggregation="shared">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sCAV8OREEeW10dPuv-Yr7w" value="3"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sCAV8eREEeW10dPuv-Yr7w" value="5"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iVvE8OREEeW10dPuv-Yr7w" name="CapsuleType" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_fl_hMOREEeW10dPuv-Yr7w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fmAvUOREEeW10dPuv-Yr7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_g6-XIOREEeW10dPuv-Yr7w" base_Class="_g3wEAOREEeW10dPuv-Yr7w"/>
+  <UMLRealTime:Capsule xmi:id="_iWLJ0OREEeW10dPuv-Yr7w" base_Class="_iVvE8OREEeW10dPuv-Yr7w"/>
+  <UMLRealTime:CapsulePart xmi:id="_kGtTUOREEeW10dPuv-Yr7w" base_Property="_kGnMsOREEeW10dPuv-Yr7w"/>
+  <UMLRealTime:CapsulePart xmi:id="_sB_u4OREEeW10dPuv-Yr7w" base_Property="_sB-gwOREEeW10dPuv-Yr7w"/>
+</xmi:XMI>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_fAlPQHA1EeSmnup5K8rmmQ" name="SMCapsuleInheritance3">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_fAlPQXA1EeSmnup5K8rmmQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6mc_EHA1EeSmnup5K8rmmQ" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6mc_EXA1EeSmnup5K8rmmQ" name="capsule1" type="_6meNMHA1EeSmnup5K8rmmQ" aggregation="composite" association="_6mgCYHA1EeSmnup5K8rmmQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mc_EnA1EeSmnup5K8rmmQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mc_E3A1EeSmnup5K8rmmQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6mc_FHA1EeSmnup5K8rmmQ" name="childCapsule1" type="_6me0QHA1EeSmnup5K8rmmQ" aggregation="composite" association="_6mgpcHA1EeSmnup5K8rmmQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mc_FXA1EeSmnup5K8rmmQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mc_FnA1EeSmnup5K8rmmQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6meNMHA1EeSmnup5K8rmmQ" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_6meNMXA1EeSmnup5K8rmmQ" name="Port1" type="_6mhQgXA1EeSmnup5K8rmmQ" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_6meNMnA1EeSmnup5K8rmmQ" name="Capsule1StateMachine" isActive="true" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_6meNM3A1EeSmnup5K8rmmQ" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_6meNNHA1EeSmnup5K8rmmQ" name="t0" source="_6meNO3A1EeSmnup5K8rmmQ" target="_6meNPHA1EeSmnup5K8rmmQ"/>
+          <transition xmi:type="uml:Transition" xmi:id="_6meNNXA1EeSmnup5K8rmmQ" name="t1" source="_6meNPHA1EeSmnup5K8rmmQ" target="_6meNPXA1EeSmnup5K8rmmQ">
+            <trigger xmi:type="uml:Trigger" xmi:id="_6meNNnA1EeSmnup5K8rmmQ" event="_6mhQjXA1EeSmnup5K8rmmQ" port="_6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_6meNN3A1EeSmnup5K8rmmQ" name="t2" source="_6meNPXA1EeSmnup5K8rmmQ" target="_6meNPnA1EeSmnup5K8rmmQ">
+            <trigger xmi:type="uml:Trigger" xmi:id="_6meNOHA1EeSmnup5K8rmmQ" event="_6mhQjnA1EeSmnup5K8rmmQ" port="_6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_6meNOXA1EeSmnup5K8rmmQ" name="t3" source="_6meNPnA1EeSmnup5K8rmmQ" target="_6meNP3A1EeSmnup5K8rmmQ">
+            <trigger xmi:type="uml:Trigger" xmi:id="_6meNOnA1EeSmnup5K8rmmQ" event="_6mhQj3A1EeSmnup5K8rmmQ" port="_6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_6meNO3A1EeSmnup5K8rmmQ" name="i0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6meNPHA1EeSmnup5K8rmmQ" name="s0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6meNPXA1EeSmnup5K8rmmQ" name="s1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6meNPnA1EeSmnup5K8rmmQ" name="s2"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6meNP3A1EeSmnup5K8rmmQ" name="s3"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6me0QHA1EeSmnup5K8rmmQ" name="ChildCapsule1" classifierBehavior="_6me0Q3A1EeSmnup5K8rmmQ" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6me0QXA1EeSmnup5K8rmmQ" general="_6meNMHA1EeSmnup5K8rmmQ"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_6me0QnA1EeSmnup5K8rmmQ" name="Port2" type="_6mhQgXA1EeSmnup5K8rmmQ" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_6me0Q3A1EeSmnup5K8rmmQ" name="ChildCapsule1StateMachine" isActive="true" isReentrant="false">
+        <redefinedClassifier xmi:type="uml:StateMachine" href="../SMCapsuleInheritance2/SMCapsuleInheritance2.uml#_QDozMGkAEeSb8aCM_NRfaA"/>
+        <region xmi:type="uml:Region" xmi:id="_6me0RHA1EeSmnup5K8rmmQ" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_6me0THA1EeSmnup5K8rmmQ" name="ct4" source="_6me0UnA1EeSmnup5K8rmmQ" target="_6me0VXA1EeSmnup5K8rmmQ">
+            <trigger xmi:type="uml:Trigger" xmi:id="_6me0TXA1EeSmnup5K8rmmQ" event="_6mhQkHA1EeSmnup5K8rmmQ" port="_6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ _6me0QnA1EeSmnup5K8rmmQ"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_6me0TnA1EeSmnup5K8rmmQ" name="ct5" source="_6me0VXA1EeSmnup5K8rmmQ" target="_6me0U3A1EeSmnup5K8rmmQ">
+            <trigger xmi:type="uml:Trigger" xmi:id="_6me0T3A1EeSmnup5K8rmmQ" event="_6mhQjnA1EeSmnup5K8rmmQ" port="_6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ _6meNMXA1EeSmnup5K8rmmQ"/>
+          </transition>
+          <subvertex xmi:type="uml:State" xmi:id="_6me0UnA1EeSmnup5K8rmmQ" name="cs1" redefinedState="_6meNPXA1EeSmnup5K8rmmQ"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6me0U3A1EeSmnup5K8rmmQ" name="cs2" redefinedState="_6meNPnA1EeSmnup5K8rmmQ"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6me0VXA1EeSmnup5K8rmmQ" name="cs4"/>
+        </region>
+        <extendedStateMachine xmi:type="uml:StateMachine" href="../SMCapsuleInheritance2/SMCapsuleInheritance2.uml#_QDozMGkAEeSb8aCM_NRfaA"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_6mgCYHA1EeSmnup5K8rmmQ" memberEnd="_6mgCYXA1EeSmnup5K8rmmQ _6mc_EXA1EeSmnup5K8rmmQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_6mgCYXA1EeSmnup5K8rmmQ" name="top" type="_6mc_EHA1EeSmnup5K8rmmQ" association="_6mgCYHA1EeSmnup5K8rmmQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mgCYnA1EeSmnup5K8rmmQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mgCY3A1EeSmnup5K8rmmQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_6mgpcHA1EeSmnup5K8rmmQ" memberEnd="_6mgpcXA1EeSmnup5K8rmmQ _6mc_FHA1EeSmnup5K8rmmQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_6mgpcXA1EeSmnup5K8rmmQ" name="top" type="_6mc_EHA1EeSmnup5K8rmmQ" association="_6mgpcHA1EeSmnup5K8rmmQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mgpcnA1EeSmnup5K8rmmQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mgpc3A1EeSmnup5K8rmmQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_6mhQgHA1EeSmnup5K8rmmQ" name="Protocol1Container">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_6mhQgXA1EeSmnup5K8rmmQ" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_6mhQgnA1EeSmnup5K8rmmQ" name="InSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6mhQg3A1EeSmnup5K8rmmQ" name="e1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6mhQhHA1EeSmnup5K8rmmQ" name="e2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6mhQhXA1EeSmnup5K8rmmQ" name="e3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6mhQhnA1EeSmnup5K8rmmQ" name="e4"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_6mhQh3A1EeSmnup5K8rmmQ" name="OutSignals"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_6mhQiHA1EeSmnup5K8rmmQ" name="SynSignals"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_6mhQiXA1EeSmnup5K8rmmQ" client="_6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ" supplier="_6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ _6mhQgnA1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_6mhQinA1EeSmnup5K8rmmQ" client="_6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ" supplier="_6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_6mhQi3A1EeSmnup5K8rmmQ" client="_6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ" supplier="_6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ _6mhQh3A1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_6mhQjHA1EeSmnup5K8rmmQ" client="_6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ _6mhQgXA1EeSmnup5K8rmmQ" supplier="_6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ _6mhQiHA1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_6mhQjXA1EeSmnup5K8rmmQ" name="CallEvent1" operation="_6mhQg3A1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_6mhQjnA1EeSmnup5K8rmmQ" name="CallEvent2" operation="_6mhQhHA1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_6mhQj3A1EeSmnup5K8rmmQ" name="CallEvent3" operation="_6mhQhXA1EeSmnup5K8rmmQ"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_6mhQkHA1EeSmnup5K8rmmQ" name="CallEvent4" operation="_6mhQhnA1EeSmnup5K8rmmQ"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6mhQkXA1EeSmnup5K8rmmQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6mhQknA1EeSmnup5K8rmmQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_yj1McHA1EeSmnup5K8rmmQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yj3osHA1EeSmnup5K8rmmQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zY7ocHA1EeSmnup5K8rmmQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zY8PgHA1EeSmnup5K8rmmQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_6mtdwHA1EeSmnup5K8rmmQ" base_Class="_6mc_EHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_6muE0HA1EeSmnup5K8rmmQ" base_Property="_6mc_EXA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_6mur4HA1EeSmnup5K8rmmQ" base_Property="_6mc_FHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:Capsule xmi:id="_6mvS8HA1EeSmnup5K8rmmQ" base_Class="_6meNMHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:RTPort xmi:id="_6mv6AHA1EeSmnup5K8rmmQ" base_Port="_6meNMXA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_6mwhEHA1EeSmnup5K8rmmQ" base_StateMachine="_6meNMnA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_6mxvMHA1EeSmnup5K8rmmQ" base_Region="_6meNM3A1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_6myWQHA1EeSmnup5K8rmmQ" base_Pseudostate="_6meNO3A1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6mzkYHA1EeSmnup5K8rmmQ" base_State="_6meNPHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m0LcHA1EeSmnup5K8rmmQ" base_State="_6meNPXA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m1ZkHA1EeSmnup5K8rmmQ" base_State="_6meNPnA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m2AoHA1EeSmnup5K8rmmQ" base_State="_6meNP3A1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:Capsule xmi:id="_6m3OwHA1EeSmnup5K8rmmQ" base_Class="_6me0QHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:RTPort xmi:id="_6m4c4HA1EeSmnup5K8rmmQ" base_Port="_6me0QnA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_6m5D8HA1EeSmnup5K8rmmQ" base_StateMachine="_6me0Q3A1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_6m6SEHA1EeSmnup5K8rmmQ" base_Region="_6me0RHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_6m65IHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m8HQHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m8uUHA1EeSmnup5K8rmmQ" base_State="_6me0UnA1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m98cHA1EeSmnup5K8rmmQ" base_State="_6me0U3A1EeSmnup5K8rmmQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_6m_xoHA1EeSmnup5K8rmmQ" base_State="_6me0VXA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_6nA_wHA1EeSmnup5K8rmmQ" base_Package="_6mhQgHA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:Protocol xmi:id="_6nCN4HA1EeSmnup5K8rmmQ" base_Collaboration="_6mhQgXA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:RTMessageSet xmi:id="_6nC08HA1EeSmnup5K8rmmQ" base_Interface="_6mhQgnA1EeSmnup5K8rmmQ"/>
+  <UMLRealTime:RTMessageSet xmi:id="_6nDcAHA1EeSmnup5K8rmmQ" base_Interface="_6mhQh3A1EeSmnup5K8rmmQ" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_6nEqIHA1EeSmnup5K8rmmQ" base_Interface="_6mhQiHA1EeSmnup5K8rmmQ" rtMsgKind="inOut"/>
+</xmi:XMI>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2016 EclipseSource Services GmbH
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Philip Langer (EclipseSource) - Initial API and implementation
+-->
+
+<plugin>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.eclipse.org/papyrus/umlrt/compare/1.0"
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.umlrt.internal.provider.custom.UMLRTCompareCustomItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.compare.provider.IItemStyledLabelProvider
+               org.eclipse.emf.compare.provider.IItemDescriptionProvider
+               org.eclipse.emf.compare.provider.ISemanticObjectLabelProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.edit.adapterFactory">
+      <factory
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.umlrt.internal.provider.decorator.UMLRTDiffItemProviderDecoratorAdapterFactory"
+            label="UML RT Item Provider"
+            ranking="100"
+            uri="http://www.eclipse.org/papyrus/umlrt/compare/1.0"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource
+               org.eclipse.emf.compare.provider.IItemDescriptionProvider"
+            >
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.rcp.ui.accessorFactory">
+      <factory
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.umlrt.internal.accessor.UMLRTDiffAccessorFactory"
+            ranking="100">
+      </factory>
+      <factory
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.umlrt.internal.accessor.ProtocolChangeAccessorFactory"
+            ranking="110">
+      </factory>
+   </extension>
+</plugin>

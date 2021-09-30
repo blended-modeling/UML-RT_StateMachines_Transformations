@@ -1,0 +1,84 @@
+/*****************************************************************************
+ * Copyright (c) 2016 Christian W. Damus and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Christian W. Damus - Initial API and implementation
+ *
+ *****************************************************************************/
+
+import PapyrusRTCommon;
+
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype umlrt "strict" uses 'http://www.eclipse.org/papyrus/umlrt';
+modeltype umlrtsm "strict" uses 'http://www.eclipse.org/papyrus/umlrt/statemachine';
+modeltype archistyle "strict" uses 'http://www.eclipse.org/papyrus/infra/gmfdiag/style';
+modeltype vpstyle "strict" uses 'http://www.eclipse.org/papyrus/infra/viewpoints/policy/style';
+
+transformation PapyrusRTDiagrams(inout semantics : uml, inout graphics : notation);
+
+main() {
+	graphics.rootObjects()[notation::Diagram].map cleanUpDiagram();
+}
+
+mapping inout notation::Diagram::basicCleanUpDiagram()
+when { self.isUMLRTDiagram() }
+{
+	// Fix the name
+	var source := self.getOriginal();
+	if (source.oclIsKindOf(notation::Diagram) and not source.oclAsType(notation::Diagram).hasName()) {
+		self.name := null;
+	};
+	
+	// Find the appropriate viewpoint configuration prototype, if any
+	var contextId : String :=
+		switch {
+		case (self.isCapsuleStructureDiagram()) "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.UMLRTCapsuleStructure";
+		case (self.isRTStateMachineDiagram()) "org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.UMLRTStateMachine";
+		else null;
+		};
+	
+	if (not contextId.oclIsUndefined()) {
+		// First, clear out any existing view style so we can add the correct one
+		self.styles := self.styles->reject(oclIsKindOf(PapyrusViewStyle));
+		
+		// Create the view style
+		self.styles += object archistyle::PapyrusDiagramStyle {
+			owner := self.element; // Diagram owner
+			diagramKindId := contextId;
+		};
+	}	
+}
+
+mapping inout notation::Diagram::cleanUpDiagram() disjuncts
+	notation::Diagram::cleanUpCapsuleStructureDiagram,
+	notation::Diagram::cleanUpStateMachineDiagram
+;
+
+mapping inout notation::Diagram::cleanUpCapsuleStructureDiagram() inherits notation::Diagram::basicCleanUpDiagram
+when { self.isCapsuleStructureDiagram() }
+{
+	// Ensure Papyrus-RT styling for port conjugation
+	self.allSubobjectsOfKind(notation::Shape)
+		->select(type = 'Port_Shape')
+		.fixPortStyling();
+}
+
+/** Ensures that the UML-RT CSS styling for ports is not overridden. */
+helper notation::Shape::fixPortStyling()
+{
+	self.unset('fillColor');
+	self.unset('lineColor');
+	self.unset('lineWidth');
+}
+
+mapping inout notation::Diagram::cleanUpStateMachineDiagram() inherits notation::Diagram::basicCleanUpDiagram
+when { self.isRTStateMachineDiagram() }
+{
+	// Pass
+}

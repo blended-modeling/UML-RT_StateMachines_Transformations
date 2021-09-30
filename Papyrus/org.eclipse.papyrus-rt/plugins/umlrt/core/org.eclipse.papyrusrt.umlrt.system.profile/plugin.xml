@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated system-elements.profile -->
+      <package
+            uri="http://www.eclipse.org/papyrus/umlrt/systemelements"
+            class="org.eclipse.papyrusrt.umlrt.system.profile.systemelements.SystemElementsPackage"
+            genModel="profiles/system-elements.profile.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://SYSTEM_ELEMENTS_PROFILE/system-elements.profile.uml#_yYSOcG9gEeaLmNOvEdC4eg"
+            uri="http://www.eclipse.org/papyrus/umlrt/systemelements">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://SYSTEM_ELEMENTS_PROFILE/"
+            target="platform:/plugin/org.eclipse.papyrusrt.umlrt.system.profile/profiles/">
+      </mapping>
+   </extension>
+
+</plugin>
