@@ -1,1 +1,0 @@
-Note 1.  Compilation fails.

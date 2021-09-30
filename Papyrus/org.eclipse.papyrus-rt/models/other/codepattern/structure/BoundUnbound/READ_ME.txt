@@ -1,1 +1,0 @@
-Note 1. Updated Dec. 2015.  Successful codegen, compilation and run.

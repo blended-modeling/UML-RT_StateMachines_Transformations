@@ -1,1 +1,0 @@
-Note 1: (Dec. 2015) Work in progress.  Will not compile.
