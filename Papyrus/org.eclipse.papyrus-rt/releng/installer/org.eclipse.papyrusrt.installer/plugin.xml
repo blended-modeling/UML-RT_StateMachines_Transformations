@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.3"?>
+<!--
+ Copyright (c) 2016 Christian W. Damus and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+     Christian W. Damus - initial API and implementation
+-->
+<plugin>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+       		application="org.eclipse.oomph.setup.installer.application"
+            name="%product.name"
+            description="%product.desc">
+         <property
+               name="appName"
+               value="%application.name">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/icon16.png,icons/icon32.png,icons/icon48.png,icons/icon64.png,icons/icon128.png">
+         </property>
+        <property
+           name="titleImage"
+           value="%titleImage">
+        </property>
+         <property
+               name="aboutText"
+               value="%about.text">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/icon128.png">
+         </property>
+      </product>
+   </extension>
+</plugin>

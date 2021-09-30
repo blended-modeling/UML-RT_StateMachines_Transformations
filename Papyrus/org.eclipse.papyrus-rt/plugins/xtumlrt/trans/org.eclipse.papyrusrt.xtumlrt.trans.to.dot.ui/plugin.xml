@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Translate to Dot Category"
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.commands.category">
+      </category>
+      <command
+            name="Translate to Dot"
+            categoryId="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.commands.category"
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.commands.trans2dotCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.commands.trans2dotCommand"
+            class="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.handlers.TranslateToDotHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+         <command
+               commandId="org.eclipse.papyrusrt.xtumlrt.trans.to.dot.ui.commands.trans2dotCommand"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <reference
+                        definitionId="org.eclipse.papyrusrt.xtumlrt.xtext.Umlrt.XtextEditor.opened">
+                  </reference>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.xtext.ui.editor.outline.IOutlineNode">
+                     </adapt>
+                  </iterate>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

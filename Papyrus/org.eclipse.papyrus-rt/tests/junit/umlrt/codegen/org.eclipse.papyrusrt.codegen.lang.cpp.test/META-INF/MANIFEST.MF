@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT C++ Language Model Tests
+Bundle-SymbolicName: org.eclipse.papyrusrt.codegen.lang.cpp.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.papyrusrt.codegen.lang.cpp;bundle-version="1.0.0",
+ org.junit;bundle-version="4.12.0"
+Export-Package: org.eclipse.papyrusrt.codegen.lang.cpp.test.util

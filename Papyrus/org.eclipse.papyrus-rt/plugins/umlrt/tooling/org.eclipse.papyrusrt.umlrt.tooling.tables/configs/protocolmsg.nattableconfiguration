@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nattableconfiguration:TableConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisconfiguration="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisconfiguration" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattableconfiguration="http://www.eclipse.org/papyrus/nattable/model/nattableconfiguration" xmlns:nattablelabelprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattablecontentprovider" xmlns:nattablestyle="http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle" description="A synchronized table for Protocol Message Parameters" name="Protocol Message Table" type="ProtocolMessageTable" iconPath="platform:/plugin/org.eclipse.papyrus.sysml.nattable.requirement.config/icons/table_SysML_Requirement.png" defaultRowAxisProvider="//@rowAxisProviders.0" defaultColumnAxisProvider="//@columnAxisProviders.0">
+  <styles xsi:type="nattablestyle:BooleanValueStyle" name="columnsWidthAsPercentage" booleanValue="true"/>
+  <styles xsi:type="nattablestyle:BooleanValueStyle" name="saveColumnsWidth"/>
+  <rowHeaderAxisConfiguration xsi:type="nattableaxisconfiguration:TableHeaderAxisConfiguration" indexStyle="NUMERIC" displayLabel="false" displayIndex="false">
+    <ownedLabelConfigurations xsi:type="nattablelabelprovider:ObjectLabelProviderConfiguration"/>
+    <ownedAxisConfigurations xsi:type="nattableaxisconfiguration:EStructuralFeatureValueFillingConfiguration">
+      <listenFeature xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioralFeature/ownedParameter"/>
+    </ownedAxisConfigurations>
+    <axisManagers xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" axisManagerId="org.eclipse.papyrusrt.umlrt.tooling.tables.owned.parameter.axis.manager" labelProviderContext="org.eclipse.papyrus.infra.nattable.header.labelprovider" headerLabelConfiguration="//@rowHeaderAxisConfiguration/@ownedLabelConfigurations.0" specificAxisConfigurations="//@rowHeaderAxisConfiguration/@ownedAxisConfigurations.0"/>
+  </rowHeaderAxisConfiguration>
+  <columnHeaderAxisConfiguration xsi:type="nattableaxisconfiguration:TableHeaderAxisConfiguration" displayIndex="false">
+    <ownedLabelConfigurations xsi:type="nattablelabelprovider:FeatureLabelProviderConfiguration" displayIcon="false" displayIsDerived="false" displayType="false" displayMultiplicity="false"/>
+    <axisManagers xsi:type="nattableaxisconfiguration:AxisManagerRepresentation" axisManagerId="org.eclipse.papyrus.uml.nattable.feature.axis.manager" labelProviderContext="org.eclipse.papyrus.infra.nattable.header.feature.labelprovider" headerLabelConfiguration="//@columnHeaderAxisConfiguration/@ownedLabelConfigurations.0"/>
+  </columnHeaderAxisConfiguration>
+  <columnAxisProviders xsi:type="nattableaxisprovider:SlaveObjectAxisProvider" description="Provides the columns of the tables with a default configuration" name="Parameters Feature Columns Provider">
+    <styles xsi:type="nattablestyle:CellTextStyle"/>
+    <axis xsi:type="nattableaxis:EStructuralFeatureAxis" alias="Name">
+      <element xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+    </axis>
+    <axis xsi:type="nattableaxis:EStructuralFeatureAxis" manager="//@columnHeaderAxisConfiguration/@axisManagers.0" alias="Type">
+      <eAnnotations xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/papyrusrt/tables/1.0.0/creation/dialogViews">
+        <references xsi:type="contexts:View" href="../../org.eclipse.papyrusrt.umlrt.tooling.ui/dialogs/CreationDialogs.ctx#ParameterCreationDialogView"/>
+      </eAnnotations>
+      <element xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//TypedElement/type"/>
+    </axis>
+  </columnAxisProviders>
+  <rowAxisProviders xsi:type="nattableaxisprovider:MasterObjectAxisProvider" description="Provides the parameters directly owned by the protocol message." name="Parameter Axis Provider" disconnectSlave="true"/>
+</nattableconfiguration:TableConfiguration>

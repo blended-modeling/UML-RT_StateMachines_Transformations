@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_B5RrAE-YEeefA54nyypyMQ" name="pure-uml">
+  <packageImport xmi:id="_CBxfsE-YEeefA54nyypyMQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dVCckE-YEeefA54nyypyMQ" name="Class1">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_AcqRIE-aEeenPuq3zem6XA" name="Port1" aggregation="composite"/>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_iOllcE-YEeefA54nyypyMQ" name="lifecycle">
+      <region xmi:id="_m0YE0E-YEeefA54nyypyMQ" name="Region1">
+        <transition xmi:id="_X0vx4E-aEeenPuq3zem6XA" source="_VHWXgE-aEeenPuq3zem6XA" target="_WIbaAE-aEeenPuq3zem6XA"/>
+        <transition xmi:id="_YxLk8E-aEeenPuq3zem6XA" name="go" source="_WIbaAE-aEeenPuq3zem6XA" target="_Wmen8E-aEeenPuq3zem6XA">
+          <trigger xmi:id="_an_8oE-aEeenPuq3zem6XA" name="onGo"/>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_VHWXgE-aEeenPuq3zem6XA" name="Initial1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_WIbaAE-aEeenPuq3zem6XA" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Wmen8E-aEeenPuq3zem6XA" name="State2"/>
+      </region>
+    </ownedBehavior>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_gvv-AE-aEeenPuq3zem6XA" name="stuff"/>
+</uml:Model>

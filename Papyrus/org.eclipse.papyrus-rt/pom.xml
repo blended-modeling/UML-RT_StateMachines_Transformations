@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Papyrus RT</name>
+	<description>Papyrus Real Time project</description>
+	<url>https://eclipse.org/papyrusrt/</url>
+	<inceptionYear>2015</inceptionYear>
+
+	<modules>
+		<module>org.eclipse.papyrusrt.targetplatform</module>
+	</modules>
+
+	<properties>
+		<!-- plugins versions -->
+		<!-- use 'mvn versions:display-plugin-updates' to check for the latest -->
+		<tycho-version>0.25.0</tycho-version>
+		<tychoExtrasVersion>0.25.0</tychoExtrasVersion>
+		<eclipse-cbi-version>1.1.4</eclipse-cbi-version>
+		<maven-checkstyle-version>2.15</maven-checkstyle-version>
+		<findbugs.version>3.0.0</findbugs.version>
+		<maven-findbugs-version>3.0.0</maven-findbugs-version>
+		<maven-pmd-version>3.1</maven-pmd-version>
+		<maven-jxr-version>2.3</maven-jxr-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- default environment overridden by profile, tycho preempts profile -->
+		<java.source>1.8</java.source>
+		<java.target>1.8</java.target>
+
+		<!-- Target Platform Selection ========================== In the Hudson 
+			build configuration, set: eclipse.release={mars|neon|oxygen|etc.} - which 
+			Eclipse and Papyrus platform stream to build on papyrus.kind={papyrusnightly|papyrusmilestone|papyrusrelease} 
+			- which kind of Papyrus build to build on, according to the kind of Papyrus-RT 
+			build target.kind={base|papyrus|profile|core|codegen|tooling|releng|rt.included} - which kind of target 
+			platform to use, according to the particular component to be built, whether 
+			it is a Gerrit build, etc. -->
+		<eclipse.release>oxygen</eclipse.release>
+		<papyrus.kind>papyrusrelease</papyrus.kind>
+		<target.kind>papyrus</target.kind>
+
+		<target.version>${project.version}</target.version>
+		<eclipse.download>http://download.eclipse.org</eclipse.download>  <!-- Set to file:/home/data/httpd/download.eclipse.org when building on Eclipse 
+			servers to improve performances -->
+
+
+
+		<!-- Default test inclusion patterns (comma-separated list) -->
+		<test.includes.default>**/*Test.java,**/*Tests.java,**/*TestCase.java,**/Test*.java</test.includes.default>
+		<test.includes>${test.includes.default}</test.includes>
+		<!-- Default test exclusion patterns (comma-separated list), in case we 
+			mistakenly add "all" suites -->
+		<test.excludes.default>**/*AllTests.java</test.excludes.default>
+		<test.excludes>${test.excludes.default}</test.excludes>
+	    <test.argline>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false -Dorg.eclipse.swt.internal.gtk.useCairo=false</test.argline>
+
+		<!-- Codegen Properties -->
+		<xtend-gen.dir>${project.basedir}/xtend-gen</xtend-gen.dir>
+		<maven-clean.version>3.0.0</maven-clean.version>
+		<exec-maven.version>1.2.1</exec-maven.version>
+		<xtext.version>2.10.0</xtext.version>
+		<build-helper-maven.version>1.7</build-helper-maven.version>
+		<uml.version>5.3milestones</uml.version>
+		<uml.release>S201703091408</uml.release>
+		<simrel-repo.url>${eclipse.download}/staging/${eclipse.release}</simrel-repo.url>
+		<uml.url>${eclipse.download}/modeling/mdt/uml2/updates/${uml.version}/${uml.release}/</uml.url>
+		<orbit-repo.url>${eclipse.download}/tools/orbit/downloads/drops/R20150821153341/repository/</orbit-repo.url>
+		<xtend-gen.dir>${project.basedir}/xtend-gen</xtend-gen.dir>
+		<src-gen.dir>${project.basedir}/src-gen</src-gen.dir>
+
+
+
+	</properties>
+
+	<distributionManagement>
+		<!-- <repository> <id>repo.eclipse.org</id> <name>Papyrus RT Repository 
+			- Releases </name> <url>https://repo.eclipse.org/content/repositories/papyrus-rt-releases/</url> 
+			</repository> -->
+		<snapshotRepository>
+			<id>repo.eclipse.org</id>
+			<name>Papyrus RT Repository - Snapshots </name>
+			<url>https://repo.eclipse.org/content/repositories/papyrus-rt-snapshots/</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+
+	</distributionManagement>
+	<organization>
+		<name>Eclipse foundation</name>
+		<url>https://www.eclipse.org/</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License</name>
+			<url>https://www.eclipse.org/legal/epl-v10.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://git.eclipse.org/c/papyrus-rt/org.eclipse.papyrus-rt.git</url>
+		<connection>scm:git:git://git.eclipse.org/gitroot/papyrus-rt/org.eclipse.papyrus-rt.git</connection>
+	</scm>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>org.eclipse.cbi.maven.plugins</id>
+			<name>Eclipse CBI</name>
+			<url>https://repo.eclipse.org/content/repositories/cbi-releases/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-report-plugin</artifactId>
+					<version>2.18.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>1.4.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jxr-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.8</version>
+					<dependencies>
+						<dependency>
+							<groupId>ant-contrib</groupId>
+							<artifactId>ant-contrib</artifactId>
+							<version>1.0b3</version>
+							<exclusions>
+								<exclusion>
+									<groupId>ant</groupId>
+									<artifactId>ant</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.ant</groupId>
+							<artifactId>ant-nodeps</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<!-- enable tycho build extension -->
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-maven-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<extensions>true</extensions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin><!-- enable source bundle generation -->
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<version>${tychoExtrasVersion}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-versions-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-pack200a-plugin</artifactId>
+					<version>${tychoExtrasVersion}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-pack200b-plugin</artifactId>
+					<version>${tychoExtrasVersion}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.cbi.maven.plugins</groupId>
+					<artifactId>eclipse-jarsigner-plugin</artifactId>
+					<version>${eclipse-cbi-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.cbi.maven.plugins</groupId>
+					<artifactId>eclipse-macsigner-plugin</artifactId>
+					<version>${eclipse-cbi-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.cbi.maven.plugins</groupId>
+					<artifactId>eclipse-winsigner-plugin</artifactId>
+					<version>${eclipse-cbi-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.xtend</groupId>
+					<artifactId>xtend-maven-plugin</artifactId>
+					<version>${xtext.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-help-plugin</artifactId>
+				<configuration>
+					<output>${basedir}/target/active-profiles.txt</output>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.source}</source>
+					<target>${java.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>${xtend-gen.dir}</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.source}</source>
+					<target>${java.target}</target>
+					<optimize>true</optimize>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<!-- enable tycho build extension -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+			</plugin>
+			<plugin><!-- enable source bundle generation -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+						<configuration>
+							<excludes>
+								<plugin id="org.eclipse.papyrusrt.rcp" />
+								<plugin id="org.eclipse.papyrusrt.installer" />
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-p2-metadata</id>
+						<phase>package</phase>
+						<goals>
+							<goal>p2-metadata</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<defaultP2Metadata>false</defaultP2Metadata>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<configuration>
+					<failIfNoTests>false</failIfNoTests>
+					<useUIHarness>true</useUIHarness>
+					<useUIThread>false</useUIThread>
+					<argLine>${test.argline}</argLine>
+					<!--<showEclipseLog>true</showEclipseLog> -->
+					<testFailureIgnore>true</testFailureIgnore>
+					<includes>
+						<include>${test.includes}</include>
+					</includes>
+
+					<excludes>
+						<exclude>${test.excludes}</exclude>
+					</excludes>
+
+					<bundleStartLevel>
+						<bundle>
+							<id>org.eclipse.equinox.launcher</id>
+							<level>4</level>
+							<autoStart>true</autoStart>
+						</bundle>
+					</bundleStartLevel>
+					<dependencies>
+						<dependency>
+							<type>p2-installable-unit</type>
+							<artifactId>org.eclipse.equinox.ds</artifactId>
+						</dependency>
+						<dependency>
+							<type>p2-installable-unit</type>
+							<artifactId>org.eclipse.equinox.event</artifactId>
+						</dependency>
+
+					</dependencies>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<configuration>
+					<includePackedArtifacts>true</includePackedArtifacts>
+					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+					<target>
+						<artifact>
+							<groupId>org.eclipse.papyrusrt</groupId>
+							<artifactId>org.eclipse.papyrusrt.targetplatform.${target.kind}</artifactId>
+							<version>${target.version}</version>
+						</artifact>
+					</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- No profile: Don't produce any artifact (update site). Used by Gerrit 
+		findBugs: produce analysis reports. Activation: explicit ("Profiles") packAndSign: 
+		produce a stable update site (Packed & signed). Used for releases (+ milestones) 
+		only. Activation: SIGN=true pack: produce a simple update site (Packed). 
+		Used for nightly or feature branch builds. Activation: SIGN=false -->
+	<profiles>
+
+		<!-- Default Profile, Active by Default. Build everything from source, no p2/RCP packaging -->
+		<profile>
+			<id>defaultProfile</id>
+			<modules>
+				<module>releng/profile</module>
+				<module>releng/core</module>
+				<module>releng/tooling</module>
+				<module>releng/codegen</module>
+			</modules>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Repository for Core Features : core, common, cpp , profile -->
+		<profile>
+			<id>junit-tests</id>
+			<modules>
+				<module>releng/tests</module>
+			</modules>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- #### REPOSITORY Profiles: to build sub repo #### -->
+		<!-- Repository for Profile Feature : profile -->
+		<profile>
+			<id>profile</id>
+			<modules>
+				<module>releng/profile/profile</module>
+				<module>releng/org.eclipse.papyrusrt.profile.p2</module>
+				<module>tests/junit/umlrt/profile</module>
+			</modules>
+
+			<properties>
+				<target.kind>profile</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<!-- Repository for Core Features : core, common, cpp -->
+		<profile>
+			<id>core</id>
+			<modules>
+				<module>releng/core</module>
+				<module>releng/org.eclipse.papyrusrt.core.p2</module>
+				<module>releng/tests</module>
+			</modules>
+
+			<properties>
+				<target.kind>core</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Repository for Tooling Features: tooling and migration -->
+		<profile>
+			<id>tooling</id>
+			<modules>
+				<module>releng/tooling</module>
+				<module>releng/org.eclipse.papyrusrt.tooling.p2</module>
+				<module>releng/tests</module>
+			</modules>
+			<properties>
+				<target.kind>tooling</target.kind>
+			</properties>
+
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Repository for Codegen Features: codegen, rts and xtumlrt -->
+		<profile>
+			<id>codegen</id>
+			<modules>
+				<module>releng/codegen</module>
+				<module>releng/org.eclipse.papyrusrt.codegen.p2</module>
+				<module>releng/tests</module>
+			</modules>
+			<properties>
+				<target.kind>codegen</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+
+		<!-- #### GERRIT Profiles: Component and there related test ### -->
+
+		<!-- tooling Gerrit Profile,to run Tooling module and the dependency tests -->
+		<profile>
+			<id>tooling-gerrit</id>
+			<modules>
+				<module>releng/tooling/tooling</module>
+
+				<module>tests/junit/umlrt/tooling</module>
+				<!-- <module>tests/junit/umlrt/migration</module> -->
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+			</modules>
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- core Gerrit Profile,to run core module and the dependency tests -->
+		<profile>
+			<id>core-gerrit</id>
+			<modules>
+				<module>releng/core/core</module>
+
+				<module>tests/junit/umlrt/core</module>
+				<!-- <module>tests/junit/umlrt/tooling</module> -->
+				<!-- <module>tests/junit/umlrt/migration</module> -->
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+
+			</modules>
+
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+		</profile>
+
+
+		<!-- Common Gerrit Profile,to run common module and the dependency tests -->
+		<profile>
+			<id>common-gerrit</id>
+			<modules>
+				<module>releng/core/common</module>
+
+				<!-- <module>tests/junit/umlrt/core</module> -->
+				<module>tests/junit/umlrt/common</module>
+				<!-- <module>tests/junit/umlrt/tooling</module> -->
+				<!-- <module>tests/junit/umlrt/migration</module> -->
+				<!-- <module>tests/junit/umlrt/codegen</module> -->
+				<!-- <module>tests/junit/framework/org.eclipse.papyrusrt.junit</module> -->
+			</modules>
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Profile Gerrit Profile,to run Profile module and the dependency tests -->
+		<profile>
+			<id>profile-gerrit</id>
+			<modules>
+				<module>releng/profile/profile</module>
+
+				<module>tests/junit/umlrt/profile</module>
+				<!-- 
+				<module>tests/junit/umlrt/core</module>
+				<module>tests/junit/umlrt/common</module>
+				<module>tests/junit/umlrt/tooling</module>
+				<module>tests/junit/umlrt/cpp</module>
+				<module>tests/junit/umlrt/migration</module>
+				<module>tests/junit/umlrt/codegen</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+				 -->
+
+			</modules>
+			<properties>
+				<target.kind>profile</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- codegen Gerrit Profile,to run codegen module and the dependency tests -->
+		<profile>
+			<id>codegen-gerrit</id>
+			<modules>
+				<!-- Until we make separate Gerrit builds for Modellib and xtext this 
+					includes those, too. -->
+				<module>releng/codegen</module>
+				<!-- <module>releng/codegen/codegen</module> --> <!-- When Modellib and xtext are separate. -->
+
+				<module>tests/junit/umlrt/codegen</module>
+				<module>tests/junit/xtumlrt/common</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+
+				<!-- wait for split of xtumlrt from codegen <module>tests/junit/umlrt/xtumlrt</module> -->
+			</modules>
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+
+		<!-- xtumlrt Gerrit Profile,to run xtumlrt module and the dependency tests -->
+
+		<profile>
+			<id>xtumlrt-gerrit</id>
+			<modules>
+				<module>releng/codegen/xtumlrt</module>
+
+				<module>tests/junit/umlrt/codegen</module>
+				<module>tests/junit/xtumlrt/common</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+			</modules>
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- xtumlrt Gerrit Profile,to run xtumlrt module and the dependency tests -->
+
+		<profile>
+			<id>modellib-gerrit</id>
+			<modules>
+				<module>releng/codegen/modellib</module>
+
+				<module>tests/junit/umlrt/codegen</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+			</modules>
+			<properties>
+				<eclipse.targetrelease>${eclipse.release}.rt.included</eclipse.targetrelease>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+
+		<!-- cpp Gerrit Profile,to run cpp module and the dependency tests -->
+		<profile>
+			<id>cpp-gerrit</id>
+			<modules>
+				<module>releng/core/common</module> <!-- need common because cpp has dependencies towards common -->
+				<module>releng/core/core</module> <!-- need core because cpp has dependencies towards core -->
+				<module>releng/core/cpp</module>
+				<module>tests/junit/umlrt/cpp</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+			</modules>
+			<properties>
+				<target.kind>core</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- migration Gerrit Profile,to run cpp module and the dependency tests -->
+		<profile>
+			<id>migration-gerrit</id>
+			<modules>
+				<module>releng/tooling/migration</module>
+
+				<module>tests/junit/umlrt/migration</module>
+				<module>tests/junit/framework/org.eclipse.papyrusrt.junit</module>
+			</modules>
+			<properties>
+				<target.kind>rt.included</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+
+		<!-- ###### RELENG ans QUALITY Profiles ##### -->
+
+
+		<!-- Releng profile, to build product, rcp, p2 and Papyrus RT feature -->
+		<profile>
+			<id>releng</id>
+			<modules>
+				<module>releng</module>
+			</modules>
+			<properties>
+				<target.kind>releng</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Releng profile, to build product, rcp, p2 and Papyrus RT feature -->
+		<profile>
+			<id>rcptt</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<modules>
+				<module>releng/org.eclipse.papyrusrt.rcptt</module>
+			</modules>
+		</profile>
+
+		<!-- Installer profile, to build the Papyrus-RT Installer product -->
+		<profile>
+			<id>installer</id>
+			<modules>
+				<module>releng/installer</module>
+			</modules>
+			<properties>
+				<target.kind>installer</target.kind>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<!-- Quality Profile to run Sonar, CheckStyle and FindBugs Report -->
+		<profile>
+			<id>quality</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<version>${maven-checkstyle-version}</version>
+						<executions>
+							<execution>
+								<id>checkstyle</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>checkstyle</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.slf4j</groupId>
+								<artifactId>jcl-over-slf4j</artifactId>
+								<version>1.7.5</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>${maven-findbugs-version}</version>
+						<configuration>
+							<xmlOutput>true</xmlOutput>
+							<failOnError>false</failOnError>
+						</configuration>
+						<executions>
+							<execution>
+								<id>findbugs</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>findbugs</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.ant</groupId>
+								<artifactId>ant</artifactId>
+								<version>1.8.2</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<version>${maven-pmd-version}</version>
+						<executions>
+							<execution>
+								<id>pmd-cpd</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>pmd</goal>
+									<goal>cpd</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-surefire-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<configuration>
+							<failIfNoTests>false</failIfNoTests>
+							<useUIHarness>true</useUIHarness>
+							<useUIThread>false</useUIThread>
+							<!--<showEclipseLog>true</showEclipseLog> -->
+							<testFailureIgnore>true</testFailureIgnore>
+
+							<includes>
+								<include>${test.includes}</include>
+							</includes>
+							<excludes>
+								<exclude>${test.excludes}</exclude>
+							</excludes>
+							<bundleStartLevel>
+								<bundle>
+									<id>org.eclipse.equinox.launcher</id>
+									<level>4</level>
+									<autoStart>true</autoStart>
+								</bundle>
+							</bundleStartLevel>
+
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jxr-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+
+		<!-- Profile to Pack and Sign -->
+		<profile>
+			<id>packAndSign</id> <!-- Stable release profile. Takes more time. Eclipse servers only -->
+			<!-- Pack200 -->
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-pack200a-plugin</artifactId>
+						<version>${tychoExtrasVersion}</version>
+						<executions>
+							<execution>
+								<id>pack200-normalize</id>
+								<goals>
+									<goal>normalize</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.cbi.maven.plugins</groupId>
+						<artifactId>eclipse-jarsigner-plugin</artifactId>
+						<version>${eclipse-cbi-version}</version>
+						<executions>
+							<execution>
+								<id>sign</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-pack200b-plugin</artifactId>
+						<version>${tychoExtrasVersion}</version>
+						<executions>
+							<execution>
+								<id>pack200-pack</id>
+								<goals>
+									<goal>pack</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<defaultP2Metadata>false</defaultP2Metadata>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<activation>
+				<property>
+					<name>SIGN</name>
+					<value>true</value>
+				</property>
+			</activation>
+		</profile>
+
+		<!-- Profile to Pack only -->
+		<profile>
+			<id>pack</id> <!-- Nightly profile. Artifacts can be consumed (packed), but are not signed -->
+			<build>
+				<plugins>
+					<!-- Pack200 -->
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-pack200b-plugin</artifactId>
+						<version>${tychoExtrasVersion}</version>
+						<executions>
+							<execution>
+								<id>pack200-pack</id>
+								<goals>
+									<goal>pack</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-p2-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>attach-p2-metadata</id>
+								<phase>package</phase>
+								<goals>
+									<goal>p2-metadata</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<defaultP2Metadata>false</defaultP2Metadata>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<activation>
+				<property>
+					<name>SIGN</name>
+					<value>false</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
+
+</project>

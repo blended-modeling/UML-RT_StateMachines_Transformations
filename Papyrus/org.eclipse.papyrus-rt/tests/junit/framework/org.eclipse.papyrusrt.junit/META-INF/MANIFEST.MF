@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT JUnit Test Framework
+Bundle-SymbolicName: org.eclipse.papyrusrt.junit
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.junit;bundle-version="[4.12.0,5.0.0)";visibility:=reexport,
+ org.eclipse.ui;bundle-version="[3.107.0,4.0.0)",
+ org.eclipse.papyrus.junit.utils;bundle-version="[2.0.0,3.0.0)";visibility:=reexport,
+ org.eclipse.uml2.uml;bundle-version="[5.2.0,6.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.infra.types.core;bundle-version="[3.0.0,4.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.infra.services.edit;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.emf;bundle-version="[3.0.0,4.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.infra.emf.gmf;bundle-version="[1.2.0,2.0.0)";visibility:=reexport,
+ org.eclipse.papyrusrt.umlrt.uml;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.core;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.uml.service.types;bundle-version="[3.0.0,4.0.0)"
+Export-Package: org.eclipse.papyrusrt.junit.matchers,
+ org.eclipse.papyrusrt.junit.rules,
+ org.eclipse.papyrusrt.junit.utils
+Import-Package: com.google.common.base;version="21.0.0",
+ com.google.common.collect;version="21.0.0",
+ com.google.common.primitives;version="21.0.0"

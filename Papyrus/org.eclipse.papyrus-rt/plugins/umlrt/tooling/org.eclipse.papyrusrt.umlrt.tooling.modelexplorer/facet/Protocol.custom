@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:Customization xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:custom="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/custom" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:efacet="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet" xmlns:javaQuery="http://www.eclipse.org/papyrus/emf/facet/query/java/0.2.incubation/javaquery" xmlns:query="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query" name="UML-RT Protocols" documentation="Simplification of the display of UML-RT protocols" mustBeLoadedByDefault="true" rank="-100">
+  <eClassifiers xsi:type="efacet:Facet" name="ProtocolContainerFacet" documentation="This element represents the Package stereotyped PackageContainer as protocol definition" conformanceTypedElement="//ProtocolContainerFacet/isProtocolContainer">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+    <facetOperations name="isProtocolContainer" documentation="Test if the current Package is stereotyped ProtocolContainer">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsProtocolContainerQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="ProtocolContainerContainersFacet" documentation="This element represents the Packages that contain ProtocolContainers" conformanceTypedElement="//ProtocolContainerContainersFacet/isProtocolContainersContainer">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+    <facetOperations name="isProtocolContainersContainer">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsProtocolContainersContainerQuery"/>
+    </facetOperations>
+    <facetOperations name="DisplayOnlyContainmentReferencesExceptPackagedElement" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetVisiblePackageUMLRTReferencesQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="ProtocolContainerHidden" documentation="hide the protocol containers from their parent package" extendedFacets="//ProtocolContainerContainersFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="filteredPackagedElements" upperBound="-1" derived="true" documentation="Representation of the packaged Elements, replacing protocolcontainers by protocols">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//PackageableElement"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainerHidden/GetFilteredProtocolsPackageElements"/>
+    </facetElements>
+    <facetOperations name="GetFilteredProtocolsPackageElements" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//PackageableElement"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetFilteredProtocolsPackageElementsQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="ProtocolFacet" documentation="Facet that represents Protocol Collaboration as the main holder for RT protocols" conformanceTypedElement="//ProtocolFacet/isProtocol">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Collaboration"/>
+    <facetOperations name="isProtocol">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsProtocolQuery"/>
+    </facetOperations>
+    <facetOperations name="DisplayNoReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="ProtocolContainment_OnlyRTMessages" documentation="Display RTMessages under the protocol and nothing else" extendedFacets="//ProtocolFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="generalization" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetGeneralization"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedOut" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="out"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedIn" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="in"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedInOut" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="inOut"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="out" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="out"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="in" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="in"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inOut" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetRTMessages">
+        <arguments xsi:type="query:StringLiteralQuery" value="inOut"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="comments" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+      <query xsi:type="query:OperationCallQuery" operation="//ProtocolContainment_OnlyRTMessages/GetOwnedComments"/>
+    </facetElements>
+    <facetOperations name="GetRTMessages" upperBound="-1" documentation="Returns inherited or locally defined messages from the specified message set.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <eParameters name="directionKind" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eParameters>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetRTMessagesQuery"/>
+    </facetOperations>
+    <facetOperations name="GetOwnedComments" upperBound="-1" documentation="Returns all comments owned by the protocol">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetOwnedComments"/>
+    </facetOperations>
+    <facetOperations name="HideCollapseLinks">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="eStructuralFeature">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.collaboration.HideCollapseLinksExceptDirectionQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/collapseLink"/>
+    </facetOperations>
+    <facetOperations name="GetGeneralization">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetGeneralizationQuery"/>
+    </facetOperations>
+  </eClassifiers>
+</custom:Customization>

@@ -1,0 +1,48 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: Synchro_32_SynchronizationOfCapsulePart
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _jAkb0JpwEeWSHptStDmSKg
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:30 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+// Open Model
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+
+// Open Diagram and create a New Capsule
+with [get-view "Model Explorer" | get-tree] {
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+    get-item RootElement | click
+    select RootElement | get-menu "New UML-RT Child/Capsule" | click
+}
+
+// Create A New Capsule Pasrt 
+get-view "Model Explorer" | get-tree | select "RootElement/«Capsule» Capsule1" | get-menu "New UML-RT Child/CapsulePart" 
+    | click
+get-menu "Capsule Part with existing Capsule..." | click
+with [get-window "Select Capsule"] {
+    get-tree | select "RootElement/«Capsule» Capsule2"
+    get-button OK | click
+}
+
+// test that the CapsulePart is present into the Diagram as a RTPropertyEditPart and Named as "capsule2: Capsule2"
+get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | mouse-move 633 204 -height 365 -width 647
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1] {
+    get-property "getChildren().RTClassCompositeCompartmentEditPart[2].getChildren().RTPropertyPartEditPart[0].getClassName()" 
+        | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.RTPropertyPartEditPart" | verify-true
+    get-property "getChildren().RTClassCompositeCompartmentEditPart[2].getChildren().RTPropertyPartEditPart[0].getPrimaryShape().getClassName()" 
+        | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.figures.RTPropertyPartFigure" | verify-true
+    get-property "getChildren().RTClassCompositeCompartmentEditPart[2].getChildren().RTPropertyPartEditPart[0].getPrimaryShape().getNameLabel().getText()" 
+        | equals "capsule2: Capsule2" | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

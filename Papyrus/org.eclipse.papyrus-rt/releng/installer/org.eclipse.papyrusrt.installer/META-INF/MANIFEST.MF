@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.papyrusrt.installer;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: %pluginProvider
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.oomph.setup.installer;bundle-version="1.5.0",
+ org.eclipse.oomph.setup.core;bundle-version="1.6.0",
+ org.eclipse.oomph.util;bundle-version="1.5.0",
+ org.eclipse.core.runtime;bundle-version="3.10.0",
+ org.eclipse.swt;bundle-version="3.103.0",
+ org.eclipse.jface;bundle-version="3.10.0"

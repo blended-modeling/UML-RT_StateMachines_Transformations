@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<elementtypesconfigurations:ElementTypeSetConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmi:id="_sHw4IMQMEeS2vZeHP4gaVg" description="Simple visual element types in support of diagram tests" identifier="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.simple" name="UMLRealTime-Test" metamodelNsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.RTPort_Shape" identifier="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.RTPort_Shape" name="Port (Test)" hint="Port_Shape">
+    <iconEntry xmi:id="_o-n3gTd8EeWK7ZUbpAMB-g" iconPath="/icons/rt_port.gif" bundleId="org.eclipse.papyrusrt.umlrt.tooling.ui"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ExternalBehaviorPort"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#org.eclipse.papyrus.umldi.Port_Shape"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.InternalBehaviorPort_Shape" identifier="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.InternalBehaviorPort_Shape" name="Internal Behavior Port (Test)" hint="Port_Shape">
+    <iconEntry xmi:id="_E7ZwQRBqEeaM3pwxY5WOXQ" iconPath="/icons/rt_port.gif" bundleId="org.eclipse.papyrusrt.umlrt.tooling.ui"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.InternalBehaviorPort"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#org.eclipse.papyrus.umldi.Port_Shape"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.ServiceAccessPoint_Shape" identifier="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.ServiceAccessPoint_Shape" name="SAP Port (Test)" hint="Port_Shape">
+    <iconEntry xmi:id="_DQUSAcKkEeab5OFY0YDgyg" iconPath="/icons/rt_port.gif" bundleId="org.eclipse.papyrusrt.umlrt.tooling.ui"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ServiceAccessPoint"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#org.eclipse.papyrus.umldi.Port_Shape"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.ServiceProvisionPoint_Shape" identifier="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests.ServiceProvisionPoint_Shape" name="SPP Port (Test)" hint="Port_Shape">
+    <iconEntry xmi:id="_YH490cKkEeab5OFY0YDgyg" iconPath="/icons/rt_port.gif" bundleId="org.eclipse.papyrusrt.umlrt.tooling.ui"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ServiceProvisionPoint"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="../../../../plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#org.eclipse.papyrus.umldi.Port_Shape"/>
+  </elementTypeConfigurations>
+</elementtypesconfigurations:ElementTypeSetConfiguration>

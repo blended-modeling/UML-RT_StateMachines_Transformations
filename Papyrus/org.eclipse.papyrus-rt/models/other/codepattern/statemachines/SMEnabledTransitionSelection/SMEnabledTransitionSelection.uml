@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_oJczIGqhEeSAEqNd4uIZjA" name="SMEnabledTransitionSelection">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_oJczIWqhEeSAEqNd4uIZjA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="__AmKAGqhEeSAEqNd4uIZjA" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__AmKAWqhEeSAEqNd4uIZjA" name="capsule1" type="__AmxEGqhEeSAEqNd4uIZjA" aggregation="composite" association="__An_Q2qhEeSAEqNd4uIZjA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__AmKAmqhEeSAEqNd4uIZjA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__AmKA2qhEeSAEqNd4uIZjA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__AmxEGqhEeSAEqNd4uIZjA" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="__AmxEWqhEeSAEqNd4uIZjA" name="Port1" type="__An_MWqhEeSAEqNd4uIZjA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="__AmxEmqhEeSAEqNd4uIZjA" name="StateMachine1" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="__AmxE2qhEeSAEqNd4uIZjA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="__AmxFGqhEeSAEqNd4uIZjA" name="t0" source="__AmxImqhEeSAEqNd4uIZjA" target="__AmxI2qhEeSAEqNd4uIZjA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxFWqhEeSAEqNd4uIZjA" name="ta0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta0\n&quot;;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="__AmxFmqhEeSAEqNd4uIZjA" name="t1" source="__AmxI2qhEeSAEqNd4uIZjA" target="__AmxJmqhEeSAEqNd4uIZjA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxF2qhEeSAEqNd4uIZjA" name="ta1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta1\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="__AmxGGqhEeSAEqNd4uIZjA" name="trig1" event="__An_PmqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="__AmxGWqhEeSAEqNd4uIZjA" name="t2" source="__AmxJ2qhEeSAEqNd4uIZjA" target="__AmxXmqhEeSAEqNd4uIZjA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxGmqhEeSAEqNd4uIZjA" name="ta2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta2\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="__AmxG2qhEeSAEqNd4uIZjA" name="trig2" event="__An_P2qhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="__AmxHGqhEeSAEqNd4uIZjA" name="t3" source="__AmxXmqhEeSAEqNd4uIZjA" target="__AmxXWqhEeSAEqNd4uIZjA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxHWqhEeSAEqNd4uIZjA" name="ta3">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta3\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="__AmxHmqhEeSAEqNd4uIZjA" name="trig3" event="__An_QGqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="__AmxH2qhEeSAEqNd4uIZjA" name="t4" source="__AmxXmqhEeSAEqNd4uIZjA" target="__AmxKGqhEeSAEqNd4uIZjA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxIGqhEeSAEqNd4uIZjA" name="ta4">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta4\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="__AmxIWqhEeSAEqNd4uIZjA" name="trig4" event="__An_QWqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="__AmxImqhEeSAEqNd4uIZjA" name="i0"/>
+          <subvertex xmi:type="uml:State" xmi:id="__AmxI2qhEeSAEqNd4uIZjA" name="s0">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxJGqhEeSAEqNd4uIZjA" name="ena0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena0\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxJWqhEeSAEqNd4uIZjA" name="exa0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa0\n&quot;;
+</body>
+            </exit>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="__AmxJmqhEeSAEqNd4uIZjA" name="s1">
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="__AmxJ2qhEeSAEqNd4uIZjA" name="q0" kind="exitPoint"/>
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="__AmxKGqhEeSAEqNd4uIZjA" name="p0" kind="entryPoint"/>
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxKWqhEeSAEqNd4uIZjA" name="ena1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena1\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxKmqhEeSAEqNd4uIZjA" name="exa1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa1\n&quot;;
+</body>
+            </exit>
+            <region xmi:type="uml:Region" xmi:id="__AmxK2qhEeSAEqNd4uIZjA" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="__AmxLGqhEeSAEqNd4uIZjA" name="t0" source="__AmxPmqhEeSAEqNd4uIZjA" target="__AmxP2qhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxLWqhEeSAEqNd4uIZjA" name="ta10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta10\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxLmqhEeSAEqNd4uIZjA" name="t1" source="__AmxP2qhEeSAEqNd4uIZjA" target="__AmxQmqhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxL2qhEeSAEqNd4uIZjA" name="ta11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta11\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="__AmxMGqhEeSAEqNd4uIZjA" name="trig11" event="__An_PmqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxMWqhEeSAEqNd4uIZjA" name="t2" source="__AmxP2qhEeSAEqNd4uIZjA" target="__AmxQ2qhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxMmqhEeSAEqNd4uIZjA" name="ta12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta12\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="__AmxM2qhEeSAEqNd4uIZjA" name="trig12" event="__An_P2qhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxNGqhEeSAEqNd4uIZjA" name="t3" source="__AmxQmqhEeSAEqNd4uIZjA" target="__AmxWmqhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxNWqhEeSAEqNd4uIZjA" name="ta13">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta13\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="__AmxNmqhEeSAEqNd4uIZjA" name="trig13" event="__An_P2qhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxN2qhEeSAEqNd4uIZjA" name="t4" source="__AmxWmqhEeSAEqNd4uIZjA" target="__AmxWWqhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxOGqhEeSAEqNd4uIZjA" name="ta14">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta14\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="__AmxOWqhEeSAEqNd4uIZjA" name="trig14" event="__An_QWqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxOmqhEeSAEqNd4uIZjA" name="t5" source="__AmxRGqhEeSAEqNd4uIZjA" target="__AmxWmqhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxO2qhEeSAEqNd4uIZjA" name="ta15">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta15\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="__AmxPGqhEeSAEqNd4uIZjA" name="t6" source="__AmxKGqhEeSAEqNd4uIZjA" target="__AmxWWqhEeSAEqNd4uIZjA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxPWqhEeSAEqNd4uIZjA" name="ta6">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta16\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="__AmxPmqhEeSAEqNd4uIZjA" name="i0"/>
+              <subvertex xmi:type="uml:State" xmi:id="__AmxP2qhEeSAEqNd4uIZjA" name="s0">
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxQGqhEeSAEqNd4uIZjA" name="ena10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena10\n&quot;;
+</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxQWqhEeSAEqNd4uIZjA" name="exa10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa10\n&quot;;</body>
+                </exit>
+              </subvertex>
+              <subvertex xmi:type="uml:State" xmi:id="__AmxQmqhEeSAEqNd4uIZjA" name="s1">
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="__AmxQ2qhEeSAEqNd4uIZjA" name="p0" kind="entryPoint"/>
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="__AmxRGqhEeSAEqNd4uIZjA" name="q0" kind="exitPoint"/>
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxRWqhEeSAEqNd4uIZjA" name="ena11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena11\n&quot;;</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxRmqhEeSAEqNd4uIZjA" name="exa11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa11\n&quot;;</body>
+                </exit>
+                <region xmi:type="uml:Region" xmi:id="__AmxR2qhEeSAEqNd4uIZjA" name="Region1">
+                  <transition xmi:type="uml:Transition" xmi:id="__AmxSGqhEeSAEqNd4uIZjA" name="t0" source="__AmxUmqhEeSAEqNd4uIZjA" target="__AmxU2qhEeSAEqNd4uIZjA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxSWqhEeSAEqNd4uIZjA" name="ta110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta110\n&quot;;</body>
+                    </effect>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="__AmxSmqhEeSAEqNd4uIZjA" name="t1" source="__AmxU2qhEeSAEqNd4uIZjA" target="__AmxVmqhEeSAEqNd4uIZjA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxS2qhEeSAEqNd4uIZjA" name="ta111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta111\n&quot;;</body>
+                    </effect>
+                    <trigger xmi:type="uml:Trigger" xmi:id="__AmxTGqhEeSAEqNd4uIZjA" name="trig111" event="__An_P2qhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="__AmxTWqhEeSAEqNd4uIZjA" name="t2" source="__AmxQ2qhEeSAEqNd4uIZjA" target="__AmxVmqhEeSAEqNd4uIZjA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxTmqhEeSAEqNd4uIZjA" name="ta112">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta112\n&quot;;</body>
+                    </effect>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="__AmxT2qhEeSAEqNd4uIZjA" name="t3" source="__AmxVmqhEeSAEqNd4uIZjA" target="__AmxRGqhEeSAEqNd4uIZjA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="__AmxUGqhEeSAEqNd4uIZjA" name="ta113">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta113\n&quot;;</body>
+                    </effect>
+                    <trigger xmi:type="uml:Trigger" xmi:id="__AmxUWqhEeSAEqNd4uIZjA" name="trig113" event="__An_QGqhEeSAEqNd4uIZjA" port="__AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA __AmxEWqhEeSAEqNd4uIZjA"/>
+                  </transition>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="__AmxUmqhEeSAEqNd4uIZjA" name="i0"/>
+                  <subvertex xmi:type="uml:State" xmi:id="__AmxU2qhEeSAEqNd4uIZjA" name="s0">
+                    <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxVGqhEeSAEqNd4uIZjA" name="ena110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ena110\n&quot;;</body>
+                    </entry>
+                    <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxVWqhEeSAEqNd4uIZjA" name="exa110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.exa110\n&quot;;</body>
+                    </exit>
+                  </subvertex>
+                  <subvertex xmi:type="uml:State" xmi:id="__AmxVmqhEeSAEqNd4uIZjA" name="s1">
+                    <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxV2qhEeSAEqNd4uIZjA" name="ena111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ena111\n&quot;;</body>
+                    </entry>
+                    <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxWGqhEeSAEqNd4uIZjA" name="exa111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.exa111\n&quot;;</body>
+                    </exit>
+                  </subvertex>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="__AmxWWqhEeSAEqNd4uIZjA" name="h1" kind="deepHistory"/>
+                </region>
+              </subvertex>
+              <subvertex xmi:type="uml:State" xmi:id="__AmxWmqhEeSAEqNd4uIZjA" name="s2">
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxW2qhEeSAEqNd4uIZjA" name="ena12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena12\n&quot;;</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxXGqhEeSAEqNd4uIZjA" name="exa12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa12\n&quot;;</body>
+                </exit>
+              </subvertex>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="__AmxXWqhEeSAEqNd4uIZjA" name="h1" kind="deepHistory"/>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="__AmxXmqhEeSAEqNd4uIZjA" name="s2">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="__AmxX2qhEeSAEqNd4uIZjA" name="ena2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena2\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="__AmxYGqhEeSAEqNd4uIZjA" name="exa2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa2\n&quot;;
+</body>
+            </exit>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="__An_MGqhEeSAEqNd4uIZjA" name="ProtocolContainer1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="__An_MWqhEeSAEqNd4uIZjA" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="__An_MmqhEeSAEqNd4uIZjA" name="InSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__An_M2qhEeSAEqNd4uIZjA" name="e1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__An_NGqhEeSAEqNd4uIZjA" name="e2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__An_NWqhEeSAEqNd4uIZjA" name="e3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__An_NmqhEeSAEqNd4uIZjA" name="e4"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="__An_N2qhEeSAEqNd4uIZjA" name="e5"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="__An_OGqhEeSAEqNd4uIZjA" name="OutSignals"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="__An_OWqhEeSAEqNd4uIZjA" name="SymSignals"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="__An_OmqhEeSAEqNd4uIZjA" client="__An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA" supplier="__An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA __An_MmqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="__An_O2qhEeSAEqNd4uIZjA" client="__An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA" supplier="__An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="__An_PGqhEeSAEqNd4uIZjA" client="__An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA" supplier="__An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA __An_OGqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="__An_PWqhEeSAEqNd4uIZjA" client="__An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA __An_MWqhEeSAEqNd4uIZjA" supplier="__An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA __An_OWqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="__An_PmqhEeSAEqNd4uIZjA" name="CallEvent1" operation="__An_M2qhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="__An_P2qhEeSAEqNd4uIZjA" name="CallEvent2" operation="__An_NGqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="__An_QGqhEeSAEqNd4uIZjA" name="CallEvent3" operation="__An_NWqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="__An_QWqhEeSAEqNd4uIZjA" name="CallEvent4" operation="__An_NmqhEeSAEqNd4uIZjA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="__An_QmqhEeSAEqNd4uIZjA" name="CallEvent5" operation="__An_N2qhEeSAEqNd4uIZjA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="__An_Q2qhEeSAEqNd4uIZjA" memberEnd="__An_RGqhEeSAEqNd4uIZjA __AmKAWqhEeSAEqNd4uIZjA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="__An_RGqhEeSAEqNd4uIZjA" name="top" type="__AmKAGqhEeSAEqNd4uIZjA" association="__An_Q2qhEeSAEqNd4uIZjA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__An_RWqhEeSAEqNd4uIZjA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__An_RmqhEeSAEqNd4uIZjA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_1hi1oGqhEeSAEqNd4uIZjA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1kJdsGqhEeSAEqNd4uIZjA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_2dybcGqhEeSAEqNd4uIZjA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2fbaMGqhEeSAEqNd4uIZjA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37yqgGqhEeSAEqNd4uIZjA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_39UUgGqhEeSAEqNd4uIZjA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/C_Cpp/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="__A3PwGqhEeSAEqNd4uIZjA" base_Class="__AmKAGqhEeSAEqNd4uIZjA"/>
+  <UMLRealTime:CapsulePart xmi:id="__A5E8GqhEeSAEqNd4uIZjA" base_Property="__AmKAWqhEeSAEqNd4uIZjA"/>
+  <UMLRealTime:Capsule xmi:id="__A5sAGqhEeSAEqNd4uIZjA" base_Class="__AmxEGqhEeSAEqNd4uIZjA"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="__A6TEGqhEeSAEqNd4uIZjA" base_StateMachine="__AmxEmqhEeSAEqNd4uIZjA"/>
+  <UMLRealTime:Protocol xmi:id="__A66IGqhEeSAEqNd4uIZjA" base_Collaboration="__An_MWqhEeSAEqNd4uIZjA"/>
+  <UMLRealTime:RTMessageSet xmi:id="__A7hMGqhEeSAEqNd4uIZjA" base_Interface="__An_MmqhEeSAEqNd4uIZjA"/>
+  <UMLRealTime:RTMessageSet xmi:id="__A99cGqhEeSAEqNd4uIZjA" base_Interface="__An_OGqhEeSAEqNd4uIZjA" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="__A-kgGqhEeSAEqNd4uIZjA" base_Interface="__An_OWqhEeSAEqNd4uIZjA" rtMsgKind="inOut"/>
+</xmi:XMI>

@@ -1,0 +1,39 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: ProtocolMessage_10_SelectedInModelExplorer
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _OWKsEIyhEeaylOgvnSdRxQ
+Runtime-Version: 2.2.0.201610042323
+Save-Time: 10/14/16 12:52 PM
+Tags: ignore
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test That when we create a protocol message from the model explorer view, the protocol menu item is expanded and the new created protocol message get selected 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+with [get-view "Model Explorer" | get-tree] {
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+    select "RootElement/«Protocol» Protocol1" | get-menu -path "New UML-RT Child/OutProtocolMessage" | click
+}
+get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | mouse-move 18 547 -height 561 -width 1185
+with [get-view "Model Explorer" | get-tree] {
+
+// test that the new created protocol message is selected
+    get-item -path "RootElement/«Protocol» Protocol1/out OutProtocolMessage1 \\(\\)" | get-property selected 
+        | equals true | verify-true
+        
+// test that the Protocol tree item is expanded
+    get-item -path "RootElement/«Protocol» Protocol1" | get-property "getExpanded()" | equals true | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

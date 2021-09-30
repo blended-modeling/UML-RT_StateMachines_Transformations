@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.compare.rcp.ui.filters">
+      <filter
+            activeByDefault="true"
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.ui.internal.diagram.UMLRTAutomaticDiagramChangesFilter"
+            label="UMLRT Automatic Diagram Changes Filter">
+      </filter>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.rcp.ui.differenceGroupExtender">
+      <differenceGroupExtender
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.ui.internal.differenceGroup.ProtocolMessageGroupExtender">
+      </differenceGroupExtender>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.rcp.ui.differenceGroupExtender">
+      <differenceGroupExtender
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.ui.internal.differenceGroup.PapyrusFilteringDifferenceGroupExtender">
+      </differenceGroupExtender>
+   </extension>
+</plugin>

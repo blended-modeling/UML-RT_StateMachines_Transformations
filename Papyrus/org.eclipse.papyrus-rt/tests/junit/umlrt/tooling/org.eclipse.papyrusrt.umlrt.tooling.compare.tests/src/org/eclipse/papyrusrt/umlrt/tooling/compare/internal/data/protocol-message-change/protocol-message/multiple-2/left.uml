@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_sXzaQOHoEeWzwPJ4Fqcgdw" name="RootElement">
+    <packagedElement xmi:type="uml:Package" xmi:id="_a47joOwwEeWjsqNZEaWDqg" name="Protocol1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_a45HYOwwEeWjsqNZEaWDqg" name="Protocol1">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_a5BDMOwwEeWjsqNZEaWDqg" client="_a45HYOwwEeWjsqNZEaWDqg" supplier="_a4-m8OwwEeWjsqNZEaWDqg" contract="_a4-m8OwwEeWjsqNZEaWDqg">
+          <name xsi:nil="true"/>
+        </interfaceRealization>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_a5IX8OwwEeWjsqNZEaWDqg" client="_a45HYOwwEeWjsqNZEaWDqg" supplier="_a5FUoOwwEeWjsqNZEaWDqg" contract="_a5FUoOwwEeWjsqNZEaWDqg">
+          <name xsi:nil="true"/>
+        </interfaceRealization>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_a4-m8OwwEeWjsqNZEaWDqg" name="Protocol1">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_HMUMEP1oEeWxdoMk6XzmWA" name="InProtocolMessage1"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_a5BqQOwwEeWjsqNZEaWDqg" name="Protocol1~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a5EGgOwwEeWjsqNZEaWDqg" client="_a45HYOwwEeWjsqNZEaWDqg" supplier="_a5BqQOwwEeWjsqNZEaWDqg">
+        <name xsi:nil="true"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_a5EtkOwwEeWjsqNZEaWDqg" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_a5FUoOwwEeWjsqNZEaWDqg" name="Protocol1IO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a5JmEOwwEeWjsqNZEaWDqg" client="_a45HYOwwEeWjsqNZEaWDqg" supplier="_a5FUoOwwEeWjsqNZEaWDqg">
+        <name xsi:nil="true"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_HMXPYP1oEeWxdoMk6XzmWA" operation="_HMUMEP1oEeWxdoMk6XzmWA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_setTgOHoEeWzwPJ4Fqcgdw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_seuhoOHoEeWzwPJ4Fqcgdw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:ProtocolContainer xmi:id="_a48xwOwwEeWjsqNZEaWDqg" base_Package="_a47joOwwEeWjsqNZEaWDqg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_a4_1EOwwEeWjsqNZEaWDqg" base_Interface="_a4-m8OwwEeWjsqNZEaWDqg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_a5C4YOwwEeWjsqNZEaWDqg" base_Interface="_a5BqQOwwEeWjsqNZEaWDqg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_a5GiwOwwEeWjsqNZEaWDqg" base_Interface="_a5FUoOwwEeWjsqNZEaWDqg" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_a5K0MOwwEeWjsqNZEaWDqg" base_Collaboration="_a45HYOwwEeWjsqNZEaWDqg"/>
+</xmi:XMI>

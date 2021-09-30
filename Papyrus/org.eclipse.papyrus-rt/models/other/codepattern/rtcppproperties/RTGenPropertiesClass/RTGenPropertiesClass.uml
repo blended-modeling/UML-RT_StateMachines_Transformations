@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_TGhFMEBjEeWaR-eiBezS_w" name="RootElement">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TwWFUEBjEeWaR-eiBezS_w">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WFKnoEBjEeWaR-eiBezS_w" name="Class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YxvioEBjEeWaR-eiBezS_w" name="Attribute1" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_drlmcEBjEeWaR-eiBezS_w" name="Attribute2" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gDmmsEBjEeWaR-eiBezS_w" name="Attribute3">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NT6w0HQeEeWH1ILavSyaxA" name="Top" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_TGhFMUBjEeWaR-eiBezS_w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TGhFMkBjEeWaR-eiBezS_w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_nPiB4EBjEeWaR-eiBezS_w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I4XLgHQeEeWH1ILavSyaxA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4XLgXQeEeWH1ILavSyaxA" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4XLgnQeEeWH1ILavSyaxA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4XLg3QeEeWH1ILavSyaxA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4XLhHQeEeWH1ILavSyaxA" key="Date" value="2015-09-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I4XLhXQeEeWH1ILavSyaxA" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nPj3EEBjEeWaR-eiBezS_w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <RTCppProperties:PassiveClassProperties xmi:id="__WmIgEBjEeWaR-eiBezS_w" generateEqualityOperator="true" generateExtractionOperator="true" generateInequalityOperator="true" generateInsertionOperator="true" base_Class="_WFKnoEBjEeWaR-eiBezS_w" privateDeclarations="// this is private&#xA;int i;&#xA;char c;" protectedDeclarations="// this is protected&#xA;float f;&#xA;void * p;&#xA;" publicDeclarations="// this is public&#xA;bool b;&#xA;Class1 c;&#xA;"/>
+  <UMLRealTime:Capsule xmi:id="_NUbuMHQeEeWH1ILavSyaxA" base_Class="_NT6w0HQeEeWH1ILavSyaxA"/>
+</xmi:XMI>

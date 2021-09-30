@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.xtumlrt.xtext</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+
+	<parent>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<artifactId>org.eclipse.papyrusrt.xtumlrt.xtext.main</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<build>
+		<resources>
+			<resource>
+				<targetPath>org/eclipse/papyrusrt/xtumlrt/xtext</targetPath>
+				<directory>src-gen/org/eclipse/papyrusrt/xtumlrt/xtext</directory>
+				<includes>
+					<include>Umlrt.xtextbin</include>
+				</includes>
+			</resource>
+			<resource>
+				<targetPath>org/eclipse/papyrusrt/xtumlrt/xtext/parser/antlr/internal</targetPath>
+				<directory>src-gen/org/eclipse/papyrusrt/xtumlrt/xtext/parser/antlr/internal</directory>
+				<includes>
+					<include>InternalUmlrt.tokens</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean.version}</version>
+				<executions>
+					<execution>
+						<id>gen-clean</id>
+						<phase>clean</phase>
+						<!-- Clean up generated files in all projects -->
+						<configuration>
+							<filesets combine.children="append">
+								<fileset>
+									<directory>${src-gen.dir}</directory>
+								</fileset>
+								<fileset>
+									<directory>${xtend-gen.dir}</directory>
+								</fileset>
+								<!-- clean ui plugin as well -->
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+								</fileset>
+								<!-- clean test fragment as well -->
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${exec-maven.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includeProjectDependencies>false</includeProjectDependencies>
+					<includePluginDependencies>true</includePluginDependencies>
+					<mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
+					<arguments>
+						<argument>file://${project.basedir}/src/org/eclipse/papyrusrt/xtumlrt/xtext/GenerateTumlrt.mwe2</argument>
+						<argument>-p</argument>
+						<argument>runtimeProject=/${project.basedir}</argument>
+						<argument>-p</argument>
+						<argument>workspace=${project.basedir}/../../../..</argument>
+					</arguments>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.xtext</groupId>
+						<artifactId>org.eclipse.xtext.xtext</artifactId>
+						<version>${xtext.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.xtext</groupId>
+						<artifactId>org.eclipse.xtext.xbase</artifactId>
+						<version>${xtext.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.papyrusrt</groupId>
+						<artifactId>org.eclipse.papyrusrt.xtumlrt.common.model</artifactId>
+						<version>1.0.0-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.papyrusrt</groupId>
+						<artifactId>org.eclipse.papyrusrt.xtumlrt.interactions.model</artifactId>
+						<version>1.0.0-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.papyrusrt</groupId>
+						<artifactId>org.eclipse.papyrusrt.xtumlrt.statemach.model</artifactId>
+						<version>1.0.0-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.papyrusrt</groupId>
+						<artifactId>org.eclipse.papyrusrt.xtumlrt.statemach.ext.model</artifactId>
+						<version>1.0.0-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.papyrusrt</groupId>
+						<artifactId>org.eclipse.papyrusrt.xtumlrt.umlrt.model</artifactId>
+						<version>1.0.0-SNAPSHOT</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											exec-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.2.1,)
+										</versionRange>
+										<goals>
+											<goal>java</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

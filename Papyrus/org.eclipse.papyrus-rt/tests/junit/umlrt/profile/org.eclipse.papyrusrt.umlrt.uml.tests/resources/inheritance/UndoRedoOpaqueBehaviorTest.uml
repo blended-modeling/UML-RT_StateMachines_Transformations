@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRTStateMachines="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_j1YCbRUeEeeg-Ih23C3MRA" name="UndoRedoOpaqueBehaviorTest">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1YCbhUeEeeg-Ih23C3MRA" source="http://www.eclipse.org/papyrus-rt/language/1.0.0">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j1YCbxUeEeeg-Ih23C3MRA" key="language" value="umlrt-cpp"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lgSrIBUeEeeg-Ih23C3MRA" name="Capsule1" classifierBehavior="_moqBYBUeEeeg-Ih23C3MRA" isActive="true">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_moqBYBUeEeeg-Ih23C3MRA" name="StateMachine" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_mo9jYBUeEeeg-Ih23C3MRA" name="Region">
+          <transition xmi:type="uml:Transition" xmi:id="_mpQeUBUeEeeg-Ih23C3MRA" name="Initial" source="_mo9jYRUeEeeg-Ih23C3MRA" target="_mpGtURUeEeeg-Ih23C3MRA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_mo9jYRUeEeeg-Ih23C3MRA" kind="initial">
+            <name xsi:nil="true"/>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_mpGtURUeEeeg-Ih23C3MRA" name="State1">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_oZ3gUBUeEeeg-Ih23C3MRA" name="Entry" isReentrant="false">
+              <language>C++</language>
+              <body>// Entry code</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pBgIEBUeEeeg-Ih23C3MRA" name="Capsule2" classifierBehavior="_q5BDUBUeEeeg-Ih23C3MRA" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_qQ-y8BUeEeeg-Ih23C3MRA" general="_lgSrIBUeEeeg-Ih23C3MRA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_q5BDUBUeEeeg-Ih23C3MRA" name="StateMachine" redefinedClassifier="_moqBYBUeEeeg-Ih23C3MRA" isReentrant="false" extendedStateMachine="_moqBYBUeEeeg-Ih23C3MRA">
+        <region xmi:type="uml:Region" xmi:id="_q5K0URUeEeeg-Ih23C3MRA" extendedRegion="_mo9jYBUeEeeg-Ih23C3MRA">
+          <subvertex xmi:type="uml:State" xmi:id="_q5T-RBUeEeeg-Ih23C3MRA" redefinedState="_mpGtURUeEeeg-Ih23C3MRA">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_rlNa8BUeEeeg-Ih23C3MRA" redefinedClassifier="_oZ3gUBUeEeeg-Ih23C3MRA" redefinedBehavior="_oZ3gUBUeEeeg-Ih23C3MRA">
+              <language>C++</language>
+              <body>// Redefined entry code</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_j1YCcBUeEeeg-Ih23C3MRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1YCcRUeEeeg-Ih23C3MRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_j1YCchUeEeeg-Ih23C3MRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1YCcxUeEeeg-Ih23C3MRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_j1YCdBUeEeeg-Ih23C3MRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1YCdRUeEeeg-Ih23C3MRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_lkXS1hUeEeeg-Ih23C3MRA" base_Class="_lgSrIBUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTPseudostate xmi:id="_mpGtUBUeEeeg-Ih23C3MRA" base_Pseudostate="_mo9jYRUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTState xmi:id="_mpGtUhUeEeeg-Ih23C3MRA" base_State="_mpGtURUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTRegion xmi:id="_mpQeURUeEeeg-Ih23C3MRA" base_Region="_mo9jYBUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTStateMachine xmi:id="_mqAFQBUeEeeg-Ih23C3MRA" base_StateMachine="_moqBYBUeEeeg-Ih23C3MRA"/>
+  <UMLRealTime:Capsule xmi:id="_pCPu_BUeEeeg-Ih23C3MRA" base_Class="_pBgIEBUeEeeg-Ih23C3MRA"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_q5T-RxUeEeeg-Ih23C3MRA" base_RedefinableElement="_q5BDUBUeEeeg-Ih23C3MRA" rootFragment="_moqBYBUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTStateMachine xmi:id="_q56bQBUeEeeg-Ih23C3MRA" base_StateMachine="_q5BDUBUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTRegion xmi:id="_q5T-QBUeEeeg-Ih23C3MRA" base_Region="_q5K0URUeEeeg-Ih23C3MRA"/>
+  <UMLRTStateMachines:RTState xmi:id="_q5T-RRUeEeeg-Ih23C3MRA" base_State="_q5T-RBUeEeeg-Ih23C3MRA"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_so6ToBUeEeeg-Ih23C3MRA" base_RedefinableElement="_q5K0URUeEeeg-Ih23C3MRA" rootFragment="_mo9jYBUeEeeg-Ih23C3MRA"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_so6ToRUeEeeg-Ih23C3MRA" base_RedefinableElement="_q5T-RBUeEeeg-Ih23C3MRA" rootFragment="_mpGtURUeEeeg-Ih23C3MRA"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_spDdkBUeEeeg-Ih23C3MRA" base_RedefinableElement="_rlNa8BUeEeeg-Ih23C3MRA" rootFragment="_oZ3gUBUeEeeg-Ih23C3MRA"/>
+</xmi:XMI>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ElementCreationMenuModel:Folder xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ElementCreationMenuModel="http://www.eclipse.org/papyrus/infra/newchild/elementcreationmenumodel" xmlns:elementtypefilter="http://www.eclipse.org/papyrus/filters/elementtype/1.2.0" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:filters="http://www.eclipse.org/Papyrus/2014/common/filters" xmlns:rulebased="http://www.eclipse.org/papyrus/infra/types/rulebased/1.1" xmlns:umlfilters="http://www.eclipse.org/Papyrus/2014/uml/filters" label="New UML-RT Child">
+  <filter xsi:type="filters:CompoundFilter" filter="//@filter/@ownedFilter.0">
+    <ownedFilter xsi:type="umlfilters:ProfileApplied" name="isUMLRTApplied" profileQualifiedName="UMLRealTime" profileURI="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+  </filter>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Attribute">
+    <filter xsi:type="filters:CompoundFilter" filter="//@menu.0/@filter/@ownedFilter.0" operator="not">
+      <ownedFilter xsi:type="elementtypefilter:ParentMatcherFilter" parentType="org.eclipse.papyrusrt.umlrt.core.CapsulePart" subtypesCheck="true"/>
+    </filter>
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Property"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Capsule">
+    <elementType xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.Capsule"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="CapsulePart" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/icons/capsule_part.png">
+    <filter xsi:type="filters:CompoundFilter" filter="//@menu.2/@filter/@ownedFilter.0" operator="not">
+      <ownedFilter xsi:type="elementtypefilter:ParentMatcherFilter" parentType="org.eclipse.papyrusrt.umlrt.core.CapsulePart" subtypesCheck="true"/>
+    </filter>
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/elementtypes/uml-rt.tooling.ui.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.ui.capsulepartcreationwithui"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Class">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Class"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Enumeration">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Enumeration"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="EnumerationLiteral">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.EnumerationLiteral"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Operation">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Operation"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Package">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#org.eclipse.papyrus.uml.Package"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Parameter">
+    <elementType xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/elementtypes/uml-rt.tooling.ui.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.ui.protocolmsgparametercreationwithui"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Port" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/icons/rt_port.gif">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/elementtypes/uml-rt.tooling.ui.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.ui.rtportcreationwithui"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="Protocol">
+    <elementType xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.Protocol"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="OutProtocolMessage" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/icons/protocolmessage_out.gif">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ProtocolMessageOut"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="InProtocolMessage" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/icons/protocolmessage_in.gif">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ProtocolMessageIn"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="InOutProtocolMessage" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/icons/protocolmessage_inout.gif">
+    <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ProtocolMessageInOut"/>
+  </menu>
+  <menu xsi:type="ElementCreationMenuModel:CreationMenu" label="StateMachine" role="ownedBehavior">
+    <filter xsi:type="filters:CompoundFilter" filter="//@menu.14/@filter/@ownedFilter.0">
+      <ownedFilter xsi:type="umlfilters:ProfileApplied" name="isRTSMapplied" profileQualifiedName="UMLRTStateMachines" profileURI="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </filter>
+    <elementType xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.RTStateMachine"/>
+  </menu>
+</ElementCreationMenuModel:Folder>

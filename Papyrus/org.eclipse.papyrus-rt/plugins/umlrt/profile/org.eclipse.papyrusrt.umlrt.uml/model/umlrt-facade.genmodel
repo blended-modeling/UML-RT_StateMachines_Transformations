@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    copyrightText="Copyright (c) 2017 Christian W. Damus and others.&#xA;&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;  Christian W. Damus - initial API and implementation&#xA;"
+    modelDirectory="/org.eclipse.papyrusrt.umlrt.uml/src-facade" editDirectory="/org.eclipse.papyrusrt.umlrt.uml.edit/src-facade"
+    editorDirectory="/org.eclipse.papyrusrt.umlrt.uml.editor/src-facade" modelPluginID="org.eclipse.papyrusrt.umlrt.uml"
+    modelName="UMLRT" nonNLSMarkers="true" rootExtendsInterface="org.eclipse.papyrusrt.umlrt.uml.FacadeObject"
+    rootExtendsClass="org.eclipse.papyrusrt.umlrt.uml.internal.facade.impl.FacadeObjectImpl"
+    suppressEMFTypes="true" suppressEMFModelTags="true" featureMapWrapperClass=""
+    codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrusrt.umlrt.uml.tests/src-facade"
+    booleanFlagsField="fFlags" importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0"
+    copyrightFields="false" providerRootExtendsClass="org.eclipse.papyrusrt.umlrt.uml.edit.UMLRTItemProviderAdapter"
+    colorProviders="true" fontProviders="true" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/uml-rt.genmodel#//UMLRealTime"
+    interfaceNamePattern="UMLRT{0}" classNamePattern="UMLRT{0}Impl" styleProviders="true"
+    cleanup="true" factoryMethods="true" pluralizedGetters="true" cacheAdapterSupport="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
+    <details key="NON_API_INVARIANTS" value="PROCESS"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
+    <details key="INVOCATION_DELEGATES" value="PROCESS"/>
+    <details key="VALIDATION_DELEGATES" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>umlrt-facade.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="UMLRT" basePackage="org.eclipse.papyrusrt"
+      disposableProviderFactory="true" interfacePackageSuffix="uml" metaDataPackageSuffix="uml.internal.facade"
+      classPackageSuffix="uml.internal.facade.impl" utilityPackageSuffix="uml.util"
+      providerPackageSuffix="uml.provider" presentationPackageSuffix="uml.presentation"
+      testsPackageSuffix="uml.tests" generateExampleClass="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="umlrt.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//UMLRTInheritanceKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTInheritanceKind/inherited"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTInheritanceKind/redefined"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTInheritanceKind/excluded"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTInheritanceKind/none"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//UMLRTPortKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/externalBehavior"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/internalBehavior"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/relay"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/SAP"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/SPP"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPortKind/null"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//UMLRTCapsulePartKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTCapsulePartKind/fixed"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTCapsulePartKind/optional"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTCapsulePartKind/plug_in"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTCapsulePartKind/null"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//UMLRTConnectionPointKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTConnectionPointKind/entry"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTConnectionPointKind/exit"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//UMLRTPseudostateKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPseudostateKind/initial"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPseudostateKind/history"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPseudostateKind/choice"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umlrt.ecore#//UMLRTPseudostateKind/junction"/>
+    </genEnums>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="umlrt.ecore#//Model"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="umlrt.ecore#//Stream">
+      <genTypeParameters ecoreTypeParameter="umlrt.ecore#//Stream/E"/>
+    </genDataTypes>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="umlrt.ecore#//List">
+      <genTypeParameters ecoreTypeParameter="umlrt.ecore#//List/E"/>
+    </genDataTypes>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="umlrt.ecore#//Map">
+      <genTypeParameters ecoreTypeParameter="umlrt.ecore#//Map/K"/>
+      <genTypeParameters ecoreTypeParameter="umlrt.ecore#//Map/V"/>
+    </genDataTypes>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="umlrt.ecore#//IllegalStateException"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umlrt.ecore#//NamedElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/model"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/inheritanceKind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/name"
+          key="true"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/qualifiedName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/isInherited"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/isVirtualRedefinition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/isRedefinition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//NamedElement/isExcluded"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/redefinedElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/redefinitionContext"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/redefinableElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/inheritedElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/rootDefinition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//NamedElement/excludedElement"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/redefines">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//NamedElement/redefines/element"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/getRedefinitionOf">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//NamedElement/getRedefinitionOf/element"/>
+        <genTypeParameters ecoreTypeParameter="umlrt.ecore#//NamedElement/getRedefinitionOf/T"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/getRedefinitionChain"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/getExcludedElement">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//NamedElement/getExcludedElement/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//NamedElement/getExcludedElement/type"/>
+        <genTypeParameters ecoreTypeParameter="umlrt.ecore#//NamedElement/getExcludedElement/T"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/allRedefinitions"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/exclude"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/reinherit"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/reify"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//NamedElement/destroy"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Package">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Package/nestedPackage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Package/nestingPackage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Package/capsule"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Package/protocol"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Package/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Package/createNestedPackage">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Package/createNestedPackage/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Package/createCapsule">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Package/createCapsule/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Package/createProtocol">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Package/createProtocol/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Capsule">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/superclass"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/subclass"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/port"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/capsulePart"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/connector"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Capsule/hierarchy"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/stateMachine"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Capsule/package"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/getAncestry"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/getPorts">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/getPorts/withExclusions"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/getCapsuleParts">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/getCapsuleParts/withExclusions"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/getConnectors">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/getConnectors/withExclusions"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/createPort">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createPort/type"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/createPort.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createPort.1/type"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createPort.1/kind"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/createCapsulePart">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createCapsulePart/type"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/createConnector">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createConnector/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createConnector/source"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createConnector/sourcePartWithPort"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createConnector/target"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Capsule/createConnector/targetPartWithPort"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Capsule/createStateMachine"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umlrt.ecore#//Classifier">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Classifier/general"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Classifier/specific"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/getPackage"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/getAncestry"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/getHierarchy"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/isSuperTypeOf">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Classifier/isSuperTypeOf/classifier"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Classifier/setGeneral">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Classifier/setGeneral/general"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Port">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/redefinedPort"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Port/partsWithPort"
+          pluralizationException="true"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/service"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/behavior"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/conjugated"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/wired"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/publish"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/notification"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/registration"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/registrationOverride"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/isConnected"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/isConnectedInside"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Port/isConnectedOutside"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/connector"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/insideConnector"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/outsideConnector"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Port/capsule"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Port/toUML"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umlrt.ecore#//ReplicatedElement">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//ReplicatedElement/replicationFactor"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//ReplicatedElement/replicationFactorAsString"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//ReplicatedElement/symbolicReplicationFactor"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ReplicatedElement/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ReplicatedElement/getCapsule"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Protocol">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/package"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/superProtocol"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/subProtocol"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/message"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/inMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/outMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/inOutMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Protocol/isConjugate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EReference umlrt.ecore#//Protocol/conjugate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Protocol/hierarchy"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/getAnyReceiveEvent"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/getAncestry"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/getMessages">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/getMessages/kind"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/getMessages.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/getMessages.1/kind"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/getMessages.1/withExclusions"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/getMessages.2">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/getMessages.2/withExclusions"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/createMessage">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage/kind"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/createMessage.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.1/kind"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.1/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.1/dataType"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Protocol/createMessage.2">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.2/kind"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.2/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.2/parameterName"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Protocol/createMessage.2/parameterType"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//ProtocolMessage">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//ProtocolMessage/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//ProtocolMessage/redefinedMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//ProtocolMessage/parameter"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//ProtocolMessage/isConjugate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//ProtocolMessage/conjugate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//ProtocolMessage/protocol"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ProtocolMessage/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ProtocolMessage/toReceiveEvent"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ProtocolMessage/createParameter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//ProtocolMessage/createParameter/name"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//ProtocolMessage/createParameter/type"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//CapsulePart">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//CapsulePart/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//CapsulePart/optional"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//CapsulePart/redefinedPart"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//CapsulePart/capsule"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//CapsulePart/type"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//CapsulePart/getConnectorsOf">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//CapsulePart/getConnectorsOf/port"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//CapsulePart/getConnectorsOfPorts"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Connector">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/redefinedConnector"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/capsule"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/source"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/sourcePartWithPort"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Connector/sourceReplicationFactor"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/target"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Connector/targetPartWithPort"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Connector/targetReplicationFactor"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Connector/toUML"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//StateMachine">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/vertex"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/transition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/redefinedStateMachine"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//StateMachine/capsule"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//StateMachine/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//StateMachine/createState">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//StateMachine/createState/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//StateMachine/createPseudostate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//StateMachine/createPseudostate/kind"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//StateMachine/ensureDefaultContents"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//StateMachine/toRegion"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Vertex">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/state"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/incoming"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/outgoing"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/redefinedVertex"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Vertex/stateMachine"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Vertex/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Vertex/containingStateMachine"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Vertex/createTransitionTo">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Vertex/createTransitionTo/target"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//State">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/subtransition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/entry"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/exit"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//State/connectionPoint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/entryPoint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/exitPoint"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/redefinedState"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//State/composite"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//State/simple"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//State/subvertex"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/createSubstate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createSubstate/name"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/createSubpseudostate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createSubpseudostate/kind"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/createConnectionPoint">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createConnectionPoint/kind"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/toRegion"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/createEntry">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createEntry/language"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createEntry/body"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//State/createExit">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createExit/language"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//State/createExit/body"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Transition">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/stateMachine"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/source"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/target"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/trigger"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/guard"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/redefinedTransition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Transition/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Transition/internal"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/effect"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Transition/state"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Transition/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Transition/containingStateMachine"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Transition/createTrigger">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createTrigger/protocolMessage"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createTrigger/port"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Transition/createGuard">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createGuard/language"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createGuard/body"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Transition/createEffect">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createEffect/language"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Transition/createEffect/body"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Trigger">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Trigger/protocolMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Trigger/port"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Trigger/guard"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Trigger/redefinedTrigger"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Trigger/receiveAnyMessage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Trigger/transition"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Trigger/toUML"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Trigger/createGuard">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Trigger/createGuard/language"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Trigger/createGuard/body"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Trigger/getPort"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Trigger/setPort">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umlrt.ecore#//Trigger/setPort/port"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Trigger/hasMultiplePorts"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Guard">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//Guard/bodies"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Guard/bodyEntry"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Guard/transition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Guard/redefinedGuard"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//Guard/trigger"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Guard/toUML"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//OpaqueBehavior">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute umlrt.ecore#//OpaqueBehavior/bodies"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//OpaqueBehavior/bodyEntry"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//OpaqueBehavior/enteredState"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//OpaqueBehavior/exitedState"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//OpaqueBehavior/redefinedBehavior"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//OpaqueBehavior/transition"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//OpaqueBehavior/toUML"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//ConnectionPoint">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//ConnectionPoint/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//ConnectionPoint/redefinedConnectionPoint"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//ConnectionPoint/toUML"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umlrt.ecore#//Pseudostate">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Pseudostate/kind"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//Pseudostate/redefinedPseudostate"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umlrt.ecore#//Pseudostate/toUML"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

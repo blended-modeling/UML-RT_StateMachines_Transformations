@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+ 
+ <extension
+       point="org.eclipse.papyrus.infra.services.validation.diagnosticians">
+    <diagnostician
+          id="org.eclipse.papyrusrt.umlrt.core.language"
+          priority="normal"
+          filter="org.eclipse.papyrusrt.umlrt.core.validation.internal.PapyrusRTDiagnostician$Filter"
+          diagnostician="org.eclipse.papyrusrt.umlrt.core.validation.internal.PapyrusRTDiagnostician">
+    </diagnostician>
+ </extension>
+ 
+<extension name="dsml.validation.generated.umlrealtime" point="org.eclipse.emf.validation.constraintProviders">
+      <category id="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime" mandatory="false" name="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime"/>
+      <constraintProvider cache="false" mode="Batch">
+         <package namespaceUri="http://www.eclipse.org/papyrus/umlrt"/>
+         <constraints categories="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime">
+            <constraint id="UMLRealTime.Capsule.Capsules are always active classifiers" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Capsules are always active classifiers" severity="ERROR" statusCode="1">
+               <message>Capsules are always active classifiers</message><![CDATA[base_Class.isActive]]></constraint>
+            <constraint id="UMLRealTime.Capsule.A capsule cannot have Reception features" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="A capsule cannot have Reception features" severity="ERROR" statusCode="1">
+               <message>A capsule cannot have Reception features</message><![CDATA[base_Class.ownedReception->isEmpty()]]></constraint>
+            <constraint id="UMLRealTime.Capsule.A capsule class can always be subclassed" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="A capsule class can always be subclassed" severity="ERROR" statusCode="1">
+               <message>A capsule class can always be subclassed</message><![CDATA[not(base_Class.isFinalSpecialization)]]></constraint>
+            <constraint id="UMLRealTime.Capsule.A capsule can have at most one superclass" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="A capsule can have at most one superclass" severity="ERROR" statusCode="1">
+               <message>A capsule can have at most one superclass</message><![CDATA[(base_Class.generalization->size()) <= 1]]></constraint>
+            <constraint id="UMLRealTime.Capsule.Capsule classes are always substitutable" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Capsule classes are always substitutable" severity="ERROR" statusCode="1">
+               <message>Capsule classes are always substitutable</message><![CDATA[(base_Class.generalization->notEmpty()) implies (base_Class.generalization->forAll (g | g.isSubstitutable))]]></constraint>
+            <constraint id="UMLRealTime.Capsule.All attributes of a capsule class can have at most one type" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="All attributes of a capsule class can have at most one type" severity="ERROR" statusCode="1">
+               <message>All attributes of a capsule class can have at most one type</message><![CDATA[base_Class.ownedAttribute->forAll(at | at.type->size() <= 1)]]></constraint>
+            <constraint id="UMLRealTime.Capsule.All operations of a capsule are guarded" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="All operations of a capsule are guarded" severity="ERROR" statusCode="1">
+               <message>All operations of a capsule are guarded</message><![CDATA[base_Class.ownedOperation->notEmpty() implies 
+   (base_Class.ownedOperation->forAll(op | op.concurrency = UML::CallConcurrencyKind::guarded))]]></constraint>
+            <constraint id="UMLRealTime.CapsulePart.Fixed capsule parts cannot have variable multiplicity" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Fixed capsule parts cannot have variable multiplicity" severity="ERROR" statusCode="1">
+               <message>Fixed capsule parts cannot have variable multiplicity</message><![CDATA[(base_Property.aggregation = UML::AggregationKind::composite and base_Property.lower > 0) implies (base_Property.upper = base_Property.lower)]]></constraint>
+            <constraint id="UMLRealTime.CapsulePart.Plugin capsule parts must have a lower multiplicity of zero" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Plugin capsule parts must have a lower multiplicity of zero" severity="ERROR" statusCode="1">
+               <message>Plugin capsule parts must have a lower multiplicity of zero</message><![CDATA[(base_Property.aggregation = UML::AggregationKind::shared) implies (base_Property.lower = 0)]]></constraint>
+            <constraint id="UMLRealTime.CapsulePart.Capsule parts must have aggregation" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Capsule parts must have aggregation" severity="ERROR" statusCode="1">
+               <message>Capsule parts must have aggregation</message><![CDATA[base_Property.aggregation <> UML::AggregationKind::none]]></constraint>
+            <constraint id="UMLRealTime.Protocol.Protocols can have at most one generalization" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Protocols can have at most one generalization" severity="ERROR" statusCode="1">
+               <message>Protocols can have at most one generalization</message><![CDATA[base_Collaboration.generalization->size() <= 1]]></constraint>
+            <constraint id="UMLRealTime.RTPort.Only SPPs can publish their name" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Only SPPs can publish their name" severity="ERROR" statusCode="1">
+               <message>Only SPPs can publish their name</message><![CDATA[isPublish = (base_Port.isService and not isWired)]]></constraint>
+            <constraint id="UMLRealTime.RTPort.All service ports must have public visibility and protected otherwise" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="All service ports must have public visibility and protected otherwise" severity="ERROR" statusCode="1">
+               <message>All service ports must have public visibility and protected otherwise</message><![CDATA[if (base_Port.isService) then
+   (base_Port.visibility = UML::VisibilityKind::public)
+else
+   (base_Port.visibility = UML::VisibilityKind::protected)
+endif]]></constraint>
+            <constraint id="UMLRealTime.RTPort.All unwired ports (SAPs and SPPs) must be behavior ports" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="All unwired ports (SAPs and SPPs) must be behavior ports" severity="ERROR" statusCode="1">
+               <message>All unwired ports (SAPs and SPPs) must be behavior ports</message><![CDATA[(not isWired) implies (base_Port.isBehavior)]]></constraint>
+            <constraint id="UMLRealTime.RTPort.A relay port must be a service port" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="A relay port must be a service port" severity="ERROR" statusCode="1">
+               <message>A relay port must be a service port</message><![CDATA[(isWired and not base_Port.isBehavior) implies (base_Port.isService)]]></constraint>
+            <constraint id="UMLRealTime.RTConnector.Only binary connectors are allowed" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Only binary connectors are allowed" severity="ERROR" statusCode="1">
+               <message>Only binary connectors are allowed</message><![CDATA[base_Connector.end->size() = 2]]></constraint>
+            <constraint id="UMLRealTime.RTRedefinedElement.Exclusion can only be applied to some UML-RT model elements" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Exclusion can only be applied to some UML-RT model elements" severity="ERROR" statusCode="1">
+               <message>Exclusion can only be applied to some UML-RT model elements</message><![CDATA[let el = base_RedefinableElement in
+(el.oclIsKindOf(UML::Port) or
+ el.oclIsKindOf(UML::Property) or
+ el.oclIsKindOf(UML::Operation) or
+ el.oclIsKindOf(UML::Behavior) or
+ el.oclIsKindOf(UML::Region) or
+ el.oclIsKindOf(UML::State) or
+ el.oclIsKindOf(UML::StateMachine) or
+ el.oclIsKindOf(UML::Transition) or
+ el.oclIsKindOf(UML::Connector))]]></constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension name="dsml.validation.generated.umlrealtime" point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext id="RTConnectorClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTConnectorClientSelector"/>
+      </clientContext>
+      <binding context="RTConnectorClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTConnector.Only binary connectors are allowed"/>
+      </binding>
+      <clientContext id="RTPortClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTPortClientSelector"/>
+      </clientContext>
+      <binding context="RTPortClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTPort.Only SPPs can publish their name"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTPort.All service ports must have public visibility and protected otherwise"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTPort.All unwired ports (SAPs and SPPs) must be behavior ports"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTPort.A relay port must be a service port"/>
+      </binding>
+      <clientContext id="CapsuleClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.CapsuleClientSelector"/>
+      </clientContext>
+      <binding context="CapsuleClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.Capsules are always active classifiers"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.A capsule cannot have Reception features"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.A capsule class can always be subclassed"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.A capsule can have at most one superclass"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.Capsule classes are always substitutable"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.All attributes of a capsule class can have at most one type"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Capsule.All operations of a capsule are guarded"/>
+      </binding>
+      <clientContext id="ProtocolClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.ProtocolClientSelector"/>
+      </clientContext>
+      <binding context="ProtocolClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.Protocol.Protocols can have at most one generalization"/>
+      </binding>
+      <clientContext id="CapsulePartClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.CapsulePartClientSelector"/>
+      </clientContext>
+      <binding context="CapsulePartClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.CapsulePart.Fixed capsule parts cannot have variable multiplicity"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.CapsulePart.Plugin capsule parts must have a lower multiplicity of zero"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.CapsulePart.Capsule parts must have aggregation"/>
+      </binding>
+      <clientContext id="RTRedefinedElementClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTRedefinedElementClientSelector"/>
+      </clientContext>
+      <binding context="RTRedefinedElementClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTRedefinedElement.Exclusion can only be applied to some UML-RT model elements"/>
+      </binding>
+   </extension>
+<extension name="dsml.validation.generated.UMLRTStateMachines" point="org.eclipse.emf.validation.constraintProviders">
+      <category id="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines" mandatory="false" name="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines"/>
+      <constraintProvider cache="false" mode="Batch">
+         <package namespaceUri="http://www.eclipse.org/papyrus/umlrt/statemachine"/>
+         <constraints categories="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines">
+            <constraint id="UMLRTStateMachines.RTStateMachine.An RT state machine has exactly one region" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="An RT state machine has exactly one region" severity="ERROR" statusCode="1">
+               <message>An RT state machine has exactly one region</message><![CDATA[base_StateMachine.region->size() = 1]]></constraint>
+            <constraint id="UMLRTStateMachines.RTStateMachine.An RT state machine is never re-entrant" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="An RT state machine is never re-entrant" severity="ERROR" statusCode="1">
+               <message>An RT state machine is never re-entrant</message><![CDATA[not base_StateMachine.isReentrant]]></constraint>
+            <constraint id="UMLRTStateMachines.RTStateMachine.RT state machines do not have parameters or parameter sets" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="RT state machines do not have parameters or parameter sets" severity="ERROR" statusCode="1">
+               <message>RT state machines do not have parameters or parameter sets</message><![CDATA[(base_StateMachine.ownedParameter->size()=0) and 
+(base_StateMachine.ownedParameterSet->size() = 0)]]></constraint>
+            <constraint id="UMLRTStateMachines.RTStateMachine.RT state machines must have a context and it must be a Class" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="RT state machines must have a context and it must be a Class" severity="ERROR" statusCode="1">
+               <message>RT state machines must have a context and it must be a Class</message><![CDATA[(base_StateMachine.context->size()=1) 
+and (base_StateMachine.context.oclIsKindOf(Class))]]></constraint>
+            <constraint id="UMLRTStateMachines.RTStateMachine.Passive state machine are only allowed on passive data classes" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Passive state machine are only allowed on passive data classes" severity="ERROR" statusCode="1">
+               <message>Passive state machine are only allowed on passive data classes</message><![CDATA[isPassive = not (base_StateMachine.context.oclAsType(Class).isActive) ]]></constraint>
+            <constraint id="UMLRTStateMachines.RTState.A composite RT state has exactly one region" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="A composite RT state has exactly one region" severity="ERROR" statusCode="1">
+               <message>A composite RT state has exactly one region</message><![CDATA[base_State.isComposite implies 
+           (base_State.region->size() = 1)]]></constraint>
+            <constraint id="UMLRTStateMachines.RTState.RT does not support submachine states" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="RT does not support submachine states" severity="ERROR" statusCode="1">
+               <message>RT does not support submachine states</message><![CDATA[not base_State.isSubmachineState]]></constraint>
+            <constraint id="UMLRTStateMachines.RTState.RT state machines do not support &quot;do&quot; activities" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="RT state machines do not support &quot;do&quot; activities" severity="ERROR" statusCode="1">
+               <message>RT state machines do not support "do" activities</message><![CDATA[base_State.doActivity->size() = 0]]></constraint>
+            <constraint id="UMLRTStateMachines.RTState.RT state machines cannot have any deferred triggers " isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="RT state machines cannot have any deferred triggers " severity="ERROR" statusCode="1">
+               <message>RT state machines cannot have any deferred triggers </message><![CDATA[base_State.deferrableTrigger->size() = 0]]></constraint>
+            <constraint id="UMLRTStateMachines.RTPseudostate.Concurrency, shallow history and terminate pseudostates not supported" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="Concurrency, shallow history and terminate pseudostates not supported" severity="ERROR" statusCode="1">
+               <message>Concurrency, shallow history and terminate pseudostates not supported</message><![CDATA[let knd = base_Pseudostate.kind in 
+   (knd <> UML::PseudostateKind::shallowHistory) and
+   (knd <> UML::PseudostateKind::fork) and
+   (knd <> UML::PseudostateKind::join) and
+   (knd <> UML::PseudostateKind::terminate)]]></constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension name="dsml.validation.generated.UMLRTStateMachines" point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext id="RTPseudostateClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTPseudostateClientSelector"/>
+      </clientContext>
+      <binding context="RTPseudostateClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTPseudostate.Concurrency, shallow history and terminate pseudostates not supported"/>
+      </binding>
+      <clientContext id="RTStateMachineClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTStateMachineClientSelector"/>
+      </clientContext>
+      <binding context="RTStateMachineClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTStateMachine.An RT state machine has exactly one region"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTStateMachine.An RT state machine is never re-entrant"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTStateMachine.RT state machines do not have parameters or parameter sets"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTStateMachine.RT state machines must have a context and it must be a Class"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTStateMachine.Passive state machine are only allowed on passive data classes"/>
+      </binding>
+      <clientContext id="RTStateClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.core.validation.selectors.RTStateClientSelector"/>
+      </clientContext>
+      <binding context="RTStateClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTState.A composite RT state has exactly one region"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTState.RT does not support submachine states"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTState.RT state machines do not support &quot;do&quot; activities"/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTState.RT state machines cannot have any deferred triggers "/>
+         <constraint ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRTStateMachines.RTState.Constraint5"/>
+      </binding>
+   </extension>
+   
+<!-- manually defined constraints -->
+<extension name="dsml.validation.custom.umlrealtime" point="org.eclipse.emf.validation.constraintProviders">
+   <category id="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime" mandatory="false" name="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime"/>
+   <constraintProvider cache="false" mode="Batch">
+      <package namespaceUri="http://www.eclipse.org/papyrus/umlrt"/>
+      <constraints categories="org.eclipse.papyrusrt.umlrt.core.validation.umlrealtime">
+         <constraint
+               class="org.eclipse.papyrusrt.umlrt.core.validation.java.ConnectorPortsCompatibilityConstraint"
+               id="UMLRealTime.RTConnector.Connected.Ports.Compatibility"
+               isEnabledByDefault="true"
+               lang="Java"
+               mode="Batch"
+               name="Connected ports must be compatible"
+               severity="ERROR"
+               statusCode="1">
+            <message>
+                  Connected ports {0} are not compatible. {1}
+            </message>
+         </constraint>
+      </constraints>
+   </constraintProvider>
+</extension>
+<extension
+         name="dsml.validation.custom.umlrealtime"
+         point="org.eclipse.emf.validation.constraintBindings">
+   <binding
+         context="RTConnectorClientContext">
+      <constraint
+            ref="org.eclipse.papyrusrt.umlrt.core.validation.UMLRealTime.RTConnector.Connected.Ports.Compatibility">
+      </constraint>
+   </binding>
+</extension>
+</plugin>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:j="clr-namespace:java.lang"
+	xmlns:ppeg="clr-namespace:org.eclipse.papyrus.infra.gmfdiag.properties.widget"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite text="Real Time Properties">
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Composite>
+			<Composite.layout>
+				<ppel:PropertiesLayout></ppel:PropertiesLayout>
+			</Composite.layout>
+			<Composite>
+				<Composite.layout>
+					<ppel:PropertiesLayout></ppel:PropertiesLayout>
+				</Composite.layout>
+				<ppe:EnumRadio input="{Binding}" property="UMLRealTime:RTPort:registration"
+					customLabel="Registration kind"></ppe:EnumRadio>
+			</Composite>
+		</Composite>
+		<Composite>
+			<Composite.layout>
+				<ppel:PropertiesLayout></ppel:PropertiesLayout>
+			</Composite.layout>
+			<ppe:StringEditor input="{Binding}"
+				property="UMLRealTime:RTPort:registrationOverride"></ppe:StringEditor>
+		</Composite>
+	</Composite>
+</Composite>

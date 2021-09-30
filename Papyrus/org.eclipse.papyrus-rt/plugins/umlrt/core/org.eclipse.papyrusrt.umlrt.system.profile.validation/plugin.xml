@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+<extension name="dsml.validation.generated.systemelements" point="org.eclipse.emf.validation.constraintProviders">
+      <category id="org.eclipse.papyrusrt.umlrt.system.profile.validation.systemelements" mandatory="false" name="org.eclipse.papyrusrt.umlrt.system.profile.validation.systemelements"/>
+      <constraintProvider cache="false" mode="Batch">
+         <package namespaceUri="http://www.eclipse.org/papyrus/umlrt/systemelements"/>
+         <constraints categories="org.eclipse.papyrusrt.umlrt.system.profile.validation.systemelements">
+            <constraint id="SystemElements.BaseProtocol.BaseProtocols are always abstract" isEnabledByDefault="true" lang="OCLpivot" mode="Batch" name="BaseProtocols are always abstract" severity="ERROR" statusCode="1">
+               <message>BaseProtocols are always abstract</message><![CDATA[base_Collaboration.isAbstract]]></constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension name="dsml.validation.generated.systemelements" point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext id="BaseProtocolClientContext">
+         <selector class="org.eclipse.papyrusrt.umlrt.system.profile.validation.selectors.BaseProtocolClientSelector"/>
+      </clientContext>
+      <binding context="BaseProtocolClientContext">
+         <constraint ref="org.eclipse.papyrusrt.umlrt.system.profile.validation.SystemElements.BaseProtocol.BaseProtocols are always abstract"/>
+      </binding>
+   </extension>
+</plugin>

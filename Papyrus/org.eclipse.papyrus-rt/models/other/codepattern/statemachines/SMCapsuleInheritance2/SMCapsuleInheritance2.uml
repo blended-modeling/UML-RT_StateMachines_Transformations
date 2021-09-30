@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
+  <uml:Model xmi:id="_5tkbAGj9EeSb8aCM_NRfaA" name="SMCapsuleInheritance2">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_5tkbAWj9EeSb8aCM_NRfaA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_G6UwMGj-EeSb8aCM_NRfaA" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Rh2vkGj-EeSb8aCM_NRfaA" name="capsule1" type="_J5WtIGj-EeSb8aCM_NRfaA" aggregation="composite" association="_Rh3WoGj-EeSb8aCM_NRfaA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rh2vkWj-EeSb8aCM_NRfaA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rh2vkmj-EeSb8aCM_NRfaA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UoIkAGj-EeSb8aCM_NRfaA" name="childCapsule1" type="_LYlEMGj-EeSb8aCM_NRfaA" aggregation="composite" association="_UoJLEGj-EeSb8aCM_NRfaA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UoIkAWj-EeSb8aCM_NRfaA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UoIkAmj-EeSb8aCM_NRfaA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_J5WtIGj-EeSb8aCM_NRfaA" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_6V7woGj_EeSb8aCM_NRfaA" name="Port1" type="_b-YY0Gj-EeSb8aCM_NRfaA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_QDozMGkAEeSb8aCM_NRfaA" name="Capsule1StateMachine" isActive="true" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_TXGvEGkAEeSb8aCM_NRfaA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_b_wJcGkMEeSb8aCM_NRfaA" name="t0" source="_Ui-14GkMEeSb8aCM_NRfaA" target="_VhUtcGkMEeSb8aCM_NRfaA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_fLcCUGkMEeSb8aCM_NRfaA" name="t1" source="_VhUtcGkMEeSb8aCM_NRfaA" target="_Wuo1IGkMEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_7jOXQGkMEeSb8aCM_NRfaA" event="_YM8SEGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_h6wIQGkMEeSb8aCM_NRfaA" name="t2" source="_Wuo1IGkMEeSb8aCM_NRfaA" target="_XnUwoGkMEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_CihEoGkNEeSb8aCM_NRfaA" event="_ZTJFIGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_kUwFgGkMEeSb8aCM_NRfaA" name="t3" source="_XnUwoGkMEeSb8aCM_NRfaA" target="_YTX-UGkMEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_Fy9hsGkNEeSb8aCM_NRfaA" event="_aUB6YGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_Ui-14GkMEeSb8aCM_NRfaA" name="i0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_VhUtcGkMEeSb8aCM_NRfaA" name="s0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Wuo1IGkMEeSb8aCM_NRfaA" name="s1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_XnUwoGkMEeSb8aCM_NRfaA" name="s2"/>
+          <subvertex xmi:type="uml:State" xmi:id="_YTX-UGkMEeSb8aCM_NRfaA" name="s3"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LYlEMGj-EeSb8aCM_NRfaA" name="ChildCapsule1" classifierBehavior="_VDAQMGkAEeSb8aCM_NRfaA" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PZqUAGj-EeSb8aCM_NRfaA" general="_J5WtIGj-EeSb8aCM_NRfaA"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_D-TZEGkAEeSb8aCM_NRfaA" name="Port2" type="_b-YY0Gj-EeSb8aCM_NRfaA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_VDAQMGkAEeSb8aCM_NRfaA" name="ChildCapsule1StateMachine" redefinedClassifier="_QDozMGkAEeSb8aCM_NRfaA" isActive="true" isReentrant="false" extendedStateMachine="_QDozMGkAEeSb8aCM_NRfaA">
+        <region xmi:type="uml:Region" xmi:id="_WDljcGkAEeSb8aCM_NRfaA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_4hEqUGkLEeSb8aCM_NRfaA" name="ct0" redefinedTransition="_b_wJcGkMEeSb8aCM_NRfaA" source="_tuM9oGkLEeSb8aCM_NRfaA" target="_wIt4QGkLEeSb8aCM_NRfaA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ATHDQGkMEeSb8aCM_NRfaA" name="ct1" redefinedTransition="_fLcCUGkMEeSb8aCM_NRfaA" source="_wIt4QGkLEeSb8aCM_NRfaA" target="_yj4TIGkLEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_RrOwMGkNEeSb8aCM_NRfaA" event="_YM8SEGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_FKwusGkMEeSb8aCM_NRfaA" name="ct2" redefinedTransition="_h6wIQGkMEeSb8aCM_NRfaA" source="_yj4TIGkLEeSb8aCM_NRfaA" target="_z4BbkGkLEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_VloJMGkNEeSb8aCM_NRfaA" event="_ZTJFIGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_IK7UEGkMEeSb8aCM_NRfaA" name="ct3" redefinedTransition="_kUwFgGkMEeSb8aCM_NRfaA" source="_z4BbkGkLEeSb8aCM_NRfaA" target="_06x5EGkLEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_YGI-IGkNEeSb8aCM_NRfaA" event="_aUB6YGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ySkEMGkMEeSb8aCM_NRfaA" name="ct4" source="_yj4TIGkLEeSb8aCM_NRfaA" target="_wo9pIGkMEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_AU20AGnuEeSjIfLQqRmAGQ" event="_bGrfUGj_EeSb8aCM_NRfaA" port="_D-TZEGkAEeSb8aCM_NRfaA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_0hxtwGkMEeSb8aCM_NRfaA" name="ct5" source="_wo9pIGkMEeSb8aCM_NRfaA" target="_z4BbkGkLEeSb8aCM_NRfaA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_E22_kGnuEeSjIfLQqRmAGQ" event="_ZTJFIGj_EeSb8aCM_NRfaA" port="_6V7woGj_EeSb8aCM_NRfaA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_tuM9oGkLEeSb8aCM_NRfaA" name="ci0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_wIt4QGkLEeSb8aCM_NRfaA" name="cs0" redefinedState="_VhUtcGkMEeSb8aCM_NRfaA"/>
+          <subvertex xmi:type="uml:State" xmi:id="_yj4TIGkLEeSb8aCM_NRfaA" name="cs1" redefinedState="_Wuo1IGkMEeSb8aCM_NRfaA"/>
+          <subvertex xmi:type="uml:State" xmi:id="_z4BbkGkLEeSb8aCM_NRfaA" name="cs2" redefinedState="_XnUwoGkMEeSb8aCM_NRfaA"/>
+          <subvertex xmi:type="uml:State" xmi:id="_06x5EGkLEeSb8aCM_NRfaA" name="cs3" redefinedState="_YTX-UGkMEeSb8aCM_NRfaA"/>
+          <subvertex xmi:type="uml:State" xmi:id="_wo9pIGkMEeSb8aCM_NRfaA" name="cs4"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Rh3WoGj-EeSb8aCM_NRfaA" memberEnd="_Rh3WoWj-EeSb8aCM_NRfaA _Rh2vkGj-EeSb8aCM_NRfaA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Rh3WoWj-EeSb8aCM_NRfaA" name="top" type="_G6UwMGj-EeSb8aCM_NRfaA" association="_Rh3WoGj-EeSb8aCM_NRfaA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rh3Womj-EeSb8aCM_NRfaA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rh3Wo2j-EeSb8aCM_NRfaA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_UoJLEGj-EeSb8aCM_NRfaA" memberEnd="_UoJLEWj-EeSb8aCM_NRfaA _UoIkAGj-EeSb8aCM_NRfaA">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_UoJLEWj-EeSb8aCM_NRfaA" name="top" type="_G6UwMGj-EeSb8aCM_NRfaA" association="_UoJLEGj-EeSb8aCM_NRfaA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UoJLEmj-EeSb8aCM_NRfaA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UoJLE2j-EeSb8aCM_NRfaA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_X40RoGj-EeSb8aCM_NRfaA" name="Protocol1Container">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_b-YY0Gj-EeSb8aCM_NRfaA" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_i6f2YGj-EeSb8aCM_NRfaA" name="InSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0pEw8Gj-EeSb8aCM_NRfaA" name="e1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1qLooGj-EeSb8aCM_NRfaA" name="e2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_218RIGj-EeSb8aCM_NRfaA" name="e3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_WA-JwGj_EeSb8aCM_NRfaA" name="e4"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_keWOwGj-EeSb8aCM_NRfaA" name="OutSignals"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_lZXskGj-EeSb8aCM_NRfaA" name="SynSignals"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_o7iLwGj-EeSb8aCM_NRfaA" client="_b-YY0Gj-EeSb8aCM_NRfaA" supplier="_i6f2YGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_poyTUGj-EeSb8aCM_NRfaA" client="_b-YY0Gj-EeSb8aCM_NRfaA" supplier="_lZXskGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_qTIQ0Gj-EeSb8aCM_NRfaA" client="_b-YY0Gj-EeSb8aCM_NRfaA" supplier="_keWOwGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_rCxlEGj-EeSb8aCM_NRfaA" client="_b-YY0Gj-EeSb8aCM_NRfaA" supplier="_lZXskGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_YM8SEGj_EeSb8aCM_NRfaA" name="CallEvent1" operation="_0pEw8Gj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_ZTJFIGj_EeSb8aCM_NRfaA" name="CallEvent2" operation="_1qLooGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_aUB6YGj_EeSb8aCM_NRfaA" name="CallEvent3" operation="_218RIGj-EeSb8aCM_NRfaA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_bGrfUGj_EeSb8aCM_NRfaA" name="CallEvent4" operation="_WA-JwGj_EeSb8aCM_NRfaA"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dgf6YGkOEeSb8aCM_NRfaA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Dh9S8GkOEeSb8aCM_NRfaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+      </profileApplication>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_8cDSIGkLEeSb8aCM_NRfaA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8ewn4GkLEeSb8aCM_NRfaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_cq90MGkNEeSb8aCM_NRfaA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ct6agGkNEeSb8aCM_NRfaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_d_6N4GkNEeSb8aCM_NRfaA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eBosMGkNEeSb8aCM_NRfaA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+  </uml:Model>
+  <ActionLanguage:TextualRepresentation xmi:id="_8ezrMGkLEeSb8aCM_NRfaA" language="org.eclipse.papyrus.uml.textedit.transition.xtext.UmlTransition"/>
+  <UMLRealTime:Capsule xmi:id="_fkXqQGkNEeSb8aCM_NRfaA" base_Class="_G6UwMGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:CapsulePart xmi:id="_g7wT8GkNEeSb8aCM_NRfaA" base_Property="_Rh2vkGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:CapsulePart xmi:id="_iCwYQGkNEeSb8aCM_NRfaA" base_Property="_UoIkAGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:Capsule xmi:id="_jKDXgGkNEeSb8aCM_NRfaA" base_Class="_J5WtIGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:RTPort xmi:id="_kqM7oGkNEeSb8aCM_NRfaA" base_Port="_6V7woGj_EeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_mFktcGkNEeSb8aCM_NRfaA" base_StateMachine="_QDozMGkAEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_nHBjYGkNEeSb8aCM_NRfaA" base_Region="_TXGvEGkAEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_pCcHMGkNEeSb8aCM_NRfaA" base_Pseudostate="_Ui-14GkMEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_rAgWYGkNEeSb8aCM_NRfaA" base_State="_VhUtcGkMEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_sDnZMGkNEeSb8aCM_NRfaA" base_State="_Wuo1IGkMEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_s_jdAGkNEeSb8aCM_NRfaA" base_State="_XnUwoGkMEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_uB5q0GkNEeSb8aCM_NRfaA" base_State="_YTX-UGkMEeSb8aCM_NRfaA"/>
+  <UMLRealTime:Capsule xmi:id="_0BoYoGkNEeSb8aCM_NRfaA" base_Class="_LYlEMGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:RTPort xmi:id="_1AJ2YGkNEeSb8aCM_NRfaA" base_Port="_D-TZEGkAEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_2RrvsGkNEeSb8aCM_NRfaA" base_StateMachine="_VDAQMGkAEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_3T9FAGkNEeSb8aCM_NRfaA" base_Region="_WDljcGkAEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_6afYIGkNEeSb8aCM_NRfaA" base_Pseudostate="_tuM9oGkLEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_7o3PwGkNEeSb8aCM_NRfaA" base_State="_wIt4QGkLEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_8hoDwGkNEeSb8aCM_NRfaA" base_State="_yj4TIGkLEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_9aeXUGkNEeSb8aCM_NRfaA" base_State="_z4BbkGkLEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_-VB7EGkNEeSb8aCM_NRfaA" base_State="_06x5EGkLEeSb8aCM_NRfaA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="__TS6IGkNEeSb8aCM_NRfaA" base_State="_wo9pIGkMEeSb8aCM_NRfaA"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_E0wXkGkOEeSb8aCM_NRfaA" base_Package="_X40RoGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:Protocol xmi:id="_GUg6IGkOEeSb8aCM_NRfaA" base_Collaboration="_b-YY0Gj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_HTJsoGkOEeSb8aCM_NRfaA" base_Interface="_i6f2YGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_K7N_gGkOEeSb8aCM_NRfaA" base_Interface="_keWOwGj-EeSb8aCM_NRfaA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_L4fgEGkOEeSb8aCM_NRfaA" base_Interface="_lZXskGj-EeSb8aCM_NRfaA"/>
+</xmi:XMI>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assistant:ModelingAssistantProvider xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assistant="http://www.eclipse.org/Papyrus/2014/diagram/assistant" xmlns:filters="http://www.eclipse.org/Papyrus/2014/common/filters" xmlns:umlfilters="http://www.eclipse.org/Papyrus/2014/uml/filters" name="UMLRealTime" clientContextID="org.eclipse.papyrusrt.umlrt.architecture">
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Activity" elementTypeID="org.eclipse.papyrus.uml.Activity"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::AssociationClass" elementTypeID="org.eclipse.papyrus.uml.AssociationClass"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Behavior" elementTypeID="org.eclipse.papyrus.uml.Behavior"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Class" elementTypeID="org.eclipse.papyrus.uml.Class"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::ClassifierTemplateParameter" elementTypeID="org.eclipse.papyrus.uml.ClassifierTemplateParameter"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Component" elementTypeID="org.eclipse.papyrus.uml.Component"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::ConnectableElementTemplateParameter" elementTypeID="org.eclipse.papyrus.uml.ConnectableElementTemplateParameter"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Device" elementTypeID="org.eclipse.papyrus.uml.Device"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::ExecutionEnvironment" elementTypeID="org.eclipse.papyrus.uml.ExecutionEnvironment"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::FunctionBehavior" elementTypeID="org.eclipse.papyrus.uml.FunctionBehavior"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Interaction" elementTypeID="org.eclipse.papyrus.uml.Interaction"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Interface" elementTypeID="org.eclipse.papyrus.uml.Interface"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Model" elementTypeID="org.eclipse.papyrus.uml.Model"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Node" elementTypeID="org.eclipse.papyrus.uml.Node"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::OpaqueBehavior" elementTypeID="org.eclipse.papyrus.uml.OpaqueBehavior"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::OperationTemplateParameter" elementTypeID="org.eclipse.papyrus.uml.OperationTemplateParameter"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Package" elementTypeID="org.eclipse.papyrus.uml.Package"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Profile" elementTypeID="org.eclipse.papyrus.uml.Profile"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::ProtocolStateMachine" elementTypeID="org.eclipse.papyrus.uml.ProtocolStateMachine"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::StateMachine" elementTypeID="org.eclipse.papyrus.uml.StateMachine"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Stereotype" elementTypeID="org.eclipse.papyrus.uml.Stereotype"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::TemplateParameter" elementTypeID="org.eclipse.papyrus.uml.TemplateParameter"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::TemplateParameterSubstitution" elementTypeID="org.eclipse.papyrus.uml.TemplateParameterSubstitution"/>
+  <ownedFilter xsi:type="filters:CompoundFilter" name="pertains to Profile UMLRealTime" filter="//@ownedFilter.23/@ownedFilter.0 //@ownedFilter.23/@ownedFilter.1" operator="or">
+    <ownedFilter xsi:type="umlfilters:ProfileApplied" name="UMLRealTime is applied in context" profileQualifiedName="UMLRealTime" profileURI="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    <ownedFilter xsi:type="assistant:AssistedElementTypeFilter"/>
+  </ownedFilter>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Artifact" elementTypeID="org.eclipse.papyrus.uml.Artifact"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::AssociationBase" elementTypeID="org.eclipse.papyrus.uml.AssociationBase"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Association" elementTypeID="org.eclipse.papyrus.uml.Association"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Collaboration" elementTypeID="org.eclipse.papyrus.uml.Collaboration"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::CommunicationPath" elementTypeID="org.eclipse.papyrus.uml.CommunicationPath"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::DataType" elementTypeID="org.eclipse.papyrus.uml.DataType"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::DeploymentSpecification" elementTypeID="org.eclipse.papyrus.uml.DeploymentSpecification"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::EncapsulatedClassifier" elementTypeID="org.eclipse.papyrus.uml.EncapsulatedClassifier"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Enumeration" elementTypeID="org.eclipse.papyrus.uml.Enumeration"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Extension" elementTypeID="org.eclipse.papyrus.uml.Extension"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::ExtensionEnd" elementTypeID="org.eclipse.papyrus.uml.ExtensionEnd"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Port" elementTypeID="org.eclipse.papyrus.uml.Port"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::PrimitiveType" elementTypeID="org.eclipse.papyrus.uml.PrimitiveType"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Property" elementTypeID="org.eclipse.papyrus.uml.Property"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::Signal" elementTypeID="org.eclipse.papyrus.uml.Signal"/>
+  <ownedFilter xsi:type="assistant:ElementTypeFilter" name="UML::StructuredClassifier" elementTypeID="org.eclipse.papyrus.uml.StructuredClassifier"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.Capsule" filter="//@popupAssistant.0/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.0/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.4 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.7 //@ownedFilter.8 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.11 //@ownedFilter.12 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.15 //@ownedFilter.16 //@ownedFilter.17 //@ownedFilter.18 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.CapsulePart" filter="//@popupAssistant.1/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.1/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.24 //@ownedFilter.25 //@ownedFilter.26 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.4 //@ownedFilter.27 //@ownedFilter.28 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.29 //@ownedFilter.30 //@ownedFilter.7 //@ownedFilter.31 //@ownedFilter.32 //@ownedFilter.8 //@ownedFilter.33 //@ownedFilter.34 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.11 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.15 //@ownedFilter.35 //@ownedFilter.36 //@ownedFilter.37 //@ownedFilter.18 //@ownedFilter.38 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.39 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.Protocol" filter="//@popupAssistant.2/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.2/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.4 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.7 //@ownedFilter.8 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.11 //@ownedFilter.12 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.15 //@ownedFilter.16 //@ownedFilter.17 //@ownedFilter.18 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.RTPort" filter="//@popupAssistant.3/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.3/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.24 //@ownedFilter.25 //@ownedFilter.26 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.4 //@ownedFilter.27 //@ownedFilter.28 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.29 //@ownedFilter.30 //@ownedFilter.7 //@ownedFilter.31 //@ownedFilter.32 //@ownedFilter.8 //@ownedFilter.33 //@ownedFilter.34 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.11 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.15 //@ownedFilter.35 //@ownedFilter.36 //@ownedFilter.37 //@ownedFilter.18 //@ownedFilter.38 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.39 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.RTConnector" filter="//@popupAssistant.4/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.4/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.27 //@ownedFilter.5 //@ownedFilter.7 //@ownedFilter.31 //@ownedFilter.8 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.18 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.39" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.ProtocolContainer" filter="//@popupAssistant.5/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.5/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.4 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.12 //@ownedFilter.15 //@ownedFilter.16 //@ownedFilter.17 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.RTRExcludedElement"/>
+  <popupAssistant elementTypeID="org.eclipse.papyrusrt.core.RTMessageSet" filter="//@popupAssistant.7/@ownedFilter">
+    <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.23 //@popupAssistant.7/@ownedFilter/@ownedFilter.0">
+      <ownedFilter xsi:type="filters:CompoundFilter" filter="//@ownedFilter.0 //@ownedFilter.1 //@ownedFilter.2 //@ownedFilter.3 //@ownedFilter.4 //@ownedFilter.5 //@ownedFilter.6 //@ownedFilter.7 //@ownedFilter.8 //@ownedFilter.9 //@ownedFilter.10 //@ownedFilter.11 //@ownedFilter.12 //@ownedFilter.13 //@ownedFilter.14 //@ownedFilter.15 //@ownedFilter.16 //@ownedFilter.17 //@ownedFilter.18 //@ownedFilter.19 //@ownedFilter.20 //@ownedFilter.21 //@ownedFilter.22" operator="or"/>
+    </ownedFilter>
+  </popupAssistant>
+  <elementTypeID>org.eclipse.papyrusrt.core.Capsule</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.CapsulePart</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.Protocol</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.RTPort</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.RTConnector</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.ProtocolContainer</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.RTRExcludedElement</elementTypeID>
+  <elementTypeID>org.eclipse.papyrusrt.core.RTMessageSet</elementTypeID>
+</assistant:ModelingAssistantProvider>

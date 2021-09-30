@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_LeYGkFsnEeWYXduY_S2jRA" name="RootElement">
+    <packagedElement xmi:type="uml:Class" xmi:id="_OqWTUFsnEeWYXduY_S2jRA" name="Top" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SM1ioFsnEeWYXduY_S2jRA" name="Class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UDYNgFsnEeWYXduY_S2jRA" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UiTlMFsnEeWYXduY_S2jRA" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fZGvoFsnEeWYXduY_S2jRA" name="Class2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_grFU4FsnEeWYXduY_S2jRA" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hLUUIFsnEeWYXduY_S2jRA" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fwyP0FsnEeWYXduY_S2jRA" name="Class3">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hlIiUFsnEeWYXduY_S2jRA" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_h_uzoFsnEeWYXduY_S2jRA" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HiIK0HQ-EeW95P4ZZmf_VA" name="Class4">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JNybYHQ-EeW95P4ZZmf_VA" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JuG6MHQ-EeW95P4ZZmf_VA" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_LrofcFsnEeWYXduY_S2jRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Lrsw4FsnEeWYXduY_S2jRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_aXyK0FsnEeWYXduY_S2jRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aX0AAFsnEeWYXduY_S2jRA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aX0AAVsnEeWYXduY_S2jRA" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aX0AAlsnEeWYXduY_S2jRA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aX0AA1snEeWYXduY_S2jRA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aX0ABFsnEeWYXduY_S2jRA" key="Date" value="2015-09-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aX0ABVsnEeWYXduY_S2jRA" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aXzY8FsnEeWYXduY_S2jRA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_OvnN0FsnEeWYXduY_S2jRA" base_Class="_OqWTUFsnEeWYXduY_S2jRA"/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_cOTAgFsnEeWYXduY_S2jRA" generateEqualityOperator="true" generateExtractionOperator="true" generateInequalityOperator="true" generateInsertionOperator="true" base_Class="_SM1ioFsnEeWYXduY_S2jRA" privateDeclarations=""/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_jO9m4FsnEeWYXduY_S2jRA" base_Class="_fZGvoFsnEeWYXduY_S2jRA" kind="Struct"/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_j-dKIFsnEeWYXduY_S2jRA" base_Class="_fwyP0FsnEeWYXduY_S2jRA" kind="Union"/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_R6cpgHQ-EeW95P4ZZmf_VA" generateInsertionOperator="true" base_Class="_HiIK0HQ-EeW95P4ZZmf_VA"/>
+</xmi:XMI>

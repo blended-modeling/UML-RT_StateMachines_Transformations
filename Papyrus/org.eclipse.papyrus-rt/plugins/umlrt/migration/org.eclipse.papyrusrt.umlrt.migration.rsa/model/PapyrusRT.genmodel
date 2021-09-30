@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" * Copyright (c) 2013, 2014 CEA LIST.&#xD;&#xA; *&#xD;&#xA; * All rights reserved. This program and the accompanying materials&#xD;&#xA; * are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; * which accompanies this distribution, and is available at&#xD;&#xA; * http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA; *&#xD;&#xA; * Contributors:&#xD;&#xA; *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrusrt.umlrt.migration.rsa/src-gen" editDirectory="/org.eclipse.papyrusrt.umlrt.migration.rsa.edit/src-gen"
+    editorDirectory="/org.eclipse.papyrusrt.umlrt.migration.rsa.editor/src-gen" modelPluginID="org.eclipse.papyrusrt.umlrt.migration.rsa"
+    modelName="PapyrusRT" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/org.eclipse.papyrusrt.umlrt.migration.rsa.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>PapyrusRT.ecore</foreignModel>
+  <genPackages prefix="UMLRealTime" basePackage="org.eclipse.papyrusrt.umlrt.migration.rsa"
+      resource="XML" disposableProviderFactory="true" ecorePackage="PapyrusRT.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PapyrusRT.ecore#//PortRegistrationType">
+      <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//PortRegistrationType/Automatic"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//PortRegistrationType/Application"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//PortRegistrationType/Automatic%20(locked)"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PapyrusRT.ecore#//HistoryKind">
+      <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//HistoryKind/Deep"/>
+      <genEnumLiterals ecoreEnumLiteral="PapyrusRT.ecore#//HistoryKind/Shallow"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="PapyrusRT.ecore#//RTStereotype"/>
+    <genClasses image="false" ecoreClass="PapyrusRT.ecore#//AbstractEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//AbstractEvent/base_CallEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//Capsule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//Capsule/base_Class"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//CapsulePart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//CapsulePart/base_Property"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//Coregion"/>
+    <genClasses ecoreClass="PapyrusRT.ecore#//InEvent"/>
+    <genClasses ecoreClass="PapyrusRT.ecore#//OutEvent"/>
+    <genClasses ecoreClass="PapyrusRT.ecore#//Protocol">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//Protocol/base_Collaboration"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//ProtocolContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//ProtocolContainer/base_Package"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//RTConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTConnector/base_Connector"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//RTHistorystate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTHistorystate/base_Pseudostate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTHistorystate/historyKind"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//RTPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTPort/base_Port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/isConjugate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/isNotification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/isPublish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/isWired"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/registration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTPort/registrationOverride"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//RTRedefinableElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTRedefinableElement/base_RedefinableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTRedefinableElement/rootFragment"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//Trigger">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//Trigger/base_Operation"/>
+    </genClasses>
+    <genClasses ecoreClass="PapyrusRT.ecore#//RTMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTMessage/receivePort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PapyrusRT.ecore#//RTMessage/sendPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PapyrusRT.ecore#//RTMessage/base_Message"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

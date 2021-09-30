@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.commands">
+      <category
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.category"
+            name="Textual-to-Papyrus-UML Generation Category">
+      </category>
+      <command
+            categoryId="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.category"
+            defaultHandler="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.ui.handlers.TransformActionHandler"
+            id="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.gen"
+            name="Generate Papyrus UML-RT model from textual model">
+      </command>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+              allPopups="true"
+              locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+            <command
+                  commandId="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.gen"
+                  id="org.eclipse.papyrusrt.xtumlrt.trans.to.uml.menu.command"
+                  label="Generate Papyrus UML-RT model from textual model (experimental)"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <with
+                           variable="selection">
+                        <iterate
+                              ifEmpty="false"
+                              operator="or">
+                           <adapt
+                                 type="org.eclipse.core.resources.IResource">
+                              <test
+                                    property="org.eclipse.core.resources.extension"
+                                    value="umlrt">
+                              </test>
+                           </adapt>
+                        </iterate>
+                     </with>
+                  </iterate>
+               </visibleWhen>
+            </command>
+        </menuContribution>
+    </extension>
+
+</plugin>

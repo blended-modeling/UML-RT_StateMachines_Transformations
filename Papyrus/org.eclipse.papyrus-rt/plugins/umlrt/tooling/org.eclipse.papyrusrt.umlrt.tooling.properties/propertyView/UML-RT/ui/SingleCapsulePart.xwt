@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:j="clr-namespace:java.lang" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:uml="clr-namespace:org.eclipse.papyrus.uml.properties.widgets"
+	xmlns:facade="clr-namespace:org.eclipse.papyrusrt.umlrt.uml"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}" property="UMLRTFacade:CapsulePart:name"></ppe:StringEditor>
+		<ppumlrt:CapsulePartTypeEditor
+			customLabel="Capsule" property="UMLRealTimeExt:Property:type" input="{Binding}"></ppumlrt:CapsulePartTypeEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppumlrt:CapsulePartKindPropertyEditor
+			property="UMLRealTime:CapsulePart:kind"
+			enumType="facade:UMLRTCapsulePartKind"
+			input="{Binding}">
+		</ppumlrt:CapsulePartKindPropertyEditor>
+		<ppumlrt:PropertyReplicationComboEditor
+			customLabel="Replication" input="{Binding}"
+			property="UMLRealTimeExt:RTMultiplicity:replication"></ppumlrt:PropertyReplicationComboEditor>
+		<ppe:EnumCombo input="{Binding}" property="UML:Property:aggregation"
+			readOnly="true"></ppe:EnumCombo>
+	</Composite>
+</Composite>

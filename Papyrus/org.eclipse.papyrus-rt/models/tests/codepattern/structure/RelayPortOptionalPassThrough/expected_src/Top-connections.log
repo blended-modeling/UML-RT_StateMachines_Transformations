@@ -1,0 +1,6 @@
+Top.RTConnector1
+    Top.sender#s_out.far[0] <-> Top.mediator#m_inp.far[0]
+Top.RTConnector2
+    Top.mediator#m_out.far[0] <-> Top.receiver#r_inp.far[0]
+Top.RTConnector3
+    Top#start.far[0] <-> Top.sender#start.far[0]

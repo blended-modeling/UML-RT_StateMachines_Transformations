@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt"
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:ppeg="clr-namespace:org.eclipse.papyrus.infra.gmfdiag.properties.widget"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:j="clr-namespace:java.lang">
+	<Composite.layout>
+		<GridLayout></GridLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="3"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTimeExt:Port:isConjugated"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTimeExt:Port:isService"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTime:RTPort:isWired"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTimeExt:Port:isBehavior"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTime:RTPort:isPublish"></ppe:BooleanCheckbox>
+		<ppe:BooleanCheckbox input="{Binding}"
+			property="UMLRealTime:RTPort:isNotification"></ppe:BooleanCheckbox>
+	</Composite>
+</Composite>

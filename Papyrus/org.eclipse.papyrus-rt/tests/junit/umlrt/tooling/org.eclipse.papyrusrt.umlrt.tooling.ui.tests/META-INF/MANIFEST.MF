@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT Tests for Tooling UI
+Bundle-SymbolicName: org.eclipse.papyrusrt.umlrt.tooling.ui.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrusrt.umlrt.tooling.ui.tests.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui;bundle-version="[3.109.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.junit;bundle-version="[4.12.0,5.0.0)",
+ org.eclipse.papyrus.junit.utils;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.emf.common;bundle-version="[2.13.0,3.0.0)",
+ org.eclipse.emf.ecore;bundle-version="[2.13.0,3.0.0)",
+ org.eclipse.papyrus.infra.services.edit;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.newchild;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.types;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.modelexplorer;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.ui;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.junit.framework;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.emf.transaction;bundle-version="[1.9.0,2.0.0)",
+ org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
+ org.eclipse.papyrus.infra.core;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrusrt.umlrt.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.core;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.uml.properties;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.views.properties;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.filter;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.infra.emf;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.core.databinding.observable;bundle-version="[1.6.0,2.0.0)",
+ org.eclipse.papyrus.uml.tools;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrusrt.junit;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.properties;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.uml.service.types;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.diagram.common;bundle-version="[1.0.0,2.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: com.google.common.base;version="[21.0.0,22.0.0)"

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_hT4jUDUIEeSKbZw3CY0ONg" name="TrafficLights">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_mhgmwHG5EeS4JuSUrqoUQA">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_NrWMEHDVEeS5e6HUI4-x1Q" name="Basic">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_hT4jUTUIEeSKbZw3CY0ONg">
+        <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+      </packageImport>
+      <packagedElement xmi:type="uml:Class" xmi:id="_V5A-UGXjEeS_4daqvwyFrg" name="Intersection" classifierBehavior="_WPSzkHY6EeS0RrgkTcb0nA" isActive="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_uBMlEHGxEeSfbNhe044FSg" name="trafficLight_NS" visibility="protected" type="_tj8ikGXjEeS_4daqvwyFrg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7KxDYHGxEeSfbNhe044FSg" name="trafficLight_EW" visibility="protected" type="_tj8ikGXjEeS_4daqvwyFrg"/>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_MJFlsHGyEeSfbNhe044FSg" name="Connector1">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_MJGMwHGyEeSfbNhe044FSg" partWithPort="_uBMlEHGxEeSfbNhe044FSg" role="_qinMIHDyEeSwWKwNKw1iAA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MJGMwXGyEeSfbNhe044FSg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MJGMwnGyEeSfbNhe044FSg" value="1"/>
+          </end>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_MJGMw3GyEeSfbNhe044FSg" partWithPort="_7KxDYHGxEeSfbNhe044FSg" role="_qinMIHDyEeSwWKwNKw1iAA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MJGMxHGyEeSfbNhe044FSg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MJGMxXGyEeSfbNhe044FSg" value="1"/>
+          </end>
+        </ownedConnector>
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_WPSzkHY6EeS0RrgkTcb0nA" name="StateMachine1" isReentrant="false">
+          <region xmi:type="uml:Region" xmi:id="_ZxquIHY6EeS0RrgkTcb0nA" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_dGTHoHY6EeS0RrgkTcb0nA" source="_a3SSYHY6EeS0RrgkTcb0nA" target="_bZEJwHY6EeS0RrgkTcb0nA">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_bkLQ8J3MEeWcqpdcWE1HVA" name="init_Intersection">
+                <language>C++</language>
+                <body>log.log(&quot;Initialising Intersection&quot;);
+</body>
+              </effect>
+            </transition>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_a3SSYHY6EeS0RrgkTcb0nA" name="Initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_bZEJwHY6EeS0RrgkTcb0nA" name="Running">
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_h4u_QJ3MEeWcqpdcWE1HVA" name="intersection_Running">
+                <language>C++</language>
+                <body>log.log(&quot;Intersection is running&quot;);
+</body>
+              </entry>
+            </subvertex>
+          </region>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_tj8ikGXjEeS_4daqvwyFrg" name="TrafficLight" classifierBehavior="_ndoiwHDzEeSwWKwNKw1iAA" isActive="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_aES5sGXoEeS_4daqvwyFrg" name="timerId">
+          <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jFxhQGXoEeS_4daqvwyFrg" name="myId" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_RfTDMHDzEeSwWKwNKw1iAA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mQmXIGXrEeS_4daqvwyFrg" name="timer" aggregation="composite" isBehavior="true" isService="false">
+          <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_qinMIHDyEeSwWKwNKw1iAA" name="betweenLights" type="_bilnMGXpEeS_4daqvwyFrg" aggregation="composite" isBehavior="true"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_OC3EAAPcEeWyav08LGx7TQ" name="log" aggregation="composite" isBehavior="true" isService="false">
+          <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_m7YpQASLEeWVBr36vWtS8Q" name="iDProvider" visibility="protected" type="_J2gqAAR5EeWwIrWko-AbkA" isOrdered="true" aggregation="composite" isBehavior="true" isService="false"/>
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_ndoiwHDzEeSwWKwNKw1iAA" name="TrafficLight_SM" isReentrant="false">
+          <region xmi:type="uml:Region" xmi:id="_qZtSUHDzEeSwWKwNKw1iAA" name="Region_TrafficLight">
+            <transition xmi:type="uml:Transition" xmi:id="_rXue4HGlEeSfbNhe044FSg" name="TrafficLight_Initial" source="_5ZedQHDzEeSwWKwNKw1iAA" target="_AvqLIHG5EeS4JuSUrqoUQA">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_gEEesHG4EeS4JuSUrqoUQA" name="Top_Initial">
+                <language>C++</language>
+                <body>log.log(&quot;[TrafficLight ] Initializing&quot;);
+
+if ( iDProvider().getID().send() ) {
+	log.log(&quot;[TrafficLight] Initializing - requesting ID&quot;);
+} else {
+	log.log(&quot;[TrafficLight] Initializing - FAILED to request ID!&quot;);
+	std::cout &lt;&lt; &quot;[TrafficLight] - FAILED to request ID!&quot; &lt;&lt; std::endl;
+}
+</body>
+              </effect>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_3SmVcHGlEeSfbNhe044FSg" name="onID" source="_AvqLIHG5EeS4JuSUrqoUQA" target="_0P5HUJ3NEeWcqpdcWE1HVA">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_y4iTAHGnEeSfbNhe044FSg" name="onID">
+                <language>C++</language>
+                <body>/**
+ Save my ID
+ */
+myId = rtdata;
+log.show(&quot;[TrafficLight] received ID: &quot;);
+log.log(myId);
+
+/**
+ Tell the other lights my ID
+ */
+log.cr();
+log.show(&quot;[TrafficLight] traffic light #&quot;);
+log.show( myId );
+if ( betweenLights.id(myId).send() ) {
+	log.log(&quot; sent it's ID to the other lights.&quot;);
+} else {
+	log.log(&quot; FAILED to send it's ID to the other lights!&quot;);
+}
+</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_kncl0ASNEeWVBr36vWtS8Q" name="onID" event="_3jX0YAR5EeWwIrWko-AbkA" port="_m7YpQASLEeWVBr36vWtS8Q"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_XQL1gHcOEeSfB9lVLn0WIA" name="Init2work_goFirst" source="_WKG1IHGmEeSfbNhe044FSg" target="_bXTD0J3SEeWcqpdcWE1HVA"/>
+            <transition xmi:type="uml:Transition" xmi:id="_B33iMHcQEeSfB9lVLn0WIA" name="Init2Work_goLater" source="_Vx2GIHGmEeSfbNhe044FSg" target="_XtYW0J3SEeWcqpdcWE1HVA"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_5ZedQHDzEeSwWKwNKw1iAA" name="Initial"/>
+            <subvertex xmi:type="uml:State" xmi:id="_AvqLIHG5EeS4JuSUrqoUQA" name="WaitForID">
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_VrVbYHa9EeSNdv26s019Dg" name="waitD">
+                <language>C++</language>
+                <body>std::cout &lt;&lt; &quot;[TrafficLight] is entering {WaitingForID&quot; &lt;&lt; std::endl;
+</body>
+              </entry>
+            </subvertex>
+            <subvertex xmi:type="uml:State" xmi:id="_QjrdkHD1EeSHgYnS5yntNQ" name="Initializing">
+              <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_Vx2GIHGmEeSfbNhe044FSg" name="init_Ex_goLater" kind="exitPoint"/>
+              <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_WKG1IHGmEeSfbNhe044FSg" name="init_Ex_goFirst" kind="exitPoint"/>
+              <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_0P5HUJ3NEeWcqpdcWE1HVA" name="Init_EP_Init" kind="entryPoint"/>
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_lxUQMHasEeSNdv26s019Dg" name="initializing_EN">
+                <language>C++</language>
+                <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is entering {Initializing} state&quot;);
+</body>
+              </entry>
+              <exit xmi:type="uml:OpaqueBehavior" xmi:id="_ftucEJ3TEeWcqpdcWE1HVA" name="Initializing_EX">
+                <language>C++</language>
+                <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is leaving {Initializing} state&quot;);
+</body>
+              </exit>
+              <region xmi:type="uml:Region" xmi:id="_5bjmAHGlEeSfbNhe044FSg" name="Region_initializing">
+                <transition xmi:type="uml:Transition" xmi:id="_a25NAHGpEeSfbNhe044FSg" name="OnInitTimeout_Contd" source="_0P5HUJ3NEeWcqpdcWE1HVA" target="_VSizoHGpEeSfbNhe044FSg">
+                  <effect xmi:type="uml:OpaqueBehavior" xmi:id="_p7x2MAPdEeWyav08LGx7TQ" name="TrafficLightStarting">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLight] Traffic Light # &quot;);
+log.show(myId);
+log.show(&quot; is initializing&quot;);
+
+log.show(&quot;[TrafficLight] Traffic Light #&quot;);
+if ( betweenLights().id(myId).send() ) {
+	log.log(&quot; : synchronization request sent.&quot;);
+} else {
+	log.log(&quot; but ERROR sending synchronisation request!&quot;);
+}</body>
+                  </effect>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_3LmYwHGpEeSfbNhe044FSg" name="exitContd" kind="local" source="_1DUdoHGpEeSfbNhe044FSg" target="_w3_ssHGpEeSfbNhe044FSg">
+                  <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Fbe-4HGqEeSfbNhe044FSg" name="cancelTimer">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+
+//log.tab();
+//log.log(&quot; cancelling flashingAmber periodic timer&quot;);
+
+//if (  timerId.isValid() ) {
+//	log.log(&quot;timer is valid!&quot;);
+//} else {
+//	log.log(&quot;timer is INVALID!&quot;);
+//}
+
+// Before continuing, we need to cancel the periodic timer
+log.tab();
+if ( timer.cancelTimer(timerId) ) {
+	log.log(&quot; Periodic timer cancelled&quot;);
+} else {
+	log.log(&quot;ERROR cancelling the periodic timer&quot;);
+}</body>
+                  </effect>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_7boqkHGpEeSfbNhe044FSg" name="OtherHasPriority" guard="_6E2BUHGqEeSfbNhe044FSg" source="_w3_ssHGpEeSfbNhe044FSg" target="_Vx2GIHGmEeSfbNhe044FSg">
+                  <ownedRule xmi:type="uml:Constraint" xmi:id="_6E2BUHGqEeSfbNhe044FSg" name="OtherHasPriority">
+                    <specification xmi:type="uml:OpaqueExpression" xmi:id="_6E2BUXGqEeSfbNhe044FSg">
+                      <language>C++</language>
+                      <body>return( myId &lt;= rtdata );
+//return( myId &lt;= *((int *)&amp;rtdata) );</body>
+                    </specification>
+                  </ownedRule>
+                  <effect xmi:type="uml:OpaqueBehavior" xmi:id="_163mUHavEeSNdv26s019Dg" name="otherHasPriority">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.show(&quot;'s other light (# &quot;);
+//log.show( *((int *)&amp;rtdata);
+log.show(rtdata);
+log.log(&quot; has priority&quot;);
+</body>
+                  </effect>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_8307wHGpEeSfbNhe044FSg" name="IHavePriority" guard="_pkxhQHGqEeSfbNhe044FSg" source="_w3_ssHGpEeSfbNhe044FSg" target="_WKG1IHGmEeSfbNhe044FSg">
+                  <ownedRule xmi:type="uml:Constraint" xmi:id="_pkxhQHGqEeSfbNhe044FSg" name="IHavePriority">
+                    <specification xmi:type="uml:OpaqueExpression" xmi:id="_pkxhQXGqEeSfbNhe044FSg" name="IHavePriority">
+                      <language>C++</language>
+                      <body>return( myId > rtdata );
+//return( myId > *((int *)&amp;rtdata) );
+</body>
+                    </specification>
+                  </ownedRule>
+                  <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Q-bvwHavEeSNdv26s019Dg" name="IHavePriority">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; has priority.&quot;);
+</body>
+                  </effect>
+                </transition>
+                <subvertex xmi:type="uml:State" xmi:id="_B53HsHGpEeSfbNhe044FSg" name="synchronizing">
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_VSizoHGpEeSfbNhe044FSg" name="Sync_EP_Init" kind="entryPoint"/>
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_1DUdoHGpEeSfbNhe044FSg" name="FA_Ex" kind="exitPoint"/>
+                  <entry xmi:type="uml:OpaqueBehavior" xmi:id="_wsNQcHasEeSNdv26s019Dg" name="Synchronizing_EN">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; entering {TrafficLight::Initializing::Synchronizing} state&quot;);
+</body>
+                  </entry>
+                  <exit xmi:type="uml:OpaqueBehavior" xmi:id="_WL03IHauEeSNdv26s019Dg" name="FlashingAmber_EX">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; exiting {TrafficLight::Initializing::Synchronizing} state&quot; &lt;&lt; std::endl;</body>
+                  </exit>
+                  <region xmi:type="uml:Region" xmi:id="_VSgXYHGpEeSfbNhe044FSg" name="Region_FlashingAmber">
+                    <transition xmi:type="uml:Transition" xmi:id="_TT4coHGrEeSfbNhe044FSg" name="setTimer" source="_VSizoHGpEeSfbNhe044FSg" target="_Omv_IHGrEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FlsY4HGsEeSfbNhe044FSg" name="setFlashingAmberTimer">
+                        <language>C++</language>
+                        <body>log.show(&quot;[TrafficLight] #&quot;);
+log.show(myId);
+log.show(&quot; : setting periodic timer to flash lights&quot;);
+
+timerId = timer.informEvery(UMLRTTimespec(1,0));
+
+if ( timerId.isValid() ) {
+	log.log(&quot; - periodic timer set!&quot;);
+} else {
+	log.log(&quot; - ERROR setting  periodic timer!&quot;);
+}
+</body>
+                      </effect>
+                    </transition>
+                    <transition xmi:type="uml:Transition" xmi:id="_bMWNsHGrEeSfbNhe044FSg" name="onTimeout_off" source="_Omv_IHGrEeSfbNhe044FSg" target="_P-HasHGrEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_4lMckHbFEeSNdv26s019Dg" name="onTimer_amberoff2on">
+                        <language>C++</language>
+                        <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; received timeout - turning Amber light ON&quot;);
+</body>
+                      </effect>
+                      <trigger xmi:type="uml:Trigger" xmi:id="_vK94QHGrEeSfbNhe044FSg" name="onTimeout" port="_mQmXIGXrEeS_4daqvwyFrg">
+                        <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+                      </trigger>
+                    </transition>
+                    <transition xmi:type="uml:Transition" xmi:id="_dVtG4HGrEeSfbNhe044FSg" name="onTimeout_on" source="_P-HasHGrEeSfbNhe044FSg" target="_Omv_IHGrEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FWlEYHbGEeSNdv26s019Dg" name="onTimer_amberon2off">
+                        <language>C++</language>
+                        <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; received timeout - turning Amber light OFF&quot;);
+</body>
+                      </effect>
+                      <trigger xmi:type="uml:Trigger" xmi:id="_053UwHGrEeSfbNhe044FSg" name="onTimeout" port="_mQmXIGXrEeS_4daqvwyFrg">
+                        <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+                      </trigger>
+                    </transition>
+                    <transition xmi:type="uml:Transition" xmi:id="_RhKFUHGsEeSfbNhe044FSg" name="onID_fromOff" source="_Omv_IHGrEeSfbNhe044FSg" target="_1DUdoHGpEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_syAfkHcLEeSfB9lVLn0WIA" name="OtherBetweenLightsFromOff">
+                        <language>C++</language>
+                        <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is taking the onID_fromOn transition.&quot;;
+
+// Light is already off - no further action.
+</body>
+                      </effect>
+                      <trigger xmi:type="uml:Trigger" xmi:id="_YJPzoHGsEeSfbNhe044FSg" name="onID" event="_qQAocGXqEeS_4daqvwyFrg" port="_qinMIHDyEeSwWKwNKw1iAA"/>
+                    </transition>
+                    <transition xmi:type="uml:Transition" xmi:id="_SE_LIHGsEeSfbNhe044FSg" name="onID_fromON" source="_P-HasHGrEeSfbNhe044FSg" target="_1DUdoHGpEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_hqs7wHGsEeSfbNhe044FSg" name="turnOffAmberLight">
+                        <language>C++</language>
+                        <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is taking the onID_fromOn transition, turning off the amber light.&quot;;
+</body>
+                      </effect>
+                      <trigger xmi:type="uml:Trigger" xmi:id="_cOOE8HGsEeSfbNhe044FSg" name="on_id" event="_qQAocGXqEeS_4daqvwyFrg" port="_qinMIHDyEeSwWKwNKw1iAA"/>
+                    </transition>
+                    <subvertex xmi:type="uml:State" xmi:id="_Omv_IHGrEeSfbNhe044FSg" name="Amber_Off">
+                      <entry xmi:type="uml:OpaqueBehavior" xmi:id="_PbahoHPtEeSXQ9GbVNRvtg" name="Amber_Off_EN">
+                        <language>C++</language>
+                        <body>// In a real system, this would need to be implemented
+// by some connection to hardware
+
+log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s amber light is off {Amber_Off}&quot;);
+</body>
+                      </entry>
+                    </subvertex>
+                    <subvertex xmi:type="uml:State" xmi:id="_P-HasHGrEeSfbNhe044FSg" name="Amber_On">
+                      <entry xmi:type="uml:OpaqueBehavior" xmi:id="_VMlPAHPtEeSXQ9GbVNRvtg" name="Amber_On_EN">
+                        <language>C++</language>
+                        <body>// In a real system, this would need to be implemented
+// by some connection to hardware
+
+log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s AMBER light is On {Amber_On}&quot;);
+</body>
+                      </entry>
+                    </subvertex>
+                  </region>
+                </subvertex>
+                <subvertex xmi:type="uml:Pseudostate" xmi:id="_w3_ssHGpEeSfbNhe044FSg" name="init_CP" kind="choice"/>
+              </region>
+            </subvertex>
+            <subvertex xmi:type="uml:State" xmi:id="_TFujkHD1EeSHgYnS5yntNQ" name="Working">
+              <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XtYW0J3SEeWcqpdcWE1HVA" name="EP2Red" kind="entryPoint"/>
+              <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_bXTD0J3SEeWcqpdcWE1HVA" name="Entry2Green" kind="entryPoint"/>
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_M36J0HawEeSNdv26s019Dg" name="Working_EN">
+                <language>C++</language>
+                <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is entering {Working} state&quot;);
+</body>
+              </entry>
+              <region xmi:type="uml:Region" xmi:id="_hh5z0XGmEeSfbNhe044FSg" name="Region_working">
+                <transition xmi:type="uml:Transition" xmi:id="_c5zjIHGtEeSfbNhe044FSg" name="onOtherTurningRed" source="_tfOSsHGsEeSfbNhe044FSg" target="__I7CYHGuEeSfbNhe044FSg">
+                  <trigger xmi:type="uml:Trigger" xmi:id="_9t8HkHGtEeSfbNhe044FSg" name="onTurningRed" event="_rBnEgGXqEeS_4daqvwyFrg" port="_qinMIHDyEeSwWKwNKw1iAA"/>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_dcc9MHGtEeSfbNhe044FSg" name="T2Green_T" source="_YWbzsHGvEeSfbNhe044FSg" target="_vwOE8HGsEeSfbNhe044FSg"/>
+                <transition xmi:type="uml:Transition" xmi:id="_eA8KUHGtEeSfbNhe044FSg" name="onGreenTimeout" source="_vwOE8HGsEeSfbNhe044FSg" target="_c4EL0HGvEeSfbNhe044FSg">
+                  <trigger xmi:type="uml:Trigger" xmi:id="_WcidYHGwEeSfbNhe044FSg" name="onTimeout" port="_mQmXIGXrEeS_4daqvwyFrg">
+                    <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+                  </trigger>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_eyF6cHGtEeSfbNhe044FSg" name="Transit2Red" visibility="public" source="_fC7g4HGvEeSfbNhe044FSg" target="_tfOSsHGsEeSfbNhe044FSg">
+                  <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FpbQEHGxEeSfbNhe044FSg" name="sendBetweenLights">
+                    <language>C++</language>
+                    <body>betweenLights().turningRed().send();
+//std::cout &lt;&lt; &quot;Traffic Light #&quot; &lt;&lt; myId &lt;&lt; &quot; sent transition signal&quot; &lt;&lt; std::endl;
+</body>
+                  </effect>
+                </transition>
+                <transition xmi:type="uml:Transition" xmi:id="_I7R_MHGtEeSfbNhe044FSg" name="IGoLater" source="_XtYW0J3SEeWcqpdcWE1HVA" target="_tfOSsHGsEeSfbNhe044FSg"/>
+                <transition xmi:type="uml:Transition" xmi:id="_KsYwcHGtEeSfbNhe044FSg" name="IGoFirst" source="_bXTD0J3SEeWcqpdcWE1HVA" target="_vwOE8HGsEeSfbNhe044FSg"/>
+                <subvertex xmi:type="uml:State" xmi:id="_tfOSsHGsEeSfbNhe044FSg" name="Red">
+                  <entry xmi:type="uml:OpaqueBehavior" xmi:id="_uzTxkHPtEeSXQ9GbVNRvtg" name="Red_on">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s RED light is on&quot;);
+</body>
+                  </entry>
+                  <exit xmi:type="uml:OpaqueBehavior" xmi:id="_7IKVIHawEeSNdv26s019Dg" name="Red_Off">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s RED light is off&quot;);
+</body>
+                  </exit>
+                </subvertex>
+                <subvertex xmi:type="uml:State" xmi:id="_uba1MHGsEeSfbNhe044FSg" name="Transitioning">
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="__I7CYHGuEeSfbNhe044FSg" name="Red_En" kind="entryPoint"/>
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_YWbzsHGvEeSfbNhe044FSg" name="Green_Ex" kind="exitPoint"/>
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_c4EL0HGvEeSfbNhe044FSg" name="Green_En" kind="entryPoint"/>
+                  <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_fC7g4HGvEeSfbNhe044FSg" name="Red_Ex" kind="exitPoint"/>
+                  <entry xmi:type="uml:OpaqueBehavior" xmi:id="_FTrG4HaxEeSNdv26s019Dg" name="Transition_EN">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; is in {Transitioning} state&quot;);
+</body>
+                  </entry>
+                  <exit xmi:type="uml:OpaqueBehavior" xmi:id="_KpQrgHaxEeSNdv26s019Dg" name="TransitionEX">
+                    <language>C++</language>
+                    <body>log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot; completed the transition&quot;);
+</body>
+                  </exit>
+                  <region xmi:type="uml:Region" xmi:id="__I5NMHGuEeSfbNhe044FSg" name="Region_transitioning">
+                    <transition xmi:type="uml:Transition" xmi:id="_r7FfEHGvEeSfbNhe044FSg" name="Red2Green_T" source="__I7CYHGuEeSfbNhe044FSg" target="_YWbzsHGvEeSfbNhe044FSg"/>
+                    <transition xmi:type="uml:Transition" xmi:id="_xn1mgHGvEeSfbNhe044FSg" name="setAmberTimer" source="_c4EL0HGvEeSfbNhe044FSg" target="_vTjPsHGvEeSfbNhe044FSg">
+                      <effect xmi:type="uml:OpaqueBehavior" xmi:id="_pamC0HGwEeSfbNhe044FSg" name="setAmberTimer">
+                        <language>C++</language>
+                        <body>timerId = timer().informIn(UMLRTTimespec(4,0));
+//if ( timerId.isValid() ) {
+//	std::cout &lt;&lt; &quot;Traffic Light #&quot; &lt;&lt; myId &lt;&lt; &quot; set a 4 sec timer&quot; &lt;&lt; std::endl;
+//} else {
+//	std::cout &lt;&lt; &quot;Traffic Light #&quot; &lt;&lt; myId &lt;&lt; &quot; failed to set a 4 sec timer&quot; &lt;&lt; std::endl;
+//}
+</body>
+                      </effect>
+                    </transition>
+                    <transition xmi:type="uml:Transition" xmi:id="_yKZhAHGvEeSfbNhe044FSg" name="onAmberTimeout" source="_vTjPsHGvEeSfbNhe044FSg" target="_fC7g4HGvEeSfbNhe044FSg">
+                      <trigger xmi:type="uml:Trigger" xmi:id="_selYQHGwEeSfbNhe044FSg" name="onTimeout" port="_mQmXIGXrEeS_4daqvwyFrg">
+                        <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+                      </trigger>
+                    </transition>
+                    <subvertex xmi:type="uml:State" xmi:id="_vTjPsHGvEeSfbNhe044FSg" name="Amber" visibility="protected">
+                      <entry xmi:type="uml:OpaqueBehavior" xmi:id="_AGHWIHPuEeSXQ9GbVNRvtg" name="Amber_EN">
+                        <language>C++</language>
+                        <body>//In a real system, this would call a hardware interface to 
+// turn on the light
+log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s AMBER light is on&quot;);
+</body>
+                      </entry>
+                      <exit xmi:type="uml:OpaqueBehavior" xmi:id="_eHdwoHaxEeSNdv26s019Dg" name="Amber_EX">
+                        <language>C++</language>
+                        <body>//In a real system, this would call a hardware interface to 
+// turn off the light
+std::cout &lt;&lt; &quot;Traffic Light &quot; &lt;&lt; myId &lt;&lt; &quot;'s amber light is off&quot; &lt;&lt; std::endl;
+</body>
+                      </exit>
+                    </subvertex>
+                  </region>
+                </subvertex>
+                <subvertex xmi:type="uml:State" xmi:id="_vwOE8HGsEeSfbNhe044FSg" name="Green">
+                  <entry xmi:type="uml:OpaqueBehavior" xmi:id="_O_s4YHGwEeSfbNhe044FSg" name="Green_EN">
+                    <language>C++</language>
+                    <body>//In a real system, this would call a hardware interface to 
+// turn on the light
+log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s GREEN light is on&quot;);
+
+// Set the green light to only last 8 seconds
+timerId = timer().informIn(UMLRTTimespec(8,0));
+//if ( timerId.isValid() ) {
+//	std::cout &lt;&lt; &quot;Traffic Light #&quot; &lt;&lt; myId &lt;&lt; &quot; set an 8 sec timer&quot; &lt;&lt; std::endl;
+//} else {
+//	std::cout &lt;&lt; &quot;Traffic Light #&quot; &lt;&lt; myId &lt;&lt; &quot; failed to set an 8 sec timer&quot; &lt;&lt; std::endl;
+//}
+</body>
+                  </entry>
+                  <exit xmi:type="uml:OpaqueBehavior" xmi:id="_SD0_oHaxEeSNdv26s019Dg" name="Green_EX">
+                    <language>C++</language>
+                    <body>//In a real system, this would call a hardware interface to 
+// turn off the light
+log.show(&quot;[TrafficLights] # &quot;);
+log.show(myId);
+log.log(&quot;'s GREEN light is off&quot;);
+</body>
+                  </exit>
+                </subvertex>
+              </region>
+            </subvertex>
+          </region>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_VIGQAGXpEeS_4daqvwyFrg" name="BetweenLights">
+        <packagedElement xmi:type="uml:Collaboration" xmi:id="_bilnMGXpEeS_4daqvwyFrg" name="BetweenLights"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_kzw3oGXpEeS_4daqvwyFrg" name="BetweenLights"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_lnDVwGXpEeS_4daqvwyFrg" name="BetweenLights~"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_mR97AGXpEeS_4daqvwyFrg" name="BetweenLightsIO">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_sS0qMGXpEeS_4daqvwyFrg" name="id">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ed0z0GXqEeS_4daqvwyFrg" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hXnrcGXqEeS_4daqvwyFrg" name="turningRed"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:CallEvent" xmi:id="_qQAocGXqEeS_4daqvwyFrg" name="id" operation="_sS0qMGXpEeS_4daqvwyFrg"/>
+        <packagedElement xmi:type="uml:CallEvent" xmi:id="_rBnEgGXqEeS_4daqvwyFrg" name="turningRed" operation="_hXnrcGXqEeS_4daqvwyFrg"/>
+        <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_r0R3kGXqEeS_4daqvwyFrg" name="*"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_uyFFcGXqEeS_4daqvwyFrg" client="_bilnMGXpEeS_4daqvwyFrg" supplier="_kzw3oGXpEeS_4daqvwyFrg"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_vQ3TMGXqEeS_4daqvwyFrg" client="_bilnMGXpEeS_4daqvwyFrg" supplier="_mR97AGXpEeS_4daqvwyFrg"/>
+        <packagedElement xmi:type="uml:Realization" xmi:id="_vxlaoGXqEeS_4daqvwyFrg" client="_bilnMGXpEeS_4daqvwyFrg" supplier="_lnDVwGXpEeS_4daqvwyFrg"/>
+        <packagedElement xmi:type="uml:Realization" xmi:id="_wNzckGXqEeS_4daqvwyFrg" client="_bilnMGXpEeS_4daqvwyFrg" supplier="_mR97AGXpEeS_4daqvwyFrg"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_44-0UHZOEeSIdNh1440eVA" name="Top" classifierBehavior="_44-0WnZOEeSIdNh1440eVA" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_W8C_UHZPEeSIdNh1440eVA" name="intersection" visibility="protected" type="_V5A-UGXjEeS_4daqvwyFrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5ktqwB84EeWH-6iI1-tDiQ" name="trafficLightIDProvider" visibility="protected" type="_Zp3qgAR4EeWwIrWko-AbkA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_44-0WnZOEeSIdNh1440eVA" name="Top_SM" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_44-0W3ZOEeSIdNh1440eVA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_44-0XHZOEeSIdNh1440eVA" source="_44-0XXZOEeSIdNh1440eVA" target="_44-0XnZOEeSIdNh1440eVA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_44-0XXZOEeSIdNh1440eVA" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_44-0XnZOEeSIdNh1440eVA" name="Running"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_1u3mUAR4EeWwIrWko-AbkA" name="Utilities">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Zp3qgAR4EeWwIrWko-AbkA" name="TrafficLightIDProvider" isActive="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xdqP0AR4EeWwIrWko-AbkA">
+          <body>This capsule is a service provider for unique IDs for lights at an intersection.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_aIZ5QAR7EeWwIrWko-AbkA" name="iDProvider" visibility="public" type="_J2gqAAR5EeWwIrWko-AbkA" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Dd4-QAR9EeWwIrWko-AbkA" name="currentID" visibility="protected" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Dd4-QQR9EeWwIrWko-AbkA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_sHBJAAR9EeWwIrWko-AbkA" name="log" aggregation="composite" isBehavior="true" isService="false">
+          <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_NFejkAR9EeWwIrWko-AbkA" name="TrafficLightIDProvider_SM">
+          <region xmi:type="uml:Region" xmi:id="_V7aCcAR9EeWwIrWko-AbkA" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_aoIQQAR9EeWwIrWko-AbkA" name="init" source="_XPEpwAR9EeWwIrWko-AbkA" target="_YmK_kAR9EeWwIrWko-AbkA">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_rKyKQAR9EeWwIrWko-AbkA" name="initialize">
+                <language>C++</language>
+                <body>log.show(&quot;[TrafficLightIDProvider] initialized with starting ID: &quot;);
+log.show( currentID );
+log.show( &quot; (&quot; );
+currentID = 0;
+log.show( currentID );
+log.log( &quot;).&quot; );
+
+
+</body>
+              </effect>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_CBfcQAR-EeWwIrWko-AbkA" name="onGetID" source="_YmK_kAR9EeWwIrWko-AbkA" target="_YmK_kAR9EeWwIrWko-AbkA">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_-WIvYAR-EeWwIrWko-AbkA" name="sendNextID">
+                <language>C++</language>
+                <body>int portNumber = msg.sapIndex0;
+int newID = currentID + 1;
+
+log.show(&quot;[TrafficLightIDProvider] received a request for an ID on port #&quot;);
+log.show( portNumber );
+log.log(&quot;,&quot;);
+
+if ( iDProvider().ID( newID ).sendAt( portNumber ) ) {
+	log.show(&quot;[TrafficLightIDProvider] sent ID: &quot;);
+	log.log( newID );
+	++currentID;
+} else {
+	log.show(&quot;[TrafficLightIDProvider] ERROR sending ID:&quot;);
+	log.log( newID );
+}
+
+
+</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_Nk08kAR-EeWwIrWko-AbkA" name="onGetID" event="_tz2bEAR5EeWwIrWko-AbkA" port="_aIZ5QAR7EeWwIrWko-AbkA"/>
+            </transition>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_XPEpwAR9EeWwIrWko-AbkA" name="Initial1"/>
+            <subvertex xmi:type="uml:State" xmi:id="_YmK_kAR9EeWwIrWko-AbkA" name="Running">
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_VP1bAAUvEeWk6JNa4BNxVg" name="Running">
+                <language>C++</language>
+                <body>log.log(&quot;[TrafficLightIDProvider] is running.&quot;);
+</body>
+              </entry>
+            </subvertex>
+          </region>
+        </ownedBehavior>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_J2jtUAR5EeWwIrWko-AbkA" name="IDProviderProtocol" URI="">
+        <packagedElement xmi:type="uml:Collaboration" xmi:id="_J2gqAAR5EeWwIrWko-AbkA" name="IDProviderProtocol">
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_J2rCEAR5EeWwIrWko-AbkA" name="IDProviderProtocol" client="_J2gqAAR5EeWwIrWko-AbkA" supplier="_J2nXsAR5EeWwIrWko-AbkA" contract="_J2nXsAR5EeWwIrWko-AbkA"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_J20MAAR5EeWwIrWko-AbkA" name="IDProviderProtocolIO" client="_J2gqAAR5EeWwIrWko-AbkA" supplier="_J2xIsAR5EeWwIrWko-AbkA" contract="_J2xIsAR5EeWwIrWko-AbkA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_J2nXsAR5EeWwIrWko-AbkA" name="IDProviderProtocol">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_3jXNUAR5EeWwIrWko-AbkA" name="ID">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="__lvIUAR5EeWwIrWko-AbkA" name="theID">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_J2sQMAR5EeWwIrWko-AbkA" name="IDProviderProtocol~">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_tz0l4AR5EeWwIrWko-AbkA" name="getID"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_J2vTgAR5EeWwIrWko-AbkA" name="IDProviderProtocol~" client="_J2gqAAR5EeWwIrWko-AbkA" supplier="_J2sQMAR5EeWwIrWko-AbkA"/>
+        <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_J2whoAR5EeWwIrWko-AbkA" name="*"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_J2xIsAR5EeWwIrWko-AbkA" name="IDProviderProtocolIO"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_J21aIAR5EeWwIrWko-AbkA" name="IDProviderProtocolIO" client="_J2gqAAR5EeWwIrWko-AbkA" supplier="_J2xIsAR5EeWwIrWko-AbkA"/>
+        <packagedElement xmi:type="uml:CallEvent" xmi:id="_tz2bEAR5EeWwIrWko-AbkA" name="getID_null" operation="_tz0l4AR5EeWwIrWko-AbkA"/>
+        <packagedElement xmi:type="uml:CallEvent" xmi:id="_3jX0YAR5EeWwIrWko-AbkA" name="ID_int" operation="_3jXNUAR5EeWwIrWko-AbkA"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GMIQoD0QEeS6aeoC063YfA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GMKF0D0QEeS6aeoC063YfA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9ZmZID0REeSWSulkfi2XMA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9ZwKID0REeSWSulkfi2XMA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_aRVCYGXjEeS_4daqvwyFrg" base_Class="_V5A-UGXjEeS_4daqvwyFrg"/>
+  <UMLRealTime:Capsule xmi:id="_wI5LkGXjEeS_4daqvwyFrg" base_Class="_tj8ikGXjEeS_4daqvwyFrg"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_Yp8mIGXpEeS_4daqvwyFrg" base_Package="_VIGQAGXpEeS_4daqvwyFrg"/>
+  <UMLRealTime:Protocol xmi:id="_doVLsGXpEeS_4daqvwyFrg" base_Collaboration="_bilnMGXpEeS_4daqvwyFrg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_B_k1EGXrEeS_4daqvwyFrg" base_Interface="_kzw3oGXpEeS_4daqvwyFrg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_DOjwsGXrEeS_4daqvwyFrg" base_Interface="_lnDVwGXpEeS_4daqvwyFrg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_FM4ekGXrEeS_4daqvwyFrg" base_Interface="_mR97AGXpEeS_4daqvwyFrg" rtMsgKind="inOut"/>
+  <UMLRealTime:RTPort xmi:id="_6qpmsHDyEeSwWKwNKw1iAA" base_Port="_qinMIHDyEeSwWKwNKw1iAA"/>
+  <UMLRealTime:RTPort xmi:id="_-OVv4HDyEeSwWKwNKw1iAA" isWired="false" base_Port="_mQmXIGXrEeS_4daqvwyFrg"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_gOKQcHY6EeS0RrgkTcb0nA" base_StateMachine="_WPSzkHY6EeS0RrgkTcb0nA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_hmBbQHY6EeS0RrgkTcb0nA" base_Region="_ZxquIHY6EeS0RrgkTcb0nA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_j2khkHY6EeS0RrgkTcb0nA" base_Pseudostate="_a3SSYHY6EeS0RrgkTcb0nA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_lOQtQHY6EeS0RrgkTcb0nA" base_State="_bZEJwHY6EeS0RrgkTcb0nA"/>
+  <UMLRealTime:CapsulePart xmi:id="_nA-gsHY9EeSZ5dzE45Fd7w" base_Property="_uBMlEHGxEeSfbNhe044FSg"/>
+  <UMLRealTime:CapsulePart xmi:id="_oP5K4HY9EeSZ5dzE45Fd7w" base_Property="_7KxDYHGxEeSfbNhe044FSg"/>
+  <UMLRealTime:RTConnector xmi:id="_peXwMHY9EeSZ5dzE45Fd7w" base_Connector="_MJFlsHGyEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_xEa7kHY9EeSZ5dzE45Fd7w" base_StateMachine="_ndoiwHDzEeSwWKwNKw1iAA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_yYrYwHY9EeSZ5dzE45Fd7w" base_Region="_qZtSUHDzEeSwWKwNKw1iAA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_zlRHsHY9EeSZ5dzE45Fd7w" base_Pseudostate="_5ZedQHDzEeSwWKwNKw1iAA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_4pOw0HY9EeSZ5dzE45Fd7w" base_State="_QjrdkHD1EeSHgYnS5yntNQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_5bc38HY9EeSZ5dzE45Fd7w" base_State="_TFujkHD1EeSHgYnS5yntNQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_99I6cHY9EeSZ5dzE45Fd7w" base_State="_AvqLIHG5EeS4JuSUrqoUQA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_BFqKkHY-EeSZ5dzE45Fd7w" base_Pseudostate="_Vx2GIHGmEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_B0EIsHY-EeSZ5dzE45Fd7w" base_Pseudostate="_WKG1IHGmEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_C2oY8HY-EeSZ5dzE45Fd7w" base_Region="_5bjmAHGlEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_FDggMHY-EeSZ5dzE45Fd7w" base_State="_B53HsHGpEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_F-GgMHY-EeSZ5dzE45Fd7w" base_Pseudostate="_w3_ssHGpEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_HUUsQHY-EeSZ5dzE45Fd7w" base_Pseudostate="_VSizoHGpEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_H_B2IHY-EeSZ5dzE45Fd7w" base_Pseudostate="_1DUdoHGpEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_IxzW4HY-EeSZ5dzE45Fd7w" base_Region="_VSgXYHGpEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_JyKnsHY-EeSZ5dzE45Fd7w" base_State="_Omv_IHGrEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_KekasHY-EeSZ5dzE45Fd7w" base_State="_P-HasHGrEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_RFvjAHY-EeSZ5dzE45Fd7w" base_Region="_hh5z0XGmEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_STRtIHY-EeSZ5dzE45Fd7w" base_State="_tfOSsHGsEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_TrXhcHY-EeSZ5dzE45Fd7w" base_State="_uba1MHGsEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_VV3UYHY-EeSZ5dzE45Fd7w" base_Pseudostate="__I7CYHGuEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_WEtXYHY-EeSZ5dzE45Fd7w" base_Pseudostate="_YWbzsHGvEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_WppQcHY-EeSZ5dzE45Fd7w" base_Pseudostate="_c4EL0HGvEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XaoogHY-EeSZ5dzE45Fd7w" base_Pseudostate="_fC7g4HGvEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_YHUvYHY-EeSZ5dzE45Fd7w" base_Region="__I5NMHGuEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_ZO9F0HY-EeSZ5dzE45Fd7w" base_State="_vTjPsHGvEeSfbNhe044FSg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_bCKI0HY-EeSZ5dzE45Fd7w" base_State="_vwOE8HGsEeSfbNhe044FSg"/>
+  <UMLRealTime:Capsule xmi:id="_45KagHZOEeSIdNh1440eVA" base_Class="_44-0UHZOEeSIdNh1440eVA"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_45QhIHZOEeSIdNh1440eVA" base_StateMachine="_44-0WnZOEeSIdNh1440eVA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_45RvQHZOEeSIdNh1440eVA" base_Region="_44-0W3ZOEeSIdNh1440eVA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_45S9YHZOEeSIdNh1440eVA" base_Pseudostate="_44-0XXZOEeSIdNh1440eVA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_45ULgHZOEeSIdNh1440eVA" base_State="_44-0XnZOEeSIdNh1440eVA"/>
+  <UMLRealTime:CapsulePart xmi:id="_e6VrkHZPEeSIdNh1440eVA" base_Property="_W8C_UHZPEeSIdNh1440eVA"/>
+  <UMLRealTime:RTPort xmi:id="_2_6c0ASLEeWVBr36vWtS8Q" isWired="false" base_Port="_m7YpQASLEeWVBr36vWtS8Q"/>
+  <UMLRealTime:RTPort xmi:id="_Ajg9MASQEeWVBr36vWtS8Q" isWired="false" base_Port="_OC3EAAPcEeWyav08LGx7TQ"/>
+  <UMLRealTime:RTPort xmi:id="_grJNgAR7EeWwIrWko-AbkA" isNotification="true" isPublish="true" isWired="false" base_Port="_aIZ5QAR7EeWwIrWko-AbkA"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_J2mJkAR5EeWwIrWko-AbkA" base_Package="_J2jtUAR5EeWwIrWko-AbkA"/>
+  <UMLRealTime:Capsule xmi:id="_ZqCpoAR4EeWwIrWko-AbkA" base_Class="_Zp3qgAR4EeWwIrWko-AbkA"/>
+  <UMLRealTime:RTPort xmi:id="_zj-m0ASeEeWVBr36vWtS8Q" isWired="false" base_Port="_sHBJAAR9EeWwIrWko-AbkA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_J2y94AR5EeWwIrWko-AbkA" base_Interface="_J2xIsAR5EeWwIrWko-AbkA" rtMsgKind="inOut"/>
+  <UMLRealTime:RTMessageSet xmi:id="_J2uFYAR5EeWwIrWko-AbkA" base_Interface="_J2sQMAR5EeWwIrWko-AbkA" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_J2pz8AR5EeWwIrWko-AbkA" base_Interface="_J2nXsAR5EeWwIrWko-AbkA"/>
+  <UMLRealTime:Protocol xmi:id="_J22oQAR5EeWwIrWko-AbkA" base_Collaboration="_J2gqAAR5EeWwIrWko-AbkA"/>
+  <UMLRealTime:CapsulePart xmi:id="__dHBgB84EeWH-6iI1-tDiQ" base_Property="_5ktqwB84EeWH-6iI1-tDiQ"/>
+</xmi:XMI>

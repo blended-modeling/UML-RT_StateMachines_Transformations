@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expansionmodel:DiagramExpansion
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2"
+    xmlns:expansionmodel="http:///expansionmodel.ecore"
+    xmi:id="_Zp9GMLDMEeajAvRMt69GYA"
+    ID="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine"
+    description="Expansion to add internal transition compartment to states">
+  <usages xmi:id="_j1no8LDMEeajAvRMt69GYA"
+      diagramType="UML-RT State Machine Diagram"
+      representations="_aB3lALDOEeajAvRMt69GYA _Ge0FAL0XEea7o-8wDyd0iQ"
+      name="UML-RT State Machine Diagram Context">
+    <gmftRepresentations
+        xmi:id="_aB3lALDOEeajAvRMt69GYA"
+        editPartQualifiedName="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.RTStateEditPart"
+        name="RTState based on State representation of Statemachine diagram"
+        viewFactory="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.factory.RTStateViewFactory"
+        inducedRepresentations="_8Lt0oLDNEeajAvRMt69GYA"
+        reusedID="State_Shape"/>
+    <gmftRepresentations
+        xmi:id="_Ge0FAL0XEea7o-8wDyd0iQ"
+        editPartQualifiedName="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.RTStateEditPartTN"
+        name="RTState_TN based on StateTN representation of Statemachine diagram"
+        viewFactory="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.factory.RTStateTNViewFactory"
+        inducedRepresentations="_8Lt0oLDNEeajAvRMt69GYA"
+        reusedID="State_Shape_TN"/>
+  </usages>
+  <libraries
+      xmi:id="_1XDfYLDMEeajAvRMt69GYA"
+      name="Independant Representations">
+    <representations
+        xsi:type="expansionmodel:Representation"
+        xmi:id="_kmw8kLDNEeajAvRMt69GYA"
+        editPartQualifiedName="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.LabelInListCompartmentEditPart"
+        name="InternalTransition As Label"
+        viewFactory="org.eclipse.gmf.runtime.diagram.ui.view.factories.optimal.ShapeViewFactory">
+      <graphicalElementTypeRef
+          xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration"
+          href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.InternalTransition_Label"/>
+    </representations>
+  </libraries>
+  <libraries
+      xmi:id="_5q4PkLDNEeajAvRMt69GYA"
+      name="Independant Compartments"
+      description="">
+    <representations
+        xsi:type="expansionmodel:InducedRepresentation"
+        xmi:id="_8Lt0oLDNEeajAvRMt69GYA"
+        editPartQualifiedName="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.editparts.InternalTransitionsCompartmentEditPart"
+        name="InternalTransitions"
+        viewFactory="org.eclipse.gmf.runtime.diagram.ui.view.factories.optimal.CompartmentViewFactory"
+        description="Compartment containing internal transitions for a given state"
+        hint="InternalTransitions"
+        children="_kmw8kLDNEeajAvRMt69GYA">
+      <kind
+          href="platform:/plugin/org.eclipse.papyrus.uml.diagram.common/model/UMLRepresentationKind.xmi#_vbTKYN0DEeS-X4lB2Ut-YA"/>
+    </representations>
+  </libraries>
+</expansionmodel:DiagramExpansion>

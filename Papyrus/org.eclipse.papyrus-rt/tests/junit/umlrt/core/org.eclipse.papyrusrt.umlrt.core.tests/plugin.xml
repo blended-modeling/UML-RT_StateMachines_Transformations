@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://UMLRT_EXT/"
+            target="platform:/plugin/org.eclipse.papyrusrt.umlrt.core.tests/profiles/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="UMLRT_EXT"
+            path="profiles"
+            plugin="org.eclipse.papyrusrt.umlrt.core.tests">
+      </pathmap>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            name="UML-RT Extension Profile"
+            path="pathmap://UMLRT_EXT/umlrtext.profile.uml">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.architecture.models">
+      <model
+            path="architecture/umlrt-extensions.architecture">
+      </model>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.papyrus.infra.types.core.elementTypeSetConfiguration">
+      <elementTypeSet
+            clientContextID="org.eclipse.papyrusrt.umlrt.architecture"
+            path="types/umlrt-extensions.elementtypesconfigurations">
+      </elementTypeSet>
+   </extension>
+	-->
+</plugin>

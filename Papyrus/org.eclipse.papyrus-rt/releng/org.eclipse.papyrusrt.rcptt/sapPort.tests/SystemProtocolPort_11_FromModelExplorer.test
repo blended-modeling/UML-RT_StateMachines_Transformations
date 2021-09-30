@@ -1,0 +1,52 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: SystemProtocolPort_11_FromModelExplorer
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _2s090JSkEea9PKPllRHh_g
+Runtime-Version: 2.2.0.201610042323
+Save-Time: 10/17/16 10:44 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test that when we create a port from the new child menu, when the default language is C++ and we choose a System Protocol type for the port , the created port is an SAP port
+This is dependant from the actual version of RTS library, since RTS library related to C++ could not provide system protocol, but we assume that it does.
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+// test that the kind is SAP
+//get-view Properties | get-button SAP | get-property selected | equals true | verify-true
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+get-view "Model Explorer" | get-tree | select RootElement
+with [get-view Properties] {
+    get-property-tab Language | click
+    get-combo -after [get-label Language] | select "C++"
+}
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1] {
+    mouse-move 329 303 -height 429 -width 556
+    mouse-move 1 314 -height 429 -width 556
+}
+get-view "Model Explorer" | get-tree | select "RootElement/«Capsule» Capsule1" | get-menu -path "New UML-RT Child/Port" 
+    | click
+get-menu -path Frame | click
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1] {
+    mouse-move 183 302 -height 429 -width 556
+    with [get-edit-part -name Capsule1 | get-edit-part -name frame] {
+        mouse-move 7 2 button1 -height 16 -width 16
+        mouse-press 7 2 button1 -height 16 -width 16
+        mouse-release 7 2 button1 524288 -height 16 -width 16
+        mouse-hover 7 2 -height 16 -width 16
+    }
+    mouse-move 168 4 -height 429 -width 556
+}
+
+// test that the kind is SAP
+get-view Properties | get-button SAP | get-property selected | equals true | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
