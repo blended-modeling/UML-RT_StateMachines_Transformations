@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<artifactId>org.eclipse.papyrusrt.tests</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.tooling.tests</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.diagram.common.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.ui.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.types.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.compare.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.tests</module>
+		<module>org.eclipse.papyrusrt.umlrt.tooling.properties.tests</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<dependency-resolution>
+						<extraRequirements>
+							<!-- Add a dependency on the ELK SDK and the Papyrus ELK Integration 
+								component (from the Papyrus Extras) so that these plug-ins will be installed 
+								even though they are not required neither by the system under test nor by 
+								the tests, themselves. This ensures resliency against any potential incompatibility 
+								with ELK's contributions to GMF. cf. http://eclip.se/500743 -->
+							<!-- <requirement>
+								<type>p2-installable-unit</type>
+								<id>org.eclipse.elk.sdk.feature.feature.group</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>p2-installable-unit</type>
+								<id>org.eclipse.papyrus.infra.gmfdiag.elk.feature.feature.group</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+ 							-->
+							<!-- And ensure that all of Papyrus main SDK is installed to ensure 
+								that there are no conflicts with extensions or other components in Papyrus 
+								that may not otherwise be installed by Tycho because they are not actually 
+								dependencies of the Papyrus-RT bundles. -->
+							<requirement>
+								<type>p2-installable-unit</type>
+								<id>org.eclipse.papyrus.sdk.feature.feature.group</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+						</extraRequirements>
+					</dependency-resolution>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

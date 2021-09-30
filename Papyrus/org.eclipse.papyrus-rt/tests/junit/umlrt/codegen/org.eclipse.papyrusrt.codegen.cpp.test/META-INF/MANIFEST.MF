@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT C++ Code GeneratorTests
+Bundle-SymbolicName: org.eclipse.papyrusrt.codegen.cpp.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.11.0",
+ org.eclipse.papyrus.designer.languages.cpp.library;bundle-version="[1.0.4,2.0.0)",
+ org.eclipse.papyrusrt.codegen;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.cpp;bundle-version="1.0.0",
+ org.eclipse.papyrusrt.codegen.cpp.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.cpp.rts;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.cpp.structure;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.cpp.statemachines.flat;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.statemachines.flat;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.codegen.utils;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.rts;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.common.rts.library;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.common.model;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.statemach.model;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.statemach.ext.model;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.trans.from.uml;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.umlrt.model;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.xtumlrt.util;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.uml2.uml.resources;bundle-version="5.2.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="[2.12.0,3.0.0)",
+ org.junit;bundle-version="4.12.0",
+ org.eclipse.papyrusrt.umlrt.uml

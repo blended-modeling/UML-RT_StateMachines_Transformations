@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture:ArchitectureDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:architecture="http://www.eclipse.org/papyrus/infra/core/architecture" xmlns:gmfdiagrepresentation="http://www.eclipse.org/papyrus/infra/gmfdiag/representation" xmi:id="_Rh7AgBhFEeeIpaZtZ6oWHg" name="UML-RT" description="Architecture domain for UML-RT">
+  <contexts xsi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_F2dc8BrMEeeD6sx6OCb52Q" name="UML-RT ADL" description="Extension for UML-RT ADL" id="org.eclipse.papyrusrt.umlrt.architecture" creationCommandClass="org.eclipse.papyrusrt.umlrt.core.internal.commands.CreateUMLRTModelCommand">
+    <viewpoints xmi:id="_gkbXICAsEeezx_pEMyh1xw" name="Basic UML-RT Modeling Viewpoint" description="Basic UML-RT viewpoint modeling" representationKinds="_tSXf0CAgEeeM9pIsG6un5Q" id="org.eclipse.papyrusrt.umlrt.viewpoint.basic">
+      <concerns href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/architecture/uml-rt.architecture#_jw88wBhFEeeIpaZtZ6oWHg"/>
+    </viewpoints>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/elementtypes/uml-rt.capsulestructurediagram.elementtypesconfigurations#_sHw4IMQMEeS2vZeHP4gaVg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.ui/elementtypes/uml-rt.tooling.ui.elementtypesconfigurations#_ubJcsKeUEeSUR5jX0TaAcA"/>
+    <representationKinds xsi:type="gmfdiagrepresentation:PapyrusDiagram" xmi:id="_tSXf0CAgEeeM9pIsG6un5Q" name="UML-RT Capsule Structure Diagram" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/icons/Diagram_CapsuleCompositeStructure.gif" id="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.UMLRTCapsuleStructure" implementationID="UMLRTCapsuleStructure" customStyle="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.common/css/capsulestructurediagram.css" creationCommandClass="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.command.CreateCapsuleStructureDiagramCommand">
+      <concerns href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/architecture/uml-rt.architecture#_jw88wBhFEeeIpaZtZ6oWHg"/>
+      <modelRules xmi:id="_IFPP8CAiEeeM9pIsG6un5Q" permit="false" elementMultiplicity="0">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <modelRules xmi:id="_L6wwACAiEeeM9pIsG6un5Q">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+      </modelRules>
+      <owningRules xmi:id="_WMxyYCAiEeeM9pIsG6un5Q">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+      </owningRules>
+      <childRules xmi:id="_aHnQQCAiEeeM9pIsG6un5Q"/>
+      <paletteRules xmi:id="_dTxDMCAiEeeM9pIsG6un5Q" permit="false" element="composite.group.*"/>
+      <palettes href="../palettes/UML-RT.CapsuleStructureDiagram.paletteconfiguration#/"/>
+    </representationKinds>
+    <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+    <profiles href="http://www.eclipse.org/papyrus/umlrt#/"/>
+  </contexts>
+</architecture:ArchitectureDomain>

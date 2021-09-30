@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.papyrusrt.xtumlrt.statemach.ext.model/src"
+    modelPluginID="org.eclipse.papyrusrt.xtumlrt.statemach.ext.model" modelName="Statemachext"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.genmodel#//common ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.genmodel#//statemach"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>statemachext.ecore</foreignModel>
+  <genPackages prefix="Statemachext" basePackage="org.eclipse.papyrusrt.xtumlrt" disposableProviderFactory="true"
+      ecorePackage="statemachext.ecore#/">
+    <genClasses ecoreClass="statemachext.ecore#//SaveHistory">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference statemachext.ecore#//SaveHistory/compositeState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference statemachext.ecore#//SaveHistory/subState"/>
+    </genClasses>
+    <genClasses ecoreClass="statemachext.ecore#//CheckHistory">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference statemachext.ecore#//CheckHistory/compositeState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference statemachext.ecore#//CheckHistory/subState"/>
+    </genClasses>
+    <genClasses ecoreClass="statemachext.ecore#//EntryAction"/>
+    <genClasses ecoreClass="statemachext.ecore#//ExitAction"/>
+    <genClasses ecoreClass="statemachext.ecore#//TransitionAction"/>
+    <genClasses ecoreClass="statemachext.ecore#//GuardAction"/>
+    <genClasses ecoreClass="statemachext.ecore#//UpdateState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference statemachext.ecore#//UpdateState/newState"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

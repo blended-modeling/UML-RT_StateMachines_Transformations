@@ -1,0 +1,15 @@
+/**
+ * Migration Target Platform for Papyrus-RT (nightly)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT migration component in the nightly version of Papyrus-RT.
+ */
+target "Papyrus-RT nightly migration target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.tooling/org.eclipse.papyrusrt.targetplatform.tooling.tpd"
+
+location "https://hudson.eclipse.org/papyrus-rt/job/Papyrus-RT-Master-Tooling/lastSuccessfulBuild/artifact/repository/" papyrus-rt-tooling {
+	org.eclipse.papyrusrt.umlrt.tooling.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.feature.source.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.source.feature.group lazy
+}

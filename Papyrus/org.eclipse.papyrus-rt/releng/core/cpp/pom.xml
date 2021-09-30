@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.core.releng</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.core.cpp.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>../../../plugins/umlrt/cpp</module>
+		<module>../../../features/cpp/org.eclipse.papyrusrt.umlrt.cpp.feature</module>
+		<module>site</module>
+	</modules>
+	<name>Cpp</name>
+</project>

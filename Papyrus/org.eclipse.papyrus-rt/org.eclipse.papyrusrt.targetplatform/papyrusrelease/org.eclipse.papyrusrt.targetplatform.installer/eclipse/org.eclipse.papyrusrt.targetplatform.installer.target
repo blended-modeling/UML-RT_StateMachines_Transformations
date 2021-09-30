@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
+<target name="Papyrus-RT releases installer target platform" sequenceNumber="1500564437">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.oomph.setup.installer.feature.group" version="1.9.0.v20170706-0615"/>
+      <repository id="oomph-updates" location="file:/home/data/httpd/download.eclipse.org/oomph/products/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.7.0.v20170531-1133"/>
+      <repository id="oxygen-simrel" location="file:/home/data/httpd/download.eclipse.org/releases/oxygen/"/>
+    </location>
+  </locations>
+</target>

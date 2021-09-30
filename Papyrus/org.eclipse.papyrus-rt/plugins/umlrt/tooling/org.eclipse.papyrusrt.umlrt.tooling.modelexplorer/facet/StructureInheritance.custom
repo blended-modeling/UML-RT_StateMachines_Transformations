@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:Customization xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:custom="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/custom" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:efacet="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet" xmlns:query="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query" name="UML-RT Inherited Structure" nsPrefix="" documentation="Presentation of purely inherited elements in UML-RT structure inheritance." rank="-99">
+  <eClassifiers xsi:type="custom:FacetCustomization" name="ProtocolWithInheritedMessages" documentation="Presents inherited content in protocols.">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedOut" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/GetRTMessages"/>
+        <arguments xsi:type="query:StringLiteralQuery" value="out"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/inheritedOut"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedIn" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/GetRTMessages"/>
+        <arguments xsi:type="query:StringLiteralQuery" value="in"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/inheritedIn"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedInOut" upperBound="-1" volatile="true" transient="true" derived="true">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/GetRTMessages"/>
+        <arguments xsi:type="query:StringLiteralQuery" value="inOut"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Protocol.custom#//ProtocolContainment_OnlyRTMessages/inheritedInOut"/>
+    </facetElements>
+    <extendedFacets href="Protocol.custom#//ProtocolContainment_OnlyRTMessages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="CapsuleWithInheritedFeatures">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedPort" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Includes the purely inherited ports.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Structure.custom#//CapsuleFeatures/getPorts"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Structure.custom#//CapsuleFeatures/inheritedPort"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedAttribute" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Includes the purely inherited capsule-parts.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Structure.custom#//CapsuleFeatures/getAttributes"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Structure.custom#//CapsuleFeatures/inheritedAttribute"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedConnector" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Includes the purely inherited connectors.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Connector"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Structure.custom#//CapsuleFeatures/getConnectors"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Structure.custom#//CapsuleFeatures/inheritedConnector"/>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedStateMachine" volatile="true" transient="true" derived="true" documentation="Includes the purely inherited state machine.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+      <query xsi:type="query:OperationCallQuery">
+        <operation href="Structure.custom#//CapsuleFeatures/getSingleContent"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Capsule/stateMachine"/>
+        </arguments>
+      </query>
+      <override xsi:type="efacet:FacetReference" href="Structure.custom#//CapsuleFeatures/inheritedStateMachine"/>
+    </facetElements>
+    <extendedFacets href="Structure.custom#//CapsuleFeatures"/>
+  </eClassifiers>
+</custom:Customization>

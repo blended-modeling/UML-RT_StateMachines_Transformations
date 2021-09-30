@@ -1,0 +1,48 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _JtglAJRCEeWw3pf3MXlLOw
+Element-Name: Init_10_CapsuleCreation
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _fVmhkHNCEeW2OsT5BxCMLQ
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:25 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+
+
+// Create a new Capsule in the Root Element
+with [get-view "Project Explorer" | get-tree] {
+    select EmptyUMLRTProject | double-click
+    select "EmptyUMLRTProject/model" | double-click
+}
+with [get-view "Model Explorer" | get-tree] {
+    get-item RootElement | click
+  
+    select RootElement | get-menu "New UML-RT Child/Capsule" | click
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+    get-item "RootElement/«Capsule» Capsule1/Capsule1" | click
+}
+
+//Check if the Diagram has been created
+with [get-editor "model.di"] {
+    get-tab-folder | get-property activePage | equals Capsule1 | verify-true
+    with [get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1] {
+     // Check the Edit Part and the UML element
+        get-property "getClassName()" 
+            | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.RTClassCompositeEditPart" 
+            | verify-true
+        get-property "getUMLElement().getClassName()" | equals "org.eclipse.papyrusrt.umlrt.uml.internal.impl.ClassRTImpl" 
+            | verify-true
+    }
+}
+// Check if Capsule is Public
+get-view Properties | get-property-tab UML | click
+get-view Properties | get-combo -after [get-label Visibility] | get-property selection | equals public | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

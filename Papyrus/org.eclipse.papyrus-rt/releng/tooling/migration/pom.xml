@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<name>Model Migration</name>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.tooling.releng</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.tooling.migration.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<!-- RSA Import is a separate installable feature, but is still part of the tooling -->
+		<module>../../../plugins/umlrt/migration</module>
+		<module>../../../features/migration/org.eclipse.papyrusrt.umlrt.migration.rsa.feature</module>
+	</modules>
+</project>

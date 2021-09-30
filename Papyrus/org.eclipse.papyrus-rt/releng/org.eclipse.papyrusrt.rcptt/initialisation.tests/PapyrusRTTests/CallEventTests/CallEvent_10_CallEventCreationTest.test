@@ -1,0 +1,59 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: CallEvent_10_CallEventCreationTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _WCOkQHyvEeWDurBKKa1KKg
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:27 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+  select "CapsuleAndProtocol/model" | double-click
+}
+get-view "Model Explorer" | get-tree | get-item "RootElement/«Protocol» Protocol1" | click
+
+get-view Properties | get-button "Add elements" | click
+with [get-window "Create a new Out Protocol Message"] {
+    get-editbox -after [get-label "Name"] | set-text MessageTestOUT
+    get-button OK | click
+}
+
+get-view Properties | get-tree | select "out MessageTestOUT ()"
+with [get-view Properties | get-tree] {
+    get-item "out MessageTestOUT \\(\\)" | get-property caption | equals "out MessageTestOUT ()" | verify-true
+    get-item "out MessageTestOUT \\(\\)" | get-property "image.path" 
+        | equals "org.eclipse.papyrusrt.umlrt.uml.edit/icons/full/obj16/ProtocolMessage_out.gif" | verify-true
+    get-item "out MessageTestOUT \\(\\)" | get-property "getData().getClassName()" 
+        | equals "org.eclipse.papyrusrt.umlrt.uml.internal.facade.impl.UMLRTProtocolMessageImpl" | verify-true
+    get-item "out MessageTestOUT \\(\\)" | get-property "getData().toUML().getQualifiedName()" 
+        | equals "RootElement::Protocol1::Protocol1~::MessageTestOUT" | verify-true
+}
+get-button "Save All (M1+M2+S)" | click
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model/uml" | get-menu "Open With/UML Model Editor" 
+    | click
+with [get-editor "model.uml" | get-tree] {
+     get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1" 
+        | get-property childCount | equals 8 | verify-true
+    get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<<RTMessageSet>> <Interface> Protocol1~" 
+        | get-property childCount | equals 1 | verify-true
+    get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<<RTMessageSet>> <Interface> Protocol1~/<Operation> MessageTestOUT \\(\\)" 
+        | get-property caption | equals "<Operation> MessageTestOUT ()" | verify-true
+    get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<<RTMessageSet>> <Interface> Protocol1~/<Operation> MessageTestOUT \\(\\)" 
+        | get-property "getData().getQualifiedName()" | equals "RootElement::Protocol1::Protocol1~::MessageTestOUT" 
+        | verify-true
+    
+    get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<Call Event>" 
+        | get-property "getData().getClassName()" | equals "org.eclipse.uml2.uml.internal.impl.CallEventImpl" 
+        | verify-true
+    get-item "platform:\\/resource\\/CapsuleAndProtocol\\/model.uml/<Model> RootElement/<<ProtocolContainer>> <Package> Protocol1/<Call Event>" 
+        | get-property "getData().getOperation().getName()" | equals MessageTestOUT | verify-true
+   
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

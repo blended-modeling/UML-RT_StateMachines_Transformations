@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlrttypes" nsURI="http://www.eclipse.org/papyrus-rt/umlrt/types/1.0.0"
+    nsPrefix="umlrttypes">
+  <eClassifiers xsi:type="ecore:EClass" name="UMLRTNewElementConfigurator" eSuperTypes="../../org.eclipse.papyrus.infra.emf.types.ui/model/RuntimeValuesAdvice.ecore#//RuntimeValuesAdviceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialogTitlePattern" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Message pattern for the dialog title.  A '{0}' is replaced with the&#xA;user-friendly name of the element-type being configured.  If not&#xA;specified, a default title is computed as in the&#xA;RuntimeValuesAdviceConfiguration."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLRTSetTypeAdviceConfiguration" eSuperTypes="../../org.eclipse.papyrus.infra.types/model/ElementTypesConfigurations.ecore#//AbstractAdviceBindingConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Identifier of the element type to create or select for the value of the&#xA;edited element's type."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newTypeViewsToDisplay"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.infra.emf.types.ui/model/RuntimeValuesAdvice.ecore#//ViewToDisplay"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Views to display in the dialog that edits the newly created&#xA;type.  If none, then no dialog is shown and it is accepted&#xA;as created by its element-type (there is no validation in&#xA;this case)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newTypeViews" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.papyrus.infra.properties/Model/Properties.ecore#//contexts/View"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derived collection of the views to present in the dialog,&#xA;from the owned views-to-display."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementTypeLabel" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Optional label to use for the referenced elementType in the case that its own&#xA;name is not user-friendly or should be customized for the specific context in&#xA;which the advice is used.  If unset, the value is derived from the elementType's&#xA;name."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

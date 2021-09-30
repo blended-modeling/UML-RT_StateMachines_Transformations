@@ -1,0 +1,13 @@
+/**
+ * Core Target Platform for Papyrus-RT (releases)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT core component in the releases versions of Papyrus-RT.
+ */
+target "Papyrus-RT releases core target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.profile/org.eclipse.papyrusrt.targetplatform.profile.tpd"
+
+location "http://download.eclipse.org/papyrus-rt/updates/milestones/oxygen/1.0.0/M201707181334" papyrus-rt-last-milestone {
+	org.eclipse.papyrusrt.umlrt.profile.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.profile.feature.source.feature.group
+}

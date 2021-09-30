@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_0" name="umlext" URI="http://www.eclipse.org/papyrus/umlrt/uml-ext">
+    <ownedComment xmi:id="_ownedComment.0">
+      <body>UML extensions for UML-RT semantics.
+This metamodel defines features that are mixed in, in ad hoc
+fashion (not by package merge) to the UML-RT implementation
+of the UML Metamodel.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="Element" name="Element" isAbstract="true">
+      <ownedAttribute xmi:id="Element-extendedElement" name="extendedElement">
+        <ownedComment xmi:id="Element-extendedElement-_ownedComment.0" annotatedElement="Element-extendedElement">
+          <body>The UML model element that is extended by my features.
+This is a non-resolving reference to ensure that attempts
+to access the extension of an unloaded element does not
+re-load its resource.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Element-extension" name="extension" type="Element" isReadOnly="true" isDerived="true">
+        <ownedComment xmi:id="Element-extension-_ownedComment.0" annotatedElement="Element-extension">
+          <body>This looks odd as a required self-reference, but it is actually meant
+to be accessed as an extension feature of the extended UML model
+element, in order to access the extension object.</body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Element-implicitOwnedElement" name="implicitOwnedElement" isReadOnly="true" aggregation="composite" isDerived="true" isDerivedUnion="true" association="_packagedElement.1">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Element-implicitOwnedElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Element-implicitOwnedElement-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Element-excludedElement" name="excludedElement" isReadOnly="true" isDerived="true">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Element-excludedElement-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Element-excludedElement-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="Element-getExtension" name="getExtension" visibility="protected" isQuery="true">
+        <ownedParameter xmi:id="Element-getExtension-_ownedParameter.0" type="Element" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="Element-getExcludedElements" name="getExcludedElements" visibility="protected" isQuery="true">
+        <ownedParameter xmi:id="Element-getExcludedElements-_ownedParameter.0" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Element-getExcludedElements-_ownedParameter.0-_lowerValue"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Element-getExcludedElements-_ownedParameter.0-_upperValue" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.1" visibility="private" memberEnd="Element-implicitOwnedElement _packagedElement.1-implicitOwner">
+      <ownedEnd xmi:id="_packagedElement.1-implicitOwner" name="implicitOwner" type="Element" association="_packagedElement.1">
+        <subsettedProperty href="pathmap://UML_METAMODELS/UML.metamodel.uml#Element-owner"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Namespace" name="Namespace" isAbstract="true">
+      <generalization xmi:id="Namespace-_generalization.0" general="Element"/>
+      <ownedAttribute xmi:id="Namespace-implicitOwnedMember" name="implicitOwnedMember" isReadOnly="true" aggregation="composite" isDerived="true" isDerivedUnion="true" subsettedProperty="Element-implicitOwnedElement" association="_packagedElement.3">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Namespace-implicitOwnedMember-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Namespace-implicitOwnedMember-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Namespace-excludedMember" name="excludedMember" isReadOnly="true" isDerived="true" subsettedProperty="Element-excludedElement">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Namespace-excludedMember-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Namespace-excludedMember-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Namespace-implicitOwnedRule" name="implicitOwnedRule" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.4">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Namespace-implicitOwnedRule-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Namespace-implicitOwnedRule-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="Namespace-getExcludedMembers" name="getExcludedMembers" visibility="protected" isQuery="true">
+        <ownedParameter xmi:id="Namespace-getExcludedMembers-_ownedParameter.0" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Namespace-getExcludedMembers-_ownedParameter.0-_lowerValue"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Namespace-getExcludedMembers-_ownedParameter.0-_upperValue" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.3" visibility="private" memberEnd="Namespace-implicitOwnedMember _packagedElement.3-implicitNamespace">
+      <ownedEnd xmi:id="_packagedElement.3-implicitNamespace" name="implicitNamespace" type="Namespace" subsettedProperty="_packagedElement.1-implicitOwner" association="_packagedElement.3"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.4" visibility="private" memberEnd="Namespace-implicitOwnedRule _packagedElement.4-implicitContext">
+      <ownedEnd xmi:id="_packagedElement.4-implicitContext" name="implicitContext" type="Namespace" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.4"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="BehavioredClassifier" name="BehavioredClassifier" isAbstract="true">
+      <generalization xmi:id="BehavioredClassifier-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="BehavioredClassifier-implicitBehavior" name="implicitBehavior" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.6">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Behavior"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BehavioredClassifier-implicitBehavior-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BehavioredClassifier-implicitBehavior-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.6" visibility="private" memberEnd="BehavioredClassifier-implicitBehavior _packagedElement.6-implicitContext">
+      <ownedEnd xmi:id="_packagedElement.6-implicitContext" name="implicitContext" type="BehavioredClassifier" subsettedProperty="StructuredClassifier-implicitAttribute" association="_packagedElement.6">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.6-implicitContext-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="StructuredClassifier" name="StructuredClassifier" isAbstract="true">
+      <generalization xmi:id="StructuredClassifier-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="StructuredClassifier-implicitAttribute" name="implicitAttribute" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.8">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StructuredClassifier-implicitAttribute-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StructuredClassifier-implicitAttribute-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="StructuredClassifier-implicitConnector" name="implicitConnector" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.9">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Connector"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StructuredClassifier-implicitConnector-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StructuredClassifier-implicitConnector-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.8" visibility="private" memberEnd="StructuredClassifier-implicitAttribute _packagedElement.8-implicitClass">
+      <ownedEnd xmi:id="_packagedElement.8-implicitClass" name="implicitClass" type="StructuredClassifier" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.8">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.8-implicitClass-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.9" visibility="private" memberEnd="StructuredClassifier-implicitConnector _packagedElement.9-implicitClass">
+      <ownedEnd xmi:id="_packagedElement.9-implicitClass" name="implicitClass" type="StructuredClassifier" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.9">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.9-implicitClass-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="EncapsulatedClassifier" name="EncapsulatedClassifier" isAbstract="true">
+      <generalization xmi:id="EncapsulatedClassifier-_generalization.0" general="StructuredClassifier"/>
+      <ownedAttribute xmi:id="EncapsulatedClassifier-implicitPort" name="implicitPort" aggregation="composite" isDerived="true" subsettedProperty="StructuredClassifier-implicitAttribute" association="_packagedElement.11">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Port"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="EncapsulatedClassifier-implicitPort-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EncapsulatedClassifier-implicitPort-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.11" visibility="private" memberEnd="EncapsulatedClassifier-implicitPort _packagedElement.11-implicitClass">
+      <ownedEnd xmi:id="_packagedElement.11-implicitClass" name="implicitClass" type="EncapsulatedClassifier" subsettedProperty="StructuredClassifier-implicitAttribute" association="_packagedElement.11">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.11-implicitClass-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Class" name="Class">
+      <generalization xmi:id="Class-_generalization.0" general="EncapsulatedClassifier"/>
+      <generalization xmi:id="Class-_generalization.1" general="BehavioredClassifier"/>
+      <ownedAttribute xmi:id="Class-implicitOperation" name="implicitOperation" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.13">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Operation"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Class-implicitOperation-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Class-implicitOperation-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.13" visibility="private" memberEnd="Class-implicitOperation _packagedElement.13-implicitClass">
+      <ownedEnd xmi:id="_packagedElement.13-implicitClass" name="implicitClass" type="Class" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.13">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.13-implicitClass-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Interface" name="Interface">
+      <generalization xmi:id="Interface-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="Interface-implicitOperation" name="implicitOperation" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.15">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Operation"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Interface-implicitOperation-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Interface-implicitOperation-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.15" visibility="private" memberEnd="Interface-implicitOperation _packagedElement.15-implicitInterface">
+      <ownedEnd xmi:id="_packagedElement.15-implicitInterface" name="implicitInterface" type="Interface" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.15">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.15-implicitInterface-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="StateMachine" name="StateMachine">
+      <generalization xmi:id="StateMachine-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="StateMachine-implicitRegion" name="implicitRegion" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.17">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Region"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StateMachine-implicitRegion-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StateMachine-implicitRegion-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="StateMachine-implicitConnectionPoint" name="implicitConnectionPoint" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.18">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Pseudostate"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StateMachine-implicitConnectionPoint-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StateMachine-implicitConnectionPoint-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.17" visibility="private" memberEnd="StateMachine-implicitRegion _packagedElement.17-implicitStateMachine">
+      <ownedEnd xmi:id="_packagedElement.17-implicitStateMachine" name="implicitStateMachine" type="StateMachine" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.17">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.17-implicitStateMachine-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.18" visibility="private" memberEnd="StateMachine-implicitConnectionPoint _packagedElement.18-implicitStateMachine">
+      <ownedEnd xmi:id="_packagedElement.18-implicitStateMachine" name="implicitStateMachine" type="StateMachine" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.18">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.18-implicitStateMachine-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Region" name="Region">
+      <generalization xmi:id="Region-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="Region-implicitSubvertex" name="implicitSubvertex" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.20">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Vertex"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Region-implicitSubvertex-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Region-implicitSubvertex-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Region-implicitTransition" name="implicitTransition" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.21">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Transition"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Region-implicitTransition-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Region-implicitTransition-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.20" visibility="private" memberEnd="Region-implicitSubvertex _packagedElement.20-implicitRegion">
+      <ownedEnd xmi:id="_packagedElement.20-implicitRegion" name="implicitRegion" type="Region" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.20">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.20-implicitRegion-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.21" visibility="private" memberEnd="Region-implicitTransition _packagedElement.21-implicitRegion">
+      <ownedEnd xmi:id="_packagedElement.21-implicitRegion" name="implicitRegion" type="Region" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.21">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.21-implicitRegion-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="Transition" name="Transition">
+      <generalization xmi:id="Transition-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="Transition-implicitTrigger" name="implicitTrigger" aggregation="composite" subsettedProperty="Element-implicitOwnedElement" association="_packagedElement.23">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Trigger"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Transition-implicitTrigger-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Transition-implicitTrigger-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.23" visibility="private" memberEnd="Transition-implicitTrigger _packagedElement.23-implicitTransition">
+      <ownedEnd xmi:id="_packagedElement.23-implicitTransition" name="implicitTransition" type="Transition" subsettedProperty="_packagedElement.1-implicitOwner" association="_packagedElement.23">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.23-implicitTransition-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="State" name="State">
+      <generalization xmi:id="State-_generalization.0" general="Namespace"/>
+      <ownedAttribute xmi:id="State-implicitRegion" name="implicitRegion" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.25">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Region"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="State-implicitRegion-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="State-implicitRegion-_upperValue" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="State-implicitConnectionPoint" name="implicitConnectionPoint" aggregation="composite" subsettedProperty="Namespace-implicitOwnedMember" association="_packagedElement.26">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Pseudostate"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="State-implicitConnectionPoint-_lowerValue"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="State-implicitConnectionPoint-_upperValue" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.25" visibility="private" memberEnd="State-implicitRegion _packagedElement.25-implicitState">
+      <ownedEnd xmi:id="_packagedElement.25-implicitState" name="implicitState" type="State" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.25">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.25-implicitState-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_packagedElement.26" visibility="private" memberEnd="State-implicitConnectionPoint _packagedElement.26-implicitState">
+      <ownedEnd xmi:id="_packagedElement.26-implicitState" name="implicitState" type="State" subsettedProperty="_packagedElement.3-implicitNamespace" association="_packagedElement.26">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_packagedElement.26-implicitState-_lowerValue"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="_profileApplication.0">
+      <eAnnotations xmi:id="_profileApplication.0-_http2F2Fwww.eclipse.org2Fuml22F2.0.02FUML" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_profileApplication.1">
+      <eAnnotations xmi:id="_profileApplication.1-_http2F2Fwww.eclipse.org2Fuml22F2.0.02FUML" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EReference xmi:id="_Y6eFMKdkEeaVuqljGw-fqQ" isTransient="true" base_Property="_packagedElement.3-implicitNamespace"/>
+  <Ecore:EPackage xmi:id="_lUR6gKdkEeaVuqljGw-fqQ" base_Package="_0" nsPrefix="umlext" basePackage="org.eclipse.papyrusrt.umlrt.uml.internal" prefix="UMLExt"/>
+  <standard:Metamodel xmi:id="_wkH3EKdkEeaVuqljGw-fqQ" base_Model="_0"/>
+  <standard:Metaclass xmi:id="_wkJFMKdkEeaVuqljGw-fqQ" base_Class="Namespace"/>
+  <standard:Metaclass xmi:id="_Vi05EKgWEeaVuqljGw-fqQ" base_Class="StructuredClassifier"/>
+  <standard:Metaclass xmi:id="_dJdTQ6gWEeaVuqljGw-fqQ" base_Class="EncapsulatedClassifier"/>
+  <standard:Metaclass xmi:id="_shDj0KggEeaVuqljGw-fqQ" base_Class="Class"/>
+  <Ecore:EReference xmi:id="_X5gUMKgkEeaVuqljGw-fqQ" base_Property="Element-extendedElement" isResolveProxies="false"/>
+  <standard:Metaclass xmi:id="_hamP8KgkEeaVuqljGw-fqQ" base_Class="Element"/>
+  <Ecore:EReference xmi:id="_nuGvkLcxEeaYpJpPVa7-0w" isTransient="true" isVolatile="true" base_Property="Element-extension" isResolveProxies="false"/>
+  <Ecore:EOperation xmi:id="_vKxgALcyEeaYpJpPVa7-0w" visibility="None"/>
+  <Ecore:EOperation xmi:id="_yPzXQLcyEeaYpJpPVa7-0w" base_Operation="Element-getExtension" visibility="None"/>
+  <Ecore:EReference xmi:id="_PiML4Lc2EeaYpJpPVa7-0w" isVolatile="true" base_Property="Namespace-excludedMember"/>
+  <standard:Metaclass xmi:id="_jhYCQMZMEeaGEbJYZtSZBg" base_Class="Interface"/>
+  <standard:Metaclass xmi:id="_kfEaoNkFEeazkusD5dGZ5Q" base_Class="StateMachine"/>
+  <standard:Metaclass xmi:id="_kfGP0NkFEeazkusD5dGZ5Q" base_Class="Region"/>
+  <standard:Metaclass xmi:id="_CfRpc9kHEeazkusD5dGZ5Q" base_Class="Transition"/>
+  <Ecore:EReference xmi:id="_xEszgNkHEeazkusD5dGZ5Q" isVolatile="true" base_Property="Element-excludedElement"/>
+  <Ecore:EOperation xmi:id="_xEszgdkHEeazkusD5dGZ5Q" base_Operation="Element-getExcludedElements" visibility="None"/>
+  <Ecore:EReference xmi:id="_ZrLA8NkKEeazkusD5dGZ5Q" isTransient="true" base_Property="_packagedElement.1-implicitOwner"/>
+  <Ecore:EOperation xmi:id="_wUDSVNkKEeazkusD5dGZ5Q" base_Operation="Namespace-getExcludedMembers" visibility="None"/>
+  <standard:Metaclass xmi:id="_euiK4NwwEeaQ8K8ekoOkIQ" base_Class="State"/>
+  <Ecore:EReference xmi:id="_OHoWgOPlEeaLvo0VJV92DA" isTransient="true" base_Property="_packagedElement.4-implicitContext"/>
+  <standard:Metaclass xmi:id="_CQNDoAtEEeeEBeQ0QZdCZw" base_Class="BehavioredClassifier"/>
+</xmi:XMI>

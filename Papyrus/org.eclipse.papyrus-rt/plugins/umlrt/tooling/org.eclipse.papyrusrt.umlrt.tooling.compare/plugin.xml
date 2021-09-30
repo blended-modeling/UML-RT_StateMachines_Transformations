@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated umlrt.compare -->
+      <package
+            uri="http://www.eclipse.org/papyrus/umlrt/compare/1.0"
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.umlrt.internal.UMLRTComparePackage"
+            genModel="model/umlrt.compare.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.rcp.postProcessor">
+      <processor
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.internal.UMLRTPostProcessor"
+            description="Post processor for UML-RT models."
+            label="UML-RT Post Processor"
+            ordinal="50">
+         <nsURI
+               value="http://www.eclipse.org/papyrus/umlrt">
+         </nsURI>
+      </processor>
+   </extension>
+   <extension
+         point="org.eclipse.emf.compare.rcp.merger">
+      <merger
+            class="org.eclipse.papyrusrt.umlrt.tooling.compare.internal.diagram.merger.UMLRTDiagramChangeMerger"
+            ranking="22">
+      </merger>
+   </extension>
+
+</plugin>

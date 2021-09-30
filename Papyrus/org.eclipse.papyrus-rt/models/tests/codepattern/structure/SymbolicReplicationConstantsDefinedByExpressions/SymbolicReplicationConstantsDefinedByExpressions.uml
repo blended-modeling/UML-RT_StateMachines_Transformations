@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_nKWy0NkeEeage7NIo_FkXg" name="SymbolicReplicationConstantsDefinedByExpressions">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o91ioNkeEeage7NIo_FkXg" source="http://www.eclipse.org/papyrus-rt/language/1.0.0">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o92JsNkeEeage7NIo_FkXg" key="language" value="umlrt-cpp"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qMg8QNkeEeage7NIo_FkXg" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_x1bOYNkeEeage7NIo_FkXg" name="capsule1" visibility="protected" type="_yFu7QNkeEeage7NIo_FkXg" isOrdered="true" aggregation="composite"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_z2EQcNkeEeage7NIo_FkXg" name="capsule2" visibility="protected" type="_0CnesNkeEeage7NIo_FkXg" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:OpaqueExpression" xmi:id="_KPM1oNkfEeage7NIo_FkXg" name="OpaqueExpression2">
+          <language>C++</language>
+          <body>K*(M-1)/2</body>
+        </lowerValue>
+        <upperValue xmi:type="uml:OpaqueExpression" xmi:id="_KOttcNkfEeage7NIo_FkXg" name="OpaqueExpression1">
+          <language>C++</language>
+          <body>K*(M-1)/2</body>
+        </upperValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UDL4MNkfEeage7NIo_FkXg" name="K">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_NCDiUNkgEeage7NIo_FkXg" value="2"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VcTnQNkfEeage7NIo_FkXg" name="M">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_O5Ul8NkgEeage7NIo_FkXg" value="4"/>
+      </ownedAttribute>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_F0Wa8NkfEeage7NIo_FkXg" name="RTConnector1">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_F0Y3MNkfEeage7NIo_FkXg" partWithPort="_x1bOYNkeEeage7NIo_FkXg" role="_27wPANkeEeage7NIo_FkXg"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_F0Y3MdkfEeage7NIo_FkXg" partWithPort="_z2EQcNkeEeage7NIo_FkXg" role="_9LknQNkeEeage7NIo_FkXg"/>
+      </ownedConnector>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yFu7QNkeEeage7NIo_FkXg" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_27wPANkeEeage7NIo_FkXg" name="protocol1" visibility="public" type="_3KIpQNkeEeage7NIo_FkXg" isOrdered="true" aggregation="composite" isBehavior="true">
+        <lowerValue xmi:type="uml:OpaqueExpression" xmi:id="_6dMVcNkeEeage7NIo_FkXg" name="OpaqueExpression2">
+          <language>C++</language>
+          <body>(N-1)/2</body>
+        </lowerValue>
+        <upperValue xmi:type="uml:OpaqueExpression" xmi:id="_6c0iANkeEeage7NIo_FkXg" name="OpaqueExpression1">
+          <language>C++</language>
+          <body>(N-1)/2</body>
+        </upperValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QxdowNkfEeage7NIo_FkXg" name="N">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_FBMqQNkgEeage7NIo_FkXg">
+          <language>C++</language>
+          <body>2*A+B</body>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_z9vJQNkfEeage7NIo_FkXg" name="A">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_AUzMkNkgEeage7NIo_FkXg" value="5"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3IhDMNkfEeage7NIo_FkXg" name="B">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_BoMuINkgEeage7NIo_FkXg" value="3"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0CnesNkeEeage7NIo_FkXg" name="Capsule2" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_9LknQNkeEeage7NIo_FkXg" name="protocol1" visibility="public" type="_3KIpQNkeEeage7NIo_FkXg" isOrdered="true" aggregation="composite" isBehavior="true" isConjugated="true">
+        <lowerValue xmi:type="uml:OpaqueExpression" xmi:id="_CboLoNkfEeage7NIo_FkXg" name="OpaqueExpression2">
+          <language>C++</language>
+          <body>M - 1</body>
+        </lowerValue>
+        <upperValue xmi:type="uml:OpaqueExpression" xmi:id="_CbRmUNkfEeage7NIo_FkXg" name="OpaqueExpression1">
+          <language>C++</language>
+          <body>M - 1</body>
+        </upperValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_S0lXENkfEeage7NIo_FkXg" name="M">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_wMtHoNkfEeage7NIo_FkXg">
+          <language>C++</language>
+          <body>L/2 - 1</body>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gtSMQNkfEeage7NIo_FkXg" name="L">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_s4xRsNkfEeage7NIo_FkXg" value="8"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_3KOv4NkeEeage7NIo_FkXg" name="Protocol1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_3KIpQNkeEeage7NIo_FkXg" name="Protocol1">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_3KZH8NkeEeage7NIo_FkXg" client="_3KIpQNkeEeage7NIo_FkXg" supplier="_3KU2gNkeEeage7NIo_FkXg" contract="_3KU2gNkeEeage7NIo_FkXg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_3KkHENkeEeage7NIo_FkXg" client="_3KIpQNkeEeage7NIo_FkXg" supplier="_3KhDwNkeEeage7NIo_FkXg" contract="_3KhDwNkeEeage7NIo_FkXg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_3KU2gNkeEeage7NIo_FkXg" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_3Ka9INkeEeage7NIo_FkXg" name="Protocol1~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_3KfOkNkeEeage7NIo_FkXg" client="_3KIpQNkeEeage7NIo_FkXg" supplier="_3Ka9INkeEeage7NIo_FkXg"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_3Kf1oNkeEeage7NIo_FkXg" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_3KhDwNkeEeage7NIo_FkXg" name="Protocol1IO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_3KlVMNkeEeage7NIo_FkXg" client="_3KIpQNkeEeage7NIo_FkXg" supplier="_3KhDwNkeEeage7NIo_FkXg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_nK0s4NkeEeage7NIo_FkXg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nK3JINkeEeage7NIo_FkXg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_o_P34NkeEeage7NIo_FkXg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o_Qe8NkeEeage7NIo_FkXg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_qNpksNkeEeage7NIo_FkXg" base_Class="_qMg8QNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:CapsulePart xmi:id="_x169oNkeEeage7NIo_FkXg" base_Property="_x1bOYNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:Capsule xmi:id="_yGOqgNkeEeage7NIo_FkXg" base_Class="_yFu7QNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:CapsulePart xmi:id="_z2Ih4NkeEeage7NIo_FkXg" base_Property="_z2EQcNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:Capsule xmi:id="_0DCVcNkeEeage7NIo_FkXg" base_Class="_0CnesNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:RTPort xmi:id="_275Y8NkeEeage7NIo_FkXg" base_Port="_27wPANkeEeage7NIo_FkXg"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_3KRzMNkeEeage7NIo_FkXg" base_Package="_3KOv4NkeEeage7NIo_FkXg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_3KXSwNkeEeage7NIo_FkXg" base_Interface="_3KU2gNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_3KeAcNkeEeage7NIo_FkXg" base_Interface="_3Ka9INkeEeage7NIo_FkXg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_3Ki48NkeEeage7NIo_FkXg" base_Interface="_3KhDwNkeEeage7NIo_FkXg" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_3Kl8QNkeEeage7NIo_FkXg" base_Collaboration="_3KIpQNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:RTPort xmi:id="_9LoRoNkeEeage7NIo_FkXg" base_Port="_9LknQNkeEeage7NIo_FkXg"/>
+  <UMLRealTime:RTConnector xmi:id="_F0ZeQNkfEeage7NIo_FkXg" base_Connector="_F0Wa8NkfEeage7NIo_FkXg"/>
+</xmi:XMI>

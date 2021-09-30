@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<paletteconfiguration:PaletteConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:paletteconfiguration="http://www.eclipse.org/papyrus/diagram/paletteconfiguration/0.8" id="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.palette" label="UMLRealTime">
+  <drawerConfigurations id="rtstatemachine.nodes" label="States and Transitions" description="States and Transitions Drawer">
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtstate" label="State" description="Create a RTState">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_state.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.State_Shape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.edges.transition" label="Transition" description="Create a Transition" kind="ConnectionTool">
+      <icon pluginID="org.eclipse.papyrus.uml.diagram.common" iconPath="icons/obj16/Transition_local.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#org.eclipse.papyrus.umldi.Transition_Edge"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:SeparatorConfiguration" id="rtstatemachine.separator.statetopseudostate"/>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_choice" label="Choice" description="Create a RTPseudoState (Choice)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_choice.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_ChoiceShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_deepHistory" label="Deep History" description="Create a RTPseudoState (DeepHistory)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_deepHistory.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_DeepHistoryShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_entryPoint" label="Entry Point" description="Create a RTPseudoState (EntryPoint)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_entryPoint.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_EntryPointShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_exitPoint" label="Exit Point" description="Create a RTPseudoState (ExitPoint)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_exitPoint.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_ExitPointShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_initial" label="Initial State" description="Create a RTPseudoState (InitialState)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_initial.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_InitialShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="rtstatemachine.nodes.rtpseudostate_junction" label="Junction" description="Create a RTPseudoState (Junction)">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/rt_pseudostate_junction.gif"/>
+      <elementDescriptors>
+        <elementType xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.RTPseudoState_JunctionShape"/>
+      </elementDescriptors>
+    </ownedConfigurations>
+  </drawerConfigurations>
+  <requiredProfiles>UMLRealTime</requiredProfiles>
+</paletteconfiguration:PaletteConfiguration>

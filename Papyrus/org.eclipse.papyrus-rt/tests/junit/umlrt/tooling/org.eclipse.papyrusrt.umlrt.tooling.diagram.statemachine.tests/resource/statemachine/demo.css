@@ -1,0 +1,28 @@
+State, StateMachine {
+	fillColor: white;
+	gradient: none;
+	nameBackgroundColor: lightsteelblue;
+	lineColor: steelblue;
+}
+
+Region {
+	fillColor:white;
+	gradient:none;
+}
+
+Transition {
+	lineColor: steelblue;
+}
+
+Pseudostate {
+	lineColor: steelblue;
+}
+
+Pseudostate[kind=initial] {
+	fillColor:steelblue;
+}
+
+Pseudostate[kind=junction] {
+	fillColor:steelblue;
+}
+

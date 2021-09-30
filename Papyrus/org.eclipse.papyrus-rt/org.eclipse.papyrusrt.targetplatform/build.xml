@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2016 Christian W. Damus and others.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+   Christian W. Damus - Initial API and implementation
+   Remi Schnekenburger - update regex mapper to handle multi-platform
+-->
+<project name="generate-eclipse" default="default">
+	<description>
+    	Generate variants of targets localized for use on Eclipse.org servers.
+    </description>
+
+	<!-- Find all targets and POMs that have Eclipse variants. -->
+	<fileset id="src-targets" dir="${basedir}">
+		<include name="**/*.target" />
+		<present targetdir="${basedir}">
+			<regexpmapper from="(.*)/[^/]+\.target$$" to="\1/eclipse" handledirsep="true" />
+		</present>
+	</fileset>
+	<fileset id="src-poms" dir="${basedir}">
+		<include name="**/pom.xml" />
+		<present targetdir="${basedir}">
+			<regexpmapper from="(.*)/pom.xml$$" to="\1/eclipse" handledirsep="true"/>
+		</present>
+	</fileset>
+	<fileset id="eclipse-localized" dir="${basedir}">
+		<include name="**/*.targetplatform.*/eclipse/**" />
+	</fileset>
+
+	<target name="default" description="Generate Eclipse targets">
+		<!-- Create the Eclipse-localized target files. -->
+		<copy todir="${basedir}">
+			<fileset refid="src-targets" />
+			<regexpmapper from="(.*)/([^/]+\.target)$$" to="\1/eclipse/\2" handledirsep="true"/>
+			<filterchain>
+				<replacestring
+					from="http://download.eclipse.org/papyrus-rt/updates/nightly/oxygen/"
+					to="file:/home/hudson/genie.papyrus-rt/.hudson/jobs/Papyrus-RT-Master-Product/lastSuccessful/archive/repository/" />
+				<replacestring
+					from="http://download.eclipse.org"
+					to="file:/home/data/httpd/download.eclipse.org" />
+				<replaceregex
+					pattern="https://hudson\.eclipse\.org/papyrus-rt/job/([^/]+)/lastSuccessfulBuild/artifact/"
+					replace="file:/home/hudson/genie.papyrus-rt/.hudson/jobs/\1/lastSuccessful/archive/" />
+			</filterchain>
+		</copy>
+
+		<!-- Create the Maven POM files. -->
+		<copy todir="${basedir}">
+			<fileset refid="src-poms" />
+			<regexpmapper from="(.*)/pom.xml$$" to="\1/eclipse/pom.xml" handledirsep="true"/>
+			<filterchain>
+				<replacestring from="&lt;relativePath&gt;" to="&lt;relativePath&gt;../" />
+			</filterchain>
+		</copy>
+	</target>
+
+	<target name="clean" description="Delete generated Eclipse targets">
+		<delete>
+			<fileset refid="eclipse-localized" />
+		</delete>
+	</target>
+
+	<target name="generate-readme" description="Generate wikitext documentation" if="wikitext.standalone">
+		<path id="wikitext.classpath">
+			<fileset dir="${wikitext.standalone}" includes="*.jar" />
+		</path>
+		<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/ant/tasks.properties" />
+		<wikitext-to-html markupLanguage="Markdown">
+			<fileset dir="${basedir}">
+				<include name="**/*.md" />
+			</fileset>
+		</wikitext-to-html>
+	</target>
+
+	<target name="clean-readme" description="Delete generated wikitext documentation" if="wikitext.standalone">
+		<delete>
+			<fileset dir="${basedir}" includes="**/*.html" />
+		</delete>
+	</target>
+
+</project>

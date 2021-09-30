@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_jN4CIArgEeWxY4EHS0DxPQ" name="RootElement">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_kBfQYArgEeWxY4EHS0DxPQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lg4mkArgEeWxY4EHS0DxPQ" name="Class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_srRwsArgEeWxY4EHS0DxPQ" name="Attribute1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tLI8gArgEeWxY4EHS0DxPQ" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_qCfwkArgEeWxY4EHS0DxPQ" name="Operation1">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-ncbQAukEeWXDcOv7gRvWA" name="u" type="_lg4mkArgEeWxY4EHS0DxPQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tuJh4AuvEeWXDcOv7gRvWA" name="v">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_qmBUYArgEeWxY4EHS0DxPQ" name="Operation2">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HLa7kAuyEeWXDcOv7gRvWA" name="x" type="_lg4mkArgEeWxY4EHS0DxPQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7VvaAArgEeWxY4EHS0DxPQ" name="y" type="_ohuhYArgEeWxY4EHS0DxPQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_LBvs4AuyEeWXDcOv7gRvWA" name="z">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ohuhYArgEeWxY4EHS0DxPQ" name="Class2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tqmfsArgEeWxY4EHS0DxPQ" name="Attribute1" type="_lg4mkArgEeWxY4EHS0DxPQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uTHRMArgEeWxY4EHS0DxPQ" name="Attribute2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rFamIArgEeWxY4EHS0DxPQ" name="Operation1">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_MijEQArhEeWxY4EHS0DxPQ" name="x" type="_lg4mkArgEeWxY4EHS0DxPQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rkIicArgEeWxY4EHS0DxPQ" name="Operation2">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PSOWkArhEeWxY4EHS0DxPQ" type="_lg4mkArgEeWxY4EHS0DxPQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pY3WIHwdEeWYgJYrwwMf6w" name="Top" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_jN4CIQrgEeWxY4EHS0DxPQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jN4CIgrgEeWxY4EHS0DxPQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_pal0cHwdEeWYgJYrwwMf6w" base_Class="_pY3WIHwdEeWYgJYrwwMf6w"/>
+</xmi:XMI>

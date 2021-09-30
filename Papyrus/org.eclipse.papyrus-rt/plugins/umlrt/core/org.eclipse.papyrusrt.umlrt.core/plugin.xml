@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="defaultLanguage" name="defaultLanguage" schema="schema/defaultLanguage.exsd"/>
+	<extension
+         point="org.eclipse.papyrus.infra.core.language">
+      <provider>
+         <class class="org.eclipse.papyrus.uml.tools.profile.index.ProfileLanguageProvider">
+            <parameter
+                  name="profile.1"
+                  value="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ">
+            </parameter>
+            <parameter
+                  name="language.1"
+                  value="org.eclipse.papyrusrt.umlrt.core.internal.language.UMLRTLanguage">
+            </parameter>
+            <!-- Support also the normalized URI of the profile, in case some models use that. -->
+            <parameter
+                  name="profile.2"
+                  value="platform:/plugin/org.eclipse.papyrusrt.umlrt.profile/umlProfile/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ">
+            </parameter>
+            <parameter
+                  name="language.2"
+                  value="org.eclipse.papyrusrt.umlrt.core.internal.language.UMLRTLanguage">
+            </parameter>
+         </class>
+      </provider>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrusrt.umlrt.core.internal.expressions.BehaviorPropertyTester"
+            id="org.eclipse.papyrusrt.umlrt.core.behaviorProperties"
+            namespace="org.eclipse.papyrusrt.umlrt.core"
+            properties="context"
+            type="org.eclipse.uml2.uml.Behavior">
+      </propertyTester>
+      <propertyTester
+            class="org.eclipse.papyrusrt.umlrt.core.internal.expressions.UMLRTElementPropertyTester"
+            id="org.eclipse.papyrusrt.umlrt.core.umlrtProperties"
+            namespace="org.eclipse.papyrusrt.umlrt.core"
+            properties="isInherited,isRedefinition,isExcluded,canExclude,canReinherit"
+            type="org.eclipse.uml2.uml.Element">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.service">
+      <service
+            classname="org.eclipse.papyrusrt.umlrt.core.internal.defaultlanguage.DefaultLanguageService"
+            description="Service to manage active default language in a UML-RT model"
+            id="org.eclipse.papyrusrt.umlrt.core.defaultlanguage.IDefaultLanguageService"
+            priority="1"
+            startKind="startup">
+      </service>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.emf.readonly.readOnlyHandler">
+      <readOnlyHandler
+            class="org.eclipse.papyrusrt.umlrt.core.internal.language.UMLExtensionReadOnlyHandler"
+            priority="1000"
+            id="org.eclipse.papyrusrt.umlrt.core.umlextensionReadOnlyHandler">
+      </readOnlyHandler>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.architecture.models">
+      <model
+            path="architecture/uml-rt.architecture">
+      </model>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.model">
+      <modelSetSnippet
+            classname="org.eclipse.papyrusrt.umlrt.core.internal.architecture.UMLRTArchitectureContextSnippet"
+            description="Checks the current active viewpoint">
+      </modelSetSnippet>
+   </extension>
+</plugin>

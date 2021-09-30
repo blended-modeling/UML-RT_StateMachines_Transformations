@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_MM5bQEdkEeWFj7RjpCP0zQ" name="RootElement">
+  <packagedElement xmi:type="uml:Class" xmi:id="_OUTMoEdkEeWFj7RjpCP0zQ" name="UMLRTGenerator">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_OdK_UEdlEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_P2_ucEdkEeWFj7RjpCP0zQ" name="CppCodeGenerator">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bi7UoEdlEeWFj7RjpCP0zQ" name="uml2changetracker" type="_uQ8IYEdkEeWFj7RjpCP0zQ" association="_bi6GgEdlEeWFj7RjpCP0zQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cz3_IkdlEeWFj7RjpCP0zQ" name="cppcodepattern" type="_Q9sQwEdkEeWFj7RjpCP0zQ" association="_cz3YEEdlEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0qvRIEdmEeWFj7RjpCP0zQ" name="generate"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_viKDMEdlEeWFj7RjpCP0zQ" name="Collector"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Q9sQwEdkEeWFj7RjpCP0zQ" name="CppCodePattern">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_euQBIkdlEeWFj7RjpCP0zQ" name="uml2xtumlrtmodeltranslator" type="_veYL4EdkEeWFj7RjpCP0zQ" association="_euPaEEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SZ0QgEdkEeWFj7RjpCP0zQ" name="AbstractCppGenerator">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_SXU10kdnEeWFj7RjpCP0zQ" name="cppcodepattern" type="_Q9sQwEdkEeWFj7RjpCP0zQ" association="_SXUOwEdnEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7HYkcEdmEeWFj7RjpCP0zQ" name="generate" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TV5eQEdkEeWFj7RjpCP0zQ" name="GeneratorManager">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-XrtAEdlEeWFj7RjpCP0zQ" name="getGenerator"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UqPbAEdkEeWFj7RjpCP0zQ" name="CapsuleGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="_4Q6_kEdkEeWFj7RjpCP0zQ" general="_m25_wEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_IiQOIEdnEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VrmKUEdkEeWFj7RjpCP0zQ" name="ProtocolGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="_-sbDYEdkEeWFj7RjpCP0zQ" general="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Eu4DIEdnEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_m25_wEdkEeWFj7RjpCP0zQ" name="BasicClassGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="_3CcaQEdkEeWFj7RjpCP0zQ" general="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-LpmsEdmEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oOL7wEdkEeWFj7RjpCP0zQ" name="StateMachineGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="__QNs8EdkEeWFj7RjpCP0zQ" general="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GSjcYEdnEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pfoVgEdkEeWFj7RjpCP0zQ" name="CompositionGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Bc4_4EdlEeWFj7RjpCP0zQ" general="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HXqqUEdnEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uQ8IYEdkEeWFj7RjpCP0zQ" name="UML2ChangeTracker">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_iR68MkdlEeWFj7RjpCP0zQ" name="uml2xtumlrtmodeltranslator" type="_veYL4EdkEeWFj7RjpCP0zQ" association="_iR6VIEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_veYL4EdkEeWFj7RjpCP0zQ" name="UML2xtumlrtModelTranslator"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6aUVAEdkEeWFj7RjpCP0zQ" name="SerializableClassGenerator">
+    <generalization xmi:type="uml:Generalization" xmi:id="_9YHi4EdkEeWFj7RjpCP0zQ" general="_m25_wEdkEeWFj7RjpCP0zQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JORmoEdnEeWFj7RjpCP0zQ" name="generate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_QwPOIEdlEeWFj7RjpCP0zQ" client="_OUTMoEdkEeWFj7RjpCP0zQ" supplier="_P2_ucEdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_SYC5cEdlEeWFj7RjpCP0zQ" client="_OUTMoEdkEeWFj7RjpCP0zQ" supplier="_Q9sQwEdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_TWVGoEdlEeWFj7RjpCP0zQ" client="_MM5bQEdkEeWFj7RjpCP0zQ" supplier="_veYL4EdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bi6GgEdlEeWFj7RjpCP0zQ" memberEnd="_bi7UoEdlEeWFj7RjpCP0zQ _bi7UoUdlEeWFj7RjpCP0zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bi6tkEdlEeWFj7RjpCP0zQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bi6tkUdlEeWFj7RjpCP0zQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bi7UoUdlEeWFj7RjpCP0zQ" name="cppcodegenerator" type="_P2_ucEdkEeWFj7RjpCP0zQ" association="_bi6GgEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cz3YEEdlEeWFj7RjpCP0zQ" memberEnd="_cz3_IkdlEeWFj7RjpCP0zQ _cz4mMEdlEeWFj7RjpCP0zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cz3_IEdlEeWFj7RjpCP0zQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cz3_IUdlEeWFj7RjpCP0zQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cz4mMEdlEeWFj7RjpCP0zQ" name="cppcodegenerator" type="_P2_ucEdkEeWFj7RjpCP0zQ" association="_cz3YEEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_euPaEEdlEeWFj7RjpCP0zQ" memberEnd="_euQBIkdlEeWFj7RjpCP0zQ _euQoMEdlEeWFj7RjpCP0zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_euQBIEdlEeWFj7RjpCP0zQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_euQBIUdlEeWFj7RjpCP0zQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_euQoMEdlEeWFj7RjpCP0zQ" name="cppcodepattern" type="_Q9sQwEdkEeWFj7RjpCP0zQ" association="_euPaEEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iR6VIEdlEeWFj7RjpCP0zQ" memberEnd="_iR68MkdlEeWFj7RjpCP0zQ _iR7jQEdlEeWFj7RjpCP0zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iR68MEdlEeWFj7RjpCP0zQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iR68MUdlEeWFj7RjpCP0zQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_iR7jQEdlEeWFj7RjpCP0zQ" name="uml2changetracker" type="_uQ8IYEdkEeWFj7RjpCP0zQ" association="_iR6VIEdlEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_6Z1-cEdlEeWFj7RjpCP0zQ" client="_P2_ucEdkEeWFj7RjpCP0zQ" supplier="_TV5eQEdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="__5rrQEdlEeWFj7RjpCP0zQ" client="_P2_ucEdkEeWFj7RjpCP0zQ" supplier="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_OqbGQEdnEeWFj7RjpCP0zQ" client="_TV5eQEdkEeWFj7RjpCP0zQ" supplier="_SZ0QgEdkEeWFj7RjpCP0zQ"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SXUOwEdnEeWFj7RjpCP0zQ" memberEnd="_SXU10kdnEeWFj7RjpCP0zQ _SXVc4EdnEeWFj7RjpCP0zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SXU10EdnEeWFj7RjpCP0zQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SXU10UdnEeWFj7RjpCP0zQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SXVc4EdnEeWFj7RjpCP0zQ" name="abstractcppgenerator" type="_SZ0QgEdkEeWFj7RjpCP0zQ" association="_SXUOwEdnEeWFj7RjpCP0zQ"/>
+  </packagedElement>
+</uml:Model>

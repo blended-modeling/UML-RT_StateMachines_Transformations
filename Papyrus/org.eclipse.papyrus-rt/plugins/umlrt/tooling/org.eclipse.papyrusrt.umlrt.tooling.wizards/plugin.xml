@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+         point="org.eclipse.papyrus.uml.diagram.wizards.templates">
+      <template
+            di_file="resources/templates/rt-template.di"
+            file="resources/templates/rt-template.uml"
+            id="org.eclipse.papyrusrt.umlrt.tooling.wizards.template"
+            language="org.eclipse.papyrusrt.umlrt.architecture"
+            name="UML-RT for structural modelling"
+            notation_file="resources/templates/rt-template.notation">
+      </template>
+      <template
+            di_file="resources/templates/rtsm-template.di"
+            file="resources/templates/rtsm-template.uml"
+            id="org.eclipse.papyrusrt.umlrt.tooling.wizards.smtemplate"
+            language="org.eclipse.papyrusrt.umlrt.architecture"
+            name="UML-RT basic"
+            notation_file="resources/templates/rtsm-template.notation">
+      </template>
+      <template
+            di_file="resources/templates/rtsmcpp-template.di"
+            file="resources/templates/rtsmcpp-template.uml"
+            id="org.eclipse.papyrusrt.umlrt.tooling.wizards.smcpptemplate"
+            language="org.eclipse.papyrusrt.umlrt.architecture"
+            name="UML-RT for C++"
+            notation_file="resources/templates/rtsmcpp-template.notation">
+      </template>
+   </extension>
+
+</plugin>

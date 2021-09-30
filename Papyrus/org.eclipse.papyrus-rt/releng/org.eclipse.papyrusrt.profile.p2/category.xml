@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <stats location="http://download.eclipse.org/stats/">
+      <feature url="features/org.eclipse.papyrusrt.umlrt.profile.feature_1.0.0.201707040402.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.201707040402"/>
+      <feature url="features/org.eclipse.papyrusrt.umlrt.profile.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.qualifier"/>
+   </stats>
+   <feature url="features/profile/org.eclipse.papyrusrt.umlrt.profile.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.profile"/>
+   </feature>
+   <feature url="features/profile/org.eclipse.papyrusrt.umlrt.profile.feature.source_1.0.0.qualifier.jar" id="org.eclipse.papyrusrt.umlrt.profile.feature.source" version="1.0.0.qualifier">
+      <category name="org.eclipse.papyrusrt.profile"/>
+   </feature>
+   <category-def name="org.eclipse.papyrusrt.profile" label="Papyrus RT Profile Feature">
+      <description>
+         Profile feature of the Papyrus extension for Real Time: 
+Profile and UML-RT specific implementation of UML.
+      </description>
+   </category-def>
+</site>

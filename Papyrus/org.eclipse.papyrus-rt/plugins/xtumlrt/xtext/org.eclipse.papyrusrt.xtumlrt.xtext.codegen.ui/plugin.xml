@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.UmlrtXtextPropertyTester"
+            id="org.eclipse.papyrusrt.xtumlrt.text.propertytester"
+            namespace="org.eclipse.papyrusrt.xtumlrt.text.propertytester"
+            properties="eClass, isSourceEditable"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="UML-RT Category"
+            id="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.category">
+      </category>
+      <command
+            name="Generate Code"
+            categoryId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.category"
+            id="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.UMLRTCodeGenCommand">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.category"
+            id="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.editSource"
+            name="Edit Source">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.UMLRTCodeGenCommand"
+            class="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.handlers.UmlrtXtextHandler">
+      </handler>
+      <handler
+            class="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.handlers.EditSourceHandler"
+            commandId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.editSource">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+         <command
+               commandId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.UMLRTCodeGenCommand"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <reference
+                        definitionId="org.eclipse.papyrusrt.xtumlrt.xtext.Umlrt.XtextEditor.opened">
+                  </reference>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.xtext.ui.editor.outline.IOutlineNode">
+                     </adapt>
+                  </iterate>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.commands.editSource"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.xtext.ui.editor.outline.IOutlineNode">
+                     </adapt>
+                  </iterate>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.papyrusrt.xtumlrt.text.propertytester.isSourceEditable"
+                        value="true">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.papyrusrt.codegen.eobjectlocator">
+      <eobjectlocator
+            class="org.eclipse.papyrusrt.xtumlrt.xtext.codegen.ui.cdt.UmlrtXtextEObjectLocator"
+            id="umlrt">
+      </eobjectlocator>
+   </extension>
+
+</plugin>

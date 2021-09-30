@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_35sMsA0LEeWWicCvtoZajg" name="Bound">
+    <packagedElement xmi:type="uml:Class" xmi:id="_PTztwA0MEeWWicCvtoZajg" name="Top" classifierBehavior="_LdrLYC4WEeWQAJFqozjbLA" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iSTYEA0MEeWWicCvtoZajg" name="testerOne" visibility="protected" type="_Rvwy0A0MEeWWicCvtoZajg" aggregation="composite" association="_iSPGoA0MEeWWicCvtoZajg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wxo70g0NEeWWicCvtoZajg" name="testeeSOne" visibility="protected" type="_OWdfQA0NEeWWicCvtoZajg" aggregation="composite" association="_WxoUwA0NEeWWicCvtoZajg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CSa8wC4WEeWQAJFqozjbLA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CSz-UC4WEeWQAJFqozjbLA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_wzmgAC4WEeWQAJFqozjbLA" name="timer" visibility="protected" aggregation="composite" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_XgqmsC4XEeWQAJFqozjbLA" name="frame" visibility="protected" isOrdered="true" aggregation="composite" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_TWVjwGtVEeSCmtGQ-V4nzg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uxZSQC7HEeWzE6MG4dfmAA" name="timerID" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_N2DNYC7ZEeWBkIg3Yi159Q" name="opStatus" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sj5I0C7bEeWBkIg3Yi159Q" name="testeeSOneID" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_GfwZUICSEeSeANT-DfY5oA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iydrsDn3EeWJYs5xJ0oB0g" name="timerDuration" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+      </ownedAttribute>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_k_-zwA1jEeWyBMEuvQ4Q4w" name="Connector1">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lAOEUA1jEeWyBMEuvQ4Q4w" partWithPort="_Wxo70g0NEeWWicCvtoZajg" role="_IclsYA0OEeWWicCvtoZajg"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lAPScA1jEeWyBMEuvQ4Q4w" partWithPort="_iSTYEA0MEeWWicCvtoZajg" role="_v1I1gA0NEeWWicCvtoZajg"/>
+      </ownedConnector>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_LdrLYC4WEeWQAJFqozjbLA" name="TopSM" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_MMO6gC4WEeWQAJFqozjbLA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_b1d5MC4WEeWQAJFqozjbLA" name="initialize_timer" source="_VXZCgC4WEeWQAJFqozjbLA" target="_VMyvQC7KEeWBkIg3Yi159Q">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_ScomsC7IEeWzE6MG4dfmAA" name="initialize">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initial}]&quot; &lt;&lt; std::endl;&#xD;
+&#xD;
+timerDuration = 2;&#xD;
+&#xD;
+/* Set timer */&#xD;
+timerID = timer.informIn(UMLRTTimespec(timerDuration,0));&#xD;
+opStatus = timerID.isValid();&#xD;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ciTxEC4WEeWQAJFqozjbLA" name="onTimeout/incarnateTestee" source="_XHlNwC4WEeWQAJFqozjbLA" target="_-pVEMC7bEeWBkIg3Yi159Q">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_bsl0gC7bEeWBkIg3Yi159Q" name="incarnateTestee">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {incarnateTestee}]&quot; &lt;&lt; std::endl;&#xD;
+&#xD;
+/* Incarnating an optional capsule: */&#xD;
+testeeSOneID = frame.incarnate(testeeSOne);&#xD;
+opStatus = testeeSOneID.isValid();&#xD;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_InWecC7aEeWBkIg3Yi159Q" name="onTimeout" port="_wzmgAC4WEeWQAJFqozjbLA">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_dYRi8C7KEeWBkIg3Yi159Q" name="initHasErr" guard="_qqXtUC7ZEeWBkIg3Yi159Q" source="_VMyvQC7KEeWBkIg3Yi159Q" target="_bbBMEC7KEeWBkIg3Yi159Q">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_qqXtUC7ZEeWBkIg3Yi159Q" name="iserr">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_qqXtUS7ZEeWBkIg3Yi159Q">
+                <language>C++</language>
+                <body>return(!opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_vMpUcDn3EeWJYs5xJ0oB0g" name="initErr">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initHasErr}] Failed to initialise incarnate timer!&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_eHFwwC7KEeWBkIg3Yi159Q" name="initIsOK" guard="_4rTRcC7ZEeWBkIg3Yi159Q" source="_VMyvQC7KEeWBkIg3Yi159Q" target="_XHlNwC4WEeWQAJFqozjbLA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_4rTRcC7ZEeWBkIg3Yi159Q" name="isOK">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_4rTRcS7ZEeWBkIg3Yi159Q">
+                <language>C++</language>
+                <body>return(opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_3aVHkDn3EeWJYs5xJ0oB0g" name="initOK">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initIsOK}] &quot; &lt;&lt; timerDuration &lt;&lt; &quot; seconds incarnate timer initialised.&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_OlxSwC7cEeWBkIg3Yi159Q" name="incarnateErr" guard="_BKaucDEtEeWlk5bnZgknIw" source="_-pVEMC7bEeWBkIg3Yi159Q" target="_bbBMEC7KEeWBkIg3Yi159Q">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_BKaucDEtEeWlk5bnZgknIw" name="isErr">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_BKaucTEtEeWlk5bnZgknIw">
+                <language>C++</language>
+                <body>return(!opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_KDa_EDn3EeWJYs5xJ0oB0g" name="incErr">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {incarnateErr}] Failed to incarnate testeeSOne capsule!&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_QDnJwC7cEeWBkIg3Yi159Q" name="incarnateOK" guard="_1nT3oDEsEeWlk5bnZgknIw" source="_-pVEMC7bEeWBkIg3Yi159Q" target="_nkudoDnzEeWJYs5xJ0oB0g">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_1nT3oDEsEeWlk5bnZgknIw" name="isOK">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_1nT3oTEsEeWlk5bnZgknIw">
+                <language>C++</language>
+                <body>return(opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_JuOH8DnzEeWJYs5xJ0oB0g" name="setDestroy">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {incarnateOK}] testeeSOne capsule incarnated.&quot; &lt;&lt; std::endl;&#xD;
+&#xD;
+timerDuration = 15;&#xD;
+&#xD;
+/* Set timer */&#xD;
+timerID = timer.informIn(UMLRTTimespec(timerDuration,0));&#xD;
+opStatus = timerID.isValid();&#xD;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_31JYIDnzEeWJYs5xJ0oB0g" name="timer2OK" guard="_BtTJADn0EeWJYs5xJ0oB0g" source="_nkudoDnzEeWJYs5xJ0oB0g" target="_ZqIqEC4WEeWQAJFqozjbLA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_BtTJADn0EeWJYs5xJ0oB0g">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_BtTJATn0EeWJYs5xJ0oB0g">
+                <language>C++</language>
+                <body>return(opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_e79JoDn2EeWJYs5xJ0oB0g" name="t2OK">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {timer2OK}] &quot; &lt;&lt; timerDuration &lt;&lt; &quot; seconds destroy timer initialised.&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_4b2LwDnzEeWJYs5xJ0oB0g" name="timer2NOK" guard="_KyCf8Dn0EeWJYs5xJ0oB0g" source="_nkudoDnzEeWJYs5xJ0oB0g" target="_bbBMEC7KEeWBkIg3Yi159Q">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_KyCf8Dn0EeWJYs5xJ0oB0g">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_KyCf8Tn0EeWJYs5xJ0oB0g">
+                <language>C++</language>
+                <body>return(!opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_XBiQwDn2EeWJYs5xJ0oB0g" name="t2Err">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {timer2NOK}] Failed to initialise destroy timer!&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_UjrZIDn0EeWJYs5xJ0oB0g" name="destroyTestee" source="_ZqIqEC4WEeWQAJFqozjbLA" target="_aEV2QDn9EeWJYs5xJ0oB0g">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_i3e18Dn0EeWJYs5xJ0oB0g" name="destroyTestee">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {destroyTestee}] &quot;;&#xD;
+&#xD;
+if (testeeSOneID.isValid())&#xD;
+{&#xD;
+	/* Destroy the Testee optional capsule: */&#xD;
+	opStatus = frame.destroy(testeeSOneID);&#xD;
+	/* opStatus = frame.destroy( &amp; testeeSOne);  */&#xD;
+&#xD;
+	if ( opStatus ) {&#xD;
+		std::cout &lt;&lt; &quot;testeeSOne capsule destroyed.&quot; &lt;&lt; std::endl;&#xD;
+	} else {&#xD;
+		std::cout &lt;&lt; &quot;Failed to destroy testeeSOne capsule!&quot; &lt;&lt; std::endl;&#xD;
+	}&#xD;
+&#xD;
+} else {&#xD;
+	opStatus = false;&#xD;
+	std::cout &lt;&lt; &quot;Failed to destroy testeeSOne capsule!&quot; &lt;&lt; std::endl;&#xD;
+}&#xD;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_oXHxoDn4EeWJYs5xJ0oB0g" name="onTimeout2" port="_wzmgAC4WEeWQAJFqozjbLA">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_itwjIDn9EeWJYs5xJ0oB0g" name="destroyed!" guard="_3p2ikDn9EeWJYs5xJ0oB0g" source="_aEV2QDn9EeWJYs5xJ0oB0g" target="_iPbz8DnzEeWJYs5xJ0oB0g">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_3p2ikDn9EeWJYs5xJ0oB0g" name="destFail">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_3p2ikTn9EeWJYs5xJ0oB0g">
+                <language>C++</language>
+                <body>return(opStatus);</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_jduAcDn9EeWJYs5xJ0oB0g" name="destroyFailed" guard="__tmWkDn9EeWJYs5xJ0oB0g" source="_aEV2QDn9EeWJYs5xJ0oB0g" target="_bbBMEC7KEeWBkIg3Yi159Q">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="__tmWkDn9EeWJYs5xJ0oB0g" name="NoDestroy">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="__tmWkTn9EeWJYs5xJ0oB0g">
+                <language>C++</language>
+                <body>return(!opStatus);</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_VXZCgC4WEeWQAJFqozjbLA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_XHlNwC4WEeWQAJFqozjbLA" name="WaitOnInit"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ZqIqEC4WEeWQAJFqozjbLA" name="WaitForDestroy"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_VMyvQC7KEeWBkIg3Yi159Q" name="initOK?" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_bbBMEC7KEeWBkIg3Yi159Q" name="Error">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_gAh2QC7YEeWBkIg3Yi159Q" name="error">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot;] Error encountered during processing - Execution stopped!&quot; &lt;&lt; std::endl;
+</body>
+            </entry>
+          </subvertex>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_-pVEMC7bEeWBkIg3Yi159Q" name="incarnateOK?" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_iPbz8DnzEeWJYs5xJ0oB0g" name="Done"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_nkudoDnzEeWJYs5xJ0oB0g" name="timer2OK?" kind="choice"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_aEV2QDn9EeWJYs5xJ0oB0g" name="destroyed?" kind="choice"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Rvwy0A0MEeWWicCvtoZajg" name="Tester" classifierBehavior="_5j6x4A1jEeWyBMEuvQ4Q4w" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_v1I1gA0NEeWWicCvtoZajg" name="testPort" visibility="public" type="_7-CWcA0MEeWWicCvtoZajg" aggregation="composite" isBehavior="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_8G0jEBNvEeWL8M9zNy2CJw" name="timer" visibility="protected" isOrdered="true" aggregation="composite" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uFbPcBNwEeWL8M9zNy2CJw" name="timerID" visibility="protected">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qQJdMC7eEeWBkIg3Yi159Q" name="opStatus" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2608kDoBEeWJYs5xJ0oB0g" name="hasBeenBound" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_96CKYDoBEeWJYs5xJ0oB0g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7NJGUDoBEeWJYs5xJ0oB0g" name="hasBeenUnbound" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_AIgNEDoCEeWJYs5xJ0oB0g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eXF2IDoDEeWJYs5xJ0oB0g" name="timerDuration" visibility="protected" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_5j6x4A1jEeWyBMEuvQ4Q4w" name="Tester_SM" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_630pwA1jEeWyBMEuvQ4Q4w" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_E0-2cA1kEeWyBMEuvQ4Q4w" name="initialize" source="__HiygA1jEeWyBMEuvQ4Q4w" target="_uiMhMC7eEeWBkIg3Yi159Q">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_UEO0gBCpEeWr3Pbi51wSsA" name="running">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initial}] &quot; &lt;&lt; std::endl;&#xD;
+&#xD;
+timerDuration = 25;&#xD;
+&#xD;
+timerID = timer.informIn(UMLRTTimespec(timerDuration,0));&#xD;
+opStatus =  timerID.isValid();&#xD;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_HsDxQA1kEeWyBMEuvQ4Q4w" name="onBound" source="__zZy8A1jEeWyBMEuvQ4Q4w" target="__zZy8A1jEeWyBMEuvQ4Q4w">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lhcFkA1kEeWyBMEuvQ4Q4w" name="onRrtBound">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+hasBeenBound = true;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {onBound}] Bound signal received!&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_UgH5oA1kEeWyBMEuvQ4Q4w" name="onTestRTBound" port="_v1I1gA0NEeWWicCvtoZajg">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_PQtAwOzeEeSRtqCWFwOf8g"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_UhiJABNxEeWL8M9zNy2CJw" name="onTimeout" source="__zZy8A1jEeWyBMEuvQ4Q4w" target="_4zmXcBNyEeWL8M9zNy2CJw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_n6_RABNxEeWL8M9zNy2CJw" name="onTimeout">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {onTimeout}] Timout received -- FAILURE&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_jx7w8BNxEeWL8M9zNy2CJw" name="onTimeOut" port="_8G0jEBNvEeWL8M9zNy2CJw">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_3MD6AC7eEeWBkIg3Yi159Q" name="initError" guard="_NrQD4C7fEeWBkIg3Yi159Q" source="_uiMhMC7eEeWBkIg3Yi159Q" target="_sFOIcC7eEeWBkIg3Yi159Q">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_NrQD4C7fEeWBkIg3Yi159Q" name="initError">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_NrQD4S7fEeWBkIg3Yi159Q">
+                <language>C++</language>
+                <body>return(!opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_P4AWYDoDEeWJYs5xJ0oB0g" name="initError">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initError}] Failed to initialise timer!&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_72fBwC7eEeWBkIg3Yi159Q" name="initOK" guard="_WEWc0C7fEeWBkIg3Yi159Q" source="_uiMhMC7eEeWBkIg3Yi159Q" target="__zZy8A1jEeWyBMEuvQ4Q4w">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_WEWc0C7fEeWBkIg3Yi159Q" name="initOK">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_WEWc0S7fEeWBkIg3Yi159Q">
+                <language>C++</language>
+                <body>return(opStatus);</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_q8nMMDoDEeWJYs5xJ0oB0g" name="initTimer">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {initOK}] &quot; &lt;&lt; timerDuration &lt;&lt; &quot; seconds timer initialised.&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_WqcDkDnvEeWJYs5xJ0oB0g" name="onUnBound" source="__zZy8A1jEeWyBMEuvQ4Q4w" target="_8JC9oDnwEeWJYs5xJ0oB0g">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Pf9H8DnxEeWJYs5xJ0oB0g" name="unBoundSuccess">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+bool tstat = timer.cancelTimer(timerID);&#xD;
+&#xD;
+hasBeenUnbound = true;&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {onUnBound}] UnBound signal received!&quot;;&#xD;
+if (tstat) {&#xD;
+	std::cout &lt;&lt; &quot; (timer cancelled)&quot; &lt;&lt; std::endl;&#xD;
+} else {&#xD;
+	std::cout &lt;&lt; &quot; (error cancelling timer)&quot; &lt;&lt; std::endl;&#xD;
+}&#xD;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_1F0n8DnvEeWJYs5xJ0oB0g" name="onTestRTUnbound" port="_v1I1gA0NEeWWicCvtoZajg">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_R-s4EOzeEeSRtqCWFwOf8g"/>
+            </trigger>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="__HiygA1jEeWyBMEuvQ4Q4w" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="__zZy8A1jEeWyBMEuvQ4Q4w" name="Running"/>
+          <subvertex xmi:type="uml:State" xmi:id="_4zmXcBNyEeWL8M9zNy2CJw" name="Failed"/>
+          <subvertex xmi:type="uml:State" xmi:id="_sFOIcC7eEeWBkIg3Yi159Q" name="Error">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_tgWFoDEuEeWlk5bnZgknIw" name="error">
+              <language>C++</language>
+              <body>time_t currentTime;
+struct tm *localTime;
+time( &amp;currentTime );
+localTime = localtime( &amp;currentTime );
+
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;
+
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot;] Error encountered during processing - Execution stopped!&quot; &lt;&lt; std::endl;
+</body>
+            </entry>
+          </subvertex>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_uiMhMC7eEeWBkIg3Yi159Q" name="initOK?" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8JC9oDnwEeWJYs5xJ0oB0g" name="Success">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_VGSeUDnxEeWJYs5xJ0oB0g" name="success">
+              <language>C++</language>
+              <body>time_t currentTime;&#xD;
+struct tm *localTime;&#xD;
+time( &amp;currentTime );&#xD;
+localTime = localtime( &amp;currentTime );&#xD;
+&#xD;
+std::cout &lt;&lt; std::setfill('0') &lt;&lt; &quot;[&quot;&lt;&lt; std::setw(2) &lt;&lt; localTime->tm_hour &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_min &lt;&lt; &quot;:&quot; &lt;&lt; std::setw(2) &lt;&lt; localTime->tm_sec &lt;&lt; &quot;] &quot;;&#xD;
+&#xD;
+timer.cancelTimer(timerID);&#xD;
+&#xD;
+std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot; {Success}] Test Success!&quot; &lt;&lt; std::endl;&#xD;
+</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_7-JrMA0MEeWWicCvtoZajg" name="TestProtocol" URI="">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_7-CWcA0MEeWWicCvtoZajg" name="TestProtocol">
+        <generalization xmi:type="uml:Generalization" xmi:id="_54i2sA1mEeWyBMEuvQ4Q4w">
+          <general xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#__4DbwOzdEeSRtqCWFwOf8g"/>
+        </generalization>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_7-Y7wA0MEeWWicCvtoZajg" name="Protocol1" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-Q_8A0MEeWWicCvtoZajg" contract="_7-Q_8A0MEeWWicCvtoZajg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_7-sdwA0MEeWWicCvtoZajg" name="Protocol1IO" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-lwEA0MEeWWicCvtoZajg" contract="_7-lwEA0MEeWWicCvtoZajg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-Q_8A0MEeWWicCvtoZajg" name="TestProtocol"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-bYAA0MEeWWicCvtoZajg" name="TestProtocol~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_7-jT0A0MEeWWicCvtoZajg" name="CommProtocol~" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-bYAA0MEeWWicCvtoZajg"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_7-kh8A0MEeWWicCvtoZajg" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-lwEA0MEeWWicCvtoZajg" name="TestProtocolIO">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Y2GUwA37EeWZmqO69MGcNA" name="ping"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_7-uS8A0MEeWWicCvtoZajg" name="CommProtocolIO" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-lwEA0MEeWWicCvtoZajg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_Y2Z2wA37EeWZmqO69MGcNA" name="ping" operation="_Y2GUwA37EeWZmqO69MGcNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OWdfQA0NEeWWicCvtoZajg" name="Testee" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_IclsYA0OEeWWicCvtoZajg" name="testPort" type="_7-CWcA0MEeWWicCvtoZajg" aggregation="composite" isBehavior="true" isConjugated="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iSPGoA0MEeWWicCvtoZajg" name="TopHasATester" visibility="public" memberEnd="_iSTYEA0MEeWWicCvtoZajg _iST_IA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iSQ70A0MEeWWicCvtoZajg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iSQ70Q0MEeWWicCvtoZajg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iST_IA0MEeWWicCvtoZajg" name="top" type="_PTztwA0MEeWWicCvtoZajg" association="_iSPGoA0MEeWWicCvtoZajg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WxoUwA0NEeWWicCvtoZajg" name="TopHasATestee" memberEnd="_Wxo70g0NEeWWicCvtoZajg _Wxpi4A0NEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Wxo70A0NEeWWicCvtoZajg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wxo70Q0NEeWWicCvtoZajg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Wxpi4A0NEeWWicCvtoZajg" name="top" type="_PTztwA0MEeWWicCvtoZajg" association="_WxoUwA0NEeWWicCvtoZajg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Geq5EA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GetVUA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/C_Cpp/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Gew_sA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GexmwA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/dsmlvalidation#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DSMLValidation_PROFILES/PapyrusValidationRuleDSML.uml#__sUW0OhNEeCjcc2EgK3Uwg"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GeyN0A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gezb8A0MEeWWicCvtoZajg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8Q0MEeWWicCvtoZajg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8g0MEeWWicCvtoZajg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8w0MEeWWicCvtoZajg" key="Copyright" value="CEA LIST - Initial API and Implementation&#xD;&#xA;"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb9A0MEeWWicCvtoZajg" key="Date" value="2012-12-07"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb9Q0MEeWWicCvtoZajg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gey04A0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_eijPgUBcEeKj6r7ThQagKA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_dL4lkPXAEeGSQON-DQ-5eg"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge0DAA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge0qEQ0MEeWWicCvtoZajg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qEg0MEeWWicCvtoZajg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qEw0MEeWWicCvtoZajg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFA0MEeWWicCvtoZajg" key="Copyright" value="CEA LIST - Initial API and Implementation&#xD;&#xA;"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFQ0MEeWWicCvtoZajg" key="Date" value="2012-12-07"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFg0MEeWWicCvtoZajg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge0qEA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_eikdoEBcEeKj6r7ThQagKA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_16oYAD-SEeKj6r7ThQagKA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge1RIA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge1RIQ0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge7-0A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge7-0Q0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge8l4A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge9M8A0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GfCsgA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lWYu0J6xEeWpd9g0tmQhZg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lWYu0Z6xEeWpd9g0tmQhZg" key="Version" value="0.0.9"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lWYu0p6xEeWpd9g0tmQhZg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lWYu056xEeWpd9g0tmQhZg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lWYu1J6xEeWpd9g0tmQhZg" key="Date" value="2015-12-09"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lWYu1Z6xEeWpd9g0tmQhZg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GfCsgQ0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_PZqeIA0MEeWWicCvtoZajg" base_Class="_PTztwA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:Capsule xmi:id="_Rv3ggA0MEeWWicCvtoZajg" base_Class="_Rvwy0A0MEeWWicCvtoZajg"/>
+  <UMLRealTime:CapsulePart xmi:id="_3I07AA0MEeWWicCvtoZajg" base_Property="_iSTYEA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_7-OjsA0MEeWWicCvtoZajg" base_Package="_7-JrMA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-WfgA0MEeWWicCvtoZajg" base_Interface="_7-Q_8A0MEeWWicCvtoZajg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-heoA0MEeWWicCvtoZajg" base_Interface="_7-bYAA0MEeWWicCvtoZajg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-rPoA0MEeWWicCvtoZajg" base_Interface="_7-lwEA0MEeWWicCvtoZajg" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_7-vhEA0MEeWWicCvtoZajg" base_Collaboration="_7-CWcA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:Capsule xmi:id="_OWjl4A0NEeWWicCvtoZajg" base_Class="_OWdfQA0NEeWWicCvtoZajg"/>
+  <UMLRealTime:CapsulePart xmi:id="_e1rDsA0NEeWWicCvtoZajg" base_Property="_Wxo70g0NEeWWicCvtoZajg"/>
+  <UMLRealTime:RTPort xmi:id="_zqSiIA0NEeWWicCvtoZajg" isNotification="true" base_Port="_v1I1gA0NEeWWicCvtoZajg"/>
+  <UMLRealTime:RTPort xmi:id="_LSmQMA0OEeWWicCvtoZajg" isNotification="true" base_Port="_IclsYA0OEeWWicCvtoZajg"/>
+  <UMLRealTime:RTConnector xmi:id="_oJHu8A1jEeWyBMEuvQ4Q4w" base_Connector="_k_-zwA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_F9mEUA1kEeWyBMEuvQ4Q4w" base_Pseudostate="__HiygA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_GrHRoA1kEeWyBMEuvQ4Q4w" base_State="__zZy8A1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_qcszwA1mEeWyBMEuvQ4Q4w" base_StateMachine="_5j6x4A1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_rh124A1mEeWyBMEuvQ4Q4w" base_Region="_630pwA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTime:RTPort xmi:id="__pQvEBNvEeWL8M9zNy2CJw" isWired="false" base_Port="_8G0jEBNvEeWL8M9zNy2CJw"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_Ssjz8C4WEeWQAJFqozjbLA" base_StateMachine="_LdrLYC4WEeWQAJFqozjbLA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_UJqrIC4WEeWQAJFqozjbLA" base_Region="_MMO6gC4WEeWQAJFqozjbLA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XOyuIC7IEeWzE6MG4dfmAA" base_Pseudostate="_VXZCgC4WEeWQAJFqozjbLA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_v-3DkC7KEeWBkIg3Yi159Q" base_Pseudostate="_VMyvQC7KEeWBkIg3Yi159Q"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_bhWBEC7LEeWBkIg3Yi159Q" implementationPreface="#include &lt;iostream>&#xA;#include &lt;iomanip>&#xA;#include &lt;ctime>&#xA;" base_Class="_PTztwA0MEeWWicCvtoZajg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_rH6vgC7aEeWBkIg3Yi159Q" base_State="_XHlNwC4WEeWQAJFqozjbLA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_s4fVQC7aEeWBkIg3Yi159Q" base_State="_ZqIqEC4WEeWQAJFqozjbLA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_t5wlAC7aEeWBkIg3Yi159Q" base_State="_bbBMEC7KEeWBkIg3Yi159Q"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_P_BIMC7dEeWBkIg3Yi159Q" implementationPreface="#include &lt;iostream>&#xA;#include &lt;iomanip>&#xA;#include &lt;ctime>&#xA;" base_Class="_Rvwy0A0MEeWWicCvtoZajg"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_awgU0C7dEeWBkIg3Yi159Q" implementationPreface="#include &lt;iostream>&#xA;#include &lt;iomanip>&#xA;#include &lt;ctime>&#xA;" base_Class="_OWdfQA0NEeWWicCvtoZajg"/>
+  <UMLRealTime:RTPort xmi:id="_ulqx0DnoEeW1Woubsgy9Yw" isWired="false" base_Port="_XgqmsC4XEeWQAJFqozjbLA"/>
+  <UMLRealTime:RTPort xmi:id="_vU3aIDnoEeW1Woubsgy9Yw" isWired="false" base_Port="_wzmgAC4WEeWQAJFqozjbLA"/>
+</xmi:XMI>

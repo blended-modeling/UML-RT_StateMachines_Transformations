@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:j="clr-namespace:java.lang">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppumlrt:CapsulePartTypeEditor customLabel="Capsule"
+			input="{Binding}" property="UMLRealTimeExt:Property:type"></ppumlrt:CapsulePartTypeEditor>
+	</Composite>
+</Composite>

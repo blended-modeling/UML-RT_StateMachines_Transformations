@@ -1,0 +1,23 @@
+/**
+ * Releng Target Platform for Papyrus-RT (releases)
+ * 
+ * This TP is intended to contain the the Papyrus-RT features in the releases versions of Papyrus-RT.
+ */
+target "Papyrus-RT releases releng target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.tooling/org.eclipse.papyrusrt.targetplatform.tooling.tpd" 
+
+// Master Profile and Core are included in the Tooling TP
+
+// Master Tooling and Codegen Features
+location "http://download.eclipse.org/papyrus-rt/updates/milestones/oxygen/1.0.0/M201707181334" papyrus-rt-last-milestone {
+	org.eclipse.papyrusrt.umlrt.tooling.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.migration.rsa.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.tooling.feature.source.feature.group
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.source.feature.group
+	org.eclipse.papyrusrt.umlrt.migration.rsa.feature.source.feature.group
+	org.eclipse.papyrusrt.codegen-feature.feature.group
+	org.eclipse.papyrusrt.rts-feature.feature.group
+	org.eclipse.papyrusrt.xtumlrt.xtext.feature.feature.group
+}

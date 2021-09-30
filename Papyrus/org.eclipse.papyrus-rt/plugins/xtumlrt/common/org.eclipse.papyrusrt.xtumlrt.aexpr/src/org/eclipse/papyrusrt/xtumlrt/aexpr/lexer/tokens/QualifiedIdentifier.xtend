@@ -1,0 +1,38 @@
+/*******************************************************************************
+ * Copyright (c) 2014-2017 Zeligsoft (2009) Limited and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Initial contribution:
+ *   - Ernesto Posse
+ *******************************************************************************/
+package org.eclipse.papyrusrt.xtumlrt.aexpr.lexer.tokens
+
+import org.eclipse.papyrusrt.xtumlrt.aexpr.lexer.tokens.Identifier
+
+import org.eclipse.xtend.lib.annotations.ToString
+
+@ToString(singleLine=true)
+class QualifiedIdentifier extends Identifier
+{
+	static val DEFAULT_SEPARATOR = "."
+	String separator = DEFAULT_SEPARATOR
+	String[] segments
+	
+	new(int line, int column, String text) {
+		super(line, column, text)
+	}
+
+	def getSegments()
+	{
+		if (segments === null)
+		{
+			segments = text.split(separator)
+		}
+		segments
+	}
+	
+	def setSeparator(String sep) { separator = sep }
+}

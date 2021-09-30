@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.papyrusrt.umlrt.system.profile.validation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.validation;bundle-version="1.8.0",
+ org.eclipse.papyrus.uml.service.validation;bundle-version="1.2.0",
+ org.eclipse.uml2.uml;bundle-version="5.2.0",
+ org.eclipse.papyrusrt.umlrt.system.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.infra.core.log;bundle-version="1.2.0"
+Export-Package: org.eclipse.papyrusrt.umlrt.system.profile.validation.selectors
+Bundle-Vendor: %Bundle-Vendor

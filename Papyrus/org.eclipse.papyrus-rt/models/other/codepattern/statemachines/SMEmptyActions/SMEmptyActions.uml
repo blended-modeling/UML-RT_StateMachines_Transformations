@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_VKYLsHAgEeSNn6jNcTBnFg" name="SMEmptyActions">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_VKYLsXAgEeSNn6jNcTBnFg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_hASCsHAgEeSNn6jNcTBnFg" name="Protocol1Container">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_hASCsXAgEeSNn6jNcTBnFg" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_hASCsnAgEeSNn6jNcTBnFg" name="InSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASCs3AgEeSNn6jNcTBnFg" name="inSig1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASCtHAgEeSNn6jNcTBnFg" name="inSig2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASCtXAgEeSNn6jNcTBnFg" name="inSig3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASCtnAgEeSNn6jNcTBnFg" name="inSig4">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_hASCt3AgEeSNn6jNcTBnFg" name="x">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_hASpwHAgEeSNn6jNcTBnFg" name="OutSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpwXAgEeSNn6jNcTBnFg" name="outSig1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpwnAgEeSNn6jNcTBnFg" name="outSig2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpw3AgEeSNn6jNcTBnFg" name="outSig3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpxHAgEeSNn6jNcTBnFg" name="outSig4">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_hASpxXAgEeSNn6jNcTBnFg" name="s">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_hASpxnAgEeSNn6jNcTBnFg" name="InOutSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpx3AgEeSNn6jNcTBnFg" name="inOutSig1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpyHAgEeSNn6jNcTBnFg" name="inOutSig2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpyXAgEeSNn6jNcTBnFg" name="inOutSig3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_hASpynAgEeSNn6jNcTBnFg" name="inOutSig4">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_hASpy3AgEeSNn6jNcTBnFg" name="s">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_hASpzHAgEeSNn6jNcTBnFg" client="_hASCsXAgEeSNn6jNcTBnFg" supplier="_hASCsnAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_hASpzXAgEeSNn6jNcTBnFg" client="_hASCsXAgEeSNn6jNcTBnFg" supplier="_hASpxnAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_hASpznAgEeSNn6jNcTBnFg" client="_hASCsXAgEeSNn6jNcTBnFg" supplier="_hASpwHAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_hASpz3AgEeSNn6jNcTBnFg" client="_hASCsXAgEeSNn6jNcTBnFg" supplier="_hASpxnAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp0HAgEeSNn6jNcTBnFg" name="inSig1CallEvent" operation="_hASCs3AgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp0XAgEeSNn6jNcTBnFg" name="inSig2CallEvent" operation="_hASCtHAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp0nAgEeSNn6jNcTBnFg" name="inSig3CallEvent" operation="_hASCtXAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp03AgEeSNn6jNcTBnFg" name="inSig4CallEvent" operation="_hASCtnAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp1HAgEeSNn6jNcTBnFg" name="outSig1CallEvent" operation="_hASpwXAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp1XAgEeSNn6jNcTBnFg" name="outSig2CallEvent" operation="_hASpwnAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp1nAgEeSNn6jNcTBnFg" name="outSig3CallEvent" operation="_hASpw3AgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp13AgEeSNn6jNcTBnFg" name="outSig4CallEvent" operation="_hASpxHAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp2HAgEeSNn6jNcTBnFg" name="inOutSig1CallEvent" operation="_hASpx3AgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp2XAgEeSNn6jNcTBnFg" name="inOutSig2CallEvent" operation="_hASpyHAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp2nAgEeSNn6jNcTBnFg" name="inOutSig3CallEvent" operation="_hASpyXAgEeSNn6jNcTBnFg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_hASp23AgEeSNn6jNcTBnFg" name="inOutSig4CallEvent" operation="_hASpynAgEeSNn6jNcTBnFg"/>
+      <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hASp3HAgEeSNn6jNcTBnFg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hASp3XAgEeSNn6jNcTBnFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+          <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+        </eAnnotations>
+        <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+      </profileApplication>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hATQ0HAgEeSNn6jNcTBnFg" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hATQ0XAgEeSNn6jNcTBnFg" name="capsule1" type="_hAT34HAgEeSNn6jNcTBnFg" aggregation="composite" association="_hAVtEHAgEeSNn6jNcTBnFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hATQ0nAgEeSNn6jNcTBnFg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hATQ03AgEeSNn6jNcTBnFg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hAT34HAgEeSNn6jNcTBnFg" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_wmwfgKjPEeSlEMEn4rDE4w" name="Port1" type="_hASCsXAgEeSNn6jNcTBnFg" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_XeJIoHAhEeSNn6jNcTBnFg" name="StateMachine1">
+        <region xmi:type="uml:Region" xmi:id="_XeJIoXAhEeSNn6jNcTBnFg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_XeJIonAhEeSNn6jNcTBnFg" source="_XeJIqnAhEeSNn6jNcTBnFg" target="_XeJIq3AhEeSNn6jNcTBnFg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_XeJIpHAhEeSNn6jNcTBnFg" source="_XeJIrHAhEeSNn6jNcTBnFg" target="_XeJI33AhEeSNn6jNcTBnFg">
+            <trigger xmi:type="uml:Trigger" xmi:id="_XeJIpnAhEeSNn6jNcTBnFg" port="_wmwfgKjPEeSlEMEn4rDE4w">
+              <event xmi:type="uml:CallEvent" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_jaR-2HAGEeSeC-HPvYSNPw"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_XeJIp3AhEeSNn6jNcTBnFg" source="_XeJI33AhEeSNn6jNcTBnFg" target="_XeJIrXAhEeSNn6jNcTBnFg">
+            <trigger xmi:type="uml:Trigger" xmi:id="_XeJIqXAhEeSNn6jNcTBnFg">
+              <event xmi:type="uml:CallEvent" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_jaR-2XAGEeSeC-HPvYSNPw"/>
+              <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+              <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+              <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+              <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+            </trigger>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_XeJIqnAhEeSNn6jNcTBnFg" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_XeJIq3AhEeSNn6jNcTBnFg" name="State1">
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIrHAhEeSNn6jNcTBnFg" name="ExitPoint1" kind="exitPoint"/>
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIrXAhEeSNn6jNcTBnFg" name="EntryPoint1" kind="entryPoint"/>
+            <region xmi:type="uml:Region" xmi:id="_XeJIsHAhEeSNn6jNcTBnFg" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="_XeJIsXAhEeSNn6jNcTBnFg" source="_XeJIt3AhEeSNn6jNcTBnFg" target="_XeJIuHAhEeSNn6jNcTBnFg"/>
+              <transition xmi:type="uml:Transition" xmi:id="_XeJIs3AhEeSNn6jNcTBnFg" source="_XeJIuXAhEeSNn6jNcTBnFg" target="_XeJIznAhEeSNn6jNcTBnFg"/>
+              <transition xmi:type="uml:Transition" xmi:id="_XeJItXAhEeSNn6jNcTBnFg" source="_XeJIz3AhEeSNn6jNcTBnFg" target="_XeJIunAhEeSNn6jNcTBnFg">
+                <trigger xmi:type="uml:Trigger" xmi:id="_sofmgHAhEeSNn6jNcTBnFg" event="_hASp0HAgEeSNn6jNcTBnFg" port="_wmwfgKjPEeSlEMEn4rDE4w"/>
+              </transition>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_XeJIt3AhEeSNn6jNcTBnFg" name="Initial1"/>
+              <subvertex xmi:type="uml:State" xmi:id="_XeJIuHAhEeSNn6jNcTBnFg" name="State1">
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIuXAhEeSNn6jNcTBnFg" name="ExitPoint1" kind="exitPoint"/>
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIunAhEeSNn6jNcTBnFg" name="EntryPoint1" kind="entryPoint"/>
+                <region xmi:type="uml:Region" xmi:id="_XeJIvXAhEeSNn6jNcTBnFg" name="Region1">
+                  <transition xmi:type="uml:Transition" xmi:id="_XeJIvnAhEeSNn6jNcTBnFg" source="_XeJIxnAhEeSNn6jNcTBnFg" target="_XeJIx3AhEeSNn6jNcTBnFg"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_XeJIwHAhEeSNn6jNcTBnFg" source="_XeJIx3AhEeSNn6jNcTBnFg" target="_XeJIynAhEeSNn6jNcTBnFg">
+                    <trigger xmi:type="uml:Trigger" xmi:id="_XeJIwnAhEeSNn6jNcTBnFg">
+                      <event xmi:type="uml:CallEvent" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_jaR-2HAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                    </trigger>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_XeJIw3AhEeSNn6jNcTBnFg" source="_XeJIx3AhEeSNn6jNcTBnFg" target="_XeJIuXAhEeSNn6jNcTBnFg">
+                    <trigger xmi:type="uml:Trigger" xmi:id="_XeJIxXAhEeSNn6jNcTBnFg">
+                      <event xmi:type="uml:CallEvent" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_jaR-2XAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                      <port xmi:type="uml:Port" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_-TrDEHAGEeSeC-HPvYSNPw"/>
+                    </trigger>
+                  </transition>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_XeJIxnAhEeSNn6jNcTBnFg" name="Initial1"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_XeJIx3AhEeSNn6jNcTBnFg" name="State1"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_XeJIynAhEeSNn6jNcTBnFg" name="State2"/>
+                </region>
+              </subvertex>
+              <subvertex xmi:type="uml:State" xmi:id="_XeJIzXAhEeSNn6jNcTBnFg" name="State2">
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIznAhEeSNn6jNcTBnFg" name="EntryPoint1" kind="entryPoint"/>
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_XeJIz3AhEeSNn6jNcTBnFg" name="ExitPoint1" kind="exitPoint"/>
+                <region xmi:type="uml:Region" xmi:id="_XeJI0nAhEeSNn6jNcTBnFg" name="Region1">
+                  <transition xmi:type="uml:Transition" xmi:id="_XeJI03AhEeSNn6jNcTBnFg" source="_XeJI2HAhEeSNn6jNcTBnFg" target="_XeJI2XAhEeSNn6jNcTBnFg"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_XeJI1XAhEeSNn6jNcTBnFg" source="_XeJI2XAhEeSNn6jNcTBnFg" target="_XeJI3HAhEeSNn6jNcTBnFg">
+                    <trigger xmi:type="uml:Trigger" xmi:id="_XeJI13AhEeSNn6jNcTBnFg" port="_wmwfgKjPEeSlEMEn4rDE4w">
+                      <event xmi:type="uml:CallEvent" href="../SMThreeLevelNesting/SMThreeLevelNesting.uml#_jaR-2HAGEeSeC-HPvYSNPw"/>
+                    </trigger>
+                  </transition>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_XeJI2HAhEeSNn6jNcTBnFg" name="Initial1"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_XeJI2XAhEeSNn6jNcTBnFg" name="State1x"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_XeJI3HAhEeSNn6jNcTBnFg" name="State2"/>
+                </region>
+              </subvertex>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_XeJI33AhEeSNn6jNcTBnFg" name="State2"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hAVtEHAgEeSNn6jNcTBnFg" memberEnd="_hAVtEXAgEeSNn6jNcTBnFg _hATQ0XAgEeSNn6jNcTBnFg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_hAVtEXAgEeSNn6jNcTBnFg" name="top" type="_hATQ0HAgEeSNn6jNcTBnFg" association="_hAVtEHAgEeSNn6jNcTBnFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hAVtEnAgEeSNn6jNcTBnFg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hAVtE3AgEeSNn6jNcTBnFg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_a1CBYHAgEeSNn6jNcTBnFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_a3JhQHAgEeSNn6jNcTBnFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_b2k98HAgEeSNn6jNcTBnFg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b32JQHAgEeSNn6jNcTBnFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_hAihYHAgEeSNn6jNcTBnFg" base_Class="_hATQ0HAgEeSNn6jNcTBnFg"/>
+  <UMLRealTime:CapsulePart xmi:id="_hAkWkHAgEeSNn6jNcTBnFg" base_Property="_hATQ0XAgEeSNn6jNcTBnFg"/>
+  <UMLRealTime:Capsule xmi:id="_hAk9oHAgEeSNn6jNcTBnFg" base_Class="_hAT34HAgEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_XeP2UHAhEeSNn6jNcTBnFg" base_StateMachine="_XeJIoHAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_XeQdYHAhEeSNn6jNcTBnFg" base_Region="_XeJIoXAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeREcHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIqnAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XeRrgHAhEeSNn6jNcTBnFg" base_State="_XeJIq3AhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeSSkHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIrHAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeS5oHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIrXAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_XeS5oXAhEeSNn6jNcTBnFg" base_Region="_XeJIsHAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeTgsHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIt3AhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XeUHwHAhEeSNn6jNcTBnFg" base_State="_XeJIuHAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeUu0HAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIuXAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeVV4HAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIunAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_XeV88HAhEeSNn6jNcTBnFg" base_Region="_XeJIvXAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeWkAHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIxnAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XeXLEHAhEeSNn6jNcTBnFg" base_State="_XeJIx3AhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XeXLEXAhEeSNn6jNcTBnFg" base_State="_XeJIynAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XeXyIHAhEeSNn6jNcTBnFg" base_State="_XeJIzXAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeYZMHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIznAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeZAQHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJIz3AhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_XeZnUHAhEeSNn6jNcTBnFg" base_Region="_XeJI0nAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_XeaOYHAhEeSNn6jNcTBnFg" base_Pseudostate="_XeJI2HAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_Xea1cHAhEeSNn6jNcTBnFg" base_State="_XeJI2XAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XebcgHAhEeSNn6jNcTBnFg" base_State="_XeJI3HAhEeSNn6jNcTBnFg"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XecDkHAhEeSNn6jNcTBnFg" base_State="_XeJI33AhEeSNn6jNcTBnFg"/>
+  <UMLRealTime:RTPort xmi:id="_1-8FIKjPEeSlEMEn4rDE4w" base_Port="_wmwfgKjPEeSlEMEn4rDE4w"/>
+</xmi:XMI>

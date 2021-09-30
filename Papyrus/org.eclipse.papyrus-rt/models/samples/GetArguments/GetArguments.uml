@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_McQnIJhcEeW6kuh42ZvZkQ" name="GetArguments">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_iTNsUJhcEeW6kuh42ZvZkQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_DV8nkBv8EduZN5aJJITI5w"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_inU7IJhcEeW6kuh42ZvZkQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_mPjAgGXmEeS_4daqvwyFrg"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kailMJhcEeW6kuh42ZvZkQ" name="Top" classifierBehavior="_nwo-UJhcEeW6kuh42ZvZkQ" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_PHUNQJheEeW6kuh42ZvZkQ" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1lOSEJhoEeW6kuh42ZvZkQ" name="below1" visibility="protected" type="_WD4yQJhoEeW6kuh42ZvZkQ" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1lSjgZhoEeW6kuh42ZvZkQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1lTKkJhoEeW6kuh42ZvZkQ" value="1"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_nwo-UJhcEeW6kuh42ZvZkQ" name="StateMachine" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_nwwTEJhcEeW6kuh42ZvZkQ" name="Region">
+          <transition xmi:type="uml:Transition" xmi:id="_p3V0UKW-EeWN9JTg-IMukA" name="TopInitial" source="_nw1LkJhcEeW6kuh42ZvZkQ" target="_mtrUsKW-EeWN9JTg-IMukA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_-DasEKW-EeWN9JTg-IMukA" name="initializeTop">
+              <language>C++</language>
+              <body>log.log( &quot;initializeTop&quot; );
+
+int numArgs = 0;
+char argVal;
+
+dbg.setDebug( false );
+dbg.setPrintType( PrintActual );
+
+numArgs = UMLRTMain::getArgCount();
+
+if ( numArgs > 0 ) {
+	log.show (&quot;Number of arguments: &quot;);
+	log.log( numArgs );
+	for ( int i = 0; i &lt; numArgs; i++ ) {
+		log.show( &quot;Args(&quot; );
+		log.show( i );
+		log.show( &quot; ) = &quot; );
+		(log.log( UMLRTMain::getArg( i ) ));
+	}
+} else {
+	log.log( &quot;No user arguments&quot; );
+}
+
+for ( int i = 0; i &lt; numArgs; i++ ) {
+	if  ( UMLRTMain::getArg(i)[0] == '-' ) {
+		argVal = UMLRTMain::getArg(i)[1];
+		log.show( &quot;argument: &quot;); log.log( argVal );
+		switch ( argVal ) {
+			case 'D' :
+			case 'd' :
+				dbg.setDebug( true );
+				log.log( &quot;debug output enabled&quot; );
+				break;
+			case 'T' :
+			case 't' :
+				dbg.setPrintType( PrintActual );
+				if ( dbg.isDebug() ) {
+					log.log(&quot;Should print actual time!&quot;);
+				}
+				break;
+			case 'R' :
+			case 'r' :
+				dbg.setPrintType( PrintDelta );
+				if ( dbg.isDebug() ) {
+					log.log(&quot;Should print relative time!&quot;);
+				}
+				break;
+			default:
+				if ( dbg.isDebug() ) {
+					log.show( &quot;Unrecognized argument: &quot; );
+					log.log( argVal );
+				}
+				break;
+		}
+	} else {
+		if ( dbg.isDebug() ) {
+			log.show( &quot;Argument value: &quot; );
+			log.log( UMLRTMain::getArg(i) );
+		}
+	}
+}
+</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_nw1LkJhcEeW6kuh42ZvZkQ">
+            <name xsi:nil="true"/>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_mtrUsKW-EeWN9JTg-IMukA" name="Running">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_YSG7oKXBEeWN9JTg-IMukA" name="topRunning">
+              <language>C++</language>
+              <body>log.log( &quot;Top is running. &quot;);
+</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WD4yQJhoEeW6kuh42ZvZkQ" name="Below1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_rXDN4JhoEeW6kuh42ZvZkQ" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_gGwlYJhoEeW6kuh42ZvZkQ" name="StateMachine" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_gGwlYZhoEeW6kuh42ZvZkQ" name="Region">
+          <transition xmi:type="uml:Transition" xmi:id="_gGwlYphoEeW6kuh42ZvZkQ" name="belowOneInitial" source="_gGwlZphoEeW6kuh42ZvZkQ" target="_gGwlZ5hoEeW6kuh42ZvZkQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_qF3HcKmuEeWEXOiRnj2ETQ" name="below1Init">
+              <language>C++</language>
+              <body>log.log( &quot;below1Init&quot; );
+</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_gGwlZphoEeW6kuh42ZvZkQ">
+            <name xsi:nil="true"/>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_gGwlZ5hoEeW6kuh42ZvZkQ" name="Running">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_gGwlaJhoEeW6kuh42ZvZkQ" name="Running_EN">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_tHPbUJh3EeW6kuh42ZvZkQ" name="msg"/>
+              <language>C++</language>
+              <body>log.log( &quot;Below1 Running&quot;);
+
+if ( dbg.isDebug() ) {
+	log.log(&quot;Debug is ON!&quot;);
+	switch ( dbg.getPrintKind() ) {
+		case PrintActual:
+			log.log( &quot;Printing actual time.&quot; );
+			break;
+		case PrintDelta:
+			log.log( &quot;Printing relative (delta) time.&quot; );
+			break;
+		case PrintNone:
+			log.log( &quot;Time is not printed.&quot; );
+			break;
+		default:
+			log.log( &quot;Could not decipher printing type!&quot; );
+			break;
+	}
+} else {
+	log.log(&quot;Debug is OFF!&quot;);
+}</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XQSjAKgWEeWGg7h3jLnwpQ" name="DBG">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XQSjAagWEeWGg7h3jLnwpQ" name="debugStatus" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XQSjAqgWEeWGg7h3jLnwpQ" name="printTimeKind" visibility="protected" type="_XQXbgKgWEeWGg7h3jLnwpQ"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XQSjA6gWEeWGg7h3jLnwpQ" name="isDebug" specification="_XQSjB6gWEeWGg7h3jLnwpQ">
+        <language>C++</language>
+        <body>return( debugStatus );
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XQSjBKgWEeWGg7h3jLnwpQ" name="setDebug" specification="_XQSjCagWEeWGg7h3jLnwpQ">
+        <language>C++</language>
+        <body>debugStatus = dbg;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XQSjBagWEeWGg7h3jLnwpQ" name="setPrintType" specification="_XQSjC6gWEeWGg7h3jLnwpQ">
+        <language>C++</language>
+        <body>printTimeKind = printType;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XQSjBqgWEeWGg7h3jLnwpQ" name="getPrintKind" specification="_XQSjDagWEeWGg7h3jLnwpQ">
+        <language>C++</language>
+        <body>return( printTimeKind );
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XQSjB6gWEeWGg7h3jLnwpQ" name="isDebug" method="_XQSjA6gWEeWGg7h3jLnwpQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XQSjCKgWEeWGg7h3jLnwpQ" direction="return" effect="read">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XQSjCagWEeWGg7h3jLnwpQ" name="setDebug" method="_XQSjBKgWEeWGg7h3jLnwpQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XQSjCqgWEeWGg7h3jLnwpQ" name="dbg" effect="update">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XQSjC6gWEeWGg7h3jLnwpQ" name="setPrintType" method="_XQSjBagWEeWGg7h3jLnwpQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XQSjDKgWEeWGg7h3jLnwpQ" name="printType" type="_XQXbgKgWEeWGg7h3jLnwpQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XQSjDagWEeWGg7h3jLnwpQ" name="getPrintKind" method="_XQSjBqgWEeWGg7h3jLnwpQ">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XQSjDqgWEeWGg7h3jLnwpQ" type="_XQXbgKgWEeWGg7h3jLnwpQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_XQXbgKgWEeWGg7h3jLnwpQ" name="debugPrintKinds">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XQXbgagWEeWGg7h3jLnwpQ" name="PrintNone"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XQXbgqgWEeWGg7h3jLnwpQ" name="PrintActual"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XQXbg6gWEeWGg7h3jLnwpQ" name="PrintDelta"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_XQYCkKgWEeWGg7h3jLnwpQ" client="_XQSjAKgWEeWGg7h3jLnwpQ" supplier="_XQXbgKgWEeWGg7h3jLnwpQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_HSnasKmdEeWEXOiRnj2ETQ" client="_kailMJhcEeW6kuh42ZvZkQ" supplier="_XQSjAKgWEeWGg7h3jLnwpQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_KpIqkKmdEeWEXOiRnj2ETQ" client="_WD4yQJhoEeW6kuh42ZvZkQ" supplier="_XQSjAKgWEeWGg7h3jLnwpQ"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_NAR6MJhcEeW6kuh42ZvZkQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NAWysJhcEeW6kuh42ZvZkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_NGrdIJhcEeW6kuh42ZvZkQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NGsrQJhcEeW6kuh42ZvZkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KOH0QJhfEeW6kuh42ZvZkQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GUss0KmQEeWtZctEI02BYg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GUss0amQEeWtZctEI02BYg" key="Version" value="0.0.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GUss0qmQEeWtZctEI02BYg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GUss06mQEeWtZctEI02BYg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GUss1KmQEeWtZctEI02BYg" key="Date" value="2015-12-10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GUss1amQEeWtZctEI02BYg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KOIbUJhfEeW6kuh42ZvZkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_koBAgJhcEeW6kuh42ZvZkQ" base_Class="_kailMJhcEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_nw5dAJhcEeW6kuh42ZvZkQ" base_Pseudostate="_nw1LkJhcEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_nw7SMJhcEeW6kuh42ZvZkQ" base_Region="_nwwTEJhcEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_nw8gUJhcEeW6kuh42ZvZkQ" base_StateMachine="_nwo-UJhcEeW6kuh42ZvZkQ"/>
+  <UMLRealTime:RTPort xmi:id="_PHX3oJheEeW6kuh42ZvZkQ" isWired="false" base_Port="_PHUNQJheEeW6kuh42ZvZkQ"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_OSXFwJhfEeW6kuh42ZvZkQ" headerPreface="#include &quot;umlrtmain.hh&quot;&#xA;" base_Class="_kailMJhcEeW6kuh42ZvZkQ"/>
+  <UMLRealTime:Capsule xmi:id="_WEgdUJhoEeW6kuh42ZvZkQ" base_Class="_WD4yQJhoEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_gG020JhoEeW6kuh42ZvZkQ" base_StateMachine="_gGwlYJhoEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_gG1d4JhoEeW6kuh42ZvZkQ" base_Region="_gGwlYZhoEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_gG2E8JhoEeW6kuh42ZvZkQ" base_Pseudostate="_gGwlZphoEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_gG2sAJhoEeW6kuh42ZvZkQ" base_State="_gGwlZ5hoEeW6kuh42ZvZkQ"/>
+  <UMLRealTime:RTPort xmi:id="_rXG4QJhoEeW6kuh42ZvZkQ" isWired="false" base_Port="_rXDN4JhoEeW6kuh42ZvZkQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_1lSjgJhoEeW6kuh42ZvZkQ" base_Property="_1lOSEJhoEeW6kuh42ZvZkQ"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_mttw8KW-EeWN9JTg-IMukA" base_State="_mtrUsKW-EeWN9JTg-IMukA"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_l5BYwKmcEeWEXOiRnj2ETQ" headerPreface="#include &quot;umlrtmain.hh&quot;" base_Class="_WD4yQJhoEeW6kuh42ZvZkQ"/>
+  <RTCppProperties:DependencyProperties xmi:id="_C96EQKmdEeWEXOiRnj2ETQ" KindInHeader="Inclusion" KindInImplementation="None" base_Dependency="_XQYCkKgWEeWGg7h3jLnwpQ"/>
+  <RTCppProperties:DependencyProperties xmi:id="_I11g8KmdEeWEXOiRnj2ETQ" KindInHeader="Inclusion" KindInImplementation="None" base_Dependency="_HSnasKmdEeWEXOiRnj2ETQ"/>
+  <RTCppProperties:DependencyProperties xmi:id="_MhLKQKmdEeWEXOiRnj2ETQ" KindInHeader="Inclusion" KindInImplementation="None" base_Dependency="_KpIqkKmdEeWEXOiRnj2ETQ"/>
+  <RTCppProperties:AttributeProperties xmi:id="_dTy9cKmeEeWEXOiRnj2ETQ" base_Property="_XQSjAagWEeWGg7h3jLnwpQ"/>
+  <RTCppProperties:AttributeProperties xmi:id="_fHbeQKmeEeWEXOiRnj2ETQ" base_Property="_XQSjAqgWEeWGg7h3jLnwpQ"/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_AwF08Km1EeWEXOiRnj2ETQ" generateStateMachine="false" generateAssignmentOperator="false" generateCopyConstructor="false" headerEnding="extern DBG dbg;" implementationEnding="DBG dbg;" base_Class="_XQSjAKgWEeWGg7h3jLnwpQ"/>
+</xmi:XMI>

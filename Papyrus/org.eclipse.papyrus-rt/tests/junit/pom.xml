@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.tests.releng</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../releng/tests</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.tests</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>framework/org.eclipse.papyrusrt.junit</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>papyrus-dev</id> <!-- For Papyrus JUnit Framework. This is not released, so we need to reference 
+				the Hudson artifact -->
+			<layout>p2</layout>
+			<url>https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<configuration>
+					<dependency-resolution>
+						<extraRequirements>
+							<requirement>
+								<type>p2-installable-unit</type>
+								<id>org.eclipse.sdk.feature.group</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.sdk.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+						</extraRequirements>
+					</dependency-resolution>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+
+		<profile>
+			<id>default</id>
+			<modules>
+				<module>umlrt/profile</module>
+				<module>umlrt/common</module>
+				<module>umlrt/core</module>
+				<module>umlrt/cpp</module>
+				<module>umlrt/tooling</module>
+				<module>umlrt/migration</module>
+				<module>umlrt/codegen</module>
+				<module>xtumlrt/common</module>
+			</modules>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>core</id>
+			<modules>
+				<module>umlrt/profile</module>
+				<module>umlrt/common</module>
+				<module>umlrt/core</module>
+				<module>umlrt/cpp</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>tooling</id>
+			<modules>
+				<module>umlrt/tooling</module>
+				<module>umlrt/migration</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>codegen</id>
+			<modules>
+				<module>umlrt/codegen</module>
+				<module>xtumlrt/common</module>
+			</modules>
+		</profile>
+
+	</profiles>
+
+</project>

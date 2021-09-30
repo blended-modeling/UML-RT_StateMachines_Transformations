@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration:PapyrusConfiguration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration"
+    xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation"
+    xmi:id="_KIq-4P4UEeSRsNBVzfUrzA">
+  <viewpoints
+      xsi:type="configuration:PapyrusViewpoint"
+      xmi:id="_VGewQP4UEeSRsNBVzfUrzA"
+      name="Default Papyrus Viewpoint">
+    <modelKinds
+        xsi:type="configuration:PapyrusSyncTable"
+        xmi:id="_WC1q0P4UEeSRsNBVzfUrzA"
+        name="StereotypeDisplayTreeTable"
+        icon="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/icons/uml_generic_table.png"
+        implementationID="PapyrusStereotypeDisplayTreeTable">
+      <modelRules
+          xmi:id="_7k79wP4VEeSRsNBVzfUrzA">
+        <element
+        	href="http://www.eclipse.org/gmf/runtime/1.0.2/notation#//View"/>
+      </modelRules>
+      <owningRules
+          xmi:id="_AJmbwP4WEeSRsNBVzfUrzA">
+        <element
+            href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+      </owningRules>
+      <categories
+          href="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration#_7wNb4txhEeOqHvRyiN87hA"/>
+    </modelKinds>
+  </viewpoints>
+  <defaultStakeholder
+      href="platform:/plugin/org.eclipse.papyrus.infra.viewpoints.policy/builtin/default.configuration#_7wLmkdxhEeOqHvRyiN87hA"/>
+  <metamodel
+      href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+</configuration:PapyrusConfiguration>

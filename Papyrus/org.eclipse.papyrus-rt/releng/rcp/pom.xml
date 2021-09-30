@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<artifactId>org.eclipse.papyrusrt.releng</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.rcp.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>org.eclipse.papyrusrt.rcp</module>
+		<module>../../features/rcp/org.eclipse.papyrusrt.rcp.feature</module>
+		<module>org.eclipse.papyrusrt.rcp.product</module>
+
+	</modules>
+
+
+	<name>Papyrus-RT RCP</name>
+</project>

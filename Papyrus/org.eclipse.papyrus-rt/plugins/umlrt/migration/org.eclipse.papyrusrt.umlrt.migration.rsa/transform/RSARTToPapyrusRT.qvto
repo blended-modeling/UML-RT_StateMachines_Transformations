@@ -1,0 +1,350 @@
+/*****************************************************************************
+ * Copyright (c) 2013, 2016 CEA LIST, Christian W. Damus, and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
+ *  Christian W. Damus - bug 489323
+ *****************************************************************************/
+import org.eclipse.papyrus.uml.m2m.qvto.common.utils.UI;
+import org.eclipse.papyrus.interoperability.rsa.RTMappings;
+import org.eclipse.papyrus.uml.m2m.qvto.common.blackboxes.emf.EMFResource;
+import libraries.EclipseUI;
+import PapyrusRTCommon;
+ 
+modeltype uml "strict" uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype notation "strict" uses 'http://www.eclipse.org/gmf/runtime/1.0.2/notation';
+modeltype umlrt "strict" uses 'http://www.eclipse.org/papyrus/umlrt';
+modeltype umlrtsm "strict" uses 'http://www.eclipse.org/papyrus/umlrt/statemachine';
+modeltype sourcert "strict" uses 'http://www.eclipse.org/papyrus/profile/umlrt'; 
+modeltype ecore "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype types "strict" uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+transformation RSARTToPapyrusRT(inout semantics : uml, in profiles : uml, in profileDefinitions : ecore);
+
+property UML_RT_URI : String = 'http://www.eclipse.org/papyrus/umlrt';
+
+property UML_RT_SM_URI : String = 'http://www.eclipse.org/papyrus/umlrt/statemachine';
+
+property RT_PROFILE_URI_PREFIX : String = 'pathmap://RT_PROPERTIES/UMLRealTime.epx';
+
+property UML_DEFINITION_SOURCE : String = 'http://www.eclipse.org/uml2/2.0.0/UML';
+
+//Transforms RSA RT stereotypes to Papyrus RT
+//Stereotypes will not be deleted during this transformation for performance issues (Bug 444379)
+//Instead, they should be deleted as a post-action of the transformation
+main() {
+	semantics.objectsOfType(ProfileApplication).map toPapyrusRTProfile();
+	
+	//Apply new RT Stereotypes first
+	semantics.objectsOfType(StateMachine).map applyRTStateMachine();
+	semantics.objectsOfType(Region).map applyRTRegion();
+	semantics.objectsOfType(State).map applyRTState();
+	semantics.objectsOfType(Pseudostate).map applyRTPseudostate();
+	semantics.objectsOfType(Operation).map setGuarded();
+	
+	semantics.rootObjects()[sourcert::Capsule].map toCapsule();
+	semantics.rootObjects()[sourcert::CapsulePart].map toCapsulePart();
+	semantics.rootObjects()[sourcert::ProtocolContainer].map toProtocolContainer();
+	semantics.rootObjects()[sourcert::Protocol].map toProtocol();
+	semantics.rootObjects()[sourcert::RTConnector].map toRTConnector();
+	semantics.rootObjects()[sourcert::RTHistorystate].map toHistorystate();
+	semantics.rootObjects()[sourcert::RTPort].map toRTPort();
+	semantics.rootObjects()[sourcert::RTRedefinableElement].map toRTRedefinedElement();
+	semantics.rootObjects()[sourcert::Trigger].map toRTTrigger();
+}
+
+mapping inout ProfileApplication::toPapyrusRTProfile() : ProfileApplication when {
+	self.getDefinition().oclAsType(EObject).getURI().startsWith(RT_PROFILE_URI_PREFIX);
+}{
+	//UML-RT
+	self.appliedProfile := getRTProfile();
+
+	self.getDefinitionAnnotation()._references := profileDefinitions.rootObjects()[EPackage]->any(nsURI = UML_RT_URI).oclAsType(EObject);
+	self.eAnnotations := self.getDefinitionAnnotation(); //Remove all other annotations
+	
+	//UML-RT StateMachine extension
+	result.appliedProfile := getRTSMProfile();
+	
+	result.eAnnotations := object EAnnotation {
+		_references := profileDefinitions.rootObjects()[EPackage]->any(nsURI = UML_RT_SM_URI).oclAsType(EObject);
+		source := UML_DEFINITION_SOURCE;
+	};
+	
+	self.applyingPackage.profileApplication += result;
+}
+
+/* Applies the RTMessageSet on the In and Out interfaces, and create a new InOut interface */
+mapping sourcert::ProtocolContainer::toMessageSets() : Interface{
+	var inInterface : Interface := self.findInInterface();
+	var outInterface : Interface := self.findOutInterface();
+	var protocolName : String := self.base_Package.name;
+	
+	inInterface.map createMessageSet(RTMessageKind::_in);
+	inInterface.name := protocolName;
+	
+	outInterface.map createMessageSet(RTMessageKind::_out);
+	outInterface.name := protocolName+'~';
+	
+	//Order: Protocol, InInterface, OutInterface, InoutInterface
+	self.base_Package.packagedElement += result;
+	
+	result.name := protocolName+"IO";
+	result.map createMessageSet(RTMessageKind::inOut);
+	
+	//Create generalizations from the source interface to the target interface
+	var generalizations := self.base_Package.packagedElement->selectByKind(uml::Collaboration).generalization;
+	generalizations.map toGeneralization(result);
+}
+
+mapping inout Generalization::toGeneralization(inoutInterface : Interface) : Generalization {
+	result.specific := inoutInterface;
+	
+	var generalCollaboration := self.general;
+	
+	var generalProtocolContainer := semantics.objectsOfType(sourcert::ProtocolContainer)![base_Package = generalCollaboration.getNearestPackage()];
+	var generalIOInterface : Interface := generalProtocolContainer.map toMessageSets();
+	
+	result.general := generalIOInterface;
+}
+
+query sourcert::ProtocolContainer::findInInterface() : Interface {
+	return self.base_Package.packagedElement->selectByType(Interface)->any(e | not e.name.endsWith('~'));
+}
+
+query sourcert::ProtocolContainer::findOutInterface() : Interface {
+	return self.base_Package.packagedElement->selectByType(Interface)->any(e | e.name.endsWith('~'));
+}
+
+mapping inout Interface::createMessageSet(direction : RTMessageKind) : RTMessageSet {
+	result.base_Interface := self;
+	result.rtMsgKind := direction;
+	self.removeKeyword("ProtocolRole");
+}
+
+mapping sourcert::Capsule::toCapsule() : umlrt::Capsule when {
+	self.oclIsTypeOf(sourcert::Capsule) /* Workaround for Bug 445083/445198 */
+}{
+	log('Capsule: '+self.base_Class.qualifiedName);
+	result.base_Class := self.base_Class;
+	result.base_Class.isActive := true; //Capsules should always be active.
+}
+
+mapping sourcert::CapsulePart::toCapsulePart() : umlrt::CapsulePart when {
+	self.oclIsTypeOf(sourcert::CapsulePart) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_Property := self.base_Property;
+}
+
+mapping sourcert::Protocol::toProtocol() : umlrt::Protocol when {
+	self.oclIsTypeOf(sourcert::Protocol) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_Collaboration := self.base_Collaboration;
+	self.map createProtocolDependencies();
+}
+
+mapping sourcert::Protocol::createProtocolDependencies() : usage: Usage, realization: InterfaceRealization
+	{
+	usage.client := self.base_Collaboration;
+	realization.client := self.base_Collaboration;
+	
+	var interfaceIO := semantics.objectsOfType(sourcert::ProtocolContainer)->any(base_Package = self.base_Collaboration.container()).map toMessageSets();
+	usage.supplier := interfaceIO;
+	realization.supplier := interfaceIO;
+	realization.contract := interfaceIO;
+	 
+	self.base_Collaboration.getNearestPackage().packagedElement += usage;
+	self.base_Collaboration.interfaceRealization += realization;
+}
+
+mapping sourcert::ProtocolContainer::toProtocolContainer() : umlrt::ProtocolContainer when {
+	self.oclIsTypeOf(sourcert::ProtocolContainer) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_Package := self.base_Package;
+	
+	self.map toMessageSets();
+	
+	// Clean up names that should be unset (bug 489323)
+	result.base_Package.packagedElement->selectByKind(CallEvent).map normalizeUnsetName();
+	result.base_Package.packagedElement->selectByKind(Collaboration)
+		.interfaceRealization.map normalizeUnsetName();
+}
+
+/** Just unset the name of an element if its name is null or the empty string. */ 
+mapping inout NamedElement::normalizeUnsetName() when {
+	not self.hasName()
+}{
+	self.unset('name');
+}
+
+mapping sourcert::RTConnector::toRTConnector() : umlrt::RTConnector when {
+	self.oclIsTypeOf(sourcert::RTConnector) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_Connector := self.base_Connector;
+}
+
+mapping sourcert::RTHistorystate::toHistorystate() when {
+	self.oclIsTypeOf(sourcert::RTHistorystate) /* Workaround for Bug 445083/445198 */
+}{
+	if self.historyKind = HistoryKind::Deep then self.base_Pseudostate.kind := PseudostateKind::deepHistory endif;
+	if self.historyKind = HistoryKind::Shallow then self.base_Pseudostate.kind := PseudostateKind::shallowHistory endif;
+}
+
+mapping sourcert::RTPort::toRTPort() : umlrt::RTPort when {
+	self.oclIsTypeOf(sourcert::RTPort) /* Workaround for Bug 445083/445198 */
+}{
+	result.isNotification := self.isNotification;
+	result.isPublish := self.isPublish;
+	result.isWired := self.isWired;
+	result.registration := self.registration.getPapyrusType();
+	result.registrationOverride := self.registrationOverride;
+
+	result.base_Port := self.base_Port;
+	result.base_Port.isConjugated := self.isConjugate;
+	
+	// Bug 508318 : set the visibility to protected if isService = false
+	if (not self.base_Port.isService) then {
+		result.base_Port.visibility := VisibilityKind::protected;
+	} endif;
+}
+
+mapping sourcert::RTRedefinableElement::toRTRedefinedElement() : umlrt::RTRedefinedElement when {
+	self.oclIsTypeOf(sourcert::RTRedefinableElement) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_RedefinableElement := self.base_RedefinableElement;
+	result.rootFragment := self.rootFragment;
+}
+
+mapping sourcert::Trigger::toRTTrigger() : RTTrigger when {
+	self.oclIsTypeOf(sourcert::Trigger) /* Workaround for Bug 445083/445198 */
+}{
+	result.base_Operation := self.base_Operation;
+}
+
+query sourcert::PortRegistrationType::getPapyrusType() : umlrt::PortRegistrationType {
+	return switch {
+		case (self = sourcert::PortRegistrationType::Automatic) 
+			umlrt::PortRegistrationType::Automatic;
+		case (self = sourcert::PortRegistrationType::Application) 
+			umlrt::PortRegistrationType::Application;
+		else
+			umlrt::PortRegistrationType::AutomaticLocked;
+	};
+}
+
+query sourcert::AbstractEvent::getDirection() : RTMessageKind {
+	return if self.oclIsTypeOf(InEvent) then 
+		RTMessageKind::_in
+	else
+		RTMessageKind::_out
+	endif;
+}
+
+/** StateMachine Stereotypes (Auto-applied) */
+
+mapping StateMachine::applyRTStateMachine() : RTStateMachine when {
+	self.isRT()
+}{
+	result.base_StateMachine := self;
+	if self.getClassifier().classifierBehavior.oclIsUndefined() then
+		self.getClassifier().classifierBehavior := self
+	endif;
+}
+
+mapping State::applyRTState() : RTState when {
+	self.isRT()
+}{
+	result.base_State := self;
+}
+
+/** RT Operations (in a Capsule) should be guarded */ 
+mapping inout Operation::setGuarded() when {
+	self.isRT()
+} {
+	self.concurrency := CallConcurrencyKind::guarded;
+}
+
+mapping Pseudostate::applyRTPseudostate() : RTPseudostate when {
+	self.isRT()
+}{
+	result.base_Pseudostate := self;
+}
+
+mapping Region::applyRTRegion() : RTRegion when {
+	self.isRT()
+}{
+	result.base_Region := self;
+}
+
+query Classifier::isRT() : Boolean {
+	return semantics.rootObjects()[sourcert::Capsule]->exists(c | c.base_Class = self);
+}
+
+query StateMachine::isRT() : Boolean {
+	return self.getClassifier().isRT();
+}
+
+query StateMachine::getClassifier() : BehavioredClassifier {
+	return if 
+		self.owner.oclIsKindOf(BehavioredClassifier)
+		and (
+			self.owner.oclAsType(BehavioredClassifier).classifierBehavior = self or //By default in RSA, StateMachines are not the Classifier Behavior of the classifier 
+			self.owner.oclAsType(BehavioredClassifier).ownedBehavior->includes(self)
+		)
+	then 
+		self.owner.oclAsType(BehavioredClassifier) 
+	else 
+		null 
+	endif;
+}
+
+query Region::isRT() : Boolean {
+	return if not self.stateMachine.oclIsUndefined() then
+		self.stateMachine.isRT()
+	else
+		self.state.isRT()
+	endif;
+}
+
+query State::isRT() : Boolean {
+	return self.owner.oclAsType(Region).isRT();
+}
+
+query Pseudostate::isRT() : Boolean {
+	return switch {
+		case (self.owner.oclIsKindOf(Region)) self.owner.oclAsType(Region).isRT();
+		case (self.owner.oclIsKindOf(StateMachine)) self.owner.oclAsType(StateMachine).isRT();
+		case (self.owner.oclIsKindOf(State)) self.owner.oclAsType(State).isRT();
+		else false;
+	};
+}
+
+query Operation::isRT() : Boolean {
+	return if self.owner.oclIsKindOf(Classifier) then
+		self.owner.oclAsType(Classifier).isRT()
+	else
+		false
+	endif;
+}
+
+/** Profile application */
+
+query ProfileApplication::getDefinitionAnnotation() : EAnnotation {
+	return self.getEAnnotation(UML_DEFINITION_SOURCE);
+}
+
+query ProfileApplication::getDefinition() : EPackage {
+	return self.getDefinitionAnnotation()._references->any(oclIsKindOf(EPackage)).oclAsType(EPackage);
+}
+
+query getRTProfile() : Profile {
+	return profiles.rootObjects()[Profile]->any(URI = UML_RT_URI);
+}
+
+query getRTSMProfile() : Profile {
+	return profiles.rootObjects()[Profile]->any(URI = UML_RT_SM_URI);
+}

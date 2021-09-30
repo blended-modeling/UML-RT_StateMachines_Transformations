@@ -1,0 +1,63 @@
+Pre-Condition: Robot ready to explore.
+
+Check distance sensors
+IF distance sensors detect wall THEN
+	Determine closest wall
+		{
+			IF all sensors are analog THEN
+				Select RoverSide facing closest wall
+			ELSE
+				FOREACH RoverSides
+					Point best analog sensor towards RoverSide
+					Keep smallest distance
+				ENDFOR
+				Select RoverSide facing closest wall
+			ENDIF
+			Turn rover towards closest wall
+			Move forward until wall is found at minimal distance
+			Mark start position
+		}
+	Explore
+		{
+			Turn rover left
+			LOOP until DONE
+				IF ( Encoder) 
+					start counting encoder pulses
+				Else
+					Start timer
+				ENDIF 
+				LOOP WHILE
+					(NOT ( wall is found at minimal distance OR
+				  	wall on right moves beyond minimal distance OR
+				  	current position == start position))
+					{
+						Move forward
+					{
+				ENDLOOP
+				IF wall is found at minimal distance
+					IF ( Encoder )
+						convert pulse count into distance
+					ELSE
+						convert elapsed time into distance
+				ENDIF
+					Calculate new position from distance traveled
+					Turn Rover Left
+				Else IF wall on right moves beyond minimal distance THEN
+					Turn Rover right
+				ELSE
+					DONE
+				ENDIF
+			ENDREPEAT
+		}
+	Check if inside wall
+		{
+			IF most turns were right turn, we followed an inside wall
+				Mark map as inside wall
+				Turn rover left
+				Move forward until wall is found at minimal distance
+				Mark outside wall start position
+				DO Explore
+			ELSE we need to look for inside walls
+				Start inside wall search pattern (TBD)
+			Endif
+		}

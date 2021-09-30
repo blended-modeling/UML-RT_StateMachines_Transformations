@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_QeApMApfEeeFVemMZjBJ5g" name="AttributeVisibility">
+    <packagedElement xmi:type="uml:Class" xmi:id="_UlgDAApfEeeFVemMZjBJ5g" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YVcfgApfEeeFVemMZjBJ5g" name="capsule1" visibility="protected" type="_Yrr1QApfEeeFVemMZjBJ5g" isOrdered="true" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Yrr1QApfEeeFVemMZjBJ5g" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_c8dG4ApfEeeFVemMZjBJ5g" name="Attribute1" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jPH-0ApfEeeFVemMZjBJ5g" name="Attribute2" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mhvmIApfEeeFVemMZjBJ5g" name="Attribute3" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_o1hmoApfEeeFVemMZjBJ5g" name="Attribute4" visibility="package">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6t3hMApfEeeFVemMZjBJ5g" name="Attribute5" visibility="public" type="_-MF7kApfEeeFVemMZjBJ5g">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_I8uzoApgEeeFVemMZjBJ5g" type="_-MF7kApfEeeFVemMZjBJ5g" instance="_-0uo4ApfEeeFVemMZjBJ5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_KZS4QApgEeeFVemMZjBJ5g" name="Attribute6" visibility="private" type="_-MF7kApfEeeFVemMZjBJ5g">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_M--hEApgEeeFVemMZjBJ5g" type="_-MF7kApfEeeFVemMZjBJ5g" instance="_-0uo4ApfEeeFVemMZjBJ5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Odz2kApgEeeFVemMZjBJ5g" name="Attribute7" visibility="protected" type="_-MF7kApfEeeFVemMZjBJ5g">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_R4XR4ApgEeeFVemMZjBJ5g" type="_-MF7kApfEeeFVemMZjBJ5g" instance="_-0uo4ApfEeeFVemMZjBJ5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UKtvAApgEeeFVemMZjBJ5g" name="Attribute8" visibility="package" type="_-MF7kApfEeeFVemMZjBJ5g">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_XC_jsApgEeeFVemMZjBJ5g" type="_-MF7kApfEeeFVemMZjBJ5g" instance="_-0uo4ApfEeeFVemMZjBJ5g"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_-MF7kApfEeeFVemMZjBJ5g" name="Enumeration1">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-0uo4ApfEeeFVemMZjBJ5g" name="EnumerationLiteral1"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__atq0ApfEeeFVemMZjBJ5g" name="EnumerationLiteral2"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QeApMQpfEeeFVemMZjBJ5g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QeApMgpfEeeFVemMZjBJ5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_UtsVsApfEeeFVemMZjBJ5g" base_Class="_UlgDAApfEeeFVemMZjBJ5g"/>
+  <UMLRealTime:CapsulePart xmi:id="_YVqh8ApfEeeFVemMZjBJ5g" base_Property="_YVcfgApfEeeFVemMZjBJ5g"/>
+  <UMLRealTime:Capsule xmi:id="_Yr_XQApfEeeFVemMZjBJ5g" base_Class="_Yrr1QApfEeeFVemMZjBJ5g"/>
+</xmi:XMI>

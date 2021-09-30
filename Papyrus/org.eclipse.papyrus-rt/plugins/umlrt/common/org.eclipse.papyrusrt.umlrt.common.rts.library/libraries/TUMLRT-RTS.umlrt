@@ -1,0 +1,23 @@
+model RTSLibrary
+{
+	import uri "platform:/resource/org.eclipse.papyrusrt.rts/libraries/TUMLRT-Types.umlrt"
+	
+	protocol Timing
+	{
+		in message timeout();
+		annotation RTSLibraryElement;
+	}
+	
+	protocol UMLRTBaseCommProtocol
+	{
+		inout message rtBound();
+		inout message rtUnbound();
+		annotation RTSLibraryElement;
+	}
+	
+	protocol Log
+	{
+		out message log(in msg : TypesLib.String);
+		annotation RTSLibraryElement;
+	}
+}

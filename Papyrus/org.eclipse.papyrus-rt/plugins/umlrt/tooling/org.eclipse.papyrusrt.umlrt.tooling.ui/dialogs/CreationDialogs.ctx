@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ASCII"?>
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" xmi:id="_F4P6wDdoEeWK7ZUbpAMB-g" name="CreationDialogs">
+  <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_69QJkKDJEeSZxfCXzZz3-w"/>
+  <tabs xmi:id="_HowPEDdoEeWK7ZUbpAMB-g" label="Real Time" id="umlrealtime" priority="100">
+    <sections xmi:id="_Ho1uoDdoEeWK7ZUbpAMB-g" name="Single RTPort" sectionFile="ui/SingleRTPort.xwt">
+      <widget href="ui/SingleRTPort.xwt#/"/>
+    </sections>
+    <sections xmi:id="CapsulePartSection" name="Single CapsulePart" sectionFile="ui/SingleCapsulePart.xwt">
+      <widget href="ui/SingleCapsulePart.xwt#/"/>
+    </sections>
+    <sections xmi:id="_TFZ-cMsqEeWiCc89vePYSg" name="ParameterCreation" sectionFile="ui/ParameterCreation.xwt">
+      <widget href="ui/ParameterCreation.xwt#/"/>
+    </sections>
+    <sections xmi:id="_6XEyQAcbEeaXA7QItDtrGg" name="Single Capsule" sectionFile="ui/SingleCapsule.xwt">
+      <widget href="ui/SingleCapsule.xwt#/"/>
+    </sections>
+    <sections xmi:id="_Aa1rgAccEeaXA7QItDtrGg" name="Single Protocol" sectionFile="ui/SingleProtocol.xwt">
+      <widget href="ui/SingleProtocol.xwt#/"/>
+    </sections>
+  </tabs>
+  <views xmi:id="_F4P60zdoEeWK7ZUbpAMB-g" name="RTPort Creation Dialog" sections="_Ho1uoDdoEeWK7ZUbpAMB-g" automaticContext="true" datacontexts="_F4P68jdoEeWK7ZUbpAMB-g">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_F4P61DdoEeWK7ZUbpAMB-g" name="isSingleRTPort">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_F4P61TdoEeWK7ZUbpAMB-g" name="stereotypeName" value="UMLRealTime::RTPort"/>
+    </constraints>
+  </views>
+  <views xmi:id="ParameterCreationDialogView" name="Protocol Msg Parameter Creation Dialog" sections="_TFZ-cMsqEeWiCc89vePYSg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_ConID_SingleProtocolMessage" name="isSingleProtocolMessage">
+      <constraintType href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_ValID_SingleProtocolMessage" name="elementTypeID" value="org.eclipse.papyrusrt.umlrt.core.ProtocolMessage"/>
+    </constraints>
+  </views>
+  <views xmi:id="_xj0M4AcbEeaXA7QItDtrGg" name="Protocol Creation Dialog" sections="_Aa1rgAccEeaXA7QItDtrGg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_3LFXYAcbEeaXA7QItDtrGg" name="isSingleProtocol">
+      <constraintType href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_DoxKoAcdEeaXA7QItDtrGg" name="elementTypeID" value="org.eclipse.papyrusrt.umlrt.core.Protocol"/>
+    </constraints>
+  </views>
+  <views xmi:id="_kHd8gAcbEeaXA7QItDtrGg" name="Capsule Creation Dialog" sections="_6XEyQAcbEeaXA7QItDtrGg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="_n4U_AAcbEeaXA7QItDtrGg" name="isSingleCapsule">
+      <constraintType href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@constraintTypes.0"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="_-qwYgAccEeaXA7QItDtrGg" name="elementTypeID" value="org.eclipse.papyrusrt.umlrt.core.Capsule"/>
+    </constraints>
+  </views>
+  <views xmi:id="CapsulePartDialogView" name="CapsulePart Creation Dialog" sections="CapsulePartSection" automaticContext="true" datacontexts="_WdNnavMfEeSMV8TyMaa7Sg">
+    <constraints xsi:type="constraints:SimpleConstraint" xmi:id="SimpleCapsulePartConstraint" name="isSingleCapsulePart">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" xmi:id="valueProp" name="stereotypeName" value="UMLRealTime::CapsulePart"/>
+    </constraints>
+  </views>
+  <dataContexts xmi:id="_WdNnYvMfEeSMV8TyMaa7Sg" name="UMLRealTime">
+    <elements xmi:id="_F4P68jdoEeWK7ZUbpAMB-g" name="RTPort">
+      <properties xmi:id="_WdNnZPMfEeSMV8TyMaa7Sg" name="isNotification" type="Boolean"/>
+      <properties xmi:id="_WdNnZfMfEeSMV8TyMaa7Sg" name="isPublish" type="Boolean"/>
+      <properties xmi:id="_WdNnZvMfEeSMV8TyMaa7Sg" name="isWired" type="Boolean"/>
+      <properties xmi:id="_WdNnZ_MfEeSMV8TyMaa7Sg" name="registration" type="Enumeration" description=""/>
+      <properties xmi:id="_WdNnaPMfEeSMV8TyMaa7Sg" name="registrationOverride" description=""/>
+      <properties xmi:id="_QhkXQC6_EeWWx70qeJ-t-Q" name="kind" label="" type="Enumeration" description=""/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690ylaDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNnafMfEeSMV8TyMaa7Sg" name="RTConnector">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yvqDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNnavMfEeSMV8TyMaa7Sg" name="CapsulePart">
+      <properties xmi:id="_lozRECyNEeWRyc_Z_MwFYQ" name="type" label="" type="Enumeration" description=""/>
+      <properties xmi:id="_Wr_eECyOEeWRyc_Z_MwFYQ" name="multiplicity" type="Integer"/>
+      <properties xmi:id="_XE4fMCyOEeWRyc_Z_MwFYQ" name="aggregation" type="Enumeration"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yG6DJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNna_MfEeSMV8TyMaa7Sg" name="ProtocolContainer">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690xiaDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNnbPMfEeSMV8TyMaa7Sg" name="RTRExcludedElement">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690x0KDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNnbfMfEeSMV8TyMaa7Sg" name="Capsule">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yXqDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_WdNnbvMfEeSMV8TyMaa7Sg" name="RTMessageSet">
+      <properties xmi:id="_WdNnb_MfEeSMV8TyMaa7Sg" name="rtMsgKind" type="Enumeration"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690ybKDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@modelElementFactories.1"/>
+  </dataContexts>
+  <dataContexts xmi:id="_WdNncPMfEeSMV8TyMaa7Sg" name="UMLRealTimeExt">
+    <elements xmi:id="_WdNncfMfEeSMV8TyMaa7Sg" name="Protocol">
+      <properties xmi:id="_WdNncvMfEeSMV8TyMaa7Sg" name="provides" type="Reference"/>
+      <properties xmi:id="_WdNnc_MfEeSMV8TyMaa7Sg" name="required" type="Reference"/>
+      <properties xmi:id="_WdNndPMfEeSMV8TyMaa7Sg" name="provreq" type="Reference"/>
+      <properties xmi:id="_UyA-oAu_EeaDb-qs_6SIIA" name="name"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690y4KDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_SIdvoDIMEeWNUrU2mjUBfw" name="Port">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690ylaDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="UMLRealTimeExtCapsulePartElement" name="Property">
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yG6DJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_UQYRMAu_EeaDb-qs_6SIIA" name="Capsule">
+      <properties xmi:id="_UQYRMQu_EeaDb-qs_6SIIA" name="name"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yXqDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@modelElementFactories.0"/>
+  </dataContexts>
+  <dataContexts xmi:id="_Mt9S4M9iEeaeF57775zDjg" name="UMLRTFacade">
+    <elements xmi:id="_Mt9S4c9iEeaeF57775zDjg" name="Protocol">
+      <properties xmi:id="_Mt9S5c9iEeaeF57775zDjg" name="name"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690y4KDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <elements xmi:id="_Mt9S6M9iEeaeF57775zDjg" name="Capsule">
+      <properties xmi:id="_Mt9S6c9iEeaeF57775zDjg" name="name"/>
+      <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#_690yXqDJEeSZxfCXzZz3-w"/>
+    </elements>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrusrt.umlrt.tooling.ui/environment/Environment.xmi#//@modelElementFactories.2"/>
+  </dataContexts>
+</contexts:Context>

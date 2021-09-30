@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="statemachext" nsURI="http://www.eclipse.org/papyrusrt/xtumlrt/statemachext"
+    nsPrefix="statemachext">
+  <eClassifiers xsi:type="ecore:EClass" name="SaveHistory" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositeState" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//CompositeState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subState" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckHistory" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositeState" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//CompositeState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subState" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryAction" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExitAction" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionAction" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GuardAction" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateState" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//ActionCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newState" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//State"/>
+  </eClassifiers>
+</ecore:EPackage>

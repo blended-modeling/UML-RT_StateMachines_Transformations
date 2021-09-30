@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<environment:Environment
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:environment="http://www.eclipse.org/papyrus/properties/environment/0.9">
+  <constraintTypes
+      label="Is Matching Element Type"
+      constraintClass="org.eclipse.papyrusrt.umlrt.tooling.ui.constraints.IsElementTypeMatchingConstraint"/>
+  <constraintTypes
+      label="Is Root Package"
+      constraintClass="org.eclipse.papyrusrt.umlrt.tooling.ui.constraints.IsRootPackageConstraint"/>
+  <modelElementFactories
+      name="UMLRTExtModelElementFactory"
+      factoryClass="org.eclipse.papyrusrt.umlrt.tooling.ui.modelelement.UMLRTExtModelElementFactory"/>
+  <modelElementFactories
+      name="RT Stereotype Model Element Factory"
+      factoryClass="org.eclipse.papyrusrt.umlrt.tooling.ui.modelelement.RTStereotypeModelElementFactory"/>
+  <modelElementFactories
+      name="UML RT Fa&#xe7;ade Model Element Factory"
+      factoryClass="org.eclipse.papyrusrt.umlrt.tooling.ui.modelelement.UMLRTFacadeModelElementFactory"/>
+  <propertyEditorTypes
+      label="RTPort Type Editor"
+      widgetClass="RTPortTypeEditor"
+      namespace="//@namespaces.0"
+      type="Reference"/>
+  <propertyEditorTypes
+      label="CapsulePart Type Editor"
+      widgetClass="CapsulePartTypeEditor"
+      namespace="//@namespaces.0"
+      type="Reference"/>
+  <propertyEditorTypes
+      label="RT Kind Enum Editor"
+      widgetClass="RTKindEnumPropertyEditor"
+      namespace="//@namespaces.0"
+      type="Enumeration"/>
+  <propertyEditorTypes
+      label="RT String Editor"
+      widgetClass="RTStringEditor"
+      namespace="//@namespaces.0"/>
+  <propertyEditorTypes
+      label="Owned Parameter Table"
+      widgetClass="OwnedParameterOperationPropertyEditor"
+      namespace="//@namespaces.1"
+      type="Reference"
+      multiplicity="-1"/>
+  <propertyEditorTypes
+      label="Parameter Creation Property Editor"
+      widgetClass="ParameterCreationWidget"
+      namespace="//@namespaces.1"
+      type="Reference"
+      multiplicity="-1"/>
+  <propertyEditorTypes
+      label="Message Parameter Type Editor"
+      widgetClass="MessageParameterTypeEditor"
+      namespace="//@namespaces.0"
+      type="Reference"/>
+  <propertyEditorTypes
+      label="Inheritable Multiple Reference"
+      widgetClass="InheritableMultiReference"
+      namespace="//@namespaces.0"
+      type="Reference"
+      multiplicity="-1"/>
+  <namespaces
+      name="umlrt"
+      value="org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"/>
+  <namespaces
+      name="widget"
+      value="org.eclipse.papyrusrt.umlrt.tooling.properties.widget"/>
+</environment:Environment>

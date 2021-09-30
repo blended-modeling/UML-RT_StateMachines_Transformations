@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture:ArchitectureDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:architecture="http://www.eclipse.org/papyrus/infra/core/architecture" xmi:id="_Rh7AgBhFEeeIpaZtZ6oWHg" name="UML-RT" description="Architecture domain for UML-RT" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/icons/umlrt.png">
+  <stakeholders xmi:id="_biTgUBhFEeeIpaZtZ6oWHg" name="UML-RT basic" description="Stakeholder involved in basic UML-RT modeling" concerns="_jw88wBhFEeeIpaZtZ6oWHg"/>
+  <concerns xmi:id="_jw88wBhFEeeIpaZtZ6oWHg" name="UML-RT Modeling" description="UML-RT basic modeling concern"/>
+  <contexts xsi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_rthxwBhFEeeIpaZtZ6oWHg" id="org.eclipse.papyrusrt.umlrt.architecture" name="UML-RT ADL" description="Architecture Description Language for UML-RT models" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/icons/umlrt.png" defaultViewpoints="_iShTEBhJEeeIpaZtZ6oWHg" creationCommandClass="org.eclipse.papyrusrt.umlrt.core.internal.commands.CreateUMLRTModelCommand">
+    <viewpoints xmi:id="_iShTEBhJEeeIpaZtZ6oWHg" id="org.eclipse.papyrusrt.umlrt.viewpoint.basic" name="Basic UML-RT Modeling Viewpoint" description="Basic UML-RT viewpoint modeling" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/viewpoint.gif" concerns="_jw88wBhFEeeIpaZtZ6oWHg"/>
+    <viewpoints xmi:id="_9B1OUBhJEeeIpaZtZ6oWHg" id="org.eclipse.papyrusrt.umlrt.viewpoint.advanced" name="Advanced UML-RT Modeling Viewpoint" description="UML-RT Modeling with UML capabilities" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/viewpoint.gif" concerns="_jw88wBhFEeeIpaZtZ6oWHg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.emf/model/infra-emf.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/model/gmfdiag-common.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.gmfdiag.common/model/notation.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.nattable/model/nattable-tablecontents.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.nattable/model/nattable-tablecontext.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.nattable.common/model/nattable-common.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.services.controlmode/model/controlmode.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.services.edit/model/marker.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.infra.types.rulebased/model/rulebased.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/model/classdiagram.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.diagram.statemachine/model/stateMachineDiagram.elementtypesconfigurations#_wYwtMMeDEeSwP_9Vn5UnWg"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.diagram.stereotype.edition/model/stereotype-edit.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/StandardProfile.elementtypesconfigurations#_jfoLkGT_EeSEqNuV3JpFCA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml-containments.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/umldi.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrus.uml.service.types.ui/model/uml-advice.elementtypesconfigurations#_ScP1oFYCEeS0WsAAtVmToA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#_ubJcsKeUEeSUR5jX0TaAcA"/>
+    <elementTypes href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.stereotypeapplications.elementtypesconfigurations#_ubJcsKeUEeSUR5jX0TaAcA"/>
+    <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+    <profiles href="http://www.eclipse.org/papyrus/umlrt#/"/>
+  </contexts>
+</architecture:ArchitectureDomain>

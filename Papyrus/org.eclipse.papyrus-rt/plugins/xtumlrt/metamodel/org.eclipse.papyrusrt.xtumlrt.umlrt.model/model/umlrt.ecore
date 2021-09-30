@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlrt" nsURI="http://www.eclipse.org/papyrusrt/xtumlrt/umlrt"
+    nsPrefix="umlrt">
+  <eClassifiers xsi:type="ecore:EClass" name="RTPassiveClass" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Entity ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//RedefinableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RTTrigger" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//Trigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//RTPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signal" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Signal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerGuard" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.ecore#//Guard"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RTPort" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PortKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publish" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registration" eType="#//PortRegistration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registrationOverride" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortRegistration">
+    <eLiterals name="AUTOMATIC"/>
+    <eLiterals name="APPLICATION" value="1"/>
+    <eLiterals name="AUTOMATICLOCKED" value="2" literal="AUTOMATICLOCKED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyEvent" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Signal"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortKind">
+    <eLiterals name="EXTERNAL"/>
+    <eLiterals name="INTERNAL" value="1"/>
+    <eLiterals name="RELAY" value="2"/>
+    <eLiterals name="SAP" value="3"/>
+    <eLiterals name="SPP" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RTModel" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//AbstractImport" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedArtifacts" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Artifact"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactions" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.interactions.model/model/interactions.ecore#//Interaction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractImport" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractImport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIImport" eSuperTypes="#//AbstractImport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLProtocol" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Protocol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collaboration" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Collaboration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RTOpaqueBehaviour" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Behaviour">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialization" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageHandling" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extras" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

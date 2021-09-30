@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_GvTegBEcEeWo5ZPPygjvNw" name="RootElement">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_HZjVYBEcEeWo5ZPPygjvNw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OIc2UBEcEeWo5ZPPygjvNw" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_R8a3MBEcEeWo5ZPPygjvNw" name="Port1" aggregation="composite">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_WaEHMBEcEeWo5ZPPygjvNw" name="Port2" aggregation="composite">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_TWVjwGtVEeSCmtGQ-V4nzg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_bDja0BEcEeWo5ZPPygjvNw" name="Port3" aggregation="composite">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#__4DbwOzdEeSRtqCWFwOf8g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_cbzAIBEcEeWo5ZPPygjvNw" name="Port4" aggregation="composite">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hEgQoBEcEeWo5ZPPygjvNw" name="Attribute1">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_GfwZUICSEeSeANT-DfY5oA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zRflgBEcEeWo5ZPPygjvNw" name="Attribute2">
+        <type xmi:type="uml:DataType" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MLLA0ICOEeSeANT-DfY5oA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2ounEBEcEeWo5ZPPygjvNw" name="Attribute3">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5c9CMBEcEeWo5ZPPygjvNw" name="Attribute4">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7H6IIBEcEeWo5ZPPygjvNw" name="Attribute5">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_WkedAHDiEeS87_I7iwkr5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_82fw4BEcEeWo5ZPPygjvNw" name="Attribute6">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_XwBDEHDiEeS87_I7iwkr5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_-Pcg0BEcEeWo5ZPPygjvNw" name="Attribute7">
+        <type xmi:type="uml:DataType" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__g3FYBEcEeWo5ZPPygjvNw" name="Attribute8">
+        <type xmi:type="uml:Enumeration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GvTegREcEeWo5ZPPygjvNw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GvTeghEcEeWo5ZPPygjvNw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_PydhEBEcEeWo5ZPPygjvNw" base_Class="_OIc2UBEcEeWo5ZPPygjvNw"/>
+  <UMLRealTime:RTPort xmi:id="_Su75QBEcEeWo5ZPPygjvNw" base_Port="_R8a3MBEcEeWo5ZPPygjvNw"/>
+  <UMLRealTime:RTPort xmi:id="_Y--7ABEcEeWo5ZPPygjvNw" base_Port="_WaEHMBEcEeWo5ZPPygjvNw"/>
+  <UMLRealTime:RTPort xmi:id="_b93uABEcEeWo5ZPPygjvNw" base_Port="_bDja0BEcEeWo5ZPPygjvNw"/>
+  <UMLRealTime:RTPort xmi:id="_dTePABEcEeWo5ZPPygjvNw" base_Port="_cbzAIBEcEeWo5ZPPygjvNw"/>
+</xmi:XMI>

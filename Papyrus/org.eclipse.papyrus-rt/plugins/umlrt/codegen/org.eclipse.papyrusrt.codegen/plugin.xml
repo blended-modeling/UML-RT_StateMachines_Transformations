@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="eobjectlocator" name="UMLRT Codegen EObject Locator" schema="schema/eobjectlocator.exsd"/>
+   <extension
+         id="umlrtgensrcbuilder"
+         name="UMLRT Generated Source Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder>
+         <run
+               class="org.eclipse.papyrusrt.codegen.build.GeneratedSrcBuilder">
+         </run>
+      </builder>
+   </extension>
+
+</plugin>

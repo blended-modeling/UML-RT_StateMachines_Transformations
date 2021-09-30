@@ -1,0 +1,44 @@
+/**
+ * Tooling Target Platform for Papyrus-RT (releases)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT tooling component in the releases versions of Papyrus-RT.
+ */
+target "Papyrus-RT releases tooling target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.core/org.eclipse.papyrusrt.targetplatform.core.tpd"
+
+location "http://download.eclipse.org/papyrus-rt/updates/milestones/oxygen/1.0.0/M201707181334" papyrus-rt-last-milestone {
+	org.eclipse.papyrusrt.umlrt.core.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.common.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.common.ui.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.cpp.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.core.feature.source.feature.group
+	org.eclipse.papyrusrt.umlrt.common.feature.source.feature.group
+	org.eclipse.papyrusrt.umlrt.common.ui.feature.source.feature.group
+	org.eclipse.papyrusrt.umlrt.cpp.feature.source.feature.group
+}
+
+// Papyrus Interoperability for RSA Migration
+location "http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rsa/updates/oxygen/1.4.0/" interoperability {
+	org.eclipse.papyrus.interoperability.rsa.feature.feature.group [1.4.0,2.0.0)
+}
+
+location "http://download.eclipse.org/nebula/releases/1.2.0/" nebula-release {
+	org.eclipse.nebula.cwt [1.0.0,2.0.0)
+}
+
+// EMF Compare and EGit, including dependencies
+location "http://download.eclipse.org/modeling/emf/compare/updates/logical/emf.compare/integration/3.3.1.201707041528/" {
+	org.eclipse.emf.compare.diagram.gmf.feature.group
+	org.eclipse.emf.compare.diagram.papyrus.feature.group
+	org.eclipse.emf.compare.egit.feature.group
+	org.eclipse.emf.compare.feature.group
+	org.eclipse.emf.compare.ide.ui.feature.group
+	org.eclipse.emf.compare.rcp.ui.feature.group
+	org.eclipse.emf.compare.uml2.feature.group
+}
+
+location "http://download.eclipse.org/egit/updates/" {
+	org.eclipse.egit.feature.group
+}
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_F9utEN6IEeaOPeOdlxy0RA" name="SymbolicReplicationFromSeparateNamespace">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HWRNUN6IEeaOPeOdlxy0RA" source="http://www.eclipse.org/papyrus-rt/language/1.0.0">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HWR0YN6IEeaOPeOdlxy0RA" key="language" value="umlrt-cpp"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ITUEYN6IEeaOPeOdlxy0RA" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_ct8VgN6IEeaOPeOdlxy0RA" name="protocol1" visibility="public" type="_dPJlIN6IEeaOPeOdlxy0RA" isOrdered="true" aggregation="composite" isBehavior="true" isService="true">
+        <lowerValue xmi:type="uml:OpaqueExpression" xmi:id="_eanSsN6IEeaOPeOdlxy0RA">
+          <language>C++</language>
+          <body>SymbolicReplicationFromSeparateNamespace::Package1::Package2::Class1::Class1::Attribute3</body>
+        </lowerValue>
+        <upperValue xmi:type="uml:OpaqueExpression" xmi:id="_ebCJcN6IEeaOPeOdlxy0RA">
+          <language>C++</language>
+          <body>SymbolicReplicationFromSeparateNamespace::Package1::Package2::Class1::Class1::Attribute3</body>
+        </upperValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_LCN6oN6IEeaOPeOdlxy0RA" name="Package1">
+      <packagedElement xmi:type="uml:Package" xmi:id="_NWlJ8N6IEeaOPeOdlxy0RA" name="Package2">
+        <packagedElement xmi:type="uml:Class" xmi:id="_PW0jYN6IEeaOPeOdlxy0RA" name="Class1">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QJZP0N6IEeaOPeOdlxy0RA" name="Attribute1" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zdw8YN6IEeaOPeOdlxy0RA">
+              <language>C++</language>
+              <body>SymbolicReplicationFromSeparateNamespace::Package1::Class1::Attribute1 * 2</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Q98SMN6IEeaOPeOdlxy0RA" name="Attribute2" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_jfSGcN6IEeaOPeOdlxy0RA">
+              <language>C++</language>
+              <body>Attribute1 -3</body>
+            </defaultValue>
+          </ownedAttribute>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_RqvGwN6IEeaOPeOdlxy0RA" name="Class1">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_SiJ28N6IEeaOPeOdlxy0RA" name="Attribute1" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_tiHdUN6IEeaOPeOdlxy0RA">
+                <language>C++</language>
+                <body>SymbolicReplicationFromSeparateNamespace::Package1::Package2::Class1::Attribute1 -4</body>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TO_HwN6IEeaOPeOdlxy0RA" name="Attribute3" visibility="public">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_olRI0N6IEeaOPeOdlxy0RA">
+                <language>C++</language>
+                <body>Attribute1 * Attribute2</body>
+              </defaultValue>
+            </ownedAttribute>
+          </nestedClassifier>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SimPUFttEeeU8KGrBKiaxA" name="Class1">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_XbTqsFttEeeU8KGrBKiaxA" name="Attribute1" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_cUws8FttEeeU8KGrBKiaxA" value="3"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_dPRg8N6IEeaOPeOdlxy0RA" name="Protocol1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_dPJlIN6IEeaOPeOdlxy0RA" name="Protocol1">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_dPdHIN6IEeaOPeOdlxy0RA" client="_dPJlIN6IEeaOPeOdlxy0RA" supplier="_dPYOoN6IEeaOPeOdlxy0RA" contract="_dPYOoN6IEeaOPeOdlxy0RA"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_dPotUN6IEeaOPeOdlxy0RA" client="_dPJlIN6IEeaOPeOdlxy0RA" supplier="_dPlC8N6IEeaOPeOdlxy0RA" contract="_dPlC8N6IEeaOPeOdlxy0RA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dPYOoN6IEeaOPeOdlxy0RA" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dPe8UN6IEeaOPeOdlxy0RA" name="Protocol1~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dPjNwN6IEeaOPeOdlxy0RA" client="_dPJlIN6IEeaOPeOdlxy0RA" supplier="_dPe8UN6IEeaOPeOdlxy0RA"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_dPkb4N6IEeaOPeOdlxy0RA" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dPlC8N6IEeaOPeOdlxy0RA" name="Protocol1IO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dPp7cN6IEeaOPeOdlxy0RA" client="_dPJlIN6IEeaOPeOdlxy0RA" supplier="_dPlC8N6IEeaOPeOdlxy0RA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_F-W_MN6IEeaOPeOdlxy0RA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F-ZbcN6IEeaOPeOdlxy0RA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_HXzeYN6IEeaOPeOdlxy0RA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HXzeYd6IEeaOPeOdlxy0RA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_IYT5IN6IEeaOPeOdlxy0RA" base_Class="_ITUEYN6IEeaOPeOdlxy0RA"/>
+  <UMLRealTime:RTPort xmi:id="_cvOH4N6IEeaOPeOdlxy0RA" isPublish="false" isWired="true" base_Port="_ct8VgN6IEeaOPeOdlxy0RA"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_dPUkQN6IEeaOPeOdlxy0RA" base_Package="_dPRg8N6IEeaOPeOdlxy0RA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_dPbR8N6IEeaOPeOdlxy0RA" base_Interface="_dPYOoN6IEeaOPeOdlxy0RA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_dPh_oN6IEeaOPeOdlxy0RA" base_Interface="_dPe8UN6IEeaOPeOdlxy0RA" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_dPnfMN6IEeaOPeOdlxy0RA" base_Interface="_dPlC8N6IEeaOPeOdlxy0RA" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_dPqigN6IEeaOPeOdlxy0RA" base_Collaboration="_dPJlIN6IEeaOPeOdlxy0RA"/>
+</xmi:XMI>

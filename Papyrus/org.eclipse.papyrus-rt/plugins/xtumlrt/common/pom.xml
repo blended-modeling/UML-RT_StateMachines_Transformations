@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.xtumlrt</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.xtumlrt.common</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>org.eclipse.papyrusrt.xtumlrt.config</module>
+		<module>org.eclipse.papyrusrt.xtumlrt.aexpr</module>
+		<module>org.eclipse.papyrusrt.xtumlrt.aexpr.uml</module>
+		<module>org.eclipse.papyrusrt.xtumlrt.util</module>
+		<module>org.eclipse.papyrusrt.xtumlrt.external</module>
+	</modules>
+</project>
