@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT CodeGen Plugin
+Bundle-SymbolicName: org.eclipse.papyrusrt.codegen
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.eclipse.papyrusrt.codegen.CodeGenPlugin
+Bundle-Vendor: Zeligsoft (2009) Limited
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrusrt.codegen

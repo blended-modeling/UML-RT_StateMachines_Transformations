@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML RealTime Profile"
+            name="UML RT"
+            path="pathmap://UML_RT_PROFILE/uml-rt.profile.uml"
+            provider="Eclipse Modeling Project">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML RealTime StateMachines Profile"
+            name="UML RT StateMachines"
+            path="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml"
+            provider="Eclipse Modeling Project">
+      </profile>
+   </extension>
+</plugin>

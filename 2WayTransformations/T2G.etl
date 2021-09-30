@@ -28,8 +28,7 @@ rule State2CompositeState
 transform s: Source!State
 to t: Target!CompositeState
 {
-	guard: not (s.states.isEmpty() and s.entrypoint.isEmpty() and s.exitpoint.isEmpty() and s.junction.isEmpty() and s.choice.isEmpty() and s.internaltransition.isEmpty()) 
-	
+	guard: not (s.states.isEmpty() and s.entrypoint.isEmpty() and s.exitpoint.isEmpty() and s.junction.isEmpty() and s.choice.isEmpty() and s.internaltransition.isEmpty()) 	
 	t.name=s.name;
 	t.substates ::= s.states;
 	t.junctionPoints ::= s.junction;
@@ -116,7 +115,6 @@ to t: Target!Transition{
 	if (s.transitionbody.isDefined()) {
 		t.`guard` ::= s.transitionbody.transitionguard;
 		t.actionChain ::= s.transitionbody.transitionoperation;
-		
 		if (s.transitionbody.portevent.notEmpty() and s.transitionbody.portevent.port.isDefined() and s.transitionbody.portevent.event.isDefined()){
 	       t.triggers ::= s.transitionbody.portevent;
 		}

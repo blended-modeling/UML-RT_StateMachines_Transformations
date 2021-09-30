@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.papyrusrt.xtumlrt.umlrt.model/src"
+    editDirectory="/org.eclipse.papyrusrt.xtumlrt.umlrt.model.edit/src" editorDirectory="/org.eclipse.papyrusrt.xtumlrt.umlrt.model.editor/src"
+    modelPluginID="org.eclipse.papyrusrt.xtumlrt.umlrt.model" modelName="umlrt" modelPluginClass=""
+    editPluginClass="org.eclipse.papyrusrt.xtumlrt.umlrt.provider.umlrtEditPlugin"
+    editorPluginClass="org.eclipse.papyrusrt.xtumlrt.umlrt.presentation.umlrtEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.eclipse.papyrusrt.xtumlrt.umlrt.tests.umlrtAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="org.eclipse.papyrusrt.xtumlrt.umlrt.model.edit" editorPluginID="org.eclipse.papyrusrt.xtumlrt.umlrt.model.editor"
+    usedGenPackages="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.genmodel#//common platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrusrt.xtumlrt.interactions.model/model/interactions.genmodel#//interactions ../../org.eclipse.papyrusrt.xtumlrt.statemach.model/model/statemach.genmodel#//statemach platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>umlrt.ecore</foreignModel>
+  <genPackages prefix="Umlrt" basePackage="org.eclipse.papyrusrt.xtumlrt" disposableProviderFactory="true"
+      ecorePackage="umlrt.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//PortRegistration">
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortRegistration/AUTOMATIC"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortRegistration/APPLICATION"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortRegistration/AUTOMATICLOCKED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//PortKind">
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortKind/EXTERNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortKind/INTERNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortKind/RELAY"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortKind/SAP"/>
+      <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//PortKind/SPP"/>
+    </genEnums>
+    <genClasses ecoreClass="umlrt.ecore#//RTPassiveClass"/>
+    <genClasses ecoreClass="umlrt.ecore#//RTTrigger">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTTrigger/ports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTTrigger/signal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTTrigger/triggerGuard"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//RTPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/notification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/publish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/wired"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/registration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTPort/registrationOverride"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//AnyEvent"/>
+    <genClasses ecoreClass="umlrt.ecore#//RTModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTModel/containedArtifacts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//RTModel/interactions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="umlrt.ecore#//AbstractImport"/>
+    <genClasses ecoreClass="umlrt.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//URIImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//URIImport/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//UMLProtocol">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference umlrt.ecore#//UMLProtocol/collaboration"/>
+    </genClasses>
+    <genClasses ecoreClass="umlrt.ecore#//RTOpaqueBehaviour">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTOpaqueBehaviour/initialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTOpaqueBehaviour/messageHandling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//RTOpaqueBehaviour/extras"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

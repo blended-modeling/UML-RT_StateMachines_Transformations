@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_Y4mbYBkNEeW-0pVFckYwPQ" name="RootElement">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ZYkU4BkNEeW-0pVFckYwPQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dshdYBkNEeW-0pVFckYwPQ" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9FRsIBkREeW-0pVFckYwPQ" name="part1" type="_hdqMsBkNEeW-0pVFckYwPQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AWPtoBkSEeW-0pVFckYwPQ" name="part2" type="_jrHiwBkNEeW-0pVFckYwPQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hdqMsBkNEeW-0pVFckYwPQ" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ygsP4BkNEeW-0pVFckYwPQ" name="part1" type="_ov-jwBkNEeW-0pVFckYwPQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jrHiwBkNEeW-0pVFckYwPQ" name="Capsule2" isActive="true">
+      <generalization xmi:type="uml:Generalization" xmi:id="_G69UoBkOEeW-0pVFckYwPQ" general="_hdqMsBkNEeW-0pVFckYwPQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5hKB8BkNEeW-0pVFckYwPQ" name="part2" type="_rt4fUBkNEeW-0pVFckYwPQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ov-jwBkNEeW-0pVFckYwPQ" name="Capsule3" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rt4fUBkNEeW-0pVFckYwPQ" name="Capsule4" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Y4mbYRkNEeW-0pVFckYwPQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y4mbYhkNEeW-0pVFckYwPQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_f-xM0BkNEeW-0pVFckYwPQ" base_Class="_dshdYBkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:Capsule xmi:id="_ieDSsBkNEeW-0pVFckYwPQ" base_Class="_hdqMsBkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:Capsule xmi:id="_lWvXEBkNEeW-0pVFckYwPQ" base_Class="_jrHiwBkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:Capsule xmi:id="_qGFbEBkNEeW-0pVFckYwPQ" base_Class="_ov-jwBkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:Capsule xmi:id="_tDvfABkNEeW-0pVFckYwPQ" base_Class="_rt4fUBkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_0XnVQBkNEeW-0pVFckYwPQ" base_Property="_ygsP4BkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_8P0AkBkNEeW-0pVFckYwPQ" base_Property="_5hKB8BkNEeW-0pVFckYwPQ"/>
+  <UMLRealTime:CapsulePart xmi:id="__7cA8BkREeW-0pVFckYwPQ" base_Property="_9FRsIBkREeW-0pVFckYwPQ"/>
+  <UMLRealTime:CapsulePart xmi:id="_BllOkBkSEeW-0pVFckYwPQ" base_Property="_AWPtoBkSEeW-0pVFckYwPQ"/>
+</xmi:XMI>

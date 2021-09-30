@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014-2015 Zeligsoft (2009) Limited, IncQueryLabs Limited and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;"
+    modelDirectory="/org.eclipse.papyrusrt.xtumlrt.common.model/src" editDirectory="/org.eclipse.papyrusrt.xtumlrt.common.model.edit/src"
+    editorDirectory="/org.eclipse.papyrusrt.xtumlrt.common.model.editor/src" modelPluginID="org.eclipse.papyrusrt.xtumlrt.common.model"
+    modelName="Common" modelPluginClass="" editPluginClass="org.eclipse.papyrusrt.xtumlrt.common.provider.CommonEditPlugin"
+    editorPluginClass="org.eclipse.papyrusrt.xtumlrt.common.presentation.CommonEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.eclipse.papyrusrt.xtumlrt.common.tests.CommonAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" editPluginID="org.eclipse.papyrusrt.xtumlrt.common.model.edit"
+    editorPluginID="org.eclipse.papyrusrt.xtumlrt.common.model.editor" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>common.ecore</foreignModel>
+  <genPackages prefix="Common" basePackage="org.eclipse.papyrusrt.xtumlrt" disposableProviderFactory="true"
+      ecorePackage="common.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="common.ecore#//CapsuleKind">
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//CapsuleKind/FIXED"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//CapsuleKind/OPTIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//CapsuleKind/PLUGIN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="common.ecore#//DirectionKind">
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//DirectionKind/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//DirectionKind/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//DirectionKind/IN_OUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="common.ecore#//ProtocolBehaviourFeatureKind">
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//ProtocolBehaviourFeatureKind/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//ProtocolBehaviourFeatureKind/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//ProtocolBehaviourFeatureKind/INOUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="common.ecore#//VisibilityKind">
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//VisibilityKind/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//VisibilityKind/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="common.ecore#//VisibilityKind/PRIVATE"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="common.ecore#//CommonElement"/>
+    <genClasses image="false" ecoreClass="common.ecore#//AbstractAction"/>
+    <genClasses ecoreClass="common.ecore#//ActionCode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//ActionCode/source"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//ActionReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//ActionReference/target"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Annotation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Annotation/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//AnnotationParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//AnnotationParameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Artifact/fileName"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Attribute/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Attribute/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Attribute/readOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference common.ecore#//Attribute/default"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//BaseContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//BaseContainer/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//BaseContainer/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//BaseContainer/typeDefinitions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//Behaviour"/>
+    <genClasses ecoreClass="common.ecore#//Capsule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Capsule/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Capsule/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Capsule/connectors"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//CapsulePart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//CapsulePart/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//CapsulePart/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Connector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Connector/ends"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//ConnectorEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//ConnectorEnd/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//ConnectorEnd/partWithPort"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Dependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//Dependency/supplier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference common.ecore#//Dependency/client"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Entity/behaviour"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Enumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Enumeration/literals"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//Enumeration/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//EnumerationLiteral"/>
+    <genClasses image="false" ecoreClass="common.ecore#//Expression"/>
+    <genClasses ecoreClass="common.ecore#//ExternalType"/>
+    <genClasses ecoreClass="common.ecore#//Generalization">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//Generalization/sub"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//Generalization/super"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//LiteralBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//LiteralBoolean/value"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//LiteralInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//LiteralInteger/value"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//LiteralNatural">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//LiteralNatural/value"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//LiteralNull"/>
+    <genClasses ecoreClass="common.ecore#//LiteralReal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//LiteralReal/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//LiteralSpecification"/>
+    <genClasses ecoreClass="common.ecore#//LiteralString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//LiteralString/value"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//LiteralUnlimited"/>
+    <genClasses image="false" ecoreClass="common.ecore#//LiteralUnlimitedNatural"/>
+    <genClasses ecoreClass="common.ecore#//MultiplicityElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//MultiplicityElement/unique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//MultiplicityElement/ordered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference common.ecore#//MultiplicityElement/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference common.ecore#//MultiplicityElement/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Model"/>
+    <genClasses image="false" ecoreClass="common.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//NamedElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//NamedElement/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//NamedElement/dependencies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//NamedElement/artifacts"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//OpaqueExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//OpaqueExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Operation/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//OperationSignature">
+      <genFeatures property="None" notify="false" children="true" createChild="true"
+          propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//OperationSignature/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//OperationSignature/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//OperationSignature/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//OperationSignature/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//OperationSignature/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//OperationSignature/query"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Package"/>
+    <genClasses ecoreClass="common.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Parameter/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Port/conjugate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//Port/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//Port/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//PrimitiveType"/>
+    <genClasses ecoreClass="common.ecore#//Protocol">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Protocol/protocolBehaviourFeatures"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//ProtocolBehaviourFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute common.ecore#//ProtocolBehaviourFeature/kind"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//ProtocolContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//ProtocolContainer/protocols"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//RedefinableElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//RedefinableElement/redefines"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//Signal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//Signal/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//StructuredType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//StructuredType/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//StructuredType/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//StructuredType/generalizations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//Type"/>
+    <genClasses ecoreClass="common.ecore#//TypeConstraint"/>
+    <genClasses ecoreClass="common.ecore#//TypeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//TypeDefinition/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//TypedElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//TypedElement/type"/>
+    </genClasses>
+    <genClasses ecoreClass="common.ecore#//TypedMultiplicityElement"/>
+    <genClasses ecoreClass="common.ecore#//UserDefinedType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference common.ecore#//UserDefinedType/constraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference common.ecore#//UserDefinedType/baseType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="common.ecore#//ValueSpecification"/>
+  </genPackages>
+</genmodel:GenModel>

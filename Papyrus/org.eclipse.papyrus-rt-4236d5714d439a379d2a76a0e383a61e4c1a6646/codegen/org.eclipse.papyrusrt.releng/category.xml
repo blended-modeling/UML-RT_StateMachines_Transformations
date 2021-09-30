@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.papyrusrt.codegen-feature_0.5.0.qualifier.jar" id="org.eclipse.papyrusrt.codegen-feature" version="0.5.0.qualifier">
+      <category name="org.eclipse.papyrusrt.main"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrusrt.protocoleditor-feature_0.5.0.qualifier.jar" id="org.eclipse.papyrusrt.protocoleditor-feature" version="0.5.0.qualifier">
+      <category name="org.eclipse.papyrusrt.main"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrusrt.rts-feature_0.5.0.qualifier.jar" id="org.eclipse.papyrusrt.rts-feature" version="0.5.0.qualifier">
+      <category name="org.eclipse.papyrusrt.main"/>
+   </feature>
+   <category-def name="org.eclipse.papyrusrt.main" label="PapyrusRT">
+      <description>
+         The PapyrusRT code generator, runtime system and protocol editor.
+      </description>
+   </category-def>
+</site>

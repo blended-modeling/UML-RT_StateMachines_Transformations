@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<paletteconfiguration:PaletteConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:paletteconfiguration="http://www.eclipse.org/papyrus/diagram/paletteconfiguration/0.7" id="palettemodel" label="UMLRealTime">
+  <drawerConfigurations id="UML-RT" label="UML-RT" description="UML-RT">
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.Protocol" label="Protocol" description="Create a Protocol">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/protocol.png"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Protocol_2008"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Protocol_3004"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Protocol_3008"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Protocol_3010"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Protocol_3014"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ProtocolMessageOut" label="ProtocolMessage OUT" description="Create an Out Protocol Message">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/protocolmessage_out.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageOut_3003"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageOut_3007"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageOut_3013"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageOut_3019"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageOut_3042"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ProtocolMessageInOut" label="ProtocolMessage INOUT" description="Create an InOout Protocol Message">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/protocolmessage_inout.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageInOut_3003"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageInOut_3007"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageInOut_3013"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageInOut_3019"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageInOut_3042"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ProtocolMessageIn" label="ProtocolMessage IN" description="Create an In Protocol Message">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/protocolmessage_in.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageIn_3003"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageIn_3007"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageIn_3013"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageIn_3019"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ProtocolMessageIn_3042"/>
+    </ownedConfigurations>
+  </drawerConfigurations>
+  <requiredProfiles>UMLRealTime</requiredProfiles>
+</paletteconfiguration:PaletteConfiguration>

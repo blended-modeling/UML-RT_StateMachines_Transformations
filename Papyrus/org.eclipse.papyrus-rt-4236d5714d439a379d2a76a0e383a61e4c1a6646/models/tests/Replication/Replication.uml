@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:C_Cpp="http://www.eclipse.org/papyrus/C_Cpp/1" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
+  <uml:Model xmi:id="_yKukYCSQEeS0XNKzoL660g" name="Replication">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_yKukYSSQEeS0XNKzoL660g">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_guhe4GScEeSsy4TtjaMUkg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_97ZrMCSSEeS0XNKzoL660g" name="Top" classifierBehavior="_C6h7EDnxEeSo2vxA1pB3zA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AkoIgCSZEeS0XNKzoL660g" name="pinger" visibility="protected" type="__EW3UCSSEeS0XNKzoL660g" aggregation="composite" association="_AkpWoCSZEeS0XNKzoL660g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AkoIgSSZEeS0XNKzoL660g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AkoIgiSZEeS0XNKzoL660g" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CRig0CSaEeS0XNKzoL660g" name="ponger" visibility="protected" type="_BMMGgCSTEeS0XNKzoL660g" aggregation="composite" association="_CRjH4CSaEeS0XNKzoL660g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CRig0SSaEeS0XNKzoL660g" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CRig0iSaEeS0XNKzoL660g" value="2"/>
+      </ownedAttribute>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_nfqtsCbyEeSBQ4h-CZj2Uw" name="Connector1">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_nfyCcCbyEeSBQ4h-CZj2Uw" partWithPort="_AkoIgCSZEeS0XNKzoL660g" role="_PQ_kMCbnEeSBQ4h-CZj2Uw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfyCcSbyEeSBQ4h-CZj2Uw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfyCcibyEeSBQ4h-CZj2Uw" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_nfypgCbyEeSBQ4h-CZj2Uw" partWithPort="_CRig0CSaEeS0XNKzoL660g" role="_aXdiUCbnEeSBQ4h-CZj2Uw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nfypgSbyEeSBQ4h-CZj2Uw" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nfypgibyEeSBQ4h-CZj2Uw" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_C6h7EDnxEeSo2vxA1pB3zA" name="StateMachine1">
+        <region xmi:type="uml:Region" xmi:id="_DM9H0DnxEeSo2vxA1pB3zA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_HknEkDnxEeSo2vxA1pB3zA" source="_F4SFoDnxEeSo2vxA1pB3zA" target="_G6GH8DnxEeSo2vxA1pB3zA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_DjVVEFYMEeSmi4Fyw18d0w" name="onInit">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;Top initialised!\n&quot;;
+</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_F4SFoDnxEeSo2vxA1pB3zA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_G6GH8DnxEeSo2vxA1pB3zA" name="State1"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__EW3UCSSEeS0XNKzoL660g" name="Pinger" classifierBehavior="_aKvpECb0EeSBQ4h-CZj2Uw">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_PQ_kMCbnEeSBQ4h-CZj2Uw" name="PingPort" visibility="package" type="_bEbXYCS1EeS0XNKzoL660g" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jpj3kGTnEeSDgeHRQ6Tl-g" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jpnh8GTnEeSDgeHRQ6Tl-g" value="2"/>
+        <qualifier xmi:type="uml:Port" xmi:id="_SUBM4Hz1EeS0m-1xWAZCFA" name="PingPort" visibility="package" type="_bEbXYCS1EeS0XNKzoL660g" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SUBM4Xz1EeS0m-1xWAZCFA" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SUBM4nz1EeS0m-1xWAZCFA" value="2"/>
+        </qualifier>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_C8xj0Hz6EeSSbqDDsLj5dA" name="TimerPort" type="_REVtsXz1EeS0m-1xWAZCFA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_aKvpECb0EeSBQ4h-CZj2Uw" name="Pinger_SM">
+        <region xmi:type="uml:Region" xmi:id="_ibsLkCb0EeSBQ4h-CZj2Uw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_9D_DYCb1EeSBQ4h-CZj2Uw" name="initialise" source="_XswHMCb1EeSBQ4h-CZj2Uw" target="_lY5HECb1EeSBQ4h-CZj2Uw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_GPufUFYLEeSmi4Fyw18d0w" name="onInit" isAbstract="true">
+              <language>C++</language>
+              <body>printf( &quot;%-14s: sending ping from initial action\n&quot;, capsuleDescriptor->name );
+PingPort().ping( 5 ).send();
+
+TimerPort().informEvery( UMLRTTimespec( 3, 0 ) );</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_9xGBACb1EeSBQ4h-CZj2Uw" name="onPong" source="_lY5HECb1EeSBQ4h-CZj2Uw" target="_lY5HECb1EeSBQ4h-CZj2Uw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_y9GtMFYMEeSmi4Fyw18d0w" name="true">
+              <specification xmi:type="uml:LiteralBoolean" xmi:id="_y9GtMVYMEeSmi4Fyw18d0w" value="true"/>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_XTukYCcPEeSlGd4okkPIfw" name="onPong" isAbstract="true">
+              <language>C++</language>
+              <body>printf( &quot;%-14s: pong %p received from %s\n&quot;, capsuleDescriptor->name, msg.signal.getPayload(),
+        msg.destPort->farEnds[msg.sapIndex0].port->capsuleDescriptor->name );
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_byJF4CcOEeSlGd4okkPIfw" name="" event="_zFJ2YCS-EeS0XNKzoL660g" port="_PQ_kMCbnEeSBQ4h-CZj2Uw"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_cXxM8Hz5EeSSbqDDsLj5dA" name="onTimeout" source="_lY5HECb1EeSBQ4h-CZj2Uw" target="_lY5HECb1EeSBQ4h-CZj2Uw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lAYokHz5EeSSbqDDsLj5dA" name="timeout" isAbstract="true">
+              <language>C++</language>
+              <body>printf( &quot;%-14s: sending ping from timeout\n&quot;, capsuleDescriptor->name );
+PingPort().ping( 6 ).send();</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_qE-HUHz6EeSSbqDDsLj5dA" name="timeout" event="_REVuE3z1EeS0m-1xWAZCFA" port="_C8xj0Hz6EeSSbqDDsLj5dA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_XswHMCb1EeSBQ4h-CZj2Uw" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_lY5HECb1EeSBQ4h-CZj2Uw" name="Running">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_HUocgClWEeSG6Mdl9j2DSg" name="onEntry" isAbstract="true">
+              <language>C++</language>
+              <body></body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BMMGgCSTEeS0XNKzoL660g" name="Ponger" classifierBehavior="_ltVRwCcQEeSlGd4okkPIfw">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_aXdiUCbnEeSBQ4h-CZj2Uw" name="PongPort" visibility="package" type="_bEbXYCS1EeS0XNKzoL660g" aggregation="composite" isConjugated="true"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_ltVRwCcQEeSlGd4okkPIfw" name="Ponger_SM">
+        <region xmi:type="uml:Region" xmi:id="_mjyYoCcQEeSlGd4okkPIfw" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_Cf6sUCcREeSlGd4okkPIfw" name="Transition0" source="_0s6PcCcQEeSlGd4okkPIfw" target="_1KbR4CcQEeSlGd4okkPIfw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="__Obm0FYKEeSmi4Fyw18d0w" name="onInit">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;Ponger initialised&quot; &lt;&lt; std::endl;</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_DEnU0CcREeSlGd4okkPIfw" name="onPing" source="_1KbR4CcQEeSlGd4okkPIfw" target="_1KbR4CcQEeSlGd4okkPIfw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_owLJsFYNEeSmi4Fyw18d0w" name="true">
+              <specification xmi:type="uml:LiteralBoolean" xmi:id="_owLJsVYNEeSmi4Fyw18d0w" value="true"/>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_szp-wCcREeSlGd4okkPIfw" name="onPing" isAbstract="true">
+              <language>C++</language>
+              <body>printf( &quot;%-14s: received ping %p\n&quot;, capsuleDescriptor->name, msg.signal.getPayload() );
+
+UMLRTSignal sig = PongPort().pong();
+printf( &quot;%-14s: sending pong %p\n&quot;, capsuleDescriptor->name, sig.getPayload() );
+sig.send();
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_mEy6ECcREeSlGd4okkPIfw" name="" event="_yIlgcCS-EeS0XNKzoL660g" port="_aXdiUCbnEeSBQ4h-CZj2Uw"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_0s6PcCcQEeSlGd4okkPIfw" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_1KbR4CcQEeSlGd4okkPIfw" name="Running"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AkpWoCSZEeS0XNKzoL660g" name="A_top_pinger_1" visibility="protected" memberEnd="_AkpWoSSZEeS0XNKzoL660g _AkoIgCSZEeS0XNKzoL660g">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_AkpWoSSZEeS0XNKzoL660g" name="top" type="_97ZrMCSSEeS0XNKzoL660g" association="_AkpWoCSZEeS0XNKzoL660g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AkpWoiSZEeS0XNKzoL660g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AkpWoySZEeS0XNKzoL660g" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CRjH4CSaEeS0XNKzoL660g" name="A_top_ponger_1" visibility="protected" memberEnd="_CRjH4SSaEeS0XNKzoL660g _CRig0CSaEeS0XNKzoL660g">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CRjH4SSaEeS0XNKzoL660g" name="top" type="_97ZrMCSSEeS0XNKzoL660g" association="_CRjH4CSaEeS0XNKzoL660g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CRjH4iSaEeS0XNKzoL660g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CRjH4ySaEeS0XNKzoL660g" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AsGVkCSxEeS0XNKzoL660g" name="PingPongProtocol">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_bEbXYCS1EeS0XNKzoL660g" name="PingPongProtocol"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_P5bzsCS3EeS0XNKzoL660g" name="PingPongProtocol">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_wRxiECS5EeS0XNKzoL660g" name="pong"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_s_Lv8CS5EeS0XNKzoL660g" name="PingPongProtocol~">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_k7sskCS3EeS0XNKzoL660g" name="ping">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NBLSYFmXEeSDPbT4aJ98QA" name="param">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_xSYDcCS5EeS0XNKzoL660g" name="PingPongProtocolSym"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_StYIsCS8EeS0XNKzoL660g" name="ProtocolRealizesIncomingInterface" client="_bEbXYCS1EeS0XNKzoL660g" supplier="_P5bzsCS3EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_TlKsUCS8EeS0XNKzoL660g" name="ProtocolRealizesSymInterface" client="_bEbXYCS1EeS0XNKzoL660g" supplier="_xSYDcCS5EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_epsJsCS8EeS0XNKzoL660g" name="ProtocolUsesOutgoingInterface" client="_bEbXYCS1EeS0XNKzoL660g" supplier="_s_Lv8CS5EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_gdrP0CS8EeS0XNKzoL660g" name="ProtocolUsesSymInterface" client="_bEbXYCS1EeS0XNKzoL660g" supplier="_xSYDcCS5EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_yIlgcCS-EeS0XNKzoL660g" name="ping" operation="_k7sskCS3EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_zFJ2YCS-EeS0XNKzoL660g" name="pong" operation="_wRxiECS5EeS0XNKzoL660g"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_JGjJoCTCEeS0XNKzoL660g" name="*"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yt4-MCTEEeS0XNKzoL660g" name="Ponger uses PingPong Protocol" client="_BMMGgCSTEeS0XNKzoL660g" supplier="_bEbXYCS1EeS0XNKzoL660g"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_zQ-dICTEEeS0XNKzoL660g" name="Pinger uses PingPong Protocol" client="__EW3UCSSEeS0XNKzoL660g" supplier="_bEbXYCS1EeS0XNKzoL660g"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_3JgeMGScEeSsy4TtjaMUkg" name="MyStruct">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__p-qcGScEeSsy4TtjaMUkg" name="field1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_Y3550OmJEeG_gcDHG3asaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CnEtsGSdEeSsy4TtjaMUkg" name="field2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_yJpD0OmJEeG_gcDHG3asaQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_REVtsHz1EeS0m-1xWAZCFA" name="UMLRTTimerProtocol">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_REVtsXz1EeS0m-1xWAZCFA" name="UMLRTTimerProtocol"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_REVtsnz1EeS0m-1xWAZCFA" name="UMLRTTimerProtocol">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVts3z1EeS0m-1xWAZCFA" name="informAt">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVttHz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVttXz1EeS0m-1xWAZCFA" name="clockTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVttnz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVtt3z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtuHz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVtuXz1EeS0m-1xWAZCFA" name="informAt">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtunz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtu3z1EeS0m-1xWAZCFA" name="clockTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtvHz1EeS0m-1xWAZCFA" name="userData">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_8I6RgBydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtvXz1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtvnz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVtv3z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtwHz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVtwXz1EeS0m-1xWAZCFA" name="informAt">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtwnz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtw3z1EeS0m-1xWAZCFA" name="clockTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtxHz1EeS0m-1xWAZCFA" name="typedValue">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_VKzgIGtXEeSCmtGQ-V4nzg"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtxXz1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtxnz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVtx3z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtyHz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVtyXz1EeS0m-1xWAZCFA" name="informIn">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtynz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVty3z1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtzHz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVtzXz1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVtznz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVtz3z1EeS0m-1xWAZCFA" name="informIn">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt0Hz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt0Xz1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt0nz1EeS0m-1xWAZCFA" name="typedValue">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_VKzgIGtXEeSCmtGQ-V4nzg"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt03z1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt1Hz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVt1Xz1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt1nz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt13z1EeS0m-1xWAZCFA" name="informIn">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt2Hz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt2Xz1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt2nz1EeS0m-1xWAZCFA" name="userData">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_8I6RgBydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt23z1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt3Hz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVt3Xz1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt3nz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt33z1EeS0m-1xWAZCFA" name="informEvery">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt4Hz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt4Xz1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt4nz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVt43z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt5Hz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt5Xz1EeS0m-1xWAZCFA" name="informEvery">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt5nz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt53z1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt6Hz1EeS0m-1xWAZCFA" name="userData">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_8I6RgBydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt6Xz1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt6nz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVt63z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt7Hz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt7Xz1EeS0m-1xWAZCFA" name="informEvery">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt7nz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt73z1EeS0m-1xWAZCFA" name="relativeTime">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt8Hz1EeS0m-1xWAZCFA" name="typedValue">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_VKzgIGtXEeSCmtGQ-V4nzg"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt8Xz1EeS0m-1xWAZCFA" name="type">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_7fpsYGtdEeS9vrEozFz2nQ"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt8nz1EeS0m-1xWAZCFA" name="priority">
+            <type xmi:type="uml:Enumeration" href="../TrafficLights/UMLRT-RTS.uml#_QFZTMG6REeSyDdTKostG4Q"/>
+            <defaultValue xmi:type="uml:InstanceValue" xmi:id="_REVt83z1EeS0m-1xWAZCFA">
+              <instance xmi:type="uml:EnumerationLiteral" href="../TrafficLights/UMLRT-RTS.uml#_WFw6MG6REeSyDdTKostG4Q"/>
+            </defaultValue>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt9Hz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt9Xz1EeS0m-1xWAZCFA" name="cancelTimer">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt9nz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt93z1EeS0m-1xWAZCFA" name="id">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt-Hz1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt-Xz1EeS0m-1xWAZCFA" name="timeAdjustStart">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt-nz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt-3z1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_8I6RgBydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVt_Hz1EeS0m-1xWAZCFA" name="timeAdjustComplete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt_Xz1EeS0m-1xWAZCFA" name="srcPort">
+            <type xmi:type="uml:DataType" href="../TrafficLights/UMLRT-RTS.uml#_o-Ht0HDiEeS87_I7iwkr5g"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt_nz1EeS0m-1xWAZCFA" name="delta">
+            <type xmi:type="uml:Class" href="../TrafficLights/UMLRT-RTS.uml#_IWYV4G6NEeSyDdTKostG4Q"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_REVt_3z1EeS0m-1xWAZCFA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml#_8I6RgBydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_REVuAHz1EeS0m-1xWAZCFA" name="UMLRTTimerProtocol~">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_REVuAXz1EeS0m-1xWAZCFA" name="timeout"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_REVuAnz1EeS0m-1xWAZCFA" name="UMLRTTimerProtocolIO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_REVuA3z1EeS0m-1xWAZCFA" client="_REVtsXz1EeS0m-1xWAZCFA" supplier="_REVuAHz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_REVuBHz1EeS0m-1xWAZCFA" client="_REVtsXz1EeS0m-1xWAZCFA" supplier="_REVuAnz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_REVuBXz1EeS0m-1xWAZCFA" client="_REVtsXz1EeS0m-1xWAZCFA" supplier="_REVtsnz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_REVuBnz1EeS0m-1xWAZCFA" client="_REVtsXz1EeS0m-1xWAZCFA" supplier="_REVuAnz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuB3z1EeS0m-1xWAZCFA" name="informAt_port_time_prio" operation="_REVts3z1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuCHz1EeS0m-1xWAZCFA" name="informAt_port_time_data_type_prio" operation="_REVtuXz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuCXz1EeS0m-1xWAZCFA" name="informIn_port_delta_data_type_Prio" operation="_REVtz3z1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuCnz1EeS0m-1xWAZCFA" name="informIn_port_delta_value_type_Prio"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuC3z1EeS0m-1xWAZCFA" name="informEvery_port_delta_value_type_Prio" operation="_REVt7Xz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuDHz1EeS0m-1xWAZCFA" name="informEvery_port_delta_data_type_Prio" operation="_REVt5Xz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuDXz1EeS0m-1xWAZCFA" name="informEvery_port_delta_Prio" operation="_REVt33z1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuDnz1EeS0m-1xWAZCFA" name="cancelTimer" operation="_REVt9Xz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuD3z1EeS0m-1xWAZCFA" name="timeAdjustStart" operation="_REVt-Xz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuEHz1EeS0m-1xWAZCFA" name="timeAdjustComplete" operation="_REVt_Hz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuEXz1EeS0m-1xWAZCFA" name="informAt_port_time_value_type_prio" operation="_REVtwXz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuEnz1EeS0m-1xWAZCFA" name="informIn_port_delta_Prio" operation="_REVtyXz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_REVuE3z1EeS0m-1xWAZCFA" name="timeout" operation="_REVuAXz1EeS0m-1xWAZCFA"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_REVuFHz1EeS0m-1xWAZCFA" name="*"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ubQ9AFSIEeSJBo_pyoMAEg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uc2RYFSIEeSJBo_pyoMAEg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_uc7J4FSIEeSJBo_pyoMAEg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ufYoAFSIEeSJBo_pyoMAEg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_P2avEFSSEeSg3JDWm8argA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P6ldYFSSEeSg3JDWm8argA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_69nOgHzxEeS0m-1xWAZCFA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7ETsYHzxEeS0m-1xWAZCFA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/C_Cpp/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+  </uml:Model>
+  <ActionLanguage:TextualRepresentation xmi:id="_P2VPgFSSEeSg3JDWm8argA" language="org.eclipse.papyrus.uml.textedit.transition.xtext.UmlTransition"/>
+  <UMLRealTime:Capsule xmi:id="_xRIW4FSIEeSJBo_pyoMAEg" base_Class="__EW3UCSSEeS0XNKzoL660g"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_y-JSUFSIEeSJBo_pyoMAEg" base_Package="_AsGVkCSxEeS0XNKzoL660g"/>
+  <UMLRealTime:Capsule xmi:id="_z7XIgFSIEeSJBo_pyoMAEg" base_Class="_BMMGgCSTEeS0XNKzoL660g"/>
+  <UMLRealTime:Capsule xmi:id="_0lxXcFSIEeSJBo_pyoMAEg" base_Class="_97ZrMCSSEeS0XNKzoL660g"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_7RuSEFSIEeSJBo_pyoMAEg" base_StateMachine="_aKvpECb0EeSBQ4h-CZj2Uw"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_8XYSkFSIEeSJBo_pyoMAEg" base_Region="_ibsLkCb0EeSBQ4h-CZj2Uw"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_9Hoq0FSIEeSJBo_pyoMAEg" base_Pseudostate="_XswHMCb1EeSBQ4h-CZj2Uw"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_-tjfwFSIEeSJBo_pyoMAEg" base_State="_lY5HECb1EeSBQ4h-CZj2Uw"/>
+  <UMLRealTime:RTPort xmi:id="_DF71QFSJEeSJBo_pyoMAEg" base_Port="_PQ_kMCbnEeSBQ4h-CZj2Uw"/>
+  <UMLRealTime:RTPort xmi:id="_MZ1pkFSJEeSJBo_pyoMAEg" base_Port="_aXdiUCbnEeSBQ4h-CZj2Uw"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_NFZIAFSJEeSJBo_pyoMAEg" base_StateMachine="_ltVRwCcQEeSlGd4okkPIfw"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_N7GA8FSJEeSJBo_pyoMAEg" base_Region="_mjyYoCcQEeSlGd4okkPIfw"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_PBJDAFSJEeSJBo_pyoMAEg" base_Pseudostate="_0s6PcCcQEeSlGd4okkPIfw"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_PtUMgFSJEeSJBo_pyoMAEg" base_State="_1KbR4CcQEeSlGd4okkPIfw"/>
+  <UMLRealTime:RTConnector xmi:id="_RWZqMFSJEeSJBo_pyoMAEg" base_Connector="_nfqtsCbyEeSBQ4h-CZj2Uw"/>
+  <UMLRealTime:CapsulePart xmi:id="_S04aYFSJEeSJBo_pyoMAEg" base_Property="_AkoIgCSZEeS0XNKzoL660g"/>
+  <UMLRealTime:CapsulePart xmi:id="_T26fIFSJEeSJBo_pyoMAEg" base_Property="_CRig0CSaEeS0XNKzoL660g"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_Ut-qAFSJEeSJBo_pyoMAEg" base_StateMachine="_C6h7EDnxEeSo2vxA1pB3zA"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_VeEqMFSJEeSJBo_pyoMAEg" base_Region="_DM9H0DnxEeSo2vxA1pB3zA"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_WXiBwFSJEeSJBo_pyoMAEg" base_Pseudostate="_F4SFoDnxEeSo2vxA1pB3zA"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_XIIYQFSJEeSJBo_pyoMAEg" base_State="_G6GH8DnxEeSo2vxA1pB3zA"/>
+  <UMLRealTime:Protocol xmi:id="_54fY0FSJEeSJBo_pyoMAEg" base_Collaboration="_bEbXYCS1EeS0XNKzoL660g"/>
+  <UMLRealTime:RTMessageSet xmi:id="_J1j5gFSKEeSJBo_pyoMAEg" base_Interface="_s_Lv8CS5EeS0XNKzoL660g" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_NEeFgFSKEeSJBo_pyoMAEg" base_Interface="_P5bzsCS3EeS0XNKzoL660g"/>
+  <UMLRealTime:RTMessageSet xmi:id="_NxZc8FSKEeSJBo_pyoMAEg" base_Interface="_xSYDcCS5EeS0XNKzoL660g" rtMsgKind="inOut"/>
+  <UMLRealTimeStateMach:RTTrigger xmi:id="_O0USgFSKEeSJBo_pyoMAEg" base_Operation="_k7sskCS3EeS0XNKzoL660g"/>
+  <UMLRealTimeStateMach:RTTrigger xmi:id="_TPJfEFSKEeSJBo_pyoMAEg" base_Operation="_wRxiECS5EeS0XNKzoL660g"/>
+  <C_Cpp:Include xmi:id="_9tIIwHzxEeS0m-1xWAZCFA" body="#include &quot;umlrtcommsportinstance.hh&quot;&#xA;#include &lt;iostream>&#xA;#include &lt;stdio.h>&#xA;#include &lt;unistd.h>" base_class="__EW3UCSSEeS0XNKzoL660g"/>
+  <C_Cpp:Include xmi:id="_FBS58HzyEeS0m-1xWAZCFA" body="#include &lt;iostream>&#xA;#include &lt;stdio.h>&#xA;#include &lt;unistd.h>" base_class="_BMMGgCSTEeS0XNKzoL660g"/>
+  <C_Cpp:Include xmi:id="_HYhQAHzyEeS0m-1xWAZCFA" body="#include &lt;iostream>" base_class="_97ZrMCSSEeS0XNKzoL660g"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_REXi4Hz1EeS0m-1xWAZCFA" base_Package="_REVtsHz1EeS0m-1xWAZCFA"/>
+  <UMLRealTime:Protocol xmi:id="_REYJ8Hz1EeS0m-1xWAZCFA" base_Collaboration="_REVtsXz1EeS0m-1xWAZCFA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_REYxAHz1EeS0m-1xWAZCFA" base_Interface="_REVtsnz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REZYEHz1EeS0m-1xWAZCFA" base_operation="_REVts3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REZ_IHz1EeS0m-1xWAZCFA" base_parameter="_REVttHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REZ_IXz1EeS0m-1xWAZCFA" base_parameter="_REVttHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REamMHz1EeS0m-1xWAZCFA" base_parameter="_REVttXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REbNQHz1EeS0m-1xWAZCFA" base_parameter="_REVttXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REb0UHz1EeS0m-1xWAZCFA" base_parameter="_REVtuHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REcbYHz1EeS0m-1xWAZCFA" base_operation="_REVtuXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REcbYXz1EeS0m-1xWAZCFA" base_parameter="_REVtunz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REdCcHz1EeS0m-1xWAZCFA" base_parameter="_REVtunz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REdpgHz1EeS0m-1xWAZCFA" base_parameter="_REVtu3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REeQkHz1EeS0m-1xWAZCFA" base_parameter="_REVtu3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REe3oHz1EeS0m-1xWAZCFA" base_parameter="_REVtvHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REfesHz1EeS0m-1xWAZCFA" base_parameter="_REVtvHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REfesXz1EeS0m-1xWAZCFA" base_parameter="_REVtvXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REgFwHz1EeS0m-1xWAZCFA" base_parameter="_REVtvXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REgs0Hz1EeS0m-1xWAZCFA" base_parameter="_REVtwHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REhT4Hz1EeS0m-1xWAZCFA" base_operation="_REVtwXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REh68Hz1EeS0m-1xWAZCFA" base_parameter="_REVtwnz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REh68Xz1EeS0m-1xWAZCFA" base_parameter="_REVtwnz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REiiAHz1EeS0m-1xWAZCFA" base_parameter="_REVtw3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REjJEHz1EeS0m-1xWAZCFA" base_parameter="_REVtw3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REjwIHz1EeS0m-1xWAZCFA" base_parameter="_REVtxHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REkXMHz1EeS0m-1xWAZCFA" base_parameter="_REVtxHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REk-QHz1EeS0m-1xWAZCFA" base_parameter="_REVtxXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REllUHz1EeS0m-1xWAZCFA" base_parameter="_REVtxXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REllUXz1EeS0m-1xWAZCFA" base_parameter="_REVtyHz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REmMYHz1EeS0m-1xWAZCFA" base_operation="_REVtyXz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REmzcHz1EeS0m-1xWAZCFA" base_parameter="_REVtynz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REnagHz1EeS0m-1xWAZCFA" base_parameter="_REVtynz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REnagXz1EeS0m-1xWAZCFA" base_parameter="_REVty3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REoBkHz1EeS0m-1xWAZCFA" base_parameter="_REVty3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REoooHz1EeS0m-1xWAZCFA" base_parameter="_REVtznz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REpPsHz1EeS0m-1xWAZCFA" base_operation="_REVtz3z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REp2wHz1EeS0m-1xWAZCFA" base_parameter="_REVt0Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REp2wXz1EeS0m-1xWAZCFA" base_parameter="_REVt0Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REqd0Hz1EeS0m-1xWAZCFA" base_parameter="_REVt0Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RErE4Hz1EeS0m-1xWAZCFA" base_parameter="_REVt0Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RErr8Hz1EeS0m-1xWAZCFA" base_parameter="_REVt0nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REsTAHz1EeS0m-1xWAZCFA" base_parameter="_REVt0nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REs6EHz1EeS0m-1xWAZCFA" base_parameter="_REVt03z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REthIHz1EeS0m-1xWAZCFA" base_parameter="_REVt03z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REthIXz1EeS0m-1xWAZCFA" base_parameter="_REVt1nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REuIMHz1EeS0m-1xWAZCFA" base_operation="_REVt13z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REuvQHz1EeS0m-1xWAZCFA" base_parameter="_REVt2Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REvWUHz1EeS0m-1xWAZCFA" base_parameter="_REVt2Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REv9YHz1EeS0m-1xWAZCFA" base_parameter="_REVt2Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_REv9YXz1EeS0m-1xWAZCFA" base_parameter="_REVt2Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REwkcHz1EeS0m-1xWAZCFA" base_parameter="_REVt2nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RExykHz1EeS0m-1xWAZCFA" base_parameter="_REVt2nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REyZoHz1EeS0m-1xWAZCFA" base_parameter="_REVt23z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_REzAsHz1EeS0m-1xWAZCFA" base_parameter="_REVt23z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_REznwHz1EeS0m-1xWAZCFA" base_parameter="_REVt3nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE0O0Hz1EeS0m-1xWAZCFA" base_operation="_REVt33z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE0O0Xz1EeS0m-1xWAZCFA" base_parameter="_REVt4Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RE014Hz1EeS0m-1xWAZCFA" base_parameter="_REVt4Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE1c8Hz1EeS0m-1xWAZCFA" base_parameter="_REVt4Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RE2EAHz1EeS0m-1xWAZCFA" base_parameter="_REVt4Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE2rEHz1EeS0m-1xWAZCFA" base_parameter="_REVt5Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE3SIHz1EeS0m-1xWAZCFA" base_operation="_REVt5Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE3SIXz1EeS0m-1xWAZCFA" base_parameter="_REVt5nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RE35MHz1EeS0m-1xWAZCFA" base_parameter="_REVt5nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE4gQHz1EeS0m-1xWAZCFA" base_parameter="_REVt53z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RE5HUHz1EeS0m-1xWAZCFA" base_parameter="_REVt53z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE5uYHz1EeS0m-1xWAZCFA" base_parameter="_REVt6Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RE6VcHz1EeS0m-1xWAZCFA" base_parameter="_REVt6Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE68gHz1EeS0m-1xWAZCFA" base_parameter="_REVt6Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RE7jkHz1EeS0m-1xWAZCFA" base_parameter="_REVt6Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE8KoHz1EeS0m-1xWAZCFA" base_parameter="_REVt7Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE8xsHz1EeS0m-1xWAZCFA" base_operation="_REVt7Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE8xsXz1EeS0m-1xWAZCFA" base_parameter="_REVt7nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RE9YwHz1EeS0m-1xWAZCFA" base_parameter="_REVt7nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE9_0Hz1EeS0m-1xWAZCFA" base_parameter="_REVt73z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RE-m4Hz1EeS0m-1xWAZCFA" base_parameter="_REVt73z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RE_N8Hz1EeS0m-1xWAZCFA" base_parameter="_REVt8Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RE_1AHz1EeS0m-1xWAZCFA" base_parameter="_REVt8Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFAcEHz1EeS0m-1xWAZCFA" base_parameter="_REVt8Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RFBDIHz1EeS0m-1xWAZCFA" base_parameter="_REVt8Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFBqMHz1EeS0m-1xWAZCFA" base_parameter="_REVt9Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFCRQHz1EeS0m-1xWAZCFA" base_operation="_REVt9Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFC4UHz1EeS0m-1xWAZCFA" base_parameter="_REVt9nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RFDfYHz1EeS0m-1xWAZCFA" base_parameter="_REVt9nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFEGcHz1EeS0m-1xWAZCFA" base_parameter="_REVt93z1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFEtgHz1EeS0m-1xWAZCFA" base_operation="_REVt-Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFFUkHz1EeS0m-1xWAZCFA" base_parameter="_REVt-nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RFF7oHz1EeS0m-1xWAZCFA" base_parameter="_REVt-nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFGisHz1EeS0m-1xWAZCFA" base_operation="_REVt_Hz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFGisXz1EeS0m-1xWAZCFA" base_parameter="_REVt_Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ptr xmi:id="_RFHJwHz1EeS0m-1xWAZCFA" base_parameter="_REVt_Xz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Const xmi:id="_RFHw0Hz1EeS0m-1xWAZCFA" base_parameter="_REVt_nz1EeS0m-1xWAZCFA"/>
+  <C_Cpp:Ref xmi:id="_RFIX4Hz1EeS0m-1xWAZCFA" base_parameter="_REVt_nz1EeS0m-1xWAZCFA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_RFI-8Hz1EeS0m-1xWAZCFA" base_Interface="_REVuAHz1EeS0m-1xWAZCFA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_RFKNEHz1EeS0m-1xWAZCFA" base_Interface="_REVuAnz1EeS0m-1xWAZCFA"/>
+  <UMLRealTime:RTPort xmi:id="_SUoQ4Hz1EeS0m-1xWAZCFA" base_Port="_SUBM4Hz1EeS0m-1xWAZCFA"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_dbmBcHz5EeSSbqDDsLj5dA" language="org.eclipse.papyrus.uml.textedit.transition.xtext.UmlTransition"/>
+  <UMLRealTime:RTPort xmi:id="_IO3IgHz6EeSSbqDDsLj5dA" base_Port="_C8xj0Hz6EeSSbqDDsLj5dA"/>
+</xmi:XMI>

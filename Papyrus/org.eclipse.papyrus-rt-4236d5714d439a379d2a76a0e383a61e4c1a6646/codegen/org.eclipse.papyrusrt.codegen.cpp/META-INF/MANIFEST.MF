@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT C++ Code Generator
+Bundle-SymbolicName: org.eclipse.papyrusrt.codegen.cpp;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: Zeligsoft (2009) Limited
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.emf.common,
+ org.eclipse.papyrus.codegen.base;bundle-version="1.0.2",
+ org.eclipse.papyrus.cpp.profile,
+ org.eclipse.papyrus.umlrt;bundle-version="1.0.1",
+ org.eclipse.papyrusrt.codegen,
+ org.eclipse.papyrusrt.codegen.cpp.rts,
+ org.eclipse.papyrusrt.codegen.lang.cpp,
+ org.eclipse.papyrusrt.codegen.utils,
+ org.eclipse.papyrusrt.codegen.xtumlrt.trans,
+ org.eclipse.papyrusrt.xtumlrt.common.model,
+ org.eclipse.papyrusrt.xtumlrt.umlrt.model,
+ org.eclipse.papyrusrt.xtumlrt.platform.cpp.model,
+ org.eclipse.uml2.types,
+ org.eclipse.uml2.uml;bundle-version="4.1.0",
+ org.eclipse.xtend.lib;bundle-version="2.7.2"
+Export-Package: org.eclipse.papyrusrt.codegen.cpp,
+ org.eclipse.papyrusrt.codegen.instance.model
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.papyrusrt.codegen.cpp.CppCodeGenPlugin

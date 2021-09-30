@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<contexts:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9" name="UMLRTCodeGen">
+  <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
+  <tabs label="Protocol Editor" id="umlrtcodegenprotocoleditor" priority="101">
+    <sections name="ProtocolEditorNameSection" sectionFile="ui/ProtocolEditorNameSection.xwt">
+      <widget href="ui/ProtocolEditorNameSection.xwt#/"/>
+    </sections>
+    <sections name="ProtocolEditorOperationSection" sectionFile="ui/ProtocolEditorOperationSection.xwt">
+      <widget href="ui/ProtocolEditorOperationSection.xwt#/"/>
+    </sections>
+  </tabs>
+  <views name="UMLRTCodeGenProtocolEditor" sections="//@tabs.0/@sections.0 //@tabs.0/@sections.1">
+    <constraints xsi:type="constraints:SimpleConstraint" name="isSingleProtocolContainer">
+      <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+      <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="UMLRealTime::ProtocolContainer"/>
+    </constraints>
+  </views>
+</contexts:Context>

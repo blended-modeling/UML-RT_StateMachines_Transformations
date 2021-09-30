@@ -1,0 +1,82 @@
+/*******************************************************************************
+* Copyright (c) 2014-2015 Zeligsoft (2009) Limited and others.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************/
+module org.eclipse.papyrusrt.xtumlrt.mmgenerators
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe2.ecore.*
+
+var metamodel = "umlrt"
+var projectName = "org.eclipse.papyrusrt.xtumlrt.${metamodel}.model"
+var genModelPath = "platform:/resource/${projectName}/model/${metamodel}.genmodel"
+var targetDirectory = "${projectName}/src"
+
+Workflow {
+    bean = StandaloneSetup {
+        scanClassPath = true
+        platformUri = ".."
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"
+            to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
+            to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore"
+            to = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.ecore"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
+            to = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.codegen.ecore/model/GenModel.ecore"
+            to = "platform:/resource/org.eclipse.uml2.codegen.ecore/model/GenModel.ecore"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.codegen.ecore/model/GenModel.genmodel"
+            to = "platform:/resource/org.eclipse.uml2.codegen.ecore/model/GenModel.genmodel"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
+            to = "platform:/resource/org.eclipse.uml2.uml/model/UML.ecore"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel"
+            to = "platform:/resource/org.eclipse.uml2.uml/model/UML.genmodel"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"
+            to = "platform:/resource/org.eclipse.uml2.types/model/Types.ecore"
+        }
+        uriMap = {
+            from = "platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel"
+            to = "platform:/resource/org.eclipse.uml2.types/model/Types.genmodel"
+        }
+        registerGenModelFile = genModelPath
+        registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
+        registerGeneratedEPackage = "org.eclipse.uml2.uml.UMLPackage"
+        registerGeneratedEPackage = "org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage"
+        registerGeneratedEPackage = "org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage"
+        registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.uml2.uml/model/UML.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.uml2.types/model/Types.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.uml2.codegen.ecore/model/GenModel.genmodel"
+    }
+
+    component = DirectoryCleaner {
+        directory = targetDirectory
+    }
+    
+    component = EcoreGenerator {
+        genModel = genModelPath
+        srcPath = "platform:/resource/${targetDirectory}"
+    }
+}

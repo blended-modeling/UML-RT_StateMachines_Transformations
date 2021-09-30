@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<paletteconfiguration:PaletteConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:paletteconfiguration="http://www.eclipse.org/papyrus/diagram/paletteconfiguration/0.7" id="palettemodel" label="UMLRealTime">
+  <drawerConfigurations id="UML-RT" label="UML-RT" description="UML-RT">
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.Capsule" label="Capsule" description="Create a Capsule">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/capsule.png"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Capsule_2008"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Capsule_3004"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Capsule_3008"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Capsule_3010"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.Capsule_3014"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.CapsulePart" label="CapsulePart" description="Create a CapsulePart">
+      <icon pluginID="org.eclipse.papyrusrt.umlrt.tooling.ui" iconPath="icons/capsule_part.png"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3002"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3005"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3006"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3012"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3018"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.CapsulePart_3041"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ExternalBehaviorPort" label="ExternalBehaviorPort" description="Create an ExternalBehaviorPort">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="/icons/full/obj16/Port.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ExternalBehaviorPort_3069"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.InternalBehaviorPort" label="InternalBehaviorPort" description="Create an InternalBehaviorPort">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="/icons/full/obj16/Port.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.InternalBehaviorPort_3069"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.RelayPort" label="RelayPort" description="Create a RelayPort">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="/icons/full/obj16/Port.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.RelayPort_3069"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ServiceAccessPoint" label="ServiceAccessPoint" description="Create a ServiceAccessPoint">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="/icons/full/obj16/Port.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ServiceAccessPoint_3069"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="palettemodel.org.eclipse.papyrusrt.umlrt.core.ServiceProvisionPoint" label="ServiceProvisionPoint" description="Create a ServiceProvisionPoint">
+      <icon pluginID="org.eclipse.uml2.uml.edit" iconPath="/icons/full/obj16/Port.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrusrt.umlrt.tooling.diagram.common.ServiceProvisionPoint_3069"/>
+    </ownedConfigurations>
+  </drawerConfigurations>
+  <requiredProfiles>UMLRealTime</requiredProfiles>
+</paletteconfiguration:PaletteConfiguration>

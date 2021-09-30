@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT Papyrus Protocol Editor
+Bundle-SymbolicName: org.eclipse.papyrusrt.protocoleditor;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: Zeligsoft (2009) Limited
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.databinding;bundle-version="1.4.2",
+ org.eclipse.emf.transaction;bundle-version="1.8.0",
+ org.eclipse.emf.workspace;bundle-version="1.5.1",
+ org.eclipse.papyrus.infra.core.log,
+ org.eclipse.papyrus.infra.emf,
+ org.eclipse.papyrus.infra.widgets,
+ org.eclipse.papyrus.uml.properties,
+ org.eclipse.papyrus.uml.tools,
+ org.eclipse.papyrus.umlrt,
+ org.eclipse.papyrus.views.properties,
+ org.eclipse.papyrusrt.codegen,
+ org.eclipse.papyrusrt.codegen.utils
+Export-Package: org.eclipse.papyrusrt.protocoleditor,
+ org.eclipse.papyrusrt.protocoleditor.properties
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.papyrusrt.protocoleditor.Activator

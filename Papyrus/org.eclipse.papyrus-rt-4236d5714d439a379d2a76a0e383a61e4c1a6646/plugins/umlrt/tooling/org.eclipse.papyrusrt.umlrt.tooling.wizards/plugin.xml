@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.wizards.templates">
+      <template
+            di_file="resources/templates/rt-template.di"
+            file="resources/templates/rt-template.uml"
+            id="org.eclipse.papyrusrt.umlrt.tooling.wizards.template"
+            isDefault="false"
+            language="uml"
+            name="An empty UML RealTime model"
+            notation_file="resources/templates/rt-template.notation">
+      </template>
+      <template
+            di_file="resources/templates/rt-templateWithStateMachineProfileApplied.di"
+            file="resources/templates/rt-templateWithStateMachineProfileApplied.uml"
+            id="org.eclipse.papyrusrt.umlrt.tooling.wizards.templateWithStateMachine"
+            isDefault="false"
+            language="uml"
+            name="UML RealTime model With Optional StateMachine profile applied"
+            notation_file="resources/templates/rt-templateWithStateMachineProfileApplied.notation">
+      </template>
+   </extension>
+
+</plugin>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:C_Cpp="http://www.eclipse.org/papyrus/C_Cpp/1" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_35sMsA0LEeWWicCvtoZajg" name="Bound">
+    <packagedElement xmi:type="uml:Class" xmi:id="_PTztwA0MEeWWicCvtoZajg" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iSTYEA0MEeWWicCvtoZajg" name="tester" visibility="protected" type="_Rvwy0A0MEeWWicCvtoZajg" aggregation="composite" association="_iSPGoA0MEeWWicCvtoZajg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Wxo70g0NEeWWicCvtoZajg" name="testee_simple" visibility="protected" type="_OWdfQA0NEeWWicCvtoZajg" aggregation="composite" association="_WxoUwA0NEeWWicCvtoZajg"/>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_k_-zwA1jEeWyBMEuvQ4Q4w" name="Connector1">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lAOEUA1jEeWyBMEuvQ4Q4w" partWithPort="_Wxo70g0NEeWWicCvtoZajg" role="_IclsYA0OEeWWicCvtoZajg"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_lAPScA1jEeWyBMEuvQ4Q4w" partWithPort="_iSTYEA0MEeWWicCvtoZajg" role="_v1I1gA0NEeWWicCvtoZajg"/>
+      </ownedConnector>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Rvwy0A0MEeWWicCvtoZajg" name="Tester" classifierBehavior="_5j6x4A1jEeWyBMEuvQ4Q4w" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_v1I1gA0NEeWWicCvtoZajg" name="Test" visibility="public" type="_7-CWcA0MEeWWicCvtoZajg" aggregation="composite" isBehavior="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_8G0jEBNvEeWL8M9zNy2CJw" name="timer" isOrdered="true" aggregation="composite" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_MxQZgGXsEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uFbPcBNwEeWL8M9zNy2CJw" name="timerID" visibility="protected">
+        <type xmi:type="uml:Class" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6qkTMGXmEeS_4daqvwyFrg"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_5j6x4A1jEeWyBMEuvQ4Q4w" name="Tester_SM">
+        <region xmi:type="uml:Region" xmi:id="_630pwA1jEeWyBMEuvQ4Q4w" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_E0-2cA1kEeWyBMEuvQ4Q4w" name="initialize" source="__HiygA1jEeWyBMEuvQ4Q4w" target="__zZy8A1jEeWyBMEuvQ4Q4w">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_UEO0gBCpEeWr3Pbi51wSsA" name="running">
+              <language>C++</language>
+              <body>// std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot;] initialized and running.&quot; &lt;&lt; std::endl;
+
+//context()->debugOutputModel();
+
+timerID = timer().informIn(UMLRTTimespec(10,0));
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_HsDxQA1kEeWyBMEuvQ4Q4w" source="__zZy8A1jEeWyBMEuvQ4Q4w" target="_3i8A0BNyEeWL8M9zNy2CJw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lhcFkA1kEeWyBMEuvQ4Q4w" name="onRrtBound">
+              <language>C++</language>
+              <body>timer().cancelTimer(timerID);
+
+//std::cout &lt;&lt; &quot;[&quot; &lt;&lt; this->getName() &lt;&lt; &quot;] bound!&quot; &lt;&lt; std::endl;
+
+std::cout &lt;&lt; &quot;SUCCESS&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_UgH5oA1kEeWyBMEuvQ4Q4w" name="onTestRTBound" port="_v1I1gA0NEeWWicCvtoZajg">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_PQtAwOzeEeSRtqCWFwOf8g"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_UhiJABNxEeWL8M9zNy2CJw" source="__zZy8A1jEeWyBMEuvQ4Q4w" target="_3i8A0BNyEeWL8M9zNy2CJw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_n6_RABNxEeWL8M9zNy2CJw" name="onTimeout">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;FAILURE&quot; &lt;&lt; std::endl;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_jx7w8BNxEeWL8M9zNy2CJw" name="onTimeOut" port="_8G0jEBNvEeWL8M9zNy2CJw">
+              <event xmi:type="uml:CallEvent" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_IaEO8HDxEeSwWKwNKw1iAA"/>
+            </trigger>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_E_WioBNzEeWL8M9zNy2CJw" source="_3i8A0BNyEeWL8M9zNy2CJw" target="_4zmXcBNyEeWL8M9zNy2CJw">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_MqWfcBNzEeWL8M9zNy2CJw" name="done_terminate">
+              <language>C++</language>
+              <body>context()->abort();
+</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="__HiygA1jEeWyBMEuvQ4Q4w" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="__zZy8A1jEeWyBMEuvQ4Q4w" name="Running"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_3i8A0BNyEeWL8M9zNy2CJw" name="Junction1" kind="junction"/>
+          <subvertex xmi:type="uml:State" xmi:id="_4zmXcBNyEeWL8M9zNy2CJw" name="Done"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iSPGoA0MEeWWicCvtoZajg" visibility="protected" memberEnd="_iSTYEA0MEeWWicCvtoZajg _iST_IA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iSQ70A0MEeWWicCvtoZajg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iSQ70Q0MEeWWicCvtoZajg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iST_IA0MEeWWicCvtoZajg" name="top" type="_PTztwA0MEeWWicCvtoZajg" association="_iSPGoA0MEeWWicCvtoZajg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_7-JrMA0MEeWWicCvtoZajg" name="CommProtocol">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_7-CWcA0MEeWWicCvtoZajg" name="CommProtocol">
+        <generalization xmi:type="uml:Generalization" xmi:id="_54i2sA1mEeWyBMEuvQ4Q4w">
+          <general xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#__4DbwOzdEeSRtqCWFwOf8g"/>
+        </generalization>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_7-Y7wA0MEeWWicCvtoZajg" name="Protocol1" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-Q_8A0MEeWWicCvtoZajg" contract="_7-Q_8A0MEeWWicCvtoZajg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_7-sdwA0MEeWWicCvtoZajg" name="Protocol1IO" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-lwEA0MEeWWicCvtoZajg" contract="_7-lwEA0MEeWWicCvtoZajg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-Q_8A0MEeWWicCvtoZajg" name="CommProtocol"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-bYAA0MEeWWicCvtoZajg" name="CommProtocol~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_7-jT0A0MEeWWicCvtoZajg" name="CommProtocol~" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-bYAA0MEeWWicCvtoZajg"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_7-kh8A0MEeWWicCvtoZajg" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7-lwEA0MEeWWicCvtoZajg" name="CommProtocolIO">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Y2GUwA37EeWZmqO69MGcNA" name="ping"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_7-uS8A0MEeWWicCvtoZajg" name="CommProtocolIO" client="_7-CWcA0MEeWWicCvtoZajg" supplier="_7-lwEA0MEeWWicCvtoZajg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_Y2Z2wA37EeWZmqO69MGcNA" name="ping" operation="_Y2GUwA37EeWZmqO69MGcNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OWdfQA0NEeWWicCvtoZajg" name="Testee_Simple" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_IclsYA0OEeWWicCvtoZajg" name="Port1" type="_7-CWcA0MEeWWicCvtoZajg" aggregation="composite" isBehavior="true" isConjugated="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WxoUwA0NEeWWicCvtoZajg" memberEnd="_Wxo70g0NEeWWicCvtoZajg _Wxpi4A0NEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Wxo70A0NEeWWicCvtoZajg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wxo70Q0NEeWWicCvtoZajg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Wxpi4A0NEeWWicCvtoZajg" name="top" type="_PTztwA0MEeWWicCvtoZajg" association="_WxoUwA0NEeWWicCvtoZajg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Geq5EA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GetVUA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/C_Cpp/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Gew_sA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GexmwA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/dsmlvalidation#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://DSMLValidation_PROFILES/PapyrusValidationRuleDSML.uml#__sUW0OhNEeCjcc2EgK3Uwg"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GeyN0A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gezb8A0MEeWWicCvtoZajg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8Q0MEeWWicCvtoZajg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8g0MEeWWicCvtoZajg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb8w0MEeWWicCvtoZajg" key="Copyright" value="CEA LIST - Initial API and Implementation&#xD;&#xA;"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb9A0MEeWWicCvtoZajg" key="Date" value="2012-12-07"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gezb9Q0MEeWWicCvtoZajg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gey04A0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_eijPgUBcEeKj6r7ThQagKA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_dL4lkPXAEeGSQON-DQ-5eg"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge0DAA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge0qEQ0MEeWWicCvtoZajg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qEg0MEeWWicCvtoZajg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qEw0MEeWWicCvtoZajg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFA0MEeWWicCvtoZajg" key="Copyright" value="CEA LIST - Initial API and Implementation&#xD;&#xA;"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFQ0MEeWWicCvtoZajg" key="Date" value="2012-12-07"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ge0qFg0MEeWWicCvtoZajg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge0qEA0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_eikdoEBcEeKj6r7ThQagKA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_INTERNAL_PROFILES/PapyrusInternal.profile.uml#_16oYAD-SEeKj6r7ThQagKA"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge1RIA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge1RIQ0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge7-0A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge7-0Q0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ge8l4A0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ge9M8A0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GfCsgA0MEeWWicCvtoZajg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GfDTkA0MEeWWicCvtoZajg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GfDTkQ0MEeWWicCvtoZajg" key="Version" value="0.0.3"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GfDTkg0MEeWWicCvtoZajg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GfDTkw0MEeWWicCvtoZajg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GfDTlA0MEeWWicCvtoZajg" key="Date" value="2015-03-19"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GfDTlQ0MEeWWicCvtoZajg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GfCsgQ0MEeWWicCvtoZajg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_WyvuoM4NEeSo_bwoIR2YQw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_PZqeIA0MEeWWicCvtoZajg" base_Class="_PTztwA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:Capsule xmi:id="_Rv3ggA0MEeWWicCvtoZajg" base_Class="_Rvwy0A0MEeWWicCvtoZajg"/>
+  <UMLRealTime:CapsulePart xmi:id="_3I07AA0MEeWWicCvtoZajg" base_Property="_iSTYEA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_7-OjsA0MEeWWicCvtoZajg" base_Package="_7-JrMA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-WfgA0MEeWWicCvtoZajg" base_Interface="_7-Q_8A0MEeWWicCvtoZajg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-heoA0MEeWWicCvtoZajg" base_Interface="_7-bYAA0MEeWWicCvtoZajg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_7-rPoA0MEeWWicCvtoZajg" base_Interface="_7-lwEA0MEeWWicCvtoZajg" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_7-vhEA0MEeWWicCvtoZajg" base_Collaboration="_7-CWcA0MEeWWicCvtoZajg"/>
+  <UMLRealTime:Capsule xmi:id="_OWjl4A0NEeWWicCvtoZajg" base_Class="_OWdfQA0NEeWWicCvtoZajg"/>
+  <UMLRealTime:CapsulePart xmi:id="_e1rDsA0NEeWWicCvtoZajg" base_Property="_Wxo70g0NEeWWicCvtoZajg"/>
+  <UMLRealTime:RTPort xmi:id="_zqSiIA0NEeWWicCvtoZajg" isNotification="true" base_Port="_v1I1gA0NEeWWicCvtoZajg"/>
+  <UMLRealTime:RTPort xmi:id="_LSmQMA0OEeWWicCvtoZajg" base_Port="_IclsYA0OEeWWicCvtoZajg"/>
+  <UMLRealTime:RTConnector xmi:id="_oJHu8A1jEeWyBMEuvQ4Q4w" base_Connector="_k_-zwA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_F9mEUA1kEeWyBMEuvQ4Q4w" base_Pseudostate="__HiygA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTState xmi:id="_GrHRoA1kEeWyBMEuvQ4Q4w" base_State="__zZy8A1jEeWyBMEuvQ4Q4w"/>
+  <C_Cpp:Include xmi:id="_1-Wj8A1kEeWyBMEuvQ4Q4w" body="#include &lt;iostream>&#xA;" preBody="#include &lt;iostream>&#xA;" base_class="_Rvwy0A0MEeWWicCvtoZajg"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_qcszwA1mEeWyBMEuvQ4Q4w" base_StateMachine="_5j6x4A1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_rh124A1mEeWyBMEuvQ4Q4w" base_Region="_630pwA1jEeWyBMEuvQ4Q4w"/>
+  <UMLRealTime:RTPort xmi:id="__pQvEBNvEeWL8M9zNy2CJw" isWired="false" base_Port="_8G0jEBNvEeWL8M9zNy2CJw"/>
+</xmi:XMI>

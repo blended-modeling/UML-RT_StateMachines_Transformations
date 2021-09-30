@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.papyrusrt.xtumlrt.platform.model/src"
+    editDirectory="/org.eclipse.papyrusrt.xtumlrt.platform.model.edit/src" editorDirectory="/org.eclipse.papyrusrt.xtumlrt.platform.model.editor/src"
+    modelPluginID="org.eclipse.papyrusrt.xtumlrt.platform.model" modelName="Platformmodel"
+    modelPluginClass="" editPluginClass="org.eclipse.papyrusrt.xtumlrt.platformmodel.provider.PlatformmodelEditPlugin"
+    editorPluginClass="org.eclipse.papyrusrt.xtumlrt.platformmodel.presentation.PlatformmodelEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.eclipse.papyrusrt.xtumlrt.platformmodel.tests.PlatformmodelAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="org.eclipse.papyrusrt.xtumlrt.platform.model.edit" editorPluginID="org.eclipse.papyrusrt.xtumlrt.platform.model.editor"
+    usedGenPackages="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.genmodel#//common"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>platformmodel.ecore</foreignModel>
+  <genPackages prefix="Platformmodel" basePackage="org.eclipse.papyrusrt.xtumlrt"
+      disposableProviderFactory="true" ecorePackage="platformmodel.ecore#/">
+    <genClasses image="false" ecoreClass="platformmodel.ecore#//PlatformElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platformmodel.ecore#//PlatformElement/referredElements"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
