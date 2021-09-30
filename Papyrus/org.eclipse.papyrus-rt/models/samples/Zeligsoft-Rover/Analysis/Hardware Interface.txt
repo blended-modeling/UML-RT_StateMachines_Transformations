@@ -1,0 +1,11 @@
+init:
+	For each motor, there are 2 pins to configure:
+		- Direction
+		- Power
+	Needs to be configured in WiringPi before starting to define as input or output pin
+
+runside: control direction and speed for one track
+
+go: Go forward - uses runside
+turn: turn - uses runside
+

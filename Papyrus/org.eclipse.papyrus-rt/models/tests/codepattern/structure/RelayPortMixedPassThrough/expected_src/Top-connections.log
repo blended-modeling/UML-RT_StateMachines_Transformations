@@ -1,0 +1,9 @@
+Top.RTConnector1
+    Top.sender#out.far[0] <-> Top.medium#m_inp.far[0]
+    Top.sender#out.far[1] <-> Top.medium#m_inp.far[1]
+Top.RTConnector2
+    Top.medium#m_out.far[0] <-> Top.receiver#inp.far[0]
+Top.medium.RTConnector1
+    Top.sender#out.far[0] <-> Top.receiver#inp.far[0]
+Top.medium.RTConnector2
+    Top.sender#out.far[1] <-> Top.medium.eavesdropper#inp.far[0]

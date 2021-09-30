@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrusrt.umlrt.core.defaultLanguage">
+      <defaultLanguage
+            class="org.eclipse.papyrusrt.umlrt.cpp.defaultlanguage.UMLRTCppDefaultLanguage"
+            icon="icons/cpp.gif"
+            id="umlrt-cpp"
+            name="C++">
+      </defaultLanguage>
+   </extension>
+   
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+      <library
+            description="ANSI C fixed size primitive types library for UML-RT C++ code generation."
+            iconpath="icons/c_lib.png"
+            name="ANSI C Primitive Types"
+            path="pathmap://PapyrusC_Cpp_LIBRARIES/AnsiCLibrary.uml"
+            provider="Eclipse Modeling Project">
+      </library>
+   </extension>
+
+</plugin>

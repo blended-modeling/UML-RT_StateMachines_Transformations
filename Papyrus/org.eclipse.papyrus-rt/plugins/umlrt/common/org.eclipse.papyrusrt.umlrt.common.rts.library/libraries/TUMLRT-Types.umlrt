@@ -1,0 +1,35 @@
+model TypesLib
+{
+	/* UML primitives */
+	typedef primitivetype Boolean;
+	typedef primitivetype Integer;
+	typedef primitivetype Real;
+	typedef primitivetype String;
+	typedef primitivetype UnlimitedNatural;
+
+	/* C/C++ primitives */
+	typedef primitivetype bool;
+	typedef primitivetype char;
+	typedef primitivetype double;
+	typedef primitivetype float;
+	typedef primitivetype int;
+	typedef primitivetype long;
+	typedef primitivetype "long double";
+	typedef primitivetype short;
+	typedef primitivetype "unsigned char";
+	typedef primitivetype "unsigned int";
+	typedef primitivetype "unsigned long";
+	typedef primitivetype "unsigned short";
+	typedef primitivetype void;
+
+	/* Ansi C Library */
+	typedef primitivetype int8_t;
+	typedef primitivetype int16_t;
+	typedef primitivetype int32_t;
+	typedef primitivetype int64_t;
+	typedef primitivetype uint8_t;
+	typedef primitivetype uint16_t;
+	typedef primitivetype uint32_t;
+	typedef primitivetype uint64_t;
+	typedef primitivetype wchar_t;
+}

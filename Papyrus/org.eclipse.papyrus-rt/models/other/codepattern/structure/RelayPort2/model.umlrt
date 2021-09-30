@@ -1,0 +1,27 @@
+model Model
+{
+	protocol P
+	{
+		out message m(); 
+	}
+	capsule A
+	{
+		external port p : P;	
+	}
+	capsule B
+	{
+		conjugate relay port q : P;
+		part c : C;
+		connect q to c:r;
+	}
+	capsule C
+	{
+		conjugate external port r : P;
+	}
+	capsule Top
+	{
+		part a : A;
+		part b : B;
+		connect a:p to b:q;
+	}
+}

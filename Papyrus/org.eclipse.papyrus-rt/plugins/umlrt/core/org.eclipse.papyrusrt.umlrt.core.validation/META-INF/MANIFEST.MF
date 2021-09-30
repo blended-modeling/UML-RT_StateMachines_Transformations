@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT Validation Rules for Profile-based Models
+Bundle-SymbolicName: org.eclipse.papyrusrt.umlrt.core.validation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrusrt.umlrt.core.validation.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui;bundle-version="[3.109.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.eclipse.emf.validation;bundle-version="[1.8.0,2.0.0)",
+ org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
+ org.eclipse.papyrus.infra.services.validation;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.uml.service.validation;bundle-version="[2.1.0,3.0.0)",
+ org.eclipse.papyrus.infra.core.log;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.uml;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrusrt.umlrt.core;bundle-version="[1.0.0,2.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrusrt.umlrt.core.validation,
+ org.eclipse.papyrusrt.umlrt.core.validation.internal;x-internal:=true,
+ org.eclipse.papyrusrt.umlrt.core.validation.java;x-internal:=true,
+ org.eclipse.papyrusrt.umlrt.core.validation.selectors

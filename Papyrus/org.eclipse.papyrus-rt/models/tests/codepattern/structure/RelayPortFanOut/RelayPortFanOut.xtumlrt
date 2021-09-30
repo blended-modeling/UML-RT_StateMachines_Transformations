@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:common="http://www.eclipse.org/papyrusrt/xtumlrt/common" xmlns:statemach="http://www.eclipse.org/papyrusrt/xtumlrt/statemach" xmlns:statemachext="http://www.eclipse.org/papyrusrt/xtumlrt/statemachext" xmlns:umlrt="http://www.eclipse.org/papyrusrt/xtumlrt/umlrt">
+  <umlrt:RTModel name="RootElement">
+    <entities xsi:type="common:Capsule" name="Top">
+      <parts name="a" unique="true" ordered="true" type="/0/@entities.1">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralNatural" value="1"/>
+      </parts>
+      <parts name="b" unique="true" ordered="true" type="/0/@entities.2">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralNatural" value="1"/>
+      </parts>
+      <connectors name="x">
+        <ends role="/0/@entities.1/@ports.0" partWithPort="/0/@entities.0/@parts.0"/>
+        <ends role="/0/@entities.2/@ports.0" partWithPort="/0/@entities.0/@parts.1"/>
+      </connectors>
+    </entities>
+    <entities xsi:type="common:Capsule" name="A">
+      <behaviour xsi:type="statemach:StateMachine" name="StateMachine">
+        <top>
+          <substates xsi:type="statemach:SimpleState" name="State1" incommingTransitions="/0/@entities.1/@behaviour/@top/@transitions.0">
+            <entryAction xsi:type="statemachext:EntryAction" source="cout &lt;&lt; &quot;[A.State1] sending msg1 on p[0]&quot; &lt;&lt; endl;&#xA;p.msg1().sendAt(0);&#xA;cout &lt;&lt; &quot;[A.State1] sending msg2 on p[1]&quot; &lt;&lt; endl;&#xA;p.msg2().sendAt(1);&#xA;cout &lt;&lt; &quot;[A.State1] messages sent&quot; &lt;&lt; endl;&#xA;cout &lt;&lt; &quot;[A.State1] multicasting msg1 to p&quot; &lt;&lt; endl;&#xA;p.msg1().send();&#xA;cout &lt;&lt; &quot;[A.State1] multicasting msg2 to p&quot; &lt;&lt; endl;&#xA;p.msg2().send();&#xA;cout &lt;&lt; &quot;[A.State1] messages sent&quot; &lt;&lt; endl;&#xA;&#xA;"/>
+          </substates>
+          <transitions name="t0" targetVertex="/0/@entities.1/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.1/@behaviour/@top/@initial">
+            <actionChain/>
+          </transitions>
+          <initial outgoingTransitions="/0/@entities.1/@behaviour/@top/@transitions.0"/>
+        </top>
+      </behaviour>
+      <ports xsi:type="umlrt:RTPort" name="p" unique="true" ordered="true" type="/0/@protocols.0" registrationOverride="">
+        <lowerBound xsi:type="common:LiteralInteger" value="2"/>
+        <upperBound xsi:type="common:LiteralNatural" value="2"/>
+      </ports>
+    </entities>
+    <entities xsi:type="common:Capsule" name="B">
+      <parts name="c" unique="true" ordered="true" type="/0/@entities.3">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralNatural" value="1"/>
+      </parts>
+      <parts name="d" unique="true" ordered="true" type="/0/@entities.4">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralNatural" value="1"/>
+      </parts>
+      <ports xsi:type="umlrt:RTPort" name="q" unique="true" ordered="true" conjugate="true" type="/0/@protocols.0" kind="RELAY" registrationOverride="">
+        <lowerBound xsi:type="common:LiteralInteger" value="2"/>
+        <upperBound xsi:type="common:LiteralNatural" value="2"/>
+      </ports>
+      <connectors name="y">
+        <ends role="/0/@entities.2/@ports.0"/>
+        <ends role="/0/@entities.3/@ports.0" partWithPort="/0/@entities.2/@parts.0"/>
+      </connectors>
+      <connectors name="z">
+        <ends role="/0/@entities.2/@ports.0"/>
+        <ends role="/0/@entities.4/@ports.0" partWithPort="/0/@entities.2/@parts.1"/>
+      </connectors>
+    </entities>
+    <entities xsi:type="common:Capsule" name="C">
+      <behaviour xsi:type="statemach:StateMachine" name="StateMachine">
+        <top>
+          <substates xsi:type="statemach:SimpleState" name="State1" incommingTransitions="/0/@entities.3/@behaviour/@top/@transitions.0 /0/@entities.3/@behaviour/@top/@transitions.1 /0/@entities.3/@behaviour/@top/@transitions.2" outgoingTransitions="/0/@entities.3/@behaviour/@top/@transitions.1 /0/@entities.3/@behaviour/@top/@transitions.2"/>
+          <transitions name="t0" targetVertex="/0/@entities.3/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.3/@behaviour/@top/@initial">
+            <actionChain/>
+          </transitions>
+          <transitions name="t1" targetVertex="/0/@entities.3/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.3/@behaviour/@top/@substates.0">
+            <triggers xsi:type="umlrt:RTTrigger" ports="/0/@entities.3/@ports.0" signal="/0/@protocols.0/@protocolBehaviourFeatures.0"/>
+            <actionChain>
+              <actions xsi:type="statemachext:TransitionAction" source="cout &lt;&lt; &quot;[C.t1] received msg1&quot; &lt;&lt; endl;&#xA;"/>
+            </actionChain>
+          </transitions>
+          <transitions name="t2" targetVertex="/0/@entities.3/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.3/@behaviour/@top/@substates.0">
+            <triggers xsi:type="umlrt:RTTrigger" ports="/0/@entities.3/@ports.0" signal="/0/@protocols.0/@protocolBehaviourFeatures.1"/>
+            <actionChain>
+              <actions xsi:type="statemachext:TransitionAction" source="cout &lt;&lt; &quot;[C.t2] received msg2&quot; &lt;&lt; endl;&#xA;"/>
+            </actionChain>
+          </transitions>
+          <initial outgoingTransitions="/0/@entities.3/@behaviour/@top/@transitions.0"/>
+        </top>
+      </behaviour>
+      <ports xsi:type="umlrt:RTPort" name="r" unique="true" ordered="true" conjugate="true" type="/0/@protocols.0" registrationOverride="">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralInteger" value="1"/>
+      </ports>
+    </entities>
+    <entities xsi:type="common:Capsule" name="D">
+      <behaviour xsi:type="statemach:StateMachine" name="StateMachine">
+        <top>
+          <substates xsi:type="statemach:SimpleState" name="State1" incommingTransitions="/0/@entities.4/@behaviour/@top/@transitions.0 /0/@entities.4/@behaviour/@top/@transitions.1 /0/@entities.4/@behaviour/@top/@transitions.2" outgoingTransitions="/0/@entities.4/@behaviour/@top/@transitions.1 /0/@entities.4/@behaviour/@top/@transitions.2"/>
+          <transitions name="t0" targetVertex="/0/@entities.4/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.4/@behaviour/@top/@initial">
+            <actionChain/>
+          </transitions>
+          <transitions name="t1" targetVertex="/0/@entities.4/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.4/@behaviour/@top/@substates.0">
+            <triggers xsi:type="umlrt:RTTrigger" ports="/0/@entities.4/@ports.0" signal="/0/@protocols.0/@protocolBehaviourFeatures.0"/>
+            <actionChain>
+              <actions xsi:type="statemachext:TransitionAction" source="cout &lt;&lt; &quot;[D.t1] received msg1&quot; &lt;&lt; endl;&#xA;"/>
+            </actionChain>
+          </transitions>
+          <transitions name="t2" targetVertex="/0/@entities.4/@behaviour/@top/@substates.0" sourceVertex="/0/@entities.4/@behaviour/@top/@substates.0">
+            <triggers xsi:type="umlrt:RTTrigger" ports="/0/@entities.4/@ports.0" signal="/0/@protocols.0/@protocolBehaviourFeatures.1"/>
+            <actionChain>
+              <actions xsi:type="statemachext:TransitionAction" source="cout &lt;&lt; &quot;[D.t2] received msg2&quot; &lt;&lt; endl;&#xA;"/>
+            </actionChain>
+          </transitions>
+          <initial outgoingTransitions="/0/@entities.4/@behaviour/@top/@transitions.0"/>
+        </top>
+      </behaviour>
+      <ports xsi:type="umlrt:RTPort" name="s" unique="true" ordered="true" conjugate="true" type="/0/@protocols.0" registrationOverride="">
+        <lowerBound xsi:type="common:LiteralInteger" value="1"/>
+        <upperBound xsi:type="common:LiteralInteger" value="1"/>
+      </ports>
+    </entities>
+    <protocols name="Protocol1" redefines="/3">
+      <protocolBehaviourFeatures xsi:type="common:Signal" name="msg1" kind="OUT"/>
+      <protocolBehaviourFeatures xsi:type="common:Signal" name="msg2" kind="OUT"/>
+    </protocols>
+  </umlrt:RTModel>
+  <common:Signal name="rtUnbound" kind="INOUT">
+    <annotations name="RTSLibraryElement"/>
+  </common:Signal>
+  <common:Signal name="rtBound" kind="INOUT">
+    <annotations name="RTSLibraryElement"/>
+  </common:Signal>
+  <common:Protocol name="UMLRTBaseCommProtocol">
+    <annotations name="RTSLibraryElement"/>
+  </common:Protocol>
+</xmi:XMI>

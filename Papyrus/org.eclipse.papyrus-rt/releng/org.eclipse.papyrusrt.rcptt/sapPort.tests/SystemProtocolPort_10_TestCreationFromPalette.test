@@ -1,0 +1,147 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: SystemProtocolPort_10_TestCreationFromPalette
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _6RSX0I5pEeaREK5lGwUrJQ
+Runtime-Version: 2.2.0.201610042323
+Save-Time: 10/18/16 1:28 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test that when we create a port from palette with no default language defined, the popup to select port type display only 2 menu named "Port with existing Protocol..." and "Port with new Protocol..."
+
+Test that if C++ language is selected as default language, and we drop the port  inside the capsule  the popup display more than 2 menus 
+
+Test that if we drop on the capsule border, the popup displays only the 2 choices : "Port with existing Protocol..." and "Port with new Protocol..."
+
+Test that if the selected type is a system protocol, the port kind is SAP (dependent from the actual RTS lib)
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+//remove .di extension inorder to find the tree otherwise can not find tree error
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+get-view "Model Explorer" | get-tree | select RootElement
+
+// verify that the default language is nolanguage
+with [get-view Properties] {
+    get-property-tab Language | click
+    get-combo -after [get-label Language]  | get-property selection | equals "No Language" | verify-true
+}
+
+
+// go to the palette and select port entry
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+with [get-view "Model Explorer" | get-tree] {
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+}
+with [get-editor "model.di"] {
+    get-diagram -index 1 | get-edit-part -name Capsule1 | mouse-move 1172 401 -height 561 -width 1185
+    with [get-palette] {
+        with [get-palette-entry Port] {
+            mouse-move 41 4 button1 -height 23 -width 125
+            mouse-press 41 4 button1 -height 23 -width 125
+            mouse-release 41 4 button1 524288 -height 23 -width 125
+        }
+    }
+    
+    // drop inside the capsule
+    with [get-diagram -index 1 | get-edit-part -name Capsule1] {
+        mouse-move 560 147 -height 561 -width 1185
+        with [get-edit-part -name Capsule1 | get-edit-part -className RTClassCompositeCompartmentEditPart] {
+            mouse-move 291 58 button1 -height 230 -width 500
+            mouse-press 291 58 button1 -height 230 -width 500
+            mouse-release 291 58 button1 524288 -height 230 -width 500
+        }
+    }
+}
+
+
+
+// declare a global variable to change its value: can not change a variable value in RCPTT 
+global [val separtor 0]
+
+proc "search_separator" [val menu -input] {
+
+	$menu |get-property "getParent().getItems()" |foreach [val item -input]{	
+	let [val size [$menu |get-property "getParent().getItems().length" -raw| int | minus 1]] {	
+		repeat [val index] -times $size -command {
+	if [$menu |get-property [format "getParent().getItems().MenuItem[%d].getStyle()" $index]  -raw| equals "[SEPARATOR]"]{
+		global [val separtor 1] -override
+	}
+	} 
+	}
+ }
+}
+
+        
+
+// verify that there is no separator in the popup memu item (to avoid comparing the number of existing choice to 2)
+get-menu -path "Port with existing Protocol..."  | search_separator | $separtor |int | eq 0 | verify-true
+get-menu -path "Port with existing Protocol..."  | get-property "getParent().getItems().MenuItem[0].getText()" -raw | equals "Port with existing Protocol..." | verify-true
+get-menu -path "Port with new Protocol..."  | get-property "getParent().getItems().MenuItem[1].getText()" -raw | equals "Port with new Protocol..." | verify-true
+
+// change to C++ language
+
+get-view "Model Explorer" | get-tree | select RootElement
+get-view Properties | get-combo -after [get-label Language] | select "C++"
+
+// go  to the palette
+with [get-editor "model.di"] {
+    with [get-palette | get-palette-entry Port] {
+        mouse-move 97 20 -height 23 -width 125
+        mouse-move 37 11 button1 -height 23 -width 125
+        mouse-press 37 11 button1 -height 23 -width 125
+        mouse-release 37 11 button1 524288 -height 23 -width 125
+        mouse-move 18 19 -height 23 -width 125
+    }
+
+// drop on the border of the capsule
+    with [get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1] {
+        mouse-move 498 97 button1 -height 250 -width 500
+        mouse-press 498 97 button1 -height 250 -width 500
+        mouse-release 498 97 button1 524288 -height 250 -width 500
+    }
+}
+
+//get-menu -path "Port with existing Protocol..."  | get-property "getParent().getItems().length" | equals 2 | verify-true
+get-menu -path "Port with existing Protocol..."  | search_separator | $separtor |int | eq 0 | verify-true
+get-menu -path "Port with existing Protocol..."  | get-property "getParent().getItems().MenuItem[0].getText()" -raw | equals "Port with existing Protocol..." | verify-true
+get-menu -path "Port with new Protocol..."  | get-property "getParent().getItems().MenuItem[1].getText()" -raw | equals "Port with new Protocol..." | verify-true
+
+// go again to the palette and select port entry
+with [get-editor "model.di"] {
+    get-diagram -index 1 | get-edit-part -name Capsule1 | mouse-move 1179 122 -height 561 -width 1185
+    with [get-palette] {
+        with [get-palette-entry Port] {
+            mouse-move 42 10 button1 -height 23 -width 125
+            mouse-press 42 10 button1 -height 23 -width 125
+            mouse-release 42 10 button1 524288 -height 23 -width 125
+        }
+    }
+
+// drop inside the capsule
+    with [get-diagram -index 1 | get-edit-part -name Capsule1] {
+        mouse-move 548 153 -height 561 -width 1185
+        with [get-edit-part -name Capsule1 | get-edit-part -className RTClassCompositeCompartmentEditPart] {
+ 
+            mouse-move 275 92 button1 -height 230 -width 500
+            mouse-press 275 92 button1 -height 230 -width 500
+            mouse-release 275 92 button1 524288 -height 230 -width 500
+        }
+    }
+}
+
+// verify that the created port is an SAP port
+get-menu -path "Port with existing Protocol..."  | search_separator | $separtor |int | eq 1 | verify-true
+
+
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

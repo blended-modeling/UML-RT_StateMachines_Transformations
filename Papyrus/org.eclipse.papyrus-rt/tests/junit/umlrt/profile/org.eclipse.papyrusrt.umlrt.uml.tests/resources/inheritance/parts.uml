@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_77Y34K3TEeab8Ykik38t7Q" name="parts">
+    <packagedElement xmi:type="uml:Class" xmi:id="_9mXL8K3TEeab8Ykik38t7Q" name="RootCapsule" isActive="true">
+      <ownedAttribute xmi:id="_Bd2a4K3UEeab8Ykik38t7Q" name="capsule2" visibility="protected" type="_BwitYK3UEeab8Ykik38t7Q" isOrdered="true" aggregation="composite"/>
+      <ownedAttribute xmi:id="_DhOn4K3UEeab8Ykik38t7Q" name="capsule3" visibility="protected" type="_Dub9cK3UEeab8Ykik38t7Q" isOrdered="true" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tThaIK3UEeab8Ykik38t7Q" value="4"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_WlYK3UEeab8Ykik38t7Q" value="4"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BwitYK3UEeab8Ykik38t7Q" name="Capsule2" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Dub9cK3UEeab8Ykik38t7Q" name="Capsule3" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FOroMK3UEeab8Ykik38t7Q" name="Subcapsule" isActive="true">
+      <generalization xmi:id="_H3CKgK3UEeab8Ykik38t7Q" general="_9mXL8K3TEeab8Ykik38t7Q"/>
+      <ownedAttribute xmi:id="_L2fpsK3UEeab8Ykik38t7Q" isOrdered="true" redefinedProperty="_Bd2a4K3UEeab8Ykik38t7Q"/>
+      <ownedAttribute xmi:id="_L2gQwK3UEeab8Ykik38t7Q" name="subpart" type="_wYHzkK3UEeab8Ykik38t7Q" isOrdered="true" aggregation="composite" redefinedProperty="_DhOn4K3UEeab8Ykik38t7Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wYHzkK3UEeab8Ykik38t7Q" name="Capsule4" isActive="true">
+      <generalization xmi:id="_x-G58K3UEeab8Ykik38t7Q" general="_Dub9cK3UEeab8Ykik38t7Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OOKEoK3UEeab8Ykik38t7Q" name="Subsubcapsule" isActive="true">
+      <generalization xmi:id="_RyvlsK3UEeab8Ykik38t7Q" general="_FOroMK3UEeab8Ykik38t7Q"/>
+      <ownedAttribute xmi:id="_TLYzoK3UEeab8Ykik38t7Q" isOrdered="true" redefinedProperty="_L2fpsK3UEeab8Ykik38t7Q"/>
+      <ownedAttribute xmi:id="_TLZasK3UEeab8Ykik38t7Q" isOrdered="true" aggregation="composite" redefinedProperty="_L2gQwK3UEeab8Ykik38t7Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8SabUK3UEeab8Ykik38t7Q" value="6"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:id="_77xSYK3TEeab8Ykik38t7Q">
+      <eAnnotations xmi:id="_77zHkK3TEeab8Ykik38t7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_9qwjwK3TEeab8Ykik38t7Q" base_Class="_9mXL8K3TEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_BeFEYK3UEeab8Ykik38t7Q" base_Property="_Bd2a4K3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:Capsule xmi:id="_Bw2PYK3UEeab8Ykik38t7Q" base_Class="_BwitYK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_DhQdEK3UEeab8Ykik38t7Q" base_Property="_DhOn4K3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:Capsule xmi:id="_Dup_4K3UEeab8Ykik38t7Q" base_Class="_Dub9cK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:Capsule xmi:id="_FO5Dk63UEeab8Ykik38t7Q" base_Class="_FOroMK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_L2g30K3UEeab8Ykik38t7Q" base_Property="_L2fpsK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_L2he4K3UEeab8Ykik38t7Q" base_Property="_L2gQwK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:Capsule xmi:id="_OOVq0K3UEeab8Ykik38t7Q" base_Class="_OOKEoK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_TLZasa3UEeab8Ykik38t7Q" base_Property="_TLYzoK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:CapsulePart xmi:id="_TLaBwK3UEeab8Ykik38t7Q" base_Property="_TLZasK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_YDej8K3UEeab8Ykik38t7Q" base_RedefinableElement="_L2fpsK3UEeab8Ykik38t7Q" rootFragment="_Bd2a4K3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_c_B38K3UEeab8Ykik38t7Q" base_RedefinableElement="_L2gQwK3UEeab8Ykik38t7Q" rootFragment="_DhOn4K3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:Capsule xmi:id="_wYOhQK3UEeab8Ykik38t7Q" base_Class="_wYHzkK3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_IbklgK3VEeab8Ykik38t7Q" base_RedefinableElement="_TLYzoK3UEeab8Ykik38t7Q" rootFragment="_Bd2a4K3UEeab8Ykik38t7Q"/>
+  <UMLRealTime:RTRedefinedElement xmi:id="_LFrbUK3VEeab8Ykik38t7Q" base_RedefinableElement="_TLZasK3UEeab8Ykik38t7Q" rootFragment="_DhOn4K3UEeab8Ykik38t7Q"/>
+</xmi:XMI>

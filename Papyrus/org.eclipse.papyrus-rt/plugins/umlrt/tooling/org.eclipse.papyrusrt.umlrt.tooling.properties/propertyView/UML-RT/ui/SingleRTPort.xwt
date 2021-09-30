@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:ppeg="clr-namespace:org.eclipse.papyrus.infra.gmfdiag.properties.widget"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:facade="clr-namespace:org.eclipse.papyrusrt.umlrt.uml"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}" property="UMLRTFacade:Port:name"></ppe:StringEditor>
+		<ppumlrt:RTPortTypeEditor input="{Binding}"
+			customLabel="Protocol" property="UMLRealTimeExt:Port:type"></ppumlrt:RTPortTypeEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppumlrt:RTKindEnumPropertyEditor
+			property="UMLRealTime:RTPort:kind"
+			enumType="facade:UMLRTPortKind"
+			input="{Binding}">
+		</ppumlrt:RTKindEnumPropertyEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppumlrt:PropertyReplicationComboEditor
+			input="{Binding}" property="UMLRealTimeExt:RTMultiplicity:replication"
+			customLabel="Replication"></ppumlrt:PropertyReplicationComboEditor>
+	</Composite>
+</Composite>

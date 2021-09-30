@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrusrt.base.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.papyrusrt.umlrt.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.papyrusrt.umlrt.profile.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.papyrusrt.umlrt.tooling.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.papyrusrt.umlrt.common.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.papyrusrt.umlrt.common.ui.feature"
+         version="0.0.0"/>
+
+</feature>

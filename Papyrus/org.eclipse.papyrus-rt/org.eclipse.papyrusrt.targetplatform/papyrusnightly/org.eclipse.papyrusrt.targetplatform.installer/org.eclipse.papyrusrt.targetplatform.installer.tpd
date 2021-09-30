@@ -1,0 +1,18 @@
+/**
+ * Installer Target Platform for Papyrus-RT (nightly)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT installer component in the nightly versions of Papyrus-RT.
+ */
+target "Papyrus-RT nightly installer target platform" with requirements
+
+// Oomph Installer
+location "http://download.eclipse.org/oomph/products/latest/repository/" oomph-updates {
+	org.eclipse.oomph.setup.installer.feature.group lazy
+}
+
+// Eclipse Platform
+location "http://download.eclipse.org/releases/oxygen/" oxygen-simrel {
+	// For the launcher in the installer product. The
+	// Oomph Installer is based on Oxygen
+	org.eclipse.equinox.executable.feature.group
+}

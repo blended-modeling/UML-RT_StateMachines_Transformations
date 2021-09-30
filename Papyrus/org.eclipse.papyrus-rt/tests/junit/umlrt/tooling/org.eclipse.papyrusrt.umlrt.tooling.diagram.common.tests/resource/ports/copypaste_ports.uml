@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_ZzxLIOiTEeaHaaE4A-18zg" name="RootElement">
+    <packagedElement xmi:type="uml:Class" xmi:id="_cwh3MOiTEeaHaaE4A-18zg" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_er27cOiTEeaHaaE4A-18zg" name="externalPort" visibility="public" type="_dsa3sOiTEeaHaaE4A-18zg" isOrdered="true" aggregation="composite" isBehavior="true" isService="true"/>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_fmNq4OiTEeaHaaE4A-18zg" name="internalPort" visibility="protected" type="_dsa3sOiTEeaHaaE4A-18zg" isOrdered="true" aggregation="composite" isBehavior="true" isService="false"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_dsg-UOiTEeaHaaE4A-18zg" name="Protocol1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_dsa3sOiTEeaHaaE4A-18zg" name="Protocol1">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_dszSMeiTEeaHaaE4A-18zg" client="_dsa3sOiTEeaHaaE4A-18zg" supplier="_dstLkOiTEeaHaaE4A-18zg" contract="_dstLkOiTEeaHaaE4A-18zg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_dtFmEuiTEeaHaaE4A-18zg" client="_dsa3sOiTEeaHaaE4A-18zg" supplier="_dtFmEOiTEeaHaaE4A-18zg" contract="_dtFmEOiTEeaHaaE4A-18zg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dstLkOiTEeaHaaE4A-18zg" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ds5Y0OiTEeaHaaE4A-18zg" name="Protocol1~"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ds_fceiTEeaHaaE4A-18zg" client="_dsa3sOiTEeaHaaE4A-18zg" supplier="_ds5Y0OiTEeaHaaE4A-18zg"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_ds_fcuiTEeaHaaE4A-18zg" name="*"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dtFmEOiTEeaHaaE4A-18zg" name="Protocol1IO"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dtLssOiTEeaHaaE4A-18zg" client="_dsa3sOiTEeaHaaE4A-18zg" supplier="_dtFmEOiTEeaHaaE4A-18zg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Z1H2AOiTEeaHaaE4A-18zg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Z1N8oOiTEeaHaaE4A-18zg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_c26zEOiTEeaHaaE4A-18zg" base_Class="_cwh3MOiTEeaHaaE4A-18zg"/>
+  <UMLRealTime:ProtocolContainer xmi:id="_dsnE8OiTEeaHaaE4A-18zg" base_Package="_dsg-UOiTEeaHaaE4A-18zg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_dszSMOiTEeaHaaE4A-18zg" base_Interface="_dstLkOiTEeaHaaE4A-18zg"/>
+  <UMLRealTime:RTMessageSet xmi:id="_ds_fcOiTEeaHaaE4A-18zg" base_Interface="_ds5Y0OiTEeaHaaE4A-18zg" rtMsgKind="out"/>
+  <UMLRealTime:RTMessageSet xmi:id="_dtFmEeiTEeaHaaE4A-18zg" base_Interface="_dtFmEOiTEeaHaaE4A-18zg" rtMsgKind="inOut"/>
+  <UMLRealTime:Protocol xmi:id="_dtLsseiTEeaHaaE4A-18zg" base_Collaboration="_dsa3sOiTEeaHaaE4A-18zg"/>
+  <UMLRealTime:RTPort xmi:id="_esPV8OiTEeaHaaE4A-18zg" isPublish="false" isWired="true" base_Port="_er27cOiTEeaHaaE4A-18zg"/>
+  <UMLRealTime:RTPort xmi:id="_fmNq4eiTEeaHaaE4A-18zg" isPublish="false" isWired="true" base_Port="_fmNq4OiTEeaHaaE4A-18zg"/>
+</xmi:XMI>

@@ -1,0 +1,33 @@
+/*******************************************************************************
+* Copyright (c) 2014-2015 Zeligsoft (2009) Limited and others.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************/
+module org.eclipse.papyrusrt.xtumlrt.mmgenerators
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.emf.mwe2.ecore.*
+
+var metamodel = "common"
+var projectName = "org.eclipse.papyrusrt.xtumlrt.${metamodel}.model"
+var genModelPath = "platform:/resource/${projectName}/model/${metamodel}.genmodel"
+var targetDirectory = "${projectName}/src"
+
+Workflow {
+    bean = StandaloneSetup {
+        scanClassPath = true
+        platformUri = ".."
+        registerGenModelFile = genModelPath
+    }
+
+    component = DirectoryCleaner {
+        directory = targetDirectory
+    }
+    
+    component = EcoreGenerator {
+        genModel = genModelPath
+        srcPath = "platform:/resource/${targetDirectory}"
+    }
+}

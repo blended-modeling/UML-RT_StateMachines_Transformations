@@ -1,0 +1,223 @@
+/**
+ * Copyright (c) 2014 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.eclipse.papyrusrt.codegen.cpp.profile.RTCppProperties.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrusrt.codegen.cpp.profile.RTCppProperties.FileGenerationProperties;
+import org.eclipse.papyrusrt.codegen.cpp.profile.RTCppProperties.RTCppPropertiesPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>File Generation Properties</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.papyrusrt.codegen.cpp.profile.RTCppProperties.impl.FileGenerationPropertiesImpl#isGenerateHeader <em>Generate Header</em>}</li>
+ *   <li>{@link org.eclipse.papyrusrt.codegen.cpp.profile.RTCppProperties.impl.FileGenerationPropertiesImpl#isGenerateImplementation <em>Generate Implementation</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public abstract class FileGenerationPropertiesImpl extends MinimalEObjectImpl.Container implements FileGenerationProperties {
+	/**
+	 * The default value of the '{@link #isGenerateHeader() <em>Generate Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_HEADER_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isGenerateHeader() <em>Generate Header</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateHeader()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateHeader = GENERATE_HEADER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isGenerateImplementation() <em>Generate Implementation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateImplementation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_IMPLEMENTATION_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isGenerateImplementation() <em>Generate Implementation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGenerateImplementation()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateImplementation = GENERATE_IMPLEMENTATION_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FileGenerationPropertiesImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RTCppPropertiesPackage.Literals.FILE_GENERATION_PROPERTIES;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isGenerateHeader() {
+		return generateHeader;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGenerateHeader(boolean newGenerateHeader) {
+		boolean oldGenerateHeader = generateHeader;
+		generateHeader = newGenerateHeader;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_HEADER, oldGenerateHeader, generateHeader));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isGenerateImplementation() {
+		return generateImplementation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGenerateImplementation(boolean newGenerateImplementation) {
+		boolean oldGenerateImplementation = generateImplementation;
+		generateImplementation = newGenerateImplementation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_IMPLEMENTATION, oldGenerateImplementation, generateImplementation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_HEADER:
+				return isGenerateHeader();
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_IMPLEMENTATION:
+				return isGenerateImplementation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_HEADER:
+				setGenerateHeader((Boolean)newValue);
+				return;
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_IMPLEMENTATION:
+				setGenerateImplementation((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_HEADER:
+				setGenerateHeader(GENERATE_HEADER_EDEFAULT);
+				return;
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_IMPLEMENTATION:
+				setGenerateImplementation(GENERATE_IMPLEMENTATION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_HEADER:
+				return generateHeader != GENERATE_HEADER_EDEFAULT;
+			case RTCppPropertiesPackage.FILE_GENERATION_PROPERTIES__GENERATE_IMPLEMENTATION:
+				return generateImplementation != GENERATE_IMPLEMENTATION_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (generateHeader: ");
+		result.append(generateHeader);
+		result.append(", generateImplementation: ");
+		result.append(generateImplementation);
+		result.append(')');
+		return result.toString();
+	}
+
+} //FileGenerationPropertiesImpl

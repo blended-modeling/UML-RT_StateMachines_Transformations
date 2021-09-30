@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_oU-gMAY9EeW4gpOQAAFNDQ" name="RTSInfo">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_yFy6AAY9EeW4gpOQAAFNDQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_yT3LMAY9EeW4gpOQAAFNDQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_yhvPIAY9EeW4gpOQAAFNDQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_yvaewAY9EeW4gpOQAAFNDQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_y-CwoAY9EeW4gpOQAAFNDQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_-IUV0KqCEeWy5PJXTafXJA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_mPjAgGXmEeS_4daqvwyFrg"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HU1DkAY-EeW4gpOQAAFNDQ" name="TestCapsule" classifierBehavior="_scZMEAY-EeW4gpOQAAFNDQ" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_A-5hYKqDEeWy5PJXTafXJA" name="log" visibility="protected" isOrdered="true" aggregation="composite" isBehavior="true" isService="false">
+        <type xmi:type="uml:Collaboration" href="pathmap://UMLRTRTSLIB/UMLRT-RTS.uml#_6kIb0IeXEeSVyrlWP4nYew"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_scZMEAY-EeW4gpOQAAFNDQ" name="StateMachine1" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_tu580AY-EeW4gpOQAAFNDQ" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_yGytoAY_EeWgr6Eokj3LVQ" source="_yV-OkAY-EeW4gpOQAAFNDQ" target="_xJFvQAY_EeWgr6Eokj3LVQ">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_8fMr4AY_EeWgr6Eokj3LVQ" name="initialize">
+              <language>C++</language>
+              <body>// std::cout &lt;&lt; &quot;Capsule name: &quot; &lt;&lt; this->getName() &lt;&lt; std::endl;
+log.show( &quot;Capsule name: &quot; );
+log.log( this->getName() );
+
+// std::cout &lt;&lt; &quot;CapsuleClass name: &quot; &lt;&lt; this->getClass()->name &lt;&lt; std::endl;
+log.show( &quot;CapsuleClass name: &quot; );
+log.log( this->getClass()->name );
+
+</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_yV-OkAY-EeW4gpOQAAFNDQ" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_xJFvQAY_EeWgr6Eokj3LVQ" name="State1">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_q6BeIA4EEeWZmqO69MGcNA" name="getStateName">
+              <language>C++</language>
+              <body>// std::cout &lt;&lt; &quot;Capsule state: &quot; &lt;&lt; this->getCurrentStateString() &lt;&lt; std::endl;
+log.show( &quot;Capsule state: &quot; );
+log.log( this->getCurrentStateString() );</body>
+            </entry>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zn9eEAZCEeWrG7dPIKiAWw" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6fcTQAZCEeWrG7dPIKiAWw" name="testCapsule" visibility="protected" type="_HU1DkAY-EeW4gpOQAAFNDQ"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oU-gMQY9EeW4gpOQAAFNDQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oU-gMgY9EeW4gpOQAAFNDQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_kuOxEAY_EeWgr6Eokj3LVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kuYiEAY_EeWgr6Eokj3LVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_nWga4AY_EeWgr6Eokj3LVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__rspkKqBEeWy5PJXTafXJA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__rspkaqBEeWy5PJXTafXJA" key="Version" value="0.0.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__rspkqqBEeWy5PJXTafXJA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__rspk6qBEeWy5PJXTafXJA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__rsplKqBEeWy5PJXTafXJA" key="Date" value="2015-12-10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__rsplaqBEeWy5PJXTafXJA" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nWhpAAY_EeWgr6Eokj3LVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_HU58EAY-EeW4gpOQAAFNDQ" base_Class="_HU1DkAY-EeW4gpOQAAFNDQ"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_sLUNsAY_EeWgr6Eokj3LVQ" base_StateMachine="_scZMEAY-EeW4gpOQAAFNDQ"/>
+  <UMLRealTimeStateMach:RTRegion xmi:id="_tMSigAY_EeWgr6Eokj3LVQ" base_Region="_tu580AY-EeW4gpOQAAFNDQ"/>
+  <UMLRealTimeStateMach:RTPseudostate xmi:id="_vsDJgAY_EeWgr6Eokj3LVQ" base_Pseudostate="_yV-OkAY-EeW4gpOQAAFNDQ"/>
+  <UMLRealTime:Capsule xmi:id="_zoJrUAZCEeWrG7dPIKiAWw" base_Class="_zn9eEAZCEeWrG7dPIKiAWw"/>
+  <UMLRealTime:CapsulePart xmi:id="_8DkYcAZCEeWrG7dPIKiAWw" base_Property="_6fcTQAZCEeWrG7dPIKiAWw"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_jUNdsJ6bEeWroNitGtyEgA" implementationPreface="#include &lt;iostream>" base_Class="_HU1DkAY-EeW4gpOQAAFNDQ"/>
+  <UMLRealTime:RTPort xmi:id="_A-_A8KqDEeWy5PJXTafXJA" isWired="false" base_Port="_A-5hYKqDEeWy5PJXTafXJA"/>
+</xmi:XMI>

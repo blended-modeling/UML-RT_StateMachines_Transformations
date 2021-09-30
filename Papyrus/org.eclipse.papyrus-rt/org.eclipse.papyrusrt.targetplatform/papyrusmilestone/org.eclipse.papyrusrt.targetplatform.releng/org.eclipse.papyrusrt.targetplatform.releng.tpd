@@ -1,0 +1,27 @@
+/**
+ * Releng Target Platform for Papyrus-RT (milestones)
+ * 
+ * This TP is intended to contain the the Papyrus-RT features in the milestones versions of Papyrus-RT.
+ */
+target "Papyrus-RT milestones releng target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.tooling/org.eclipse.papyrusrt.targetplatform.tooling.tpd" 
+
+// Master Profile and Core are included in the Tooling TP
+
+// Master Tooling Features
+location "https://hudson.eclipse.org/papyrus-rt/job/Papyrus-RT-Master-Tooling/lastSuccessfulBuild/artifact/repository/" papyrus-rt-tooling {
+	org.eclipse.papyrusrt.umlrt.tooling.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.migration.rsa.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.feature.source.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.tooling.compare.feature.source.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.migration.rsa.feature.source.feature.group lazy
+}
+
+// Master Codegen Features
+location "https://hudson.eclipse.org/papyrus-rt/job/Papyrus-RT-Master-Codegen/lastSuccessfulBuild/artifact/repository/" papyrus-rt-codegen {
+	org.eclipse.papyrusrt.codegen-feature.feature.group lazy
+	org.eclipse.papyrusrt.rts-feature.feature.group lazy
+	org.eclipse.papyrusrt.xtumlrt.xtext.feature.feature.group lazy
+}

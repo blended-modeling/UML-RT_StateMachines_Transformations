@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRealTime="http:///schemas/UMLRealTime/_3TUzoHq6Ed2hSeAAWZznoA/119" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/UMLRealTime/_3TUzoHq6Ed2hSeAAWZznoA/119 pathmap://RT_PROPERTIES/UMLRealTime.epx#_3TUzoXq6Ed2hSeAAWZznoA?UMLRealTime/UMLRealTime?">
+  <uml:Package xmi:id="_bs7rQ9OgEeSvZpYv29LAlw" name="ProtocolModel">
+    <eAnnotations xmi:id="_bs7rRNOgEeSvZpYv29LAlw" source="uml2.diagrams"/>
+    <eAnnotations xmi:id="_bs7rRtOgEeSvZpYv29LAlw" source="com.ibm.xtools.common.ui.reduction.editingCapabilities">
+      <details xmi:id="_bs7rR9OgEeSvZpYv29LAlw" key="uml.rt.activity" value="2"/>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Package" xmi:id="_dW22cNOgEeSvZpYv29LAlw" name="MyExampleProtocol">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_dXAAYNOgEeSvZpYv29LAlw" name="MyExampleProtocol" clientDependency="_dXJxYdOgEeSvZpYv29LAlw _dXJxYtOgEeSvZpYv29LAlw">
+        <interfaceRealization xmi:id="_dXJxYdOgEeSvZpYv29LAlw" name="" supplier="_dXAAYtOgEeSvZpYv29LAlw" client="_dXAAYNOgEeSvZpYv29LAlw" contract="_dXAAYtOgEeSvZpYv29LAlw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dXAAYtOgEeSvZpYv29LAlw" name="MyExampleProtocol">
+        <eAnnotations xmi:id="_dXAAY9OgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_dXAAZNOgEeSvZpYv29LAlw" key="ProtocolRole"/>
+        </eAnnotations>
+        <ownedOperation xmi:id="_l5PuQtOgEeSvZpYv29LAlw" name="inProtocolMessage"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dXAAZdOgEeSvZpYv29LAlw" name="MyExampleProtocol~">
+        <eAnnotations xmi:id="_dXAAZtOgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_dXJxYNOgEeSvZpYv29LAlw" key="ProtocolRole"/>
+        </eAnnotations>
+        <ownedOperation xmi:id="_jdW6otOgEeSvZpYv29LAlw" name="outProtocolMessage"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dXJxYtOgEeSvZpYv29LAlw" supplier="_dXAAZdOgEeSvZpYv29LAlw" client="_dXAAYNOgEeSvZpYv29LAlw"/>
+      <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_dXJxY9OgEeSvZpYv29LAlw" name="*"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_jdW6oNOgEeSvZpYv29LAlw" operation="_jdW6otOgEeSvZpYv29LAlw">
+        <name xsi:nil="true"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_l5PuQNOgEeSvZpYv29LAlw" operation="_l5PuQtOgEeSvZpYv29LAlw">
+        <name xsi:nil="true"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_bs7rSNOgEeSvZpYv29LAlw">
+      <eAnnotations xmi:id="_bs7rSdOgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_bs7rStOgEeSvZpYv29LAlw">
+      <eAnnotations xmi:id="_bs7rS9OgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default?"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML2_MSL_PROFILES/Default.epx#_a_S3wNWLEdiy4IqP8whjFA?Default?"/>
+    </profileApplication>
+    <profileApplication xmi:id="_bs7rTNOgEeSvZpYv29LAlw">
+      <eAnnotations xmi:id="_bs7rTdOgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_4OVBUD0TEeKt-L0gyEptgQ?Deployment/Deployment?"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_vjbuwOvHEdiDX5bji0iVSA?Deployment?"/>
+    </profileApplication>
+    <profileApplication xmi:id="_bs7rTtOgEeSvZpYv29LAlw">
+      <eAnnotations xmi:id="_bs7rT9OgEeSvZpYv29LAlw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://RT_PROPERTIES/UMLRealTime.epx#_3TUzoXq6Ed2hSeAAWZznoA?UMLRealTime/UMLRealTime?"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://RT_PROPERTIES/UMLRealTime.epx#_uTDwIRHVEdu19OChlR9tHg?UMLRealTime?"/>
+    </profileApplication>
+  </uml:Package>
+  <UMLRealTime:ProtocolContainer xmi:id="_dW22cdOgEeSvZpYv29LAlw" base_Package="_dW22cNOgEeSvZpYv29LAlw"/>
+  <UMLRealTime:Protocol xmi:id="_dXAAYdOgEeSvZpYv29LAlw" base_Collaboration="_dXAAYNOgEeSvZpYv29LAlw"/>
+  <UMLRealTime:OutEvent xmi:id="_jdW6odOgEeSvZpYv29LAlw" base_CallEvent="_jdW6oNOgEeSvZpYv29LAlw"/>
+  <UMLRealTime:InEvent xmi:id="_l5PuQdOgEeSvZpYv29LAlw" base_CallEvent="_l5PuQNOgEeSvZpYv29LAlw"/>
+</xmi:XMI>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:UMLRealTimeStateMach="http://www.eclipse.org/papyrus/umlrt/statemachine" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g">
+  <uml:Model xmi:id="_H_kSgGODEeSBPbhgZ3skEA" name="SMTwoLevelNestingModel">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_H_kSgWODEeSBPbhgZ3skEA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cc4EMGODEeSBPbhgZ3skEA" name="Top" isActive="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wYPmcGODEeSBPbhgZ3skEA" name="capsule1" type="_kgeuQGODEeSBPbhgZ3skEA" aggregation="composite" association="_wYQ0kGODEeSBPbhgZ3skEA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wYPmcWODEeSBPbhgZ3skEA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wYPmcmODEeSBPbhgZ3skEA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kgeuQGODEeSBPbhgZ3skEA" name="Capsule1" isActive="true">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_FfC_EGOaEeSBPbhgZ3skEA" name="Port1" type="_yS5f0GOEEeSBPbhgZ3skEA" aggregation="composite"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_IHA-UGODEeSBPbhgZ3skEA" name="StateMachine1" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_IHSrIGODEeSBPbhgZ3skEA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_wEnREGOJEeSBPbhgZ3skEA" name="t0" source="_-B3EgGOIEeSBPbhgZ3skEA" target="_D--jMGOJEeSBPbhgZ3skEA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_GHV4sGObEeSBPbhgZ3skEA" name="ta0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta0\n&quot;;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_yElkwGOJEeSBPbhgZ3skEA" name="t1" source="_D--jMGOJEeSBPbhgZ3skEA" target="_GY_ukGOJEeSBPbhgZ3skEA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_MQkgwGObEeSBPbhgZ3skEA" name="ta1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta1\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_ZdijQGOZEeSBPbhgZ3skEA" name="trig1" event="_BH2agGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_0T9mYGOJEeSBPbhgZ3skEA" name="t2" source="_tatPkGOJEeSBPbhgZ3skEA" target="_IeyWYGOJEeSBPbhgZ3skEA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_PbKNcGObEeSBPbhgZ3skEA" name="ta2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta2\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_VhItMGObEeSBPbhgZ3skEA" name="trig2" event="_Gdj68GOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_5Ra-4GOJEeSBPbhgZ3skEA" name="t3" source="_IeyWYGOJEeSBPbhgZ3skEA" target="_hxX08GOJEeSBPbhgZ3skEA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_bTUHMGObEeSBPbhgZ3skEA" name="ta3">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta3\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_gzjcoGObEeSBPbhgZ3skEA" name="trig3" event="_Hqj5kGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_AaCnYGOKEeSBPbhgZ3skEA" name="t4" source="_IeyWYGOJEeSBPbhgZ3skEA" target="_3dEsYGOJEeSBPbhgZ3skEA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_naNAgGObEeSBPbhgZ3skEA" name="ta4">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ta4\n&quot;;
+</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_qr9FIGObEeSBPbhgZ3skEA" name="trig4" event="_sUT08GOZEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_-B3EgGOIEeSBPbhgZ3skEA" name="i0"/>
+          <subvertex xmi:type="uml:State" xmi:id="_D--jMGOJEeSBPbhgZ3skEA" name="s0">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_6yoNwGObEeSBPbhgZ3skEA" name="ena0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena0\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="_E_uT4GOcEeSBPbhgZ3skEA" name="exa0">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa0\n&quot;;
+</body>
+            </exit>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_GY_ukGOJEeSBPbhgZ3skEA" name="s1">
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_tatPkGOJEeSBPbhgZ3skEA" name="q0" kind="exitPoint"/>
+            <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_3dEsYGOJEeSBPbhgZ3skEA" name="p0" kind="entryPoint"/>
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_OW_lQGOcEeSBPbhgZ3skEA" name="ena1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena1\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="_S5h8UGOcEeSBPbhgZ3skEA" name="exa1">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa1\n&quot;;
+</body>
+            </exit>
+            <region xmi:type="uml:Region" xmi:id="_NDXU0GOJEeSBPbhgZ3skEA" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="_HKqmoGOKEeSBPbhgZ3skEA" name="t0" source="_OhUgkGOJEeSBPbhgZ3skEA" target="_UOuIQGOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_qKgvgGOcEeSBPbhgZ3skEA" name="ta10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta10\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_I2LtQGOKEeSBPbhgZ3skEA" name="t1" source="_UOuIQGOJEeSBPbhgZ3skEA" target="_VsP2MGOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_uCvlUGOcEeSBPbhgZ3skEA" name="ta11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta11\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="_Iozd8GOdEeSBPbhgZ3skEA" name="trig11" event="_BH2agGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_LD0CcGOKEeSBPbhgZ3skEA" name="t2" source="_UOuIQGOJEeSBPbhgZ3skEA" target="_nsXMsGOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_xPcK0GOcEeSBPbhgZ3skEA" name="ta12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta12\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="_NMBxgGOdEeSBPbhgZ3skEA" name="trig12" event="_Gdj68GOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_MzOxoGOKEeSBPbhgZ3skEA" name="t3" source="_VsP2MGOJEeSBPbhgZ3skEA" target="_W6LB4GOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_3Z3swGOcEeSBPbhgZ3skEA" name="ta13">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta13\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="_R1eB0GOdEeSBPbhgZ3skEA" name="trig13" event="_Hqj5kGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_QwQA0GOKEeSBPbhgZ3skEA" name="t4" source="_W6LB4GOJEeSBPbhgZ3skEA" target="_kmLe4GOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_7DA9sGOcEeSBPbhgZ3skEA" name="ta14">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta14\n&quot;;
+</body>
+                </effect>
+                <trigger xmi:type="uml:Trigger" xmi:id="_W-VZEGOdEeSBPbhgZ3skEA" name="trig14" event="_sUT08GOZEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_T0vFgGOKEeSBPbhgZ3skEA" name="t5" source="_p95xgGOJEeSBPbhgZ3skEA" target="_W6LB4GOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_-d6-UGOcEeSBPbhgZ3skEA" name="ta15">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta15\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_Bst6wGOLEeSBPbhgZ3skEA" name="t6" source="_3dEsYGOJEeSBPbhgZ3skEA" target="_kmLe4GOJEeSBPbhgZ3skEA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_CwOhAGOdEeSBPbhgZ3skEA" name="ta6">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ta16\n&quot;;
+</body>
+                </effect>
+              </transition>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_OhUgkGOJEeSBPbhgZ3skEA" name="i0"/>
+              <subvertex xmi:type="uml:State" xmi:id="_UOuIQGOJEeSBPbhgZ3skEA" name="s0">
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="_rBtn0GOdEeSBPbhgZ3skEA" name="ena10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena10\n&quot;;
+</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="_t76vIGOdEeSBPbhgZ3skEA" name="exa10">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa10\n&quot;;</body>
+                </exit>
+              </subvertex>
+              <subvertex xmi:type="uml:State" xmi:id="_VsP2MGOJEeSBPbhgZ3skEA" name="s1">
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_nsXMsGOJEeSBPbhgZ3skEA" name="p0" kind="entryPoint"/>
+                <connectionPoint xmi:type="uml:Pseudostate" xmi:id="_p95xgGOJEeSBPbhgZ3skEA" name="q0" kind="exitPoint"/>
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="_xsbzYGOdEeSBPbhgZ3skEA" name="ena11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena11\n&quot;;</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="_0w1YgGOdEeSBPbhgZ3skEA" name="exa11">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa11\n&quot;;</body>
+                </exit>
+                <region xmi:type="uml:Region" xmi:id="_YvHxUmOJEeSBPbhgZ3skEA" name="Region1">
+                  <transition xmi:type="uml:Transition" xmi:id="_zCdFwGOKEeSBPbhgZ3skEA" name="t0" source="_a3EVQGOJEeSBPbhgZ3skEA" target="_cYNX4GOJEeSBPbhgZ3skEA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="_CkyQkGOeEeSBPbhgZ3skEA" name="ta110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta110\n&quot;;</body>
+                    </effect>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_0h5fQGOKEeSBPbhgZ3skEA" name="t1" source="_cYNX4GOJEeSBPbhgZ3skEA" target="_ddMC8GOJEeSBPbhgZ3skEA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FzXFYGOeEeSBPbhgZ3skEA" name="ta111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta111\n&quot;;</body>
+                    </effect>
+                    <trigger xmi:type="uml:Trigger" xmi:id="_VivvYGOeEeSBPbhgZ3skEA" name="trig111" event="_BH2agGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_1kYP8GOKEeSBPbhgZ3skEA" name="t2" source="_nsXMsGOJEeSBPbhgZ3skEA" target="_ddMC8GOJEeSBPbhgZ3skEA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Ju1ccGOeEeSBPbhgZ3skEA" name="ta112">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta112\n&quot;;</body>
+                    </effect>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_3vVroGOKEeSBPbhgZ3skEA" name="t3" source="_ddMC8GOJEeSBPbhgZ3skEA" target="_p95xgGOJEeSBPbhgZ3skEA">
+                    <effect xmi:type="uml:OpaqueBehavior" xmi:id="_NyUgAGOeEeSBPbhgZ3skEA" name="ta113">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ta113\n&quot;;</body>
+                    </effect>
+                    <trigger xmi:type="uml:Trigger" xmi:id="_ZQxgUGOeEeSBPbhgZ3skEA" name="trig113" event="_Hqj5kGOIEeSBPbhgZ3skEA" port="_FfC_EGOaEeSBPbhgZ3skEA"/>
+                  </transition>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_a3EVQGOJEeSBPbhgZ3skEA" name="i0"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_cYNX4GOJEeSBPbhgZ3skEA" name="s0">
+                    <entry xmi:type="uml:OpaqueBehavior" xmi:id="_fC86UGOeEeSBPbhgZ3skEA" name="ena110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ena110\n&quot;;</body>
+                    </entry>
+                    <exit xmi:type="uml:OpaqueBehavior" xmi:id="_iqEyAGOeEeSBPbhgZ3skEA" name="exa110">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.exa110\n&quot;;</body>
+                    </exit>
+                  </subvertex>
+                  <subvertex xmi:type="uml:State" xmi:id="_ddMC8GOJEeSBPbhgZ3skEA" name="s1">
+                    <entry xmi:type="uml:OpaqueBehavior" xmi:id="_m0ZdYGOeEeSBPbhgZ3skEA" name="ena111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.ena111\n&quot;;</body>
+                    </entry>
+                    <exit xmi:type="uml:OpaqueBehavior" xmi:id="_p-UbsGOeEeSBPbhgZ3skEA" name="exa111">
+                      <language>C++</language>
+                      <body>std::cout &lt;&lt; &quot;SM.exa111\n&quot;;</body>
+                    </exit>
+                  </subvertex>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_kmLe4GOJEeSBPbhgZ3skEA" name="h1" kind="deepHistory"/>
+                </region>
+              </subvertex>
+              <subvertex xmi:type="uml:State" xmi:id="_W6LB4GOJEeSBPbhgZ3skEA" name="s2">
+                <entry xmi:type="uml:OpaqueBehavior" xmi:id="_4Wc0UGOdEeSBPbhgZ3skEA" name="ena12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.ena12\n&quot;;</body>
+                </entry>
+                <exit xmi:type="uml:OpaqueBehavior" xmi:id="_7hi3UGOdEeSBPbhgZ3skEA" name="exa12">
+                  <language>C++</language>
+                  <body>std::cout &lt;&lt; &quot;SM.exa12\n&quot;;</body>
+                </exit>
+              </subvertex>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_hxX08GOJEeSBPbhgZ3skEA" name="h1" kind="deepHistory"/>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_IeyWYGOJEeSBPbhgZ3skEA" name="s2">
+            <entry xmi:type="uml:OpaqueBehavior" xmi:id="_aFIAUGOcEeSBPbhgZ3skEA" name="ena2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.ena2\n&quot;;
+</body>
+            </entry>
+            <exit xmi:type="uml:OpaqueBehavior" xmi:id="_droM8GOcEeSBPbhgZ3skEA" name="exa2">
+              <language>C++</language>
+              <body>std::cout &lt;&lt; &quot;SM.exa2\n&quot;;
+</body>
+            </exit>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rzBHwGODEeSBPbhgZ3skEA" name="ProtocolContainer1">
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_yS5f0GOEEeSBPbhgZ3skEA" name="Protocol1"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_K3WtEGOFEeSBPbhgZ3skEA" name="InSignals">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ziCXAGOFEeSBPbhgZ3skEA" name="e1"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1j_AoGOFEeSBPbhgZ3skEA" name="e2"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_2z3UIGOFEeSBPbhgZ3skEA" name="e3"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3km0kGOFEeSBPbhgZ3skEA" name="e4"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1k1qUGOHEeSBPbhgZ3skEA" name="e5"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_MtqHYGOFEeSBPbhgZ3skEA" name="OutSignals"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_OoW5gGOFEeSBPbhgZ3skEA" name="SymSignals"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_ZpuVMGOFEeSBPbhgZ3skEA" client="_yS5f0GOEEeSBPbhgZ3skEA" supplier="_K3WtEGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_aMrRQGOFEeSBPbhgZ3skEA" client="_yS5f0GOEEeSBPbhgZ3skEA" supplier="_OoW5gGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a3jaQGOFEeSBPbhgZ3skEA" client="_yS5f0GOEEeSBPbhgZ3skEA" supplier="_MtqHYGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_bb9u4GOFEeSBPbhgZ3skEA" client="_yS5f0GOEEeSBPbhgZ3skEA" supplier="_OoW5gGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_BH2agGOIEeSBPbhgZ3skEA" name="CallEvent1" operation="_ziCXAGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_Gdj68GOIEeSBPbhgZ3skEA" name="CallEvent2" operation="_1j_AoGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_Hqj5kGOIEeSBPbhgZ3skEA" name="CallEvent3" operation="_2z3UIGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_sUT08GOZEeSBPbhgZ3skEA" name="CallEvent4" operation="_3km0kGOFEeSBPbhgZ3skEA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_tn-cQGOZEeSBPbhgZ3skEA" name="CallEvent5" operation="_1k1qUGOHEeSBPbhgZ3skEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wYQ0kGODEeSBPbhgZ3skEA" memberEnd="_wYQ0kWODEeSBPbhgZ3skEA _wYPmcGODEeSBPbhgZ3skEA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wYQ0kWODEeSBPbhgZ3skEA" name="top" type="_cc4EMGODEeSBPbhgZ3skEA" association="_wYQ0kGODEeSBPbhgZ3skEA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wYQ0kmODEeSBPbhgZ3skEA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wYQ0k2ODEeSBPbhgZ3skEA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_fE-u4GODEeSBPbhgZ3skEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fI8o4GODEeSBPbhgZ3skEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_gOIvUGODEeSBPbhgZ3skEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gRYQkGODEeSBPbhgZ3skEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/statemachine#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/UMLRealTimeSM-addendum.profile.uml#_KLcn0FDtEeOA4ecmvfqvaw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_A84EIGOJEeSBPbhgZ3skEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A_7YIGOJEeSBPbhgZ3skEA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_j64G0GODEeSBPbhgZ3skEA" base_Class="_cc4EMGODEeSBPbhgZ3skEA"/>
+  <UMLRealTime:Capsule xmi:id="_qWqegGODEeSBPbhgZ3skEA" base_Class="_kgeuQGODEeSBPbhgZ3skEA"/>
+  <UMLRealTime:Protocol xmi:id="_ErZhIGOFEeSBPbhgZ3skEA" base_Collaboration="_yS5f0GOEEeSBPbhgZ3skEA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_MP2KAGOFEeSBPbhgZ3skEA" base_Interface="_K3WtEGOFEeSBPbhgZ3skEA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_N7InIGOFEeSBPbhgZ3skEA" base_Interface="_MtqHYGOFEeSBPbhgZ3skEA"/>
+  <UMLRealTime:RTMessageSet xmi:id="_QYgBcGOFEeSBPbhgZ3skEA" base_Interface="_OoW5gGOFEeSBPbhgZ3skEA"/>
+  <UMLRealTimeStateMach:RTStateMachine xmi:id="_6ROEcGOIEeSBPbhgZ3skEA" base_StateMachine="_IHA-UGODEeSBPbhgZ3skEA"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_A_90YGOJEeSBPbhgZ3skEA" language="org.eclipse.papyrus.uml.textedit.state.xtext.UmlState"/>
+  <UMLRealTime:CapsulePart xmi:id="_Cwuv8GOgEeSDPqUe0uJRWw" base_Property="_wYPmcGODEeSBPbhgZ3skEA"/>
+</xmi:XMI>

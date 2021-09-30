@@ -1,0 +1,56 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fWASMHyuEeWDurBKKa1KKg
+Element-Name: Synchro_31_SynchronizationOfPort
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _iM6q8JpoEeWSHptStDmSKg
+Runtime-Version: 2.1.0.201606152330
+Save-Time: 10/14/16 10:29 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+When creat a port into the Model Explorer, the Port should be added into the diagram as well . 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+// Open the Model and the Diagram
+get-view "Project Explorer" | get-tree | select "CapsuleAndProtocol/model" | double-click
+with [get-view "Model Explorer" | get-tree] {
+    select "RootElement/«Capsule» Capsule1" | double-click
+    select "RootElement/«Capsule» Capsule1/Capsule1" | double-click
+        
+}
+
+
+// select the menu to create a Port in the ModelExplorer
+get-view "Model Explorer" | get-tree | select "RootElement/«Capsule» Capsule1" | get-menu "New UML-RT Child/Port" | click
+get-menu "Port with new Protocol..." | click
+with [get-window "Create New Protocol"] {
+    get-editbox -after [get-label Name] | set-focus
+    get-button OK | click
+}
+
+
+
+// Test the presence of the Port into the Diagram
+get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | mouse-move 2 60 -height 429 -width 834
+with [get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1] {
+// Children type should be org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.RTPortEditPart
+    get-property "getChildren().RTPortEditPart[4].getClassName()" 
+        | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.editparts.RTPortEditPart" | verify-true
+    get-property "getChildren().RTPortEditPart[4].getNamedElement().getName()" | equals protocol2 | verify-true
+      
+}
+
+// Check the Port Figure
+get-editor "model.di" | get-diagram -index 1 | get-edit-part -name Capsule1 | get-edit-part -name Capsule1 
+    | get-edit-part -name protocol2 | get-figure "0/0/1" | get-property "getParent().getClassName()" 
+    | equals "org.eclipse.papyrusrt.umlrt.tooling.diagram.common.figures.RTPortFigure" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

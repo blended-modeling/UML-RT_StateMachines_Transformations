@@ -1,0 +1,13 @@
+/**
+ * Core Target Platform for Papyrus-RT (milestones)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT core component in the milestones versions of Papyrus-RT.
+ */
+target "Papyrus-RT milestones core target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.profile/org.eclipse.papyrusrt.targetplatform.profile.tpd"
+
+location "https://hudson.eclipse.org/papyrus-rt/job/Papyrus-RT-Master-Profile/lastSuccessfulBuild/artifact/repository/" papyrus-rt-profile {
+	org.eclipse.papyrusrt.umlrt.profile.feature.feature.group lazy
+	org.eclipse.papyrusrt.umlrt.profile.feature.source.feature.group lazy
+}

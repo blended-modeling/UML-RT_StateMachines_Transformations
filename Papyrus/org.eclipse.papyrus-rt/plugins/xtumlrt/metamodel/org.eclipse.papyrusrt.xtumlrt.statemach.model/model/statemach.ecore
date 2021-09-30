@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="statemach" nsURI="http://www.eclipse.org/papyrusrt/xtumlrt/statemach"
+    nsPrefix="statemach">
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//Behaviour">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="top" lowerBound="1" eType="#//CompositeState"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incommingTransitions" upperBound="-1"
+        eType="#//Transition" eOpposite="#//Transition/targetVertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
+        eType="#//Transition" eOpposite="#//Transition/sourceVertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//RedefinableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetVertex" lowerBound="1"
+        eType="#//Vertex" eOpposite="#//Vertex/incommingTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceVertex" lowerBound="1"
+        eType="#//Vertex" eOpposite="#//Vertex/outgoingTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Guard"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionChain" eType="#//ActionChain"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" abstract="true" eSuperTypes="#//Vertex ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//RedefinableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//AbstractAction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//AbstractAction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoints" upperBound="-1"
+        eType="#//EntryPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoints" upperBound="-1"
+        eType="#//ExitPoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" abstract="true" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleState" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeState" eSuperTypes="#//State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substates" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+        eType="#//Vertex" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//InitialPoint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deepHistory" eType="#//DeepHistory"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="choicePoints" upperBound="-1"
+        eType="#//ChoicePoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="junctionPoints" upperBound="-1"
+        eType="#//JunctionPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminatePoint" eType="#//TerminatePoint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Guard" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//AbstractAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionChain" eSuperTypes="../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.papyrusrt.xtumlrt.common.model/model/common.ecore#//AbstractAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialPoint" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeepHistory" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoicePoint" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JunctionPoint" eSuperTypes="#//Pseudostate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminatePoint" eSuperTypes="#//Pseudostate"/>
+</ecore:EPackage>

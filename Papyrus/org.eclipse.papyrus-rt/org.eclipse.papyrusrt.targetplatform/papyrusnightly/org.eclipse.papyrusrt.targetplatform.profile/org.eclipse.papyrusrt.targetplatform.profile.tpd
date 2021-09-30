@@ -1,0 +1,9 @@
+/**
+ * Profile Target Platform for Papyrus-RT (nightly)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT profile component in the nightly versions of Papyrus-RT.
+ */
+target "Papyrus-RT nightly profile target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.papyrus/org.eclipse.papyrusrt.targetplatform.papyrus.tpd"
+

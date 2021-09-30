@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture:ArchitectureDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:architecture="http://www.eclipse.org/papyrus/infra/core/architecture" xmlns:gmfdiagrepresentation="http://www.eclipse.org/papyrus/infra/gmfdiag/representation" xmi:id="_Rh7AgBhFEeeIpaZtZ6oWHg" name="UML-RT" description="Architecture domain for UML-RT">
+  <contexts xsi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_F2dc8BrMEeeD6sx6OCb52Q" name="UML-RT ADL" description="Extension for UML-RT ADL" id="org.eclipse.papyrusrt.umlrt.architecture" creationCommandClass="org.eclipse.papyrusrt.umlrt.core.internal.commands.CreateUMLRTModelCommand">
+    <viewpoints xmi:id="_gkbXICAsEeezx_pEMyh1xw" name="Basic UML-RT Modeling Viewpoint" description="Basic UML-RT viewpoint modeling" representationKinds="_tSXf0CAgEeeM9pIsG6un5Q" id="org.eclipse.papyrusrt.umlrt.viewpoint.basic">
+      <concerns href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/architecture/uml-rt.architecture#_jw88wBhFEeeIpaZtZ6oWHg"/>
+    </viewpoints>
+    <elementTypes href="../elementtypes/uml-rt.statemachinediagram.elementtypesconfigurations#_sHw4IMQMEeS2vZeHP4gaVg"/>
+    <representationKinds xsi:type="gmfdiagrepresentation:PapyrusDiagram" xmi:id="_tSXf0CAgEeeM9pIsG6un5Q" name="UML-RT State Machine Diagram" icon="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/icons/Diagram_StateMachine.gif" id="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.UMLRTStateMachine" implementationID="UMLRTStateMachine" customStyle="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine/css/rtstatemachinediagram.css" creationCommandClass="org.eclipse.papyrusrt.umlrt.tooling.diagram.statemachine.internal.commands.CreateRTStateMachineDiagramCommand">
+      <concerns href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/architecture/uml-rt.architecture#_jw88wBhFEeeIpaZtZ6oWHg"/>
+      <modelRules xmi:id="_IFPP8CAiEeeM9pIsG6un5Q" multiplicity="1">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+      </modelRules>
+      <modelRules xmi:id="_L6wwACAiEeeM9pIsG6un5Q" multiplicity="1">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//State"/>
+      </modelRules>
+      <modelRules xmi:id="_cHAxgCj8EeeomsR6DBOQgA" permit="false">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+      </modelRules>
+      <owningRules xmi:id="_WMxyYCAiEeeM9pIsG6un5Q" multiplicity="1">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+      </owningRules>
+      <owningRules xmi:id="_hdyB4Cj8EeeomsR6DBOQgA" multiplicity="1">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//State"/>
+      </owningRules>
+      <childRules xmi:id="_aHnQQCAiEeeM9pIsG6un5Q" permit="false"/>
+      <paletteRules xmi:id="_dTxDMCAiEeeM9pIsG6un5Q" permit="false" element="createNodesGroup"/>
+      <paletteRules xmi:id="_pIVSwCj8EeeomsR6DBOQgA" permit="false" element="createEdgesGroup"/>
+      <palettes href="../palettes/UML-RT.StateMachine.paletteconfiguration#/"/>
+    </representationKinds>
+    <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+    <profiles href="http://www.eclipse.org/papyrus/umlrt#/"/>
+  </contexts>
+</architecture:ArchitectureDomain>

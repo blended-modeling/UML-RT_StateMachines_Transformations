@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.interoperability.rsa.extensions">
+      <transformation
+            className="org.eclipse.papyrusrt.umlrt.migration.rsa.extension.ImportRTTransformationExtension">
+      </transformation>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated PapyrusRT -->
+      <package
+            uri="http://www.eclipse.org/papyrus/profile/umlrt"
+            class="org.eclipse.papyrusrt.umlrt.tooling.rsa.umlrt.UMLRealTimePackage"
+            genModel="model/PapyrusRT.genmodel"/>
+      <package
+            class="org.eclipse.papyrusrt.umlrt.tooling.rsa.umlrt.UMLRealTimePackage"
+            genModel="model/PapyrusRT.genmodel"
+            uri="http:///schemas/UMLRealTime/_3TUzoHq6Ed2hSeAAWZznoA/119">
+      </package>
+   </extension>
+
+</plugin>

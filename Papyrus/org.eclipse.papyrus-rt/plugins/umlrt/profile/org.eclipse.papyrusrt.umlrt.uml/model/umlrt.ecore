@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="umlrt" nsURI="http://www.eclipse.org/papyrus-rt/2017/UML-RT"
+    nsPrefix="umlrt">
+  <eClassifiers xsi:type="ecore:EDataType" name="Model" instanceClassName="org.eclipse.papyrusrt.umlrt.uml.UMLRTModel">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A façade for a Resource that contains a UML-RT package,&#xA;providing a view of the reosurce more in keeping with the&#xA;UML-RT semantics.&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the element in the underlying UML model&#xA;that represents this façade object."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="redefines" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries whether the receiver is a redefinition of a&#xA;given &lt;code>element&lt;/code>.  As a special case,&#xA;an element is considered to redefine itself."/>
+      </eAnnotations>
+      <eParameters name="element" ordered="false" lowerBound="1" eType="#//NamedElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An UML-RT element"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getRedefinitionOf" ordered="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the receiver is a redefinition context in the UML sense,&#xA;obtains its redefinition of a given &lt;code>element&lt;/code>&#xA;if it does, in fact, inherit that element."/>
+      </eAnnotations>
+      <eGenericType eTypeParameter="#//NamedElement/getRedefinitionOf/T"/>
+      <eTypeParameters name="T">
+        <eBounds eClassifier="#//NamedElement"/>
+      </eTypeParameters>
+      <eParameters name="element" ordered="false" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An UML-RT element, usually one that is inherited by&#xA;the receiver"/>
+        </eAnnotations>
+        <eGenericType eTypeParameter="#//NamedElement/getRedefinitionOf/T"/>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getRedefinitionChain" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the elements that the receiver redefines, from&#xA;and including itself to the root of the redefinition chain."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getExcludedElement" ordered="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries a specific item that is excluded from the receiver's&#xA;context."/>
+      </eAnnotations>
+      <eGenericType eTypeParameter="#//NamedElement/getExcludedElement/T"/>
+      <eTypeParameters name="T">
+        <eBounds eClassifier="#//NamedElement"/>
+      </eTypeParameters>
+      <eParameters name="name" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the ecluded element to find, or &lt;code>null&lt;/code>&#xA;to find any name."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="type" ordered="false" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Java interface/class of the excluded element to find,&#xA;or &lt;code>null&lt;/code> to find an element of any metaclass."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaClass">
+          <eTypeArguments eTypeParameter="#//NamedElement/getExcludedElement/T"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="allRedefinitions" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Stream">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//NamedElement"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="exclude" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Excludes the receiver from the context in which it&#xA;would otherwise have been inherited."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="reinherit" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Restores an excluded element to the condition of&#xA;being inherited."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="reify" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>&#xA;For an element that is a &quot;virtual redefinition&quot; representing an&#xA;element that is inherited from some other context, causes it&#xA;to become a real redefinition that is (in the UML model&#xA;underlying the UML-RT façade) persisted as such.&#xA;&lt;/p>&lt;p>&#xA;&lt;b>Note&lt;/b> that it should be exceedingly rare that a client&#xA;of the Façade API needs to call this operation.  This reification&#xA;is more normally done automatically by the model when an&#xA;inherited element is modified in some way to make it different&#xA;to the element that it redefines.&#xA;&lt;/p>"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="destroy" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Destroys the underlying UML model element using the&#xA;appropriate UML operation."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
+        lowerBound="1" eType="#//Model" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The model that (recursively) contains the element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inheritanceKind" ordered="false"
+        lowerBound="1" eType="#//UMLRTInheritanceKind" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The disposition of an element with respect to inheritance&#xA;from another context or redefinition of an inherited element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of an element, corresponding to the name of the&#xA;underlying UML element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The qualified name of an element, corresponding to the qualified&#xA;name of the underlying UML element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInherited" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of whether the element is inherited from another context&#xA;or redefines an inherited element.  This is true for all elements that&#xA;are not local (root) definitions in their containing context."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVirtualRedefinition"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of whether the element is a stand-in, in the inheriting&#xA;context, for an element that is actually inherited from another&#xA;context.  This stand-in is a virtual element in the sense that it&#xA;is not really an element of the model and is not persisted in the&#xA;model.  It is just a distinct &quot;proxy&quot; for the inherited element, in&#xA;and unique to the inheriting context."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRedefinition" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of whether the element redefines an inherited element&#xA;but does not exclude it fron the redefining context."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isExcluded" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of whether the element is a redefinition of an&#xA;inherited element for the purpose of excluding it from the&#xA;inheriting context."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedElement" ordered="false"
+        eType="#//NamedElement" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the element is inherited or a redefinition, the element in the&#xA;parent context that it redefines.  Unlike UML, the semantics&#xA;of redefinition in UML-RT is singular:  an element redefines at&#xA;most one inherited element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinitionContext" ordered="false"
+        eType="#//NamedElement" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//NamedElement/redefinableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The context in which an element redefines an inherited element.&#xA;It is this redefinition context that inherits the redefined element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinableElement" ordered="false"
+        upperBound="-1" eType="#//NamedElement" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false" eOpposite="#//NamedElement/redefinitionContext">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The collection of all owned elements that can be&#xA;redefined by specializing (inheriting) contexts."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritedElement" ordered="false"
+        eType="#//NamedElement" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="inheritingElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="For an element that is a redefinition, the nearest element&#xA;in the chain of redefinitions that is not a virtual element&#xA;representing the inherited element, but is a real element&#xA;in the model.  Thus, the element that is inherited.  This&#xA;may be the root definition, or else some redefinition of it."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootDefinition" ordered="false"
+        eType="#//NamedElement" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefinitionTree"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The element that is the highest-level definition of an element&#xA;in the hierarchy.  For an element that is not a redefinition of&#xA;some inherited element, this is itself, otherwise it is (recursively)&#xA;the root definition of the element that it redefines."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="excludedElement" ordered="false"
+        upperBound="-1" eType="#//NamedElement" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="excludingElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The elements that the named element would inherit&#xA;from parent contexts but which it excludes by redefinition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMLRTInheritanceKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An enumeration of the various dispositions of an UML-RT&#xA;element with respect to inheritance.&#xA;"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="InheritanceKind"/>
+    </eAnnotations>
+    <eLiterals name="inherited">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that an element represents a purely inherited&#xA;element, being a &quot;shadow&quot; of or &quot;proxy&quot; for the inherited&#xA;definition."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="redefined" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that an element redefines an inherited element."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="excluded" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that an element is an exclusion, being a&#xA;redefinition of an inherited element for the purpose&#xA;of excluding it from (&quot;undefining&quot; it in) the inheriting context."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="none" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that an element is not inherited and not a redefinition&#xA;of an inherited element:  it is a new definition, possible the root&#xA;of a redefinition tree in inheriting contexts."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Stream" instanceClassName="java.util.stream.Stream">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the Java Stream data type."/>
+    </eAnnotations>
+    <eTypeParameters name="E"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Representation of the UML-RT concept of a &lt;em>Package&lt;/em>, providing&#xA;a namespace for capsules, protocols, and other packages."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the UML package element underlying this UML-RT&#xA;façade.  Useful, for example, to find UML constructs such&#xA;as passive classes and data types that UML-RT re-uses from&#xA;UML."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="createNestedPackage" ordered="false" lowerBound="1" eType="#//Package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new package within this package's namespace."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A name for the new nested package"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createCapsule" ordered="false" lowerBound="1" eType="#//Capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new capsule within this package's namespace."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A name for the new capsule"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createProtocol" ordered="false" lowerBound="1" eType="#//Protocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new protocol within this package's namespace."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A name for the new protocol"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedPackage" ordered="false"
+        upperBound="-1" eType="#//Package" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Package/nestingPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Packages contained with this package's namespace."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingPackage" ordered="false"
+        eType="#//Package" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Package/nestedPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package containing this package.  Packages do not have to&#xA;be contained; they may be a root of the model content graph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsule" ordered="false"
+        upperBound="-1" eType="#//Capsule" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Capsule/package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Capsules contained within this package's namespace."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" ordered="false"
+        upperBound="-1" eType="#//Protocol" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Protocol/package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Protocols contained within this package's namespace."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capsule" eSuperTypes="#//Classifier">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Representation of the UML-RT concept of a &lt;em>Capsule&lt;/em>."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Class">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the class that represents this capsule in the&#xA;underlying UML model."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Classifier/toUML"/>
+    </eOperations>
+    <eOperations name="getAncestry" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the superclass chain of this capsule, from itself&#xA;to the root type."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Classifier/getAncestry"/>
+    </eOperations>
+    <eOperations name="getPorts" ordered="false" upperBound="-1" eType="#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains all of the ports of the capsule, optionally including&#xA;also those that are redefined as excluded."/>
+      </eAnnotations>
+      <eParameters name="withExclusions" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether to retrieve also excluded ports"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getCapsuleParts" ordered="false" upperBound="-1" eType="#//CapsulePart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains all of the capsule-parts of the capsule, optionally including&#xA;also those that are redefined as excluded."/>
+      </eAnnotations>
+      <eParameters name="withExclusions" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether to retrieve also excluded capsule-parts"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getConnectors" ordered="false" upperBound="-1" eType="#//Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains all of the connectors of the capsule, optionally also including&#xA;those that are redefined as excluded."/>
+      </eAnnotations>
+      <eParameters name="withExclusions" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether to retrieve also excluded connectors"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createPort" ordered="false" lowerBound="1" eType="#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new external behavior port of the given protocol type."/>
+      </eAnnotations>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="#//Protocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol type of the port.  If this protocol is the conjugate&#xA;view, then the port will be created as conjugated."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createPort" ordered="false" lowerBound="1" eType="#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new port of the given protocol type and port-kind."/>
+      </eAnnotations>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="#//Protocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol type of the port.  If this protocol is the conjugate&#xA;view, then the port will be created as conjugated."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="#//UMLRTPortKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The kind of port to create"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createCapsulePart" ordered="false" lowerBound="1" eType="#//CapsulePart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new part of the given capsule type."/>
+      </eAnnotations>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="#//Capsule">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The capsule type of the part"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createConnector" ordered="false" lowerBound="1" eType="#//Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new connector in this capsule."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional name for the connector."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="source" ordered="false" lowerBound="1" eType="#//Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The source port of the connector, which for delegation connectors&#xA;is conventionally the service port."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="sourcePartWithPort" ordered="false" eType="#//CapsulePart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the source port is a port on a capsule-part, the source&#xA;capsule-part of the connector"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="target" ordered="false" lowerBound="1" eType="#//Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The target port of the connector, which for delegation connectors&#xA;is conventionally an internal behavior port of the capsule or a&#xA;service port of some capsule-part."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="targetPartWithPort" ordered="false" eType="#//CapsulePart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the target port is a port on a capsule-part, the target&#xA;capsule-part of the connector"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createStateMachine" ordered="false" lowerBound="1" eType="#//StateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new state machine for the capsule if it does not already have one."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superclass" ordered="false"
+        eType="#//Capsule" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Capsule/subclass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The superclass of this capsule."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Classifier/general"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subclass" ordered="false"
+        upperBound="-1" eType="#//Capsule" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Capsule/superclass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The known direct subclasses of this capsule.  Note that this&#xA;may be incomplete if some subclasses are not known because&#xA;they are not currently loaded in the resource set."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Classifier/specific"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" ordered="false" upperBound="-1"
+        eType="#//Port" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Port/capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ports of this capsule, including any that are inherited&#xA;or redefined, but not those that are redefined as excluded."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsulePart" ordered="false"
+        upperBound="-1" eType="#//CapsulePart" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false" eOpposite="#//CapsulePart/capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule-parts of this capsule, including any that are&#xA;inherited or redefined, but not those that are redefined as excluded."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" ordered="false"
+        upperBound="-1" eType="#//Connector" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Connector/capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The connectors of this capsule, including any that are&#xA;inherited or redefined but not those that are redefined&#xA;as excluded."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hierarchy" ordered="false"
+        lowerBound="1" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A stream over the class hierarchy root at and including&#xA;this capsule, in breadth-first order."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Stream">
+        <eTypeArguments eClassifier="#//Capsule"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" ordered="false"
+        eType="#//StateMachine" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//StateMachine/capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state machine that defines the capsule's behavior."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" ordered="false"
+        lowerBound="1" eType="#//Package" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Package/capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package containing this capsule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An abstract representation of UML-RT concepts that are&#xA;classifiers in the underlying UML model, such as Capsules&#xA;and Protocols."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML model element representing&#xA;this classifier."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="getPackage" ordered="false" lowerBound="1" eType="#//Package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the package containing this classifier.  Unlike UML,&#xA;which has a concept of nested classifiers, all classifiers in&#xA;UML-RT are owned by packages."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAncestry" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the chain of supertypes from and including this&#xA;classifier up to the root classifier."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//List">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//Classifier"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="getHierarchy" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the classifier hierarchy rooted at this classifier,&#xA;as a Java stream, in breadth-first order.  Note that this&#xA;may only include classifiers that are currently loaded in&#xA;the resource set."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Stream">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//Classifier"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="isSuperTypeOf" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries whether another classifier is a supertype (transitively) of this classifier."/>
+      </eAnnotations>
+      <eParameters name="classifier" ordered="false" lowerBound="1" eType="#//Classifier">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Some classifier in the UML-RT model"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="setGeneral" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Sets the general classifier of this classifier, replacing the current general, if any"/>
+      </eAnnotations>
+      <eParameters name="general" ordered="false" eType="#//Classifier">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The new general classifier which, if not &lt;code>null&lt;/code>, must be of the&#xA;same metaclass or a more general metaclass as this classifier"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="general" ordered="false"
+        eType="#//Classifier" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Classifier/specific">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The supertype, if any, of the classifier.  Unlike UML, which&#xA;allows multiple inheritance, UML-RT recognizes only single&#xA;inheritance of classifiers."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specific" ordered="false"
+        upperBound="-1" eType="#//Classifier" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Classifier/general">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The set of classifiers specializing this classifier, from amongst&#xA;the model resources that are loaded in the resource set.  Thus,&#xA;this is not necessarily complete:  there can be specializations&#xA;that are unknown because they are not loaded."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="List" instanceClassName="java.util.List">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the Java List data type."/>
+    </eAnnotations>
+    <eTypeParameters name="E"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//ReplicatedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Representation of the UML-RT concept of a &lt;em>Port&lt;/em> of a capsule."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Port"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this port."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//ReplicatedElement/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//UMLRTPortKind" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of port."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedPort" ordered="false"
+        eType="#//Port" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningPort"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The inherited port that this port redefines, if any."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" lowerBound="1"
+        eType="#//Protocol" volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol type of this port.  If this port is conjugated, then&#xA;the type is the conjugate view of that protocol."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partsWithPort" ordered="false"
+        upperBound="-1" eType="#//CapsulePart" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="portOnPart"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="All of the known parts in other capsules that expose this port.&#xA;Note that this may not be the complete set of capsule-parts&#xA;if some are in resources that are not currently loaded in the&#xA;resource set."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="partWithPort"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this is a service port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isService"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this is a behavior port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isBehavior"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conjugated" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this port's protocol type is conjugated."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isConjugated"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wired" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this is a wired port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isWired"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publish" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this is a published (unwired) port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isPublish"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this port receives notifications of connection&#xA;and disconnection from the run-time."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isNotification"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registration" ordered="false"
+        lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//PortRegistrationType"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The port registration kind."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registrationOverride" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The port's registration override."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConnected" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the port has any connectors."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConnectedInside" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the port has any connectors &quot;on the inside&quot;."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConnectedOutside" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the port has any connectors &quot;on the outside&quot;."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" ordered="false"
+        upperBound="-1" eType="#//Connector" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The connectors that connect this port to other ports."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insideConnector" ordered="false"
+        upperBound="-1" eType="#//Connector" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="inside"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subset of this port's connectors that are connected &quot;inside&quot;,&#xA;in the context of the port's containing capsule."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Port/connector"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outsideConnector" ordered="false"
+        upperBound="-1" eType="#//Connector" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="outside"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subset of this port's connectors that are connected &quot;outside&quot;,&#xA;in the context of capsules that have parts that expose this port."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Port/connector"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsule" ordered="false"
+        lowerBound="1" eType="#//Capsule" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Capsule/port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule containing this port.  If this port is inherited, then&#xA;the capsule that inherits it, not the capsule from which it is&#xA;inherited."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplicatedElement" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An abstract representation of UML-RT concepts that are&#xA;replicated elements."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Property">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the representation of the UML-RT element&#xA;in the underlying UML model."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="getCapsule" ordered="false" lowerBound="1" eType="#//Capsule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the capsule that contains the replicated element."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicationFactor" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//UnlimitedNatural"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The element's replication factor."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicationFactorAsString"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The replication factor represented as a string, either encoding&#xA;the numeric replication factor or else the expression that&#xA;computes it."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbolicReplicationFactor"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the replication factor is modelled as some kind of&#xA;expression, or else it is a literal numeric value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isSymbolicReplicationFactor"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMLRTPortKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A enumeration of the kinds of ports recognized by UML-RT."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="PortKind"/>
+    </eAnnotations>
+    <eLiterals name="externalBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of a service port that provides behavior."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="internalBehavior" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of an internal behavior port."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="relay" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of a relay port: a service port that delegates behavior."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SAP" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of a service access port:  an internal port that binds&#xA;to a service provider port in another architectural layer."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SPP" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of a service provider port:  a port that provides&#xA;service to ports in other architectural layers."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="null" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication of a port that whose configuration is inconsistent&#xA;and does not imply a recognized port kind."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Protocol" eSuperTypes="#//Classifier">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>Protocol&lt;/em>."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Collaboration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this protocol."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Classifier/toUML"/>
+    </eOperations>
+    <eOperations name="getAnyReceiveEvent" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//AnyReceiveEvent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the UML event that represents the reception of any protocol message."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAncestry" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//Protocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the supertype chain of this protocol, from itself&#xA;to the root type."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Classifier/getAncestry"/>
+    </eOperations>
+    <eOperations name="getMessages" ordered="false" upperBound="-1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the subset of this protocol's messages of the given direction kind."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol message direction kind"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getMessages" ordered="false" upperBound="-1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the subset of this protocol's messages of&#xA;the given direction kind, optionally also retrieving&#xA;excluded protocol messages."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol message direction kind"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="withExclusions" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether to retrieve also excluded protocol messages"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getMessages" ordered="false" upperBound="-1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the this protocol's messages, optionally also retrieving&#xA;excluded protocol messages."/>
+      </eAnnotations>
+      <eParameters name="withExclusions" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Whether to retrieve also excluded protocol messages"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createMessage" ordered="false" lowerBound="1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new protocol message."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The direction kind for the message"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the message"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createMessage" ordered="false" lowerBound="1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new protocol message with a single parameter&#xA;named &quot;data&quot;."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The direction kind for the message"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the message"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="dataType" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Type">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of the data parameter, as a UML type."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createMessage" ordered="false" lowerBound="1" eType="#//ProtocolMessage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new protocol message with any number of parameters."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The direction kind for the message"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the message"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="parameterName" ordered="false" upperBound="-1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The names of the protocol message parameters"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="parameterType" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Type">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter types, as UML types, which must correspond one-for-one&#xA;to the parameter names"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" ordered="false"
+        lowerBound="1" eType="#//Package" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Package/protocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package namespace containing this protocol."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superProtocol" ordered="false"
+        eType="#//Protocol" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Protocol/subProtocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol, if any, that is the supertype of this protocol."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Classifier/general"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subProtocol" ordered="false"
+        upperBound="-1" eType="#//Protocol" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Protocol/superProtocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The known direct subtypes of this protocol.  Note that this may&#xA;not be complete if some subtypes are in resource that are not&#xA;currently loaded in this resource set."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Classifier/specific"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
+        upperBound="-1" eType="#//ProtocolMessage" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false" eOpposite="#//ProtocolMessage/protocol">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol messages defined, inherited, or redefined by this protocol,&#xA;but not those that are redefined to exclude an inherited message."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inMessage" ordered="false"
+        upperBound="-1" eType="#//ProtocolMessage" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="inProtocol"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subset of protocol messages are that are incoming messages."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Protocol/message"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outMessage" ordered="false"
+        upperBound="-1" eType="#//ProtocolMessage" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="outProtocol"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subset of protocol messages are that are outgoing messages."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Protocol/message"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inOutMessage" ordered="false"
+        upperBound="-1" eType="#//ProtocolMessage" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="inOutProtocol"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The subset of protocol messages are that are symmetric messages."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Protocol/message"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether this protocol is the conjugate view of the modelled protocol."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conjugate" ordered="false"
+        lowerBound="1" eType="#//Protocol" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="base"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The conjugate view of this protocol, in which all incoming messages&#xA;are outgoing messages of the base protocol and vice versa.  In the&#xA;case that this protocol is a conjugate, its conjugate is the base protocol."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hierarchy" ordered="false"
+        lowerBound="1" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A stream over the type hierarchy root at this protocol, including&#xA;this protocol first and then all of its specializations in breadth-first&#xA;order."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Stream">
+        <eTypeArguments eClassifier="#//Protocol"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolMessage" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>Protocol Message&lt;/em>."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//ProtocolMessage"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Operation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this protocol message."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="toReceiveEvent" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//CallEvent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the UML event signalling receipt of this message,&#xA;useful for specification of transition triggers in state machines."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="createParameter" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new parameter in the protocol message."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter name"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Type">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parameter type, as a UML type"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="ecore:EEnum ../../org.eclipse.papyrusrt.umlrt.profile/umlProfile/UMLRealTime.ecore#//RTMessageKind"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol message's direction kind."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedMessage" ordered="false"
+        eType="#//ProtocolMessage" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningMessage"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The inherited message that this protocol message redefines, if any."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter"
+        changeable="false" volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="message"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The parameters of the protocol message."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConjugate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the protocol message is a conjugate view of the base&#xA;protocol's corresponding message.  All of the protocol messages&#xA;in the conjugate view of a protocol are the conjugate views of&#xA;its messages."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conjugate" ordered="false"
+        lowerBound="1" eType="#//ProtocolMessage" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="base"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" ordered="false"
+        lowerBound="1" eType="#//Protocol" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Protocol/message">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol that defines, inherits, redefines, or excludes this message."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CapsulePart" eSuperTypes="#//ReplicatedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of a &lt;em>Capsule Part&lt;/em> in the&#xA;structural decomposition of a capsule."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//CapsulePart"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="getConnectorsOf" ordered="false" upperBound="-1" eType="#//Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the &quot;outside&quot; connectors of a given port exposed by this part."/>
+      </eAnnotations>
+      <eParameters name="port" ordered="false" lowerBound="1" eType="#//Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A port that this part exposes."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getConnectorsOfPorts" ordered="false" upperBound="-1" eType="#//Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries all of the &quot;outside&quot; connectors of ports that this&#xA;part exposes, that connect this part."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//UMLRTCapsulePartKind" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of capsule-part."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the capsule-part is optional."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isOptional"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedPart" ordered="false"
+        eType="#//CapsulePart" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningPart"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The inherited part that this part redefines, if any."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsule" ordered="false"
+        lowerBound="1" eType="#//Capsule" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Capsule/capsulePart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule that contains this part (not its type)."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" lowerBound="1"
+        eType="#//Capsule" volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule that is the type of this part (not its containing capsule)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMLRTCapsulePartKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An enumeration of the kinds of capsule parts recognized by UML-RT."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="CapsulePartKind"/>
+    </eAnnotations>
+    <eLiterals name="fixed">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that a capsule-part has fixed replication with composition semantics."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="optional" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that a capsule-part has optional replication with composition semantics."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="plug_in" value="2" literal="plug-in">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="plugin"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that a capsule-part has optional replication with shared aggregation semantics."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="null" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indication that the replication and aggregation specified for a capsule-part&#xA;are inconsistent an do not imply any recognized capsule-part kind."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of a &lt;em>Connector&lt;/em> in the&#xA;structural decomposition of capsules."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Connector"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this connector."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedConnector" ordered="false"
+        eType="#//Connector" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningConnector"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The inherited connector that this connector redefines, if any."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsule" ordered="false"
+        lowerBound="1" eType="#//Capsule" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Capsule/connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule that contains this connector."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//Port" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="sourceOf"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The source port of this connector, which for delegation connectors&#xA;is conventionally the service port."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePartWithPort" ordered="false"
+        eType="#//CapsulePart" volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="sourceOf"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the source port is a port on a capsule-part, the source&#xA;capsule-part of the connector"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceReplicationFactor"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//UnlimitedNatural"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The multiplicity of the source end of this connector."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//Port" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="targetOf"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The target port of this connector, which for delegation connectors&#xA;is conventionally an internal behavior port of the capsule or a&#xA;service port of some capsule-part."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPartWithPort" ordered="false"
+        eType="#//CapsulePart" volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="targetOf"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If the target port is a port on a capsule-part, the target&#xA;capsule-part of the connector"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetReplicationFactor"
+        ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//UnlimitedNatural"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The multiplicity of the target end of this connector."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>State Machine&lt;/em>, which&#xA;defines the behavior of a capsule or a passive class."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//StateMachine"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//StateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this state machine."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="createState" ordered="false" lowerBound="1" eType="#//State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new state in this state machine."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the state to create."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createPseudostate" ordered="false" lowerBound="1" eType="#//Pseudostate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new pseudostate in this state machine."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="#//UMLRTPseudostateKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The kind of pseudostate to create"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="ensureDefaultContents" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Ensures that the state machine has the default vertices&#xA;and transitions appropriate to its current context, whether&#xA;that be as the behavior of a base capsule definition or&#xA;a subclass of a capsule that is redefining/extending the&#xA;behavior of its superclass."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="toRegion" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Region">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the singular UML region of this state machine."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertex" ordered="false"
+        upperBound="-1" eType="#//Vertex" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Vertex/stateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The vertices at the top level of the state machine."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" ordered="false"
+        upperBound="-1" eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Transition/stateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transitions directly contained in the state machine."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedStateMachine"
+        ordered="false" eType="#//StateMachine" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningStateMachine"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state machine of the superclass capsule that this state machine redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capsule" ordered="false"
+        eType="#//Capsule" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//Capsule/stateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The capsule for which I define the behavior."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>Vertex&lt;/em> in a state machine."/>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Vertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this vertex."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="containingStateMachine" ordered="false" lowerBound="1" eType="#//StateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the state machine that contains this vertex."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="createTransitionTo" ordered="false" lowerBound="1" eType="#//Transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new transition from this vertex to the &lt;code>target&lt;/code>."/>
+      </eAnnotations>
+      <eParameters name="target" ordered="false" lowerBound="1" eType="#//Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The target vertex of the transition to create."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" ordered="false"
+        eType="#//State" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//State/subvertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The composite state that contains the vertex, in which case&#xA;it does not have a &lt;code>stateMachine&lt;/code>."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
+        upperBound="-1" eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="target"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transitions incoming to this vertex."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
+        upperBound="-1" eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="source"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transitions outgoing from this vertex."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedVertex" ordered="false"
+        eType="#//Vertex" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningVertex"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The vertex in the redefined state machine or composite state&#xA;that this vertex redefines."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" ordered="false"
+        eType="#//StateMachine" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//StateMachine/vertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state machine that directly contains the vertex, if it is not&#xA;in a composite state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Vertex">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>State&lt;/em> in a state machine."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//State"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this state."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Vertex/toUML"/>
+    </eOperations>
+    <eOperations name="createSubstate" ordered="false" lowerBound="1" eType="#//State">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new sub-state in this composite state."/>
+      </eAnnotations>
+      <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the state to create."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createSubpseudostate" ordered="false" lowerBound="1" eType="#//Pseudostate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new sub-pseudostate in this composite state."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="#//UMLRTPseudostateKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The kind of pseudostate to create"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createConnectionPoint" ordered="false" lowerBound="1" eType="#//ConnectionPoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new entry point to or exit point from this composite state."/>
+      </eAnnotations>
+      <eParameters name="kind" ordered="false" lowerBound="1" eType="#//UMLRTConnectionPointKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The kind of connection point to create"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="toRegion" ordered="false" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Region">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the singular UML region of this state, if it is composite."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="createEntry" ordered="false" lowerBound="1" eType="#//OpaqueBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new entry behavior for this state, if it does not already have one."/>
+      </eAnnotations>
+      <eParameters name="language" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional language for the entry behavior"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="body" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The entry code snippet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createExit" ordered="false" lowerBound="1" eType="#//OpaqueBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new exit behavior for this state, if it does not already have one."/>
+      </eAnnotations>
+      <eParameters name="language" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional language for the exit behavior"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="body" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The exit code snippet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtransition" ordered="false"
+        upperBound="-1" eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Transition/state">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transitions nested within a composite state.  These are not the&#xA;transitions &lt;code>incoming&lt;/code> to and &lt;code>outgoing&lt;/code>&#xA;from the state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" ordered="false"
+        eType="#//OpaqueBehavior" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//OpaqueBehavior/enteredState">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exit" ordered="false" eType="#//OpaqueBehavior"
+        volatile="true" transient="true" derived="true" resolveProxies="false" eOpposite="#//OpaqueBehavior/exitedState">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoint" ordered="false"
+        upperBound="-1" eType="#//ConnectionPoint" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" ordered="false"
+        upperBound="-1" eType="#//ConnectionPoint" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="entryTo"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The entry points of the composite state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//State/connectionPoint"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoint" ordered="false"
+        upperBound="-1" eType="#//ConnectionPoint" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="exitFrom"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The exit points of the composite state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//State/connectionPoint"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedState" ordered="false"
+        eType="#//State" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningState"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state in the redefined state machine or composite state&#xA;that this state redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Vertex/redefinedVertex"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="composite" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isComposite"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simple" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isSimple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subvertex" ordered="false"
+        upperBound="-1" eType="#//Vertex" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Vertex/state">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The sub-vertices of the composite state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>Transition&lt;/em> in a state machine."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Transition"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this transition."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="containingStateMachine" ordered="false" lowerBound="1" eType="#//StateMachine">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries the state machine that contains this transition."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="createTrigger" ordered="false" lowerBound="1" eType="#//Trigger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new trigger for this transition."/>
+      </eAnnotations>
+      <eParameters name="protocolMessage" ordered="false" eType="#//ProtocolMessage">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The protocol message that triggers the transition.  It does not&#xA;matter whether it is a conjugate view of the message or the&#xA;base view.  If omitted, then the trigger uses the &lt;em>AnyReceiveEvent&lt;/em>&#xA;of the protocol type of the {@code port}"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="port" ordered="false" lowerBound="1" eType="#//Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port on which the triggering message is received"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createGuard" ordered="false" lowerBound="1" eType="#//Guard">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new guard for this transition, if it does not already have one."/>
+      </eAnnotations>
+      <eParameters name="language" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional language for the guard condition"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="body" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The guard condition expression"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="createEffect" ordered="false" lowerBound="1" eType="#//OpaqueBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new effect for this transition, if it does not already have one."/>
+      </eAnnotations>
+      <eParameters name="language" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional language for the effect behavior"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="body" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The effect code snippet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" ordered="false"
+        eType="#//StateMachine" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//StateMachine/transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state machine that directly contains a transition, if it is not in&#xA;a composite state."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//Vertex" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="outgoing"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The source vertex of this transition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//Vertex" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="incoming"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The target vertex of this transition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" ordered="false"
+        upperBound="-1" eType="#//Trigger" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Trigger/transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The trigger event specification of the transition."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" ordered="false"
+        eType="#//Guard" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Guard/transition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The guard condition of the transition."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedTransition" ordered="false"
+        eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningTransition"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transition in the redefined state machine or composite state&#xA;that this transition redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="ecore:EEnum ../../org.eclipse.uml2.uml/model/UML.ecore#//TransitionKind"
+        volatile="true" transient="true" defaultValueLiteral="external" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of transition."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internal" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="As a special case of the &lt;code>kind&lt;/code>, whether the&#xA;transition is an internal transition."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isInternal"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effect" ordered="false"
+        eType="#//OpaqueBehavior" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//OpaqueBehavior/transition">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinableElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" ordered="false"
+        eType="#//State" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false" eOpposite="#//State/subtransition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The composite state that contains the transition, in which case&#xA;its &lt;code>stateMachine&lt;/code> is empty."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of transition &lt;em>Trigger&lt;/em>."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Trigger"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Trigger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this trigger."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eOperations name="createGuard" ordered="false" lowerBound="1" eType="#//Guard">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a new guard for this trigger, if it does not already have one."/>
+      </eAnnotations>
+      <eParameters name="language" ordered="false" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An optional language for the guard condition"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="body" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The guard condition expression"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getPort" ordered="false" lowerBound="1" eType="#//Port" eExceptions="#//IllegalStateException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A convenience for the common case of a trigger that is associated&#xA;with only one port, to retrieve that port.  Fails if the trigger has&#xA;more than one port."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="setPort" ordered="false" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A convenience for the common case of triggering on receipt&#xA;of a protocol message from a single port, sets the collection&#xA;of ports to contain this &lt;code>port&lt;/code> only."/>
+      </eAnnotations>
+      <eParameters name="port" ordered="false" lowerBound="1" eType="#//Port"/>
+    </eOperations>
+    <eOperations name="hasMultiplePorts" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Queries whether the trigger has multiple ports, in which case&#xA;the &lt;code>getPort()&lt;/code> operation is not supported."/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocolMessage" ordered="false"
+        eType="#//ProtocolMessage" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="trigger"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The protocol message that triggers the transition.  This&#xA;is always represented as the base view of the message"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" ordered="false" lowerBound="1"
+        upperBound="-1" eType="#//Port" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="trigger"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ports on which the triggering protocol message is received."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" ordered="false"
+        eType="#//Guard" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Guard/trigger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The guard condition of the trigger."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedTrigger" ordered="false"
+        eType="#//Trigger" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningTrigger"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The trigger in the redefined transition that this trigger redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="receiveAnyMessage" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Whether the transition triggers on receipt of any message&#xA;on its &lt;code>port&lt;/code>.  In such case, the&#xA;&lt;code>protocolMessage&lt;/code> association is empty."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="isReceiveAnyMessage"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" ordered="false"
+        lowerBound="1" eType="#//Transition" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false" eOpposite="#//Transition/trigger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The triggered transition."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Guard" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of a &lt;em>Guard&lt;/em> condition."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Guard"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Constraint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this guard."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bodies" ordered="false"
+        lowerBound="1" changeable="false" volatile="true" transient="true" derived="true">
+      <eGenericType eClassifier="#//Map">
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyEntry" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"
+        volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="guard"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The list of language -> body guard condition expression mappings.&#xA;The guard condition expressions, by language."/>
+        <details key="suppressedGetVisibility" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" ordered="false"
+        eType="#//Transition" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Transition/guard">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedGuard" ordered="false"
+        eType="#//Guard" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningGuard"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The guard of the redefined transition or trigger that this guard redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" ordered="false"
+        eType="#//Trigger" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Trigger/guard">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the Java Map data type."/>
+    </eAnnotations>
+    <eTypeParameters name="K"/>
+    <eTypeParameters name="V"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IllegalStateException" instanceClassName="java.lang.IllegalStateException"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueBehavior" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of action code snippets used in UML-RT for&#xA;transition effects and state entry/exit behavior."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//OpaqueBehavior"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//OpaqueBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this opaque behavior."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bodies" ordered="false"
+        lowerBound="1" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The opaque behavior code snippets, by language."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Map">
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+        <eTypeArguments eClassifier="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyEntry" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"
+        volatile="true" transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="behavior"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The list of language -> body code snippet mappings.&#xA;The opaque behavior code snippets, by language."/>
+        <details key="suppressedGetVisibility" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enteredState" ordered="false"
+        eType="#//State" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//State/entry">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitedState" ordered="false"
+        eType="#//State" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//State/exit">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedBehavior" ordered="false"
+        eType="#//OpaqueBehavior" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningBehavior"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The guard of the redefined transition or trigger that this guard redefines."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/redefinedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" ordered="false"
+        eType="#//Transition" volatile="true" transient="true" derived="true" resolveProxies="false"
+        eOpposite="#//Transition/effect">
+      <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoint" eSuperTypes="#//Vertex">
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//ConnectionPoint"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+      <contents xsi:type="ecore:EReference" name="state" ordered="false" eType="#//State"
+          changeable="false" volatile="true" transient="true" derived="true" resolveProxies="false"
+          eOpposite="#//State/connectionPoint">
+        <eAnnotations source="subsets" references="#//NamedElement/redefinitionContext"/>
+        <eAnnotations source="redefines" references="#//Vertex/state"/>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Pseudostate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this connection point."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Vertex/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//UMLRTConnectionPointKind" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of connection point."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedConnectionPoint"
+        ordered="false" eType="#//ConnectionPoint" changeable="false" volatile="true"
+        transient="true" derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningConnectionPoint"/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Vertex/redefinedVertex"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMLRTConnectionPointKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An enumeration of the kinds of connection-point vertices recognized&#xA;by UML-RT."/>
+    </eAnnotations>
+    <eLiterals name="entry">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates an entry point."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="exit" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates an exit point."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="#//Vertex">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A representation of the UML-RT concept of &lt;em>Pseudostate&lt;/em> in a state machine."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="allRedefinitions" ordered="false"
+          lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Queries the elements that redefine the receiver, from&#xA;and including itself down the hierarchy."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//NamedElement/allRedefinitions"/>
+        <eGenericType eClassifier="#//Stream">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//Pseudostate"/>
+          </eTypeArguments>
+        </eGenericType>
+      </contents>
+    </eAnnotations>
+    <eOperations name="toUML" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Pseudostate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Obtains the underlying UML representation of this pseudostate."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Vertex/toUML"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
+        eType="#//UMLRTPseudostateKind" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of pseudostate."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedPseudostate" ordered="false"
+        eType="#//Pseudostate" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="redefiningPseudostate"/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Vertex/redefinedVertex"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMLRTPseudostateKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An enumeration of the kinds of pseudo-state vertices recognized&#xA;by UML-RT."/>
+    </eAnnotations>
+    <eLiterals name="initial">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates an initial pseudostate."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="history" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates an history pseudostate."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="choice" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates a choice pseudostate."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="junction" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates a junction pseudostate."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+</ecore:EPackage>

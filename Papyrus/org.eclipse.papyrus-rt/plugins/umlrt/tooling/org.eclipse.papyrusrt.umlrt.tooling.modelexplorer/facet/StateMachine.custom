@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:Customization xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:custom="http://www.eclipse.org/papyrus/emf/facet/custom/0.2.incubation/custom" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:efacet="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet" xmlns:javaQuery="http://www.eclipse.org/papyrus/emf/facet/query/java/0.2.incubation/javaquery" xmlns:query="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query" name="UML-RT State Machine" nsPrefix="" documentation="Presentation of UML-RT specific state machines." mustBeLoadedByDefault="true" rank="-100">
+  <eClassifiers xsi:type="efacet:Facet" name="StateMachineFacet" conformanceTypedElement="//StateMachineFacet/isRTStateMachine">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
+    <facetOperations name="isRTStateMachine" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsRTStateMachineQuery"/>
+    </facetOperations>
+    <facetOperations name="noReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="StateMachineContents" extendedFacets="//StateMachineFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedVertex" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded vertices.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Vertex"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateMachineContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//StateMachine/vertex"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedTransition" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded transitions.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateMachineContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//StateMachine/transition"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="vertex" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined vertices.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Vertex"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateMachineContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//StateMachine/vertex"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="transition" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined transitions.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateMachineContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//StateMachine/transition"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetOperations name="getContents" upperBound="-1" documentation="Returns inherited or locally defined members of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTElementsQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="StateFacet" conformanceTypedElement="//StateFacet/isInRTStateMachine">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//State"/>
+    <facetOperations name="isInRTStateMachine" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsInRTStateMachineQuery"/>
+    </facetOperations>
+    <facetOperations name="noReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="StateContents" extendedFacets="//StateFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedEntry" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, or excluded entry code.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/entry"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedExit" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, or excluded exit code.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/exit"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedConnectionPoint" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded connection points.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Pseudostate"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/connectionPoint"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedSubvertex" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded vertices.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Vertex"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/subvertex"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedSubtransition" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded transitions.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/subtransition"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="entry" volatile="true" transient="true" derived="true" documentation="Locally-defined entry code.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/entry"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="exit" volatile="true" transient="true" derived="true" documentation="Locally-defined exit code.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/exit"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="connectionPoint" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined connection points.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Pseudostate"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/connectionPoint"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="subvertex" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined vertices.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Vertex"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/subvertex"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="subtransition" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined transitions.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
+      <query xsi:type="query:OperationCallQuery" operation="//StateContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//State/subtransition"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetOperations name="getContents" upperBound="-1" documentation="Returns inherited or locally defined members of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTElementsQuery"/>
+    </facetOperations>
+    <facetOperations name="getSingleContent" documentation="Returns a singular inherited or locally defined member of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTSingleElementQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="TransitionFacet" conformanceTypedElement="//TransitionFacet/isInRTStateMachine">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
+    <facetOperations name="isInRTStateMachine" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsInRTStateMachineQuery"/>
+    </facetOperations>
+    <facetOperations name="noReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="TransitionContents" extendedFacets="//TransitionFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedTrigger" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded triggers.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Trigger"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getContents">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/trigger"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedGuard" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, or excluded guard.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/guard"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedEffect" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, or excluded effect.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/effect"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="trigger" upperBound="-1" volatile="true" transient="true" derived="true" documentation="Locally-defined triggers.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Trigger"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getContents">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/trigger"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="guard" volatile="true" transient="true" derived="true" documentation="Locally-defined guard.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/guard"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="effect" volatile="true" transient="true" derived="true" documentation="Locally-defined effect.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TransitionContents/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Transition/effect"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetOperations name="getContents" upperBound="-1" documentation="Returns inherited or locally defined members of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTElementsQuery"/>
+    </facetOperations>
+    <facetOperations name="getSingleContent" documentation="Returns a singular inherited or locally defined member of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTSingleElementQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="TriggerFacet" conformanceTypedElement="//TriggerFacet/isInRTStateMachine">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Trigger"/>
+    <facetOperations name="isInRTStateMachine" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsInRTStateMachineQuery"/>
+    </facetOperations>
+    <facetOperations name="noReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="custom:FacetCustomization" name="TriggerContents" extendedFacets="//TriggerFacet">
+    <facetElements xsi:type="efacet:FacetReference" name="inheritedGuard" volatile="true" transient="true" derived="true" documentation="Inherited, re-defined, and excluded vertices.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TriggerContents/getSingleContent">
+        <arguments xsi:type="query:TrueLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Trigger/guard"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetElements xsi:type="efacet:FacetReference" name="guard" volatile="true" transient="true" derived="true" documentation="Locally-defined guard.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
+      <query xsi:type="query:OperationCallQuery" operation="//TriggerContents/getSingleContent">
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:FalseLiteralQuery"/>
+        <arguments xsi:type="query:EObjectLiteralQuery">
+          <element href="http://www.eclipse.org/papyrus-rt/2017/UML-RT#//Trigger/guard"/>
+        </arguments>
+      </query>
+    </facetElements>
+    <facetOperations name="getSingleContent" documentation="Returns a singular inherited or locally defined member of the namespace.">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      <eParameters name="inherited" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="includeAsIs" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
+      <eParameters name="facadeReference" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </eParameters>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.GetUMLRTSingleElementQuery"/>
+    </facetOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="efacet:Facet" name="GuardFacet" conformanceTypedElement="//GuardFacet/isGuard">
+    <extendedMetaclass href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
+    <facetOperations name="isGuard" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.IsGuardQuery"/>
+    </facetOperations>
+    <facetOperations name="noReferences" upperBound="-1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      <query xsi:type="javaQuery:JavaQuery" implementationClassName="org.eclipse.papyrusrt.umlrt.tooling.modelexplorer.queries.EmptyReferencesListQuery"/>
+      <override xsi:type="efacet:FacetOperation" href="platform:/plugin/org.eclipse.papyrus.emf.facet.custom.ui/resources/customproperties.efacet#//CustomizedEObject/visibleReferences"/>
+    </facetOperations>
+  </eClassifiers>
+</custom:Customization>

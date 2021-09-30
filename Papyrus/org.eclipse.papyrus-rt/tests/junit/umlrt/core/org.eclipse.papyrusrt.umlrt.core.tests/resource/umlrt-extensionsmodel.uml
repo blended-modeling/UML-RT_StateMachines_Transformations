@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLRTExtensionProfile="http:///schemas/UMLRTExtensionProfile/_9ZQOQOSgEeamvqcrjx4SUw/3" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLRTExtensionProfile/_9ZQOQOSgEeamvqcrjx4SUw/3 pathmap://UMLRT_EXT/umlrtext.profile.uml#_9ZQOQeSgEeamvqcrjx4SUw">
+  <uml:Model xmi:id="_MEbgsOSKEeaek7LgWZ4vVQ" name="umlrt-extensionsmodel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_SI_rMOSKEeaek7LgWZ4vVQ" name="Capsule1" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HK3SQOShEeaUFfzCnnPG1g" name="Capsule2" isActive="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aYoHoOShEeamdqJcOkEfmA" name="TopCapsule" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_MEytEOSKEeaek7LgWZ4vVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MEytEeSKEeaek7LgWZ4vVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_BG26sOScEeaWq-XWcNu-pw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GF84oOShEeaUFfzCnnPG1g" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GF84oeShEeaUFfzCnnPG1g" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GF84ouShEeaUFfzCnnPG1g" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GF84o-ShEeaUFfzCnnPG1g" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GF84pOShEeaUFfzCnnPG1g" key="Date" value="2017-01-27"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GF84peShEeaUFfzCnnPG1g" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BG-2gOScEeaWq-XWcNu-pw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLRT_EXT/umlrtext.profile.uml#_9ZQOQeSgEeamvqcrjx4SUw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_EXT/umlrtext.profile.uml#_mNNjQOSREeaek7LgWZ4vVQ"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLRealTime:Capsule xmi:id="_SM3ekOSKEeaek7LgWZ4vVQ" base_Class="_SI_rMOSKEeaek7LgWZ4vVQ"/>
+  <UMLRTExtensionProfile:SubCapsuleA xmi:id="_S9OkgOSKEeaek7LgWZ4vVQ" base_Class="_SI_rMOSKEeaek7LgWZ4vVQ"/>
+  <UMLRealTime:Capsule xmi:id="_HLwDEOShEeaUFfzCnnPG1g" base_Class="_HK3SQOShEeaUFfzCnnPG1g"/>
+  <UMLRTExtensionProfile:SubCapsuleB xmi:id="_IbS_YOShEeaUFfzCnnPG1g" base_Class="_HK3SQOShEeaUFfzCnnPG1g"/>
+  <UMLRealTime:Capsule xmi:id="_ae8yEOShEeamdqJcOkEfmA" base_Class="_aYoHoOShEeamdqJcOkEfmA"/>
+</xmi:XMI>

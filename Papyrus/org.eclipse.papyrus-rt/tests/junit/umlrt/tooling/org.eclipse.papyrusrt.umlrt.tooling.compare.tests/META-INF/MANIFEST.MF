@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-RT Tests for Compare Plugin
+Bundle-SymbolicName: org.eclipse.papyrusrt.umlrt.tooling.compare.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.junit;bundle-version="[4.12.0,5.0.0)",
+ org.eclipse.papyrusrt.umlrt.tooling.compare;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.emf.compare;bundle-version="[3.5.0,4.0.0)",
+ org.eclipse.papyrusrt.umlrt.profile;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.uml2.uml.resources;bundle-version="[5.3.0,6.0.0)",
+ org.eclipse.papyrusrt.umlrt.core;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.infra.types.core;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.emf.compare.uml2;bundle-version="[2.6.0,3.0.0)",
+ org.eclipse.swt;bundle-version="[3.106.0,4.0.0)",
+ org.eclipse.gmf.runtime.notation;bundle-version="[1.8.0,2.0.0)",
+ org.eclipse.emf.compare.diagram;bundle-version="[2.5.0,3.0.0)",
+ org.eclipse.papyrusrt.junit;bundle-version="[1.0.0,2.0.0)"
+Export-Package: org.eclipse.papyrusrt.umlrt.tooling.compare.internal;x-internal:=true
+Import-Package: com.google.common.base;version="[21.0.0,22.0.0)",
+ com.google.common.collect;version="[21.0.0,22.0.0)"

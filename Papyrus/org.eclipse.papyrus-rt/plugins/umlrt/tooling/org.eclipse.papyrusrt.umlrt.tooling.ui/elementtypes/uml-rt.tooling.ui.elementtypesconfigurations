@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<elementtypesconfigurations:ElementTypeSetConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:rulebased="http://www.eclipse.org/papyrus/infra/types/rulebased/1.1" xmlns:umlrttypes="http://www.eclipse.org/papyrus-rt/umlrt/types/1.0.0" xmi:id="_ubJcsKeUEeSUR5jX0TaAcA" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.elementTypeSet" name="UMLRealTime Tooling UI" metamodelNsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.ui.rtportcreationwithui" description="Creation type only for RTPorts from UI, like model explorer" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.rtportcreationwithui" name="Port">
+    <matcherConfiguration xsi:type="elementtypesconfigurations:MatcherConfiguration" xmi:id="_JLWfsDdnEeWK7ZUbpAMB-g" matcherClassName="org.eclipse.papyrusrt.umlrt.core.types.matcher.NoMatcher"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.ExternalBehaviorPort"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.ui.intbehportcreationwithui" description="Creation type only for Internal Behavior Ports from UI, like palette" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.intbehportcreationwithui" name="Internal Behavior Port With UI">
+    <matcherConfiguration xsi:type="elementtypesconfigurations:MatcherConfiguration" xmi:id="_DRnSgRBrEeaM3pwxY5WOXQ" matcherClassName="org.eclipse.papyrusrt.umlrt.core.types.matcher.NoMatcher"/>
+    <specializedTypes xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.InternalBehaviorPort"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.ui.capsulepartcreationwithui" description="Creation type only for capsuleParts from UI, like model explorer" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.capsulepartcreationwithui" name="Capsule Part">
+    <matcherConfiguration xsi:type="elementtypesconfigurations:MatcherConfiguration" xmi:id="_Myv-ATeEEeWK7ZUbpAMB-g" matcherClassName="org.eclipse.papyrusrt.umlrt.core.types.matcher.NoMatcher"/>
+    <specializedTypes xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.CapsulePart"/>
+  </elementTypeConfigurations>
+  <elementTypeConfigurations xsi:type="elementtypesconfigurations:SpecializationTypeConfiguration" xmi:id="org.eclipse.papyrusrt.umlrt.tooling.ui.protocolmsgparametercreationwithui" description="Parameter Creation only for Proctocol Message from UI, like model explorer" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.protocolmsgparametercreationwithui" name="Protocol Message Parameter with UI">
+    <iconEntry xmi:id="_sIKAIB3-EeauiM_eA0LaLg" iconPath="/icons/full/obj16/Parameter.gif" bundleId="org.eclipse.uml2.uml.edit"/>
+    <matcherConfiguration xsi:type="elementtypesconfigurations:MatcherConfiguration" xmi:id="_kMxxMA3oEeaiOKOTADnmfw" matcherClassName="org.eclipse.papyrusrt.umlrt.core.types.matcher.NoMatcher"/>
+    <specializedTypes xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.RTMessageParameter"/>
+  </elementTypeConfigurations>
+  <adviceBindingsConfigurations xsi:type="umlrttypes:UMLRTSetTypeAdviceConfiguration" xmi:id="_4UTDADdmEeWK7ZUbpAMB-g" description="UI configuration for the creation advice of a port" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.rtportcreationwithui.viewconfiguration" target="org.eclipse.papyrusrt.umlrt.tooling.ui.rtportcreationwithui" inheritance="all" elementType="org.eclipse.papyrusrt.umlrt.core.Protocol">
+    <newTypeViewsToDisplay xmi:id="_NFaWIAcbEeaXA7QItDtrGg">
+      <view href="../dialogs/CreationDialogs.ctx#_xj0M4AcbEeaXA7QItDtrGg"/>
+    </newTypeViewsToDisplay>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations xsi:type="umlrttypes:UMLRTSetTypeAdviceConfiguration" xmi:id="_MbPJcBBrEeaM3pwxY5WOXQ" description="UI configuration for the creation advice of an internal behavior port" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.intbehportcreationwithui.viewconfiguration" target="org.eclipse.papyrusrt.umlrt.tooling.ui.intbehportcreationwithui" inheritance="all" elementType="org.eclipse.papyrusrt.umlrt.core.Protocol">
+    <newTypeViewsToDisplay xmi:id="_MbPJcRBrEeaM3pwxY5WOXQ">
+      <view href="../dialogs/CreationDialogs.ctx#_xj0M4AcbEeaXA7QItDtrGg"/>
+    </newTypeViewsToDisplay>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations xsi:type="umlrttypes:UMLRTSetTypeAdviceConfiguration" xmi:id="_MywlEDeEEeWK7ZUbpAMB-g" description="UI configuration for the creation advice of a capsule part" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.capsulepartcreationwithui.viewconfiguration" target="org.eclipse.papyrusrt.umlrt.tooling.ui.capsulepartcreationwithui" inheritance="all" elementType="org.eclipse.papyrusrt.umlrt.core.Capsule">
+    <newTypeViewsToDisplay xmi:id="_PVneMAcbEeaXA7QItDtrGg">
+      <view href="../dialogs/CreationDialogs.ctx#_kHd8gAcbEeaXA7QItDtrGg"/>
+    </newTypeViewsToDisplay>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations xsi:type="elementtypesconfigurations:AdviceBindingConfiguration" xmi:id="_7GDdgBhFEeavLJ7TFdeJeg" description="Check connector end compatibility and notify user if incompatible" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.internal.advice.connectorEndPortsCompatibility" inheritance="all" editHelperAdviceClassName="org.eclipse.papyrusrt.umlrt.tooling.ui.internal.advice.ConnectorEndPortsCompatibilityAdvice">
+    <target xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.Capsule"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations xsi:type="umlrttypes:UMLRTSetTypeAdviceConfiguration" xmi:id="ParameterViewConfig" description="UI configuration for the creation advice of a Parameter for Protocol Message" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.protocolmsgparamatercreationwithui.viewconfiguration" target="org.eclipse.papyrusrt.umlrt.tooling.ui.protocolmsgparametercreationwithui" inheritance="all" elementType="org.eclipse.papyrus.uml.Classifier" elementTypeLabel="Type">
+    <newTypeViewsToDisplay xmi:id="">
+      <view href="../dialogs/CreationDialogs.ctx#ParameterCreationDialogView"/>
+    </newTypeViewsToDisplay>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations xsi:type="elementtypesconfigurations:AdviceBindingConfiguration" xmi:id="_MsIK8EiEEeed_eyuM74zZg" description="Check connector end compatibility and notify user if incompatible" identifier="org.eclipse.papyrusrt.umlrt.tooling.ui.internal.advice.connectorReorientCompatibility" inheritance="all" editHelperAdviceClassName="org.eclipse.papyrusrt.umlrt.tooling.ui.internal.advice.ConnectorEndPortsCompatibilityAdvice">
+    <target xsi:type="rulebased:RuleBasedTypeConfiguration" href="platform:/plugin/org.eclipse.papyrusrt.umlrt.core/elementtypes/uml-rt.elementtypesconfigurations#org.eclipse.papyrusrt.umlrt.core.RTConnector"/>
+  </adviceBindingsConfigurations>
+</elementtypesconfigurations:ElementTypeSetConfiguration>

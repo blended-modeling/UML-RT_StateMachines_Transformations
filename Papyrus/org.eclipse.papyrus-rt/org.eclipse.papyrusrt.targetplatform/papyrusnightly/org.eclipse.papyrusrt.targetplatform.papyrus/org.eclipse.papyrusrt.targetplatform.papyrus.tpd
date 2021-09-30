@@ -1,0 +1,25 @@
+/**
+ * Papyrus Target Platform for Papyrus-RT (nightly)
+ * 
+ * This TP is intended to contain the Papyrus dependencies used by Papyrus-RT components in the nightly version of Papyrus-RT.
+ */
+target "Papyrus-RT nightly Papyrus target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.base.tpd"
+
+location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/oxygen/" papyrus-nightly {
+	org.eclipse.papyrus.sdk.feature.feature.group lazy
+}
+
+location "https://hudson.eclipse.org/papyrus/job/Papyrus-Oxygen-Developer/lastSuccessfulBuild/artifact/repository/" eclipse-papyrus-developer-master {
+	org.eclipse.papyrus.junit.feature.feature.group lazy
+}
+
+// Required for building Codegen and Cpp
+location "http://download.eclipse.org/modeling/mdt/papyrus/components/designer/neon/1.0.4_papyrus-designer-neon_494/" eclipse-papyrus-designer {
+	org.eclipse.papyrus.designer.languages.cpp.feature.feature.group lazy
+}
+
+location "http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases-3.3.1a" gmf-tooling {
+	org.eclipse.gmf.tooling lazy
+}

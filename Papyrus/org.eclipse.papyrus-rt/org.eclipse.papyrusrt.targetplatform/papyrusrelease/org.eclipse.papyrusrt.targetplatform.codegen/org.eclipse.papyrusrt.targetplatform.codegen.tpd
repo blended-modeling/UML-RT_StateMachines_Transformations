@@ -1,0 +1,15 @@
+/**
+ * Codegen Target Platform for Papyrus-RT (releases)
+ * 
+ * This TP is intended to contain the dependencies used by the Papyrus-RT codegen component in the releases versions of Papyrus-RT.
+ */
+target "Papyrus-RT releases codegen target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.core/org.eclipse.papyrusrt.targetplatform.core.tpd"
+
+location "http://download.eclipse.org/papyrus-rt/updates/milestones/oxygen/1.0.0/M201707181334" papyrus-rt-last-milestone {
+	org.eclipse.papyrusrt.umlrt.core.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.common.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.common.ui.feature.feature.group
+	org.eclipse.papyrusrt.umlrt.cpp.feature.feature.group
+}

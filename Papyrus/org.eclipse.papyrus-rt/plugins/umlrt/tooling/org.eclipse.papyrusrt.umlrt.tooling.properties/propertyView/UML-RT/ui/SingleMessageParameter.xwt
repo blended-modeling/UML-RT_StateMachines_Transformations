@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:x="http://www.eclipse.org/xwt" xmlns:j="clr-namespace:java.lang"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:ppumlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:uml="clr-namespace:org.eclipse.papyrus.uml.properties.widgets">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+		    property="UMLRealTimeExt:RTMessageParameter:name"></ppe:StringEditor>
+		<ppumlrt:MessageParameterTypeEditor input="{Binding}"
+			property="UMLRealTimeExt:RTMessageParameter:type"></ppumlrt:MessageParameterTypeEditor>
+	</Composite>
+</Composite>

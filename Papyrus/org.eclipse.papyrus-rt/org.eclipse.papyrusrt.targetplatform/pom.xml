@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.targetplatform</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<artifactId>org.eclipse.papyrusrt.parent</artifactId>
+		<relativePath>..</relativePath>
+	</parent>
+	<name>Papyrus RT Target Platforms</name>
+	<description>This module contains the different Eclipse target platforms definitions.</description>
+	
+	<!--
+	   Profiles to select either a target platform optimized for building on the Papyrus-RT
+	   HIPP server at Eclipse.org (with local filesystem access to the download server content)
+	   or a portable option using HTPP to access the Eclipse downloads, which can run anywhere.
+	-->
+	<profiles>
+		<profile>
+			<id>eclipse-target</id>
+			<activation>
+				<file>
+					<!-- Do we appear to be running in the Papyrus-RT HIPP at Eclipse.org? -->
+					<exists>/home/hudson/genie.papyrus-rt/.hudson/config.xml/</exists>
+				</file>
+			</activation>
+			<modules>
+				<module>${papyrus.kind}/org.eclipse.papyrusrt.targetplatform.${target.kind}/eclipse</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>portable-target</id>
+			<activation>
+				<file>
+					<!-- Do we appear NOT to be running in the Papyrus-RT HIPP at Eclipse.org? -->
+					<missing>/home/hudson/genie.papyrus-rt/.hudson/config.xml/</missing>
+				</file>
+			</activation>
+			<modules>
+				<module>${papyrus.kind}/org.eclipse.papyrusrt.targetplatform.${target.kind}</module>
+			</modules>
+		</profile>
+	</profiles>
+</project>

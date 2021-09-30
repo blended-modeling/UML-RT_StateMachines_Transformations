@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RTCppProperties="http://www.eclipse.org/papyrus/umlrt/cppproperties" xmlns:UMLRealTime="http://www.eclipse.org/papyrus/umlrt" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_pgsKkDb_EeWHH8NofhB1Dw" name="RootElement">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_qdo7ADb_EeWHH8NofhB1Dw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sR2DkDb_EeWHH8NofhB1Dw" name="Class1">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v-MAIDfIEeW0rOkAljpcMA" name="OpaqueBehavior1" visibility="public" specification="_l6MLoDfIEeW0rOkAljpcMA">
+        <language>C++</language>
+        <body>cout &lt;&lt; &quot;hola&quot; &lt;&lt; endl;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dr8kMDfJEeW0rOkAljpcMA" name="OpaqueBehavior2" specification="_5v2HcDfIEeW0rOkAljpcMA">
+        <language>C++</language>
+        <body>cout &lt;&lt; &quot;adios&quot; &lt;&lt; endl;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tsKsgDb_EeWHH8NofhB1Dw" name="Operation1"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_454iIDb_EeWHH8NofhB1Dw" name="Operation2"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_610qYDb_EeWHH8NofhB1Dw" name="Operation3"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-V3psDb_EeWHH8NofhB1Dw" name="Operation4"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__bgcEDb_EeWHH8NofhB1Dw" name="Operation5"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_l6MLoDfIEeW0rOkAljpcMA" name="Operation6" method="_v-MAIDfIEeW0rOkAljpcMA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_5v2HcDfIEeW0rOkAljpcMA" name="Operation7" method="_Dr8kMDfJEeW0rOkAljpcMA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DBuvkFikEeW05tJXu603vw" name="Top" isActive="true"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pgsKkTb_EeWHH8NofhB1Dw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pgsKkjb_EeWHH8NofhB1Dw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_RT_PROFILE/uml-rt.profile.uml#_1h74oEeVEeO0lv5O1DTHOQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_qZokwDb_EeWHH8NofhB1Dw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4BhKcFijEeW05tJXu603vw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BhKcVijEeW05tJXu603vw" key="Version" value="0.0.7"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BhKclijEeW05tJXu603vw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BhKc1ijEeW05tJXu603vw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BhKdFijEeW05tJXu603vw" key="Date" value="2015-09-11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BhKdVijEeW05tJXu603vw" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qZs2MDb_EeWHH8NofhB1Dw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/umlrt/cppproperties#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UMLRT_CPP/RTCppProperties.profile.uml#_vl5LALs8EeSTjNEQkASznQ"/>
+    </profileApplication>
+  </uml:Model>
+  <RTCppProperties:OperationProperties xmi:id="_I35eADcAEeWHH8NofhB1Dw" Inline="true" base_Operation="_454iIDb_EeWHH8NofhB1Dw"/>
+  <RTCppProperties:OperationProperties xmi:id="_J90kQDcAEeWHH8NofhB1Dw" Polymorphic="true" base_Operation="_610qYDb_EeWHH8NofhB1Dw"/>
+  <RTCppProperties:OperationProperties xmi:id="_KtBMkDcAEeWHH8NofhB1Dw" kind="Friend" base_Operation="_-V3psDb_EeWHH8NofhB1Dw"/>
+  <RTCppProperties:OperationProperties xmi:id="_LbUdADcAEeWHH8NofhB1Dw" kind="Global" base_Operation="__bgcEDb_EeWHH8NofhB1Dw"/>
+  <RTCppProperties:CapsuleProperties xmi:id="_vQbKwDeSEeWitIME_f7tmw" headerPreface="// header preface" headerEnding="// header ending" implementationPreface="// implementation preface&#xA;#include&lt;iostream>&#xA;&#xA;using namespace std;&#xA;" implementationEnding="// implementation ending" base_Class="_sR2DkDb_EeWHH8NofhB1Dw"/>
+  <RTCppProperties:OperationProperties xmi:id="_PszuADfJEeW0rOkAljpcMA" generateDefinition="false" base_Operation="_5v2HcDfIEeW0rOkAljpcMA"/>
+  <RTCppProperties:PassiveClassProperties xmi:id="_rSHpgDoAEeWa3YvIVUdk-A" generateStateMachine="false" generateAssignmentOperator="false" generateCopyConstructor="false" generateDefaultConstructor="false" generateDestructor="false" base_Class="_sR2DkDb_EeWHH8NofhB1Dw"/>
+  <UMLRealTime:Capsule xmi:id="_DCuOEFikEeW05tJXu603vw" base_Class="_DBuvkFikEeW05tJXu603vw"/>
+</xmi:XMI>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<name>Tooling</name>
+	<parent>
+		<artifactId>org.eclipse.papyrusrt.tooling.releng</artifactId>
+		<groupId>org.eclipse.papyrusrt</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>org.eclipse.papyrusrt</groupId>
+	<artifactId>org.eclipse.papyrusrt.tooling.tooling.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+	
+		<module>../../../plugins/umlrt/tooling</module>
+		
+		<module>../../../features/tooling/org.eclipse.papyrusrt.umlrt.tooling.feature</module>
+		<module>../../../features/tooling/org.eclipse.papyrusrt.umlrt.tooling.compare.feature</module>
+		<module>site</module>	
+	</modules>
+	
+</project>

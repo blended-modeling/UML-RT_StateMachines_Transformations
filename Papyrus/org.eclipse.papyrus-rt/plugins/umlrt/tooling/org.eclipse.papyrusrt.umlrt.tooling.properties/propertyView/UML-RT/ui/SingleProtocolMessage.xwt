@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:j="clr-namespace:java.lang" xmlns:ppe="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.infra.properties.ui.widgets.layout"
+	xmlns:umlrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.ui.widgets"
+	xmlns:widgetrt="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.properties.widget"
+	xmlns:providers="clr-namespace:org.eclipse.papyrusrt.umlrt.tooling.properties.providers"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}" property="UMLRTFacade:ProtocolMessage:name"
+			customLabel="Name"></ppe:StringEditor>
+		<widgetrt:RTNatTableMultiReferencePropertyEditor
+			input="{Binding}"
+			tableURI="platform:/plugin/org.eclipse.papyrusrt.umlrt.tooling.tables/configs/protocolmsg.nattableconfiguration"
+			property="UMLRealTimeExt:ProtocolMessage:ownedParameter"
+			controlManagerClass="providers:OwnedParametersControlManager"></widgetrt:RTNatTableMultiReferencePropertyEditor>
+	</Composite>
+</Composite>

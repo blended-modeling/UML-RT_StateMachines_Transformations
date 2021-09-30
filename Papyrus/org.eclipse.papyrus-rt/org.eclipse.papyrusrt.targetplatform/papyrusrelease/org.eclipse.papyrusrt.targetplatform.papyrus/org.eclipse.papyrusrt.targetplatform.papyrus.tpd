@@ -1,0 +1,27 @@
+/**
+ * Papyrus Target Platform for Papyrus-RT (releases)
+ * 
+ * This TP is intended to contain the Papyrus dependencies used by Papyrus-RT components in the releases versions of Papyrus-RT.
+ */
+target "Papyrus-RT releases Papyrus target platform" with source requirements
+
+include "../org.eclipse.papyrusrt.targetplatform.base.tpd"
+
+location "http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/oxygen/" papyrus-release {
+	org.eclipse.papyrus.sdk.feature.feature.group [3.2.0,4.0.0)
+}
+
+// Removing Papyrus JUnit feature because it includes incompatible backported changes
+//location "https://hudson.eclipse.org/papyrus/job/Papyrus-Oxygen-Developer/lastSuccessfulBuild/artifact/repository/" eclipse-papyrus-developer-master {
+//	org.eclipse.papyrus.junit.feature.feature.group lazy
+//}
+
+// Required for building Codegen and Cpp
+location "http://download.eclipse.org/modeling/mdt/papyrus/components/designer/neon/1.0.4_papyrus-designer-neon_494/" eclipse-papyrus-designer {
+	org.eclipse.papyrus.designer.languages.cpp.feature.feature.group [1.0.4,2.0.0)
+}
+
+location "http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases-3.3.1a" gmf-tooling {
+	org.eclipse.gmf.tooling.runtime.feature.group [3.3.1,4.0.0)
+//	org.eclipse.gmf.tooling
+}
