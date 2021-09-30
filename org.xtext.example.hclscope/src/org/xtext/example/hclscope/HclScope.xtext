@@ -1,0 +1,148 @@
+grammar org.xtext.example.hclscope.HclScope with org.eclipse.xtext.common.Terminals
+
+generate hclScope "http://www.xtext.org/example/hclscope/HclScope"
+
+
+
+StateMachine:
+	"statemachine" name=ID "{"
+	
+
+	//simple state machine to allow adding concepts
+	("state" states+=State ("," states+=State)* ";")*
+	(initialtransition = InitialTransition)?
+	("junction" junction+=Junction ("," junction+=Junction)* ";" )*
+	("choice" choice+=Choice ("," choice+=Choice)* ";" )*
+	(transition+=Transition)*
+	
+	
+ "}" ";";
+State:
+	 name=ID
+	 ("{"
+	 (internaltransition+=InternalTransition)*
+	 ("entry" "{" entryaction+=EntryAction "}"  ";")?
+	 ("exit" "{" exitaction+=ExitAction "}" ";" )?
+	  
+	 ("entrypoint" entrypoint+=EntryPoint ("," entrypoint+=EntryPoint)* ";" )*
+	 ("exitpoint" exitpoint+=ExitPoint ("," exitpoint+=ExitPoint)* ";" )*
+	 ("state" states+=State ("," states+=State)* ";")*
+	 //(history+=History ";")?
+	 (initialtransition=InitialTransition)?
+	
+	("junction" junction+=Junction ("," junction+=Junction)* ";" )*
+	("choice" choice+=Choice ("," choice+=Choice)* ";" )*
+	(transition+=Transition | historytransition+=HistoryTransition )*
+	
+	  "}")?
+	;
+	
+	
+	
+	
+//state actions
+EntryAction:
+	name=STRING
+;
+ExitAction:
+	name=STRING
+;
+
+//pseudostates
+InitialState:
+
+	name="initial"
+;
+Junction: 
+	 name= ID
+; 
+Choice:
+	name=ID
+;
+
+//pseudostates used in hierarchical state machines
+EntryPoint:
+	 name=ID
+;
+ExitPoint:
+	 name=ID
+;
+
+DeepHistory:
+	name="history*"
+;
+
+//transitions
+InitialTransition:
+	(name=ID ":")? initialstate=InitialState "->" initialto=[Vertex|QualifiedName]? (transitionbody=TransitionBody) ";"
+	;
+
+Transition:
+    "transition"(name=(ID | STRING))? ":" from=[Vertex|QualifiedName] "->" to=[Vertex|QualifiedName]  (transitionbody=TransitionBody) ";"
+	;
+InternalTransition:
+	(name=ID)? (transitionbody=TransitionBody)  ";"
+;
+HistoryTransition:
+	 "historytransition" (name= (ID | STRING) ":")? from=[Vertex|QualifiedName] "->" to=DeepHistory  (transitionbody=TransitionBody) ";"
+	;
+
+//transition elements
+TransitionBody:
+	{TransitionBody} ("on" ((methodparameter+=MethodParameterTrigger)|(portevent+=PortEventTrigger)|(trigger+=Trigger)|"*"))?
+	(transitionguard=TransitionGuard)? 
+	(transitionoperation=TransitionOperation)?
+	("," ((methodparameter+=MethodParameterTrigger)|(portevent+=PortEventTrigger)|(trigger+=Trigger))?
+	(transitionguard=TransitionGuard)? 
+	(transitionoperation=TransitionOperation)?)*	
+;
+    
+TransitionGuard:
+	 "when" "[" name=STRING "]"
+;
+TransitionOperation:
+	"{" name=STRING"}"
+;
+Trigger:
+	name=ID 
+;
+
+Method:
+	name=ID
+;
+Parameter:
+	name=ID
+;
+
+MethodParameterTrigger:
+	method=Method"("parameter=Parameter")"
+;
+
+Port:
+	name=ID 
+;
+Event: 
+	name=ID
+;
+
+PortEventTrigger:
+	port=Port"."event=Event
+;
+
+//other
+
+Vertex:
+	State | Junction | Choice | EntryPoint | ExitPoint
+;
+Transitions:
+	 InitialTransition | Transition | HistoryTransition 
+;
+QualifiedName:
+	ValidID ("." ValidID)*;
+
+ValidID: ID|KEYWORD;
+
+KEYWORD: "initial" | "history" | "history*" ;
+
+
+

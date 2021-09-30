@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hclScope" nsURI="http://www.xtext.org/example/hclscope/HclScope"
+    nsPrefix="hclScope">
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialtransition" eType="#//InitialTransition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="junction" upperBound="-1"
+        eType="#//Junction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="choice" upperBound="-1"
+        eType="#//Choice" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Vertex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internaltransition" upperBound="-1"
+        eType="#//InternalTransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryaction" upperBound="-1"
+        eType="#//EntryAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitaction" upperBound="-1"
+        eType="#//ExitAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrypoint" upperBound="-1"
+        eType="#//EntryPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitpoint" upperBound="-1"
+        eType="#//ExitPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialtransition" eType="#//InitialTransition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="junction" upperBound="-1"
+        eType="#//Junction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="choice" upperBound="-1"
+        eType="#//Choice" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="historytransition" upperBound="-1"
+        eType="#//HistoryTransition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExitAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Junction" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//Vertex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeepHistory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialTransition" eSuperTypes="#//Transitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialstate" eType="#//InitialState"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialto" eType="#//Vertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//Transitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Vertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Vertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalTransition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionbody" eType="#//TransitionBody"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HistoryTransition" eSuperTypes="#//Transitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Vertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DeepHistory"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodparameter" upperBound="-1"
+        eType="#//MethodParameterTrigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portevent" upperBound="-1"
+        eType="#//PortEventTrigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionguard" eType="#//TransitionGuard"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionoperation" eType="#//TransitionOperation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionGuard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterTrigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//Method"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortEventTrigger">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transitions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionbody" eType="#//TransitionBody"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
