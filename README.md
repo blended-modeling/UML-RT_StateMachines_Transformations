@@ -21,16 +21,19 @@ This repository contains
 
 ## Installation
 
-1. In Eclipse, import the following folders that contain the domain specific languages
+1. In Eclipse, import the following folders that contain the domain specific language for the textual notation
 ```
      - org.xtext.example.hclscope
      - org.xtext.example.hclscope.ide
      - org.xtext.example.hclscope.ui
      - org.xtext.example.hclscope.tests
      - org.xtext.example.hclscope.ui.tests
-     
-     -Papyrus
 ```
+and register EPackage by:
+```
+org.xtext.example.hclscope -> model -> generated -> right click on HclScope.ecore -> Register EPackages
+```
+
 
 2. Run a second instance of Eclipse by:
 
@@ -38,10 +41,15 @@ This repository contains
 Right-clicking in org.xtext.example.hclscope -> Run As -> Run Configurations -> Eclipse Application -> New Launch Configuration -> Run 
 ```
 
-3. On the second Eclipse instance, import the following folder:
+3. On the second Eclipse instance, import the following folders:
 ```
+     - Papyrus
      - 2WayTransformations
-```     
+```    
+and register EPackage by:
+```
+org.eclipse-papyrus-rt -> plugins -> xtumlrt -> metamodel -> org.eclipse.papyrusrt.xtumlrt.statemach.model -> model -> right click on statemach.ecore -> Register EPackages
+```
 4. To make changes to the models: 
 ```
    -G.model: Use the Exceed Editor to add/remove/edit elements and the correponding properties
