@@ -1,1 +1,0 @@
-Note 1. Code generation fail.

@@ -1,4 +1,0 @@
-folder description:
---------------------
-
-documentation area

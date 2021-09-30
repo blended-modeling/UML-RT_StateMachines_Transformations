@@ -1,6 +1,0 @@
-
-#include "UtilityMacros.hh"
-
-
-// Nothing
-
